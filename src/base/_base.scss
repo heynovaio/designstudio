@@ -1,0 +1,39 @@
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+*,
+html {
+  /* -webkit-font-smoothing: antialiased; */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+::selection {
+  background: $color-hl; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $color-hl; /* Gecko Browsers */
+}
+
+body {
+  font-family: $font-primary;
+  letter-spacing: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.Container {
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 20px;
+}
+main,
+header,
+footer {
+  margin: 0 auto;
+}
+

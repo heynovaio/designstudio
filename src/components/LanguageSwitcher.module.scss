@@ -1,0 +1,26 @@
+@import '../base/module';
+
+.banner{
+  background: $color-text;
+  display: flex;
+  justify-content: flex-end;
+  height: 49px;
+  align-items: center;
+  padding: 0 20px;
+}
+.language_switcher{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+svg{
+  color: white;
+}
+span,select{
+  background: none;
+  color: white;
+}
+option{
+  color: $color-text;
+}
