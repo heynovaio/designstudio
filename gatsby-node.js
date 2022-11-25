@@ -5,41 +5,57 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const queryData = await graphql(`
     {
-      allPrismicHomepage {
+      allPrismicHome {
         nodes {
           id
           lang
           url
         }
       }
-      allPrismicPage {
+      allShopifyProduct {
         nodes {
           id
-          lang
-          url
+          handle
+        }
+      }
+      allShopifyCollection {
+        nodes {
+          id
+          handle
         }
       }
     }
   `)
 
-  queryData.data.allPrismicHomepage.nodes.forEach((page) => {
+  queryData.data.allPrismicHome.nodes.forEach((page) => {
     createPage({
       path: page.url,
-      component: path.resolve(__dirname, 'src/templates/homepage.js'),
+      component: path.resolve(__dirname, 'src/templates/home.js'),
       context: {
         id: page.id,
         lang: page.lang,
       },
     })
   })
-
-   queryData.data.allPrismicPage.nodes.forEach((page) => {
+  queryData.data.allShopifyProduct.nodes.forEach((page) => {
     createPage({
-      path: page.url,
-      component: path.resolve(__dirname, 'src/templates/page.js'),
+      path: `/product/${page.handle}/`,
+      component: path.resolve(__dirname, 'src/templates/product.js'),
       context: {
         id: page.id,
-        lang: page.lang,
+        lang: 'en-ca',
+        type: 'product',
+      },
+    })
+  })
+  queryData.data.allShopifyCollection.nodes.forEach((page) => {
+    createPage({
+      path: `/collection/${page.handle}/`,
+      component: path.resolve(__dirname, 'src/templates/collection.js'),
+      context: {
+        id: page.id,
+        lang: 'en-ca',
+        type: 'collection',
       },
     })
   })

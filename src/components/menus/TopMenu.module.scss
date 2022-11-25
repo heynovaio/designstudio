@@ -1,8 +1,9 @@
-@import '../base/module';
+@import '../../base/module';
 
 .header {
 	
-	
+	height: 104px;
+	background: $color-cream;
 	.skip_button {
 	  border-radius: 3px;
 	  width: 150px;

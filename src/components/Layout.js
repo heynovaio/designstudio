@@ -2,8 +2,8 @@ import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import { TopMenu } from './TopMenu'
-import { BottomMenu } from './BottomMenu'
+import { TopMenu } from './menus/TopMenu'
+import { BottomMenu } from './menus/BottomMenu'
 
 export const Layout = ({ children, menu, activeDocMeta }) => {
   const queryData = useStaticQuery(graphql`

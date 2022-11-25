@@ -1,0 +1,16 @@
+@import '../../base/module';
+
+.flexWrap {
+	display: flex;
+	align-items: center;
+	gap: 60px;
+	flex-wrap: wrap;
+}
+.copy {
+	max-width: $width-copy_m;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 1;
+
+}

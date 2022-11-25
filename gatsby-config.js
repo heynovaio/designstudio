@@ -19,10 +19,19 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-prismic-previews',
+      resolve: `gatsby-source-shopify`,
       options: {
-        repositoryName: prismicConfig.prismicRepo,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        password: process.env.SHOPIFY_SHOP_PASSWORD,
+        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
+        downloadImages: true,
+        shopifyConnections: ['collections'],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Open Sans\:400,600,700`, `Poppins\:400,600,700`, `Playfair Display\:400,600,700`,`Poller One\:400`],
+        display: 'swap',
       },
     },
     'gatsby-plugin-image',

@@ -7,3 +7,12 @@ export const Container = ({children}) => {
     </div>
   )
 }
+
+export const Button = ({children, variant="Primary"}) => {
+
+  return (
+    <div className={`Btn${variant}`}>
+      {children}
+    </div>
+  )
+}

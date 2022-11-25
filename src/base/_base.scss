@@ -19,14 +19,65 @@ html {
 body {
   font-family: $font-primary;
   letter-spacing: 0;
+  background: $color-cream;
+}
+section {
+  padding: 100px 0;
 }
 
 button:focus {
   outline: 0;
 }
+span.BtnPrimary, span.BtnSecondary{
+  display: flex;
+}
+.Btn{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  width: max-content;
 
+  border-radius: 52px;
+
+  color: $color-black;
+  font-weight: 700;
+  box-sizing: border-box;
+  line-height: 1;
+  a {
+    color: $color-black;
+    line-height:1;
+  }
+}
+.BtnPrimary {
+  @extend .Btn;
+  background: $color-lightorange;
+  padding: 8px 25px 7px;
+}
+.BtnSecondary {
+  @extend .Btn;
+  border: 2px solid $color-black;
+  padding: 5px 23px;
+}
+.BtnWhite {
+  @extend .Btn;
+  border: 2px solid $color-black;
+  background: white;
+  padding: 8px 31px 7px;
+}
+.subheader {
+  text-transform: uppercase;
+  color: $color-darkgreen;
+  font-weight: 600;
+}
+.flexWrap, .FlexWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 .Container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   box-sizing: content-box;
   padding: 0 20px;

@@ -1,0 +1,19 @@
+@import '../../base/module';
+
+.flexWrap {
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.copyWrap {
+    max-width: 680px;
+    h2 {
+        margin-bottom: 40px;
+    }
+}
+.imageWrap {
+    max-width: 725px;
+    .image {
+        border-radius: 5px;
+    }
+}
