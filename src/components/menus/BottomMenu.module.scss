@@ -1,6 +1,39 @@
 @import '../../base/module';
 
 .footer{
-    height: 120px;
     background: $color-darkgreen;
+    padding: 60px 20px;
+
+}
+.navBar {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+}
+.LogoWrap {
+	height: 100%;
+	width: 496px;
+	max-width: 50%;
+	position: relative;
+	.logo {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		height: auto;
+	}
+}
+.MenuLinks {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 20px;
+	flex: 1 1 400px;
+	justify-content: flex-start;
+    a {
+        color:  white;
+    }
 }

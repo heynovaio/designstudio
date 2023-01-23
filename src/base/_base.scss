@@ -79,7 +79,7 @@ span.BtnPrimary, span.BtnSecondary{
 .Container {
   max-width: 1600px;
   margin: 0 auto;
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 0 20px;
 }
 main,

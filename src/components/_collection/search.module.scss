@@ -1,0 +1,45 @@
+@import '../../base/module';
+
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.search {
+    flex: 1 1 200px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.search label {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+.search input {
+    background: rgba(40, 112, 111, 0.17);
+    border-radius: 25px;
+    flex: 1 1 100px;
+    max-width: 600px;
+    padding:10px 10px;
+}
+
+.sort label, .sort select, .sort option {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+.sort {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.sort select {
+    border: 1px solid $color-black;
+    border-radius: 2px;
+    background: transparent;
+    padding: 10px;
+}

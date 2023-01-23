@@ -1,16 +1,36 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import { PrismicLink, PrismicText } from '@prismicio/react'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
 
-import * as s from './TopMenu.module.scss'
+import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
   return (
-    <header className={s.header}>
-      <a className={s.skip_button} href="#main">   
+    <header className={sty.header}>
+      <a className={sty.skip_button} href="#main">   
         Skip to Content
       </a>
+      <div className={sty.navBar}>
+        <PrismicLink
+          className={sty.LogoWrap}
+          href="/"
+        >
+          <GatsbyImage
+            image={menu.logo?.gatsbyImageData}
+            alt={menu.logo?.alt || ""}
+            className={sty.logo}
+          />
+        </PrismicLink>
+        <div className={sty.MenuLinks}>
+          {menu.menu_links.map((item,index) => (
+            <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
+              {item.label}
+            </PrismicLink>
+          ))}
+        </div>
+      </div>
+     
     </header>
   )
 }
@@ -20,5 +40,17 @@ export const query = graphql`
     _previewable
     type
     lang
+    data {
+      logo {
+        gatsbyImageData
+        alt
+      }
+      menu_links {
+        link {
+          url
+        }
+        label
+      }
+    }
   }
 `

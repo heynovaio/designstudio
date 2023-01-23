@@ -1,0 +1,108 @@
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
+import { Container } from "../components/Components"
+import { Layout } from '../components/Layout'
+import { components } from '../components/slices'
+
+import { ProjectHero } from '../components/_project/project-hero'
+import { ProjectCarousel } from '../components/_project/project-carousel'
+import { Testimonial } from '../components/_project/testimonial'
+
+const ProjectTemplate = ({ data }) => {
+  if (!data) return null
+
+  const projectContent = data.prismicProject || {}
+  const project = projectContent.data || {}
+  const menu = data.prismicMenu || {}
+
+  const { lang, type, url } = projectContent || {}
+  const alternateLanguages = projectContent.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
+
+  return (
+    <Layout menu={menu.data} activeDocMeta={activeDoc}>
+      <ProjectHero
+        Banner={project.banner_image}
+        Tags={projectContent.tags}
+        Name={project.project_name}
+        Type={project.project_type}
+        Moment={project.favorite_moment}
+      />
+      <ProjectCarousel
+        Gallery={project.image_gallery}
+        Description={project.project_description}
+      />
+      <Testimonial
+        Banner={project.banner_image_2}
+        Title={project.client_title}
+        Quote={project.client_quote}
+        Name={project.client}
+        Gallery={project.bottom_gallery}
+      />
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query projectQuery($id: String, $lang: String) {
+    prismicProject(id: { eq: $id },lang: { eq: $lang }) {
+      _previewable
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
+      id
+      tags
+      data {
+        banner_image {
+          gatsbyImageData
+          alt
+        }
+        project_name
+        project_type
+        favorite_moment
+        image_gallery {
+          image {
+            gatsbyImageData
+            alt
+          }
+        }
+        project_description {
+          richText
+        }
+        banner_image_2 {
+          gatsbyImageData
+          alt
+        }
+        client_title
+        client_quote
+        client
+        bottom_gallery {
+          image {
+            gatsbyImageData
+            alt
+          }
+        }
+
+      }
+      
+    }
+    prismicMenu(lang: { eq: $lang }) {
+      ...TopMenuFragment
+      ...BottomMenuFragment
+    }
+  }
+`
+
+export default withPrismicPreview(ProjectTemplate);

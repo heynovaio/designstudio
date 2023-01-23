@@ -30,7 +30,7 @@ export const RelatedProducts = ({header, description, products=null}) => {
 							</div>
 							<div className={sty.infoWrap}>
 								<p>{item.title}</p>
-								<span className={sty.price}>${item.priceRange.minVariantPrice.amount} {item.priceRange.minVariantPrice.currencyCode}</span>
+								<span className={sty.price}>${item.priceRangeV2.minVariantPrice.amount} {item.priceRangeV2.minVariantPrice.currencyCode}</span>
 							</div>
 						</PrismicLink>
 					))}

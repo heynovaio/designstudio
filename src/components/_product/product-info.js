@@ -4,6 +4,7 @@ import { getShopifyImage } from 'gatsby-source-shopify'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { Container, Button } from "../Components"
 
+
 import * as sty from "./product-info.module.scss"
 
 export const ProductInfo = ({ featuredImage, images, title, description, price}) => {
@@ -11,7 +12,7 @@ export const ProductInfo = ({ featuredImage, images, title, description, price})
 		return getShopifyImage({image: img, width: w, height: h, layout: lay});
 	}
 	const [quantity, setQuantity] = React.useState(0);
-	
+ 
 	return (
 		<section style={{background: "#FAEDE5"}}>
 			<Container>

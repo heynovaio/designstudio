@@ -1,0 +1,86 @@
+@import '../../base/module';
+.FacultyGrid {
+    position: relative;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 30px;
+    row-gap: 60px;
+}
+.name {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+    display: block;
+    margin-bottom: 16px;
+}
+.employeeCard{
+    .imageWrap {
+        width: 100%;
+        aspect-ratio: 7/5;
+        position: relative;
+        margin-bottom: 20px;
+        .image {
+            width:100%;
+            height: 100%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+    
+        }
+    }
+    
+    
+    .subName {
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    button {
+        background: none;
+        font-size: inherit;
+        font-weight: inherit;
+        padding: 3px 10px;
+    }
+}
+
+.bioModalWrap {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.close {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-weight: bold;
+}
+.bioBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.4); 
+}
+.bioModal {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 10px;
+    padding: 60px;
+    background: $color-cream;
+    z-index: 11;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    
+}

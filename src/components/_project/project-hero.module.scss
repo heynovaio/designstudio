@@ -1,0 +1,46 @@
+@import '../../base/module';
+
+.ProjectHero{
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+.bannerWrap{
+    width: calc(100% + 40px);
+    aspect-ratio: 7/3;
+    margin: 0 -20px 95px;
+    position: relative;
+    overflow: hidden;
+
+    .image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: calc(100%);
+        height: 100%;
+    }
+}
+.Content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.copyWrap{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 920px;
+
+    .tag {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        text-transform: uppercase;
+        
+    }
+    h2 {
+        margin-bottom: 8px;
+    }
+    p {
+        margin-bottom: 16px;
+    }
+}

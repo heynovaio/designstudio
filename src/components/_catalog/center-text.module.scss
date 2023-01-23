@@ -1,0 +1,11 @@
+@import '../../base/module';
+
+.centerWrap{
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    text-align: center;
+}

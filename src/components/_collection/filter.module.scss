@@ -1,0 +1,37 @@
+@import '../../base/module';
+
+.Filter {
+   
+    width: 266px;
+    details > summary {
+        list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+}
+.value {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.filterItem {
+    border-bottom: 1px solid rgba($color-black, 0.4);
+    padding: 16px 0;
+}
+.filterTitle {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.Filter details summary::after {
+    content: "+";
+}
+.Filter details[open] summary:after {
+    content: "-";
+}

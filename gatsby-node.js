@@ -12,6 +12,27 @@ exports.createPages = async ({ graphql, actions }) => {
           url
         }
       }
+      allPrismicPage {
+        nodes {
+          id
+          lang
+          url
+        }
+      }
+      allPrismicProject {
+        nodes {
+          id
+          lang
+          url
+        }
+      }
+      allPrismicCatalog {
+        nodes {
+          id
+          lang
+          url
+        }
+      }
       allShopifyProduct {
         nodes {
           id
@@ -24,10 +45,11 @@ exports.createPages = async ({ graphql, actions }) => {
           handle
         }
       }
+      
     }
   `)
 
-  queryData.data.allPrismicHome.nodes.forEach((page) => {
+  queryData.data.allPrismicHome?.nodes?.forEach((page) => {
     createPage({
       path: page.url,
       component: path.resolve(__dirname, 'src/templates/home.js'),
@@ -59,4 +81,56 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  queryData.data.allPrismicPage.nodes.forEach((page) => {
+    createPage({
+      path: page.url,
+      component: path.resolve(__dirname, 'src/templates/page.js'),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
+  queryData.data.allPrismicProject.nodes.forEach((page) => {
+    createPage({
+      path: page.url,
+      component: path.resolve(__dirname, 'src/templates/project.js'),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
+  queryData.data.allPrismicCatalog.nodes.forEach((page) => {
+    createPage({
+      path: page.url,
+      component: path.resolve(__dirname, 'src/templates/catalog.js'),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
+  // queryData.data.allPrismicCatalog.nodes.forEach((page) => {
+  //   createPage({
+  //     path: page.url,
+  //     component: path.resolve(__dirname, 'src/templates/catalog.js'),
+  //     context: {
+  //       id: page.id,
+  //       lang: page.lang,
+  //       uid: page.uid,
+  //     },
+  //   })
+  // })
+  // queryData.data.allPrismicProject.nodes.forEach((page) => {
+  //   createPage({
+  //     path: page.url,
+  //     component: path.resolve(__dirname, 'src/templates/project.js'),
+  //     context: {
+  //       id: page.id,
+  //       lang: page.lang,
+  //       uid: page.uid,
+  //     },
+  //   })
+  // })
 }

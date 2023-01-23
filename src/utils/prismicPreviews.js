@@ -11,6 +11,9 @@ import { prismicRepo } from '../../prismic-configuration'
 import { linkResolver } from './linkResolver'
 
 import HomeTemplate from './../templates/home'
+import PageTemplate from './../templates/page'
+import ProjectTemplate from './../templates/project'
+import CatalogTemplate from './../templates/catalog'
 
 /**
  * Prismic preview configuration for each repository in your app. This set of
@@ -27,6 +30,9 @@ export const repositoryConfigs = [
     linkResolver,
     componentResolver: componentResolverFromMap({
       home: HomeTemplate,
+      page: PageTemplate,
+      project: ProjectTemplate,
+      catalog: CatalogTemplate,
     }),
   },
 ]

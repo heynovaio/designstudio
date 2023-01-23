@@ -1,0 +1,25 @@
+@import '../../base/module';
+
+.awardRow {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imageWrap{
+    width: 495px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid rgba($color-black, 0.3);
+    background: #FFFFFF;
+    .image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 100%;
+    }
+}

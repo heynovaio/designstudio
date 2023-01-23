@@ -4,7 +4,6 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 
 import { Layout } from '../components/Layout'
-import { components } from '../slices'
 
 import { Hero } from '../components/_homepage/hero'
 import { Catalog } from '../components/_homepage/catalog'

@@ -1,4 +1,10 @@
-import * as React from 'react'
+import React, {
+	useRef,
+	useState,
+	useEffect,
+	useContext,
+	useCallback,
+} from 'react';
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
@@ -7,6 +13,7 @@ import { ProductInfo } from '../components/_product/product-info'
 import { VendorInfo } from '../components/_product/vendor-info'
 import { RelatedProducts } from '../components/_product/related-products'
 import { VendorShowcase } from '../components/_product/vendor-showcase'
+
 
 const ProductTemplate = ({ data }) => {
   if (!data) return null
@@ -19,11 +26,12 @@ const ProductTemplate = ({ data }) => {
     url: `/product/${product.handle}/`,
     alternateLanguages: null,
   };
+
  
   const FeaturedImage = product.featuredImage;
   const SubImgs = product.media;
   const ProductTitle = product.title;
-  const Price = product.priceRange;
+  const Price = product.priceRangeV2;
   const ProductDesc = product.descriptionHtml;
   const Vendor = product.vendor;
   const TotalInventory = product.totalInventory;
@@ -57,7 +65,7 @@ export const query = graphql`
       handle
       vendor
       totalInventory
-      priceRange {
+      priceRangeV2 {
         maxVariantPrice {
           amount
           currencyCode
@@ -75,7 +83,7 @@ export const query = graphql`
             width
             height
           }
-          priceRange {
+          priceRangeV2 {
             maxVariantPrice {
               amount
               currencyCode
