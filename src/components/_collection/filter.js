@@ -8,10 +8,15 @@ import { Container, Button } from "../Components"
 
 import * as sty from "./filter.module.scss"
 
-export const Filter = ({context}) => {
+export const Filter = ({context,data}) => {
+	const handleClick = () => {
+		setFilteredData(2);
+		console.log(filteredData);
+	}
 	return (
 		<div className={sty.Filter}>
 			<h3 style={{marginBottom:20, fontWeight: "500"}}>Filter</h3>
+			<button onClick={handleClick}>Test</button>
 			<details className={sty.filterItem}>
 				<summary className={sty.filterTitle}>Product Type </summary>
 				{

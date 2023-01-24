@@ -3,11 +3,11 @@ import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import { getShopifyImage } from 'gatsby-source-shopify'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { Container, Button } from "../Components"
-
+import { AddToCart } from '../add-to-cart'
 
 import * as sty from "./product-info.module.scss"
 
-export const ProductInfo = ({ featuredImage, images, title, description, price}) => {
+export const ProductInfo = ({ featuredImage, images, title, description, price, storefront }) => {
 	function getImage(img, w, h, lay){
 		return getShopifyImage({image: img, width: w, height: h, layout: lay});
 	}
@@ -40,8 +40,12 @@ export const ProductInfo = ({ featuredImage, images, title, description, price})
 						<span className={sty.price}>${price.minVariantPrice.amount} {price.minVariantPrice.currencyCode}</span>
 						<div className={sty.purchase}>
 							<p>Quantity</p>
-							<input type='number' min='1' max="100"/>
-							<Button>Add to Cart</Button>
+							<input type='number' min='1' max="100" onChange={() => {setQuantity(value)}}/>
+							<AddToCart
+								variantId={storefront}
+								quantity={1}
+								available={true}
+							/>
 						</div>
 						<div className={sty.description}>
 							<span className={sty.tabHeader}>Overview</span>

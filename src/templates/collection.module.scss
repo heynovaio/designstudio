@@ -30,6 +30,9 @@
     row-gap: 60px;
     width: 100%;
 }
+.productCard {
+    max-width: 405px;
+}
 .imageBox {
     position: relative;
     width: 100%;
@@ -62,4 +65,83 @@
     font-size: 16px;
     line-height: 28px;
     text-transform: uppercase;
+}
+.Filter {
+   
+    width: 266px;
+    details > summary {
+        list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+}
+.value {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.filterItem {
+    border-bottom: 1px solid rgba($color-black, 0.4);
+    padding: 16px 0;
+}
+.filterTitle {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.Filter details summary::after {
+    content: "+";
+}
+.Filter details[open] summary:after {
+    content: "-";
+}
+
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.search {
+    flex: 1 1 200px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.search label {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+.search input {
+    background: rgba(40, 112, 111, 0.17);
+    border-radius: 25px;
+    flex: 1 1 100px;
+    max-width: 600px;
+    padding:10px 10px;
+}
+
+.sort label, .sort select, .sort option {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+.sort {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.sort select {
+    border: 1px solid $color-black;
+    border-radius: 2px;
+    background: transparent;
+    padding: 10px;
 }

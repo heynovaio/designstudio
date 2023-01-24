@@ -33,6 +33,7 @@ const ProductTemplate = ({ data }) => {
   const ProductTitle = product.title;
   const Price = product.priceRangeV2;
   const ProductDesc = product.descriptionHtml;
+  const Storefront = product.storefontId;
   const Vendor = product.vendor;
   const TotalInventory = product.totalInventory;
   const RelatedProds = product.collections[0]?.products.slice(0,4);
@@ -48,6 +49,7 @@ const ProductTemplate = ({ data }) => {
         title={ProductTitle}
         description={ProductDesc}
         price={Price}
+        storefront={Storefront}
       />
       <VendorInfo header={"About this product or vendor"} description={temp}/>
       <RelatedProducts header={"Style it with"}  description={"Something like: Our designers love the look of these with this product"} products={RelatedProds}/>
@@ -65,6 +67,7 @@ export const query = graphql`
       handle
       vendor
       totalInventory
+      storefrontId
       priceRangeV2 {
         maxVariantPrice {
           amount
