@@ -42,47 +42,44 @@ const CollectionTemplate = ({ data }) => {
     if(a.toLowerCase() > b.toLowerCase()) return 1;
       return 0;
   });
-  const [curSort, setCurSort] = React.useState("relevance");
-  const [filters, setFilters] = React.useState([]);
-  const [allData,setAllData] = React.useState();
-  const [filteredData,setFilteredData] = React.useState();
+  
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [allData,setAllData] = React.useState([]);
+  const [filteredData,setFilteredData] = React.useState(allData);
   const [searchedData,setSearchedData] = React.useState();
 
-  function bigSort(a,b){
-    
-    
-  };
- 
   React.useEffect(() => {
     setFilters(Array(typesList.length).fill(false));
     setAllData(Collection.products);
     setFilteredData(Collection.products);
     setSearchedData(Collection.products);
   }, []);
-  
+  const [curSort, setCurSort] = React.useState("relevance");
+  const [filters, setFilters] = React.useState([]);
+
   const handleSort = (e) => {
-    console.log(e.target.value);
     setCurSort(e.target.value);
   };
-  React.useEffect(() => {
+
+  function sortData(data){
     if(searchedData){
       switch(curSort){
-        case 'relevance': setSearchedData(filteredData);
+        case 'relevance':{
+          return data;
+        };
         case 'name': {
-          let tempSearched = searchedData;
-          tempSearched.sort((a,b) => {
+          let temp = data;
+          temp.sort((a,b) => {
             if(a.title.toLowerCase() < b.title.toLowerCase()) return -1;
             if(a.title.toLowerCase() > b.title.toLowerCase()) return 1;
             return 0;
           });
-          setSearchedData(tempSearched);
+          return temp;
         };
-        default: null;
+        default: return data;
       } 
-    } else null;
-    
-  }, [curSort]);
-
+    } else return data;
+  }
   const handleFilter = (e) => {
     let index = e.target.value;
     const newFilters = [...filters];
@@ -92,10 +89,7 @@ const CollectionTemplate = ({ data }) => {
   };
 
   const handleSearch = (e) => {
-    let hits = [];
-    let value = e.target.value.toLowerCase();
-    filteredData.map((prod,index) => prod.title.toLowerCase().includes(value) && hits.push(prod));
-    setSearchedData(hits);
+    setSearchTerm(e.target.value.toLowerCase());
   };
   
   React.useEffect(() => {
@@ -115,8 +109,12 @@ const CollectionTemplate = ({ data }) => {
   },[filters]);
 
   React.useEffect(() => {
-    setSearchedData(filteredData);
-  },[filteredData]);
+    let hits = [];
+    let value = searchTerm;
+    filteredData.map((prod,index) => prod.title.toLowerCase().includes(value) && hits.push(prod));
+    setSearchedData(hits);
+  },[filteredData, searchTerm, curSort]);
+
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <section style={{paddingTop: 20}}>
@@ -174,15 +172,16 @@ const CollectionTemplate = ({ data }) => {
                   <select
                     name="sort"
                     onChange={handleSort}
+                    defaultValue={"relevance"}
                   >
-                      <option value="relevance" selected>Relevance</option>
-                      <option value="name" >Name</option>
+                      <option value={"relevance"} >Relevance</option>
+                      <option value={"name"} >Name</option>
                     </select>
                 </div>
               </div>
               {searchedData ? 
                 (<div className={sty.ProductGrid}>
-                  {searchedData.map((item,index) => (
+                  {sortData(searchedData).map((item,index) => (
                     <PrismicLink 
                       href={`/product/${item.handle}`} 
                       key={`product:${index}`}
