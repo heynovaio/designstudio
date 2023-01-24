@@ -48,6 +48,23 @@ export const query = graphql`
         }
         label
       }
+      catalog_links {
+        link_label
+        collection_handle
+      }
+      caymans_email
+      caymans_phone
+      turks_and_caicos_email
+      turks_and_caicos_phone
+      socials {
+        social_icon {
+          gatsbyImageData
+          alt
+        }
+        social_link {
+          url
+        }
+      }
       copyright
     }
   }
