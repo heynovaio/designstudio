@@ -8,29 +8,25 @@ import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
   return (
     <header className={sty.header}>
-      <a className={sty.skip_button} href="#main">   
+      <a className={sty.skip_button} href="#main">
         Skip to Content
       </a>
       <div className={sty.navBar}>
-        <PrismicLink
-          className={sty.LogoWrap}
-          href="/"
-        >
+        <PrismicLink className={sty.LogoWrap} href="/">
           <GatsbyImage
             image={menu.logo?.gatsbyImageData}
-            alt={menu.logo?.alt || ""}
+            alt={menu.logo?.alt || ''}
             className={sty.logo}
           />
         </PrismicLink>
         <div className={sty.MenuLinks}>
-          {menu.menu_links.map((item,index) => (
+          {menu.menu_links.map((item, index) => (
             <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
               {item.label}
             </PrismicLink>
           ))}
         </div>
       </div>
-     
     </header>
   )
 }

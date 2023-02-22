@@ -25,36 +25,35 @@ const HomeTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
-  const node = homepage.data;
+  const node = homepage.data
 
-  const heroTitle = node.hero_title;
-  const heroDescription = node.hero_description;
-  const catalogBtnLabel = node.catalog_btn_label;
-  const worksBtnLabel = node.works_btn_label;
-  const heroGallery = node.hero_gallery;
-  const bellowHero = node.below_hero_richtext;
+  const heroTitle = node.hero_title
+  const heroDescription = node.hero_description
+  const catalogBtnLabel = node.catalog_btn_label
+  const worksBtnLabel = node.works_btn_label
+  const heroGallery = node.hero_gallery
+  const bellowHero = node.below_hero_richtext
 
-  const catalogDesc = node.catalog_richtext;
-  const catalogImage = node.catalog_image;
-  const catalogProducts = node.catalog_products;
-  const catalogByRoomHeader = node.catalog_by_room_header;
-  const catalogByRoomGallery = node.catalog_by_room_gallery;
+  const catalogDesc = node.catalog_richtext
+  const catalogImage = node.catalog_image
+  const catalogProducts = node.catalog_products
+  const catalogByRoomHeader = node.catalog_by_room_header
+  const catalogByRoomGallery = node.catalog_by_room_gallery
 
-  const instaHeader = node.instagram_header;
-  const viewBtnLabel = node.view_media_btn_label;
-  const media = node.all_media;
+  const instaHeader = node.instagram_header
+  const viewBtnLabel = node.view_media_btn_label
+  const media = node.all_media
 
-  const testimonials = node.testimonials;
+  const testimonials = node.testimonials
 
-  const contactMapMarker = node.contact_map_marker;
-  const contactHeader = node.contact_header;
-  const contactDesc = node.contact_description;
-  const contactCTA = node.contact_cta;
-
+  const contactMapMarker = node.contact_map_marker
+  const contactHeader = node.contact_header
+  const contactDesc = node.contact_description
+  const contactCTA = node.contact_cta
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-       <Hero
+      <Hero
         title={heroTitle}
         description={heroDescription}
         catalogLabel={catalogBtnLabel}
@@ -63,11 +62,11 @@ const HomeTemplate = ({ data }) => {
         bottom={bellowHero}
       />
       <Catalog
-        description={catalogDesc} 
-        image={catalogImage} 
+        description={catalogDesc}
+        image={catalogImage}
         products={catalogProducts}
         gallery={catalogByRoomGallery}
-        background={"rgba(206, 96, 52, 0.08)"}
+        background={'rgba(206, 96, 52, 0.08)'}
       />
       <InstagramFeed
         header={instaHeader}
@@ -76,14 +75,14 @@ const HomeTemplate = ({ data }) => {
       />
       <Testimonials
         testimonials={testimonials}
-        background={"rgba(249, 181, 142, 0.4)"}
+        background={'rgba(249, 181, 142, 0.4)'}
       />
       <Contact
         marker={contactMapMarker}
         header={contactHeader}
         description={contactDesc}
         cta={contactCTA}
-      />  
+      />
     </Layout>
   )
 }
@@ -111,51 +110,51 @@ export const query = graphql`
           image {
             gatsbyImageData
             alt
-          }   
+          }
         }
         below_hero_richtext {
-            richText
-          }
+          richText
+        }
         catalog_richtext {
-            richText
-          }
+          richText
+        }
         catalog_image {
-            gatsbyImageData
-          }
-        
+          gatsbyImageData
+        }
+
         catalog_products {
           item_x_value
           item_y_value
         }
         catalog_by_room_header {
-            richText
-          }
+          richText
+        }
         catalog_by_room_gallery {
           image {
             gatsbyImageData
             alt
           }
-          
+
           room_label
         }
         instagram_header {
-            richText
-          }
+          richText
+        }
         view_media_label
         all_media {
           media_image {
             gatsbyImageData
             alt
-          }   
+          }
         }
         view_media_btn_label
-        
+
         testimonials {
           testimonial_image {
             gatsbyImageData
             alt
           }
-          
+
           testimonial_richtext {
             richText
           }
@@ -166,8 +165,8 @@ export const query = graphql`
           longitude
         }
         contact_header {
-            richText
-          }
+          richText
+        }
         contact_description
         contact_cta
       }

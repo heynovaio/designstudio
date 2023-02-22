@@ -1,23 +1,29 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText,PrismicLink } from '@prismicio/react'
-import { Container } from "../Components"
+import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { Container } from '../Components'
 
-import * as sty from './awards-gallery.module.scss';
+import * as sty from './awards-gallery.module.scss'
 
 export const AwardsGallery = ({ slice }) => {
   return (
     <section className={sty.AwardsGallery}>
       <Container>
         <div className={sty.awardRow}>
-          {slice.items.map((item,index) => (
+          {slice.items.map((item, index) => (
             <div className={sty.award} key={`Award:${index}`}>
               <div className={sty.imageWrap}>
-                <GatsbyImage image={item.image?.gatsbyImageData} alt={item.image?.alt || ""} className={sty.image}/>
+                <GatsbyImage
+                  image={item.image?.gatsbyImageData}
+                  alt={item.image?.alt || ''}
+                  className={sty.image}
+                />
               </div>
-              <p>{item.award}</p>
-              <p><b>{item.achievement}</b></p>
+              <p style={{ paddingTop: '15px' }}>{item.award}</p>
+              <div style={{ paddingTop: '15px', fontSize: '18px' }}>
+                <b>{item.achievement}</b>
+              </div>
             </div>
           ))}
         </div>

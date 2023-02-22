@@ -2,31 +2,91 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import { PrismicLink, PrismicText } from '@prismicio/react'
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
-import * as sty from "./BottomMenu.module.scss"
 
-export const BottomMenu = ({menu}) => {
+import * as sty from './BottomMenu.module.scss'
+
+export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
-      <div className={sty.navBar}>   
+      <div className={sty.navBar}>
         <div className={sty.MenuLinks}>
-          {menu.menu_links.map((item,index) => (
+          <div className={sty.MenuLinkTitle}>The Studio</div>
+          {menu.menu_links.map((item, index) => (
             <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
-              {item.label}
+              <p>{item.label}</p>
             </PrismicLink>
           ))}
         </div>
-        <PrismicLink
-          className={sty.LogoWrap}
-          href={"/"}
-        >
-          <GatsbyImage
-            image={menu.logo_alt?.gatsbyImageData}
-            alt={menu.logo_alt?.alt || ""}
-          />
-        </PrismicLink>
+        <div className={sty.MenuLinks}>
+          <div className={sty.MenuLinkTitle}>Our Catelog</div>
+          {menu.catalog_links.map((item, index) => (
+            <PrismicLink href={item.link?.url} key={`categoryLink:${index}`}>
+              <p>{item.label}</p>
+            </PrismicLink>
+          ))}
+        </div>
+        <div className={sty.MenuLinks}>
+          <div className={sty.MenuLinkTitle}>Legal</div>
+          {menu.legal_links.map((item, index) => (
+            <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
+              <p> {item.label}</p>
+            </PrismicLink>
+          ))}
+        </div>
+        <div className={sty.MenuLinks}>
+          <div className={sty.MenuLinkTitle}> Caymans Contact</div>
+          <div className={sty.info}>
+            <p>{menu.caymans_email}</p>
+          </div>
+          <div className={sty.info}>
+            <p>{menu.caymans_phone}</p>
+          </div>
+          <div className={sty.info}>
+            <p>
+              Add address here amet ullamco dolor proident Exercitation velit ea{' '}
+            </p>
+          </div>
+
+          <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
+          <div className={sty.info}>
+            <p>{menu.turks_and_caicos_email}</p>
+          </div>
+          <div className={sty.info}>
+            <p>{menu.turks_and_caicos_phone}</p>
+          </div>
+          <div className={sty.info}>
+            <p>
+              Add address here amet ullamco dolor proident Exercitation velit ea{' '}
+            </p>
+          </div>
+        </div>
+        <div className={sty.LastColumn}>
+          <div className={sty.MenuLinkTitle}>Follow Us</div>
+          <div className={sty.SocialGroup}>
+            {menu.socials.map((item, index) => (
+              <PrismicLink
+                href={'/'}
+                key={`socialLink:${index}`}
+                className={sty.SocialLink}
+              >
+                <GatsbyImage
+                  image={item?.social_icon?.gatsbyImageData}
+                  alt={item.social_icon?.alt || ''}
+                />
+              </PrismicLink>
+            ))}
+          </div>
+          <PrismicLink className={sty.LogoWrap} href={'/'}>
+            <GatsbyImage
+              image={menu.logo_alt?.gatsbyImageData}
+              alt={menu.logo_alt?.alt || ''}
+              className={sty.logo}
+            />
+          </PrismicLink>
+        </div>
       </div>
       <div>
-        <p style={{color: "white"}}>{menu.copyright}</p>
+        <p className={sty.Copyright}>{menu.copyright}</p>
       </div>
     </footer>
   )
@@ -49,8 +109,16 @@ export const query = graphql`
         label
       }
       catalog_links {
-        link_label
-        collection_handle
+        link {
+          url
+        }
+        label
+      }
+      legal_links {
+        link {
+          url
+        }
+        label
       }
       caymans_email
       caymans_phone

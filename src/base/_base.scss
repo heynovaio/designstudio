@@ -28,15 +28,16 @@ section {
 button:focus {
   outline: 0;
 }
-span.BtnPrimary, span.BtnSecondary{
+span.BtnPrimary,
+span.BtnSecondary {
   display: flex;
 }
-.Btn{
-  display:flex;
+.Btn {
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
+
   width: max-content;
 
   border-radius: 52px;
@@ -47,18 +48,19 @@ span.BtnPrimary, span.BtnSecondary{
   line-height: 1;
   a {
     color: $color-black;
-    line-height:1;
+    line-height: 1;
   }
 }
 .BtnPrimary {
   @extend .Btn;
+  border: 2px solid $color-lightorange;
   background: $color-lightorange;
-  padding: 8px 25px 7px;
+  padding: 14px 23px;
 }
 .BtnSecondary {
   @extend .Btn;
   border: 2px solid $color-black;
-  padding: 5px 23px;
+  padding: 14px 23px;
 }
 .BtnWhite {
   @extend .Btn;
@@ -71,7 +73,8 @@ span.BtnPrimary, span.BtnSecondary{
   color: $color-darkgreen;
   font-weight: 600;
 }
-.flexWrap, .FlexWrap {
+.flexWrap,
+.FlexWrap {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -87,4 +90,3 @@ header,
 footer {
   margin: 0 auto;
 }
-

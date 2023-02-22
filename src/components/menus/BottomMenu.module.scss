@@ -1,39 +1,71 @@
 @import '../../base/module';
 
-.footer{
-    background: $color-darkgreen;
-    padding: 60px 20px;
-
+.footer {
+  background: $color-darkgreen;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 .navBar {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 .LogoWrap {
-	height: 100%;
-	width: 496px;
-	max-width: 50%;
-	position: relative;
-	.logo {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		height: auto;
-	}
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 350px;
+  height: 100%;
+
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
 }
 .MenuLinks {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 20px;
-	flex: 1 1 400px;
-	justify-content: flex-start;
-    a {
-        color:  white;
-    }
+  flex: 1 1 100px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  a {
+    color: white;
+  }
+  p {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: white;
+  }
+}
+
+.MenuLinkTitle {
+  color: white;
+  font-family: $font-header;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Copyright {
+  color: white;
+  font-size: 14px;
+}
+
+.SocialGroup {
+  align-items: center;
+  justify-content: center;
+}
+
+.SocialLink {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.LastColumn {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  justify-content: start;
+  align-items: center;
 }

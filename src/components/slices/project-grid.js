@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {  useStaticQuery,graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText,PrismicLink } from '@prismicio/react'
-import { Container } from "../Components"
+import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { Container } from '../Components'
 
-import * as sty from './project-grid.module.scss';
+import * as sty from './project-grid.module.scss'
 
 export const ProjectGrid = ({ slice }) => {
   const data = useStaticQuery(graphql`
@@ -14,7 +14,7 @@ export const ProjectGrid = ({ slice }) => {
           uid
           tags
           data {
-            banner_image {  
+            banner_image {
               gatsbyImageData
               alt
             }
@@ -23,23 +23,27 @@ export const ProjectGrid = ({ slice }) => {
         }
       }
     }
-  `);
-  const products = data.allPrismicProject?.nodes || {};
-  console.log(products[0]);
-  function tagProd(tag){
-    return products.filter(prod => prod.tags[0].toLowerCase() == tag.toLowerCase()); 
-  };
+  `)
+  const products = data.allPrismicProject?.nodes || {}
+  console.log(products[0])
+  function tagProd(tag) {
+    return products.filter(
+      (prod) => prod.tags[0].toLowerCase() == tag.toLowerCase(),
+    )
+  }
 
   return (
-    <section className="ProjectGrid">
+    <section className={sty.Title}>
       <Container>
-        {slice.items.map((item,index) => (
+        {slice.items.map((item, index) => (
           <div key={`tag:${index}`}>
-            <div><h2 className={sty.Title}>{item.project_tag}</h2></div>
+            <div>
+              <h2 className={sty.Title}>{item.project_tag}</h2>
+            </div>
             <div className={sty.grid}>
-              {tagProd(item.project_tag).map((prod,index) => (
+              {tagProd(item.project_tag).map((prod, index) => (
                 <div key={`prod:${index}`}>
-                  <PrismicLink 
+                  <PrismicLink
                     className={sty.imageWrap}
                     href={`/project/${prod.uid}`}
                   >
@@ -55,15 +59,14 @@ export const ProjectGrid = ({ slice }) => {
                       href={`/project/${prod.uid}`}
                       className={sty.link}
                     >
-                      View Project
+                      View Projec
                     </PrismicLink>
-                  </div>                  
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         ))}
-       
       </Container>
     </section>
   )

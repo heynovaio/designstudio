@@ -1,51 +1,69 @@
 @import '../../base/module';
 
 .Title {
-    text-transform: capitalize;
-    margin-bottom: 20px;
+  text-transform: capitalize;
+  margin-bottom: 60px;
+  padding-top: 0;
 }
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
 }
 
 .imageWrap {
-    position: relative;
-    width: 743px;
-    max-width: 100%;
-    aspect-ratio: 10/7;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    .image {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transition: all 0.2s ease-in-out;
-    }
-    &:hover .image {
-        width: 110%;
-        height: 110%;
-    }
+  position: relative;
+  width: 743px;
+  max-width: 100%;
+  aspect-ratio: 10/7;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  .image {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover .image {
+    width: 110%;
+    height: 110%;
+  }
 }
-.copyWrap{
-    padding: 8px 0;
-    h3 {
-        margin-bottom: 16px;
-    }
+.copyWrap {
+  padding: 8px 0;
+  h3 {
+    margin-bottom: 16px;
+  }
 }
 .link {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    text-decoration-line: underline;
-    text-transform: uppercase;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
 
-    color: $color-rustorange;
+  color: $color-rustorange;
+}
+
+.Title:before {
+  position: absolute;
+  height: 580px;
+  aspect-ratio: 1/1;
+  right: 0;
+  top: 250px;
+  transform: translateX(50%);
+  border-radius: 50%;
+
+  border: 40px solid #dae2dd;
+  outline: 40px solid $color-cream;
+  box-sizing: content-box;
+  background: $color-cream;
+  content: '';
+  z-index: -5;
 }

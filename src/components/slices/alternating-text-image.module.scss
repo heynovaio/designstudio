@@ -1,22 +1,41 @@
 @import '../../base/module';
 
 .FlexWrap {
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 80px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 0px;
 }
 .copyWrap {
-    max-width: 600px;
-    flex: 3 1 400px;
+  max-width: 600px;
+  flex: 3 1 400px;
 
-    h2 {
-        margin-bottom: 20px;
-    }
+  h2 {
+    margin-bottom: 30px;
+  }
+  p {
+    padding-bottom: 20px;
+  }
 }
 .imageWrap {
-    max-width: 800px;
-    .image {
-        border-radius: 5px;
-    }
+  max-width: 800px;
+  .image {
+    border-radius: 5px;
+  }
+}
+
+.AlternatingTextImage:before {
+  position: absolute;
+  height: 580px;
+  aspect-ratio: 1/1;
+  right: 0;
+  top: 750px;
+  transform: translateX(55%);
+  border-radius: 50%;
+  border: 40px solid #dae2dd;
+  outline: 40px solid $color-cream;
+  box-sizing: content-box;
+  background: $color-cream;
+  content: '';
+  z-index: -5;
 }

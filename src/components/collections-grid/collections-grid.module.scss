@@ -1,51 +1,62 @@
 @import '../../base/module';
 
 .ShopByRoom {
-    padding: 80px 0;
-    h2{
-        margin-bottom: 20px;
+  padding: 80px 0;
+  h2 {
+    margin-bottom: 60px;
+  }
+  .collectionsGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+    & > a:nth-child(1) {
+      grid-area: 1 / 1 / 3 / 2;
+      .imgBox {
+        aspect-ratio: 8/9;
+      }
     }
-    .collectionsGrid {
-        display:grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        column-gap: 20px;
-        row-gap: 30px;
-        & > a:nth-child(1) {
-            grid-area: 1 / 1 / 3 / 2;
-            .imgBox{
-                aspect-ratio: 8/9;
-            }
-        }
-        & > a:nth-child(2) {
-            grid-area: 1 / 2 / 2 / 3;
-        }
-        & > a:nth-child(3) {
-            grid-area: 1 / 3 / 2 / 4;
-        }
-        & > a:nth-child(4) {
-            grid-area: 2 / 2 / 3 / 3;
-        }
-        & > a:nth-child(5) {
-            grid-area: 2 / 3 / 3 / 4;
-        }
-        .gridItem {  
-            .imgBox {
-                width: 100%;
-                aspect-ratio: 1/1;
-                position: relative;
-                overflow: hidden;
-                background: white;
-            }
-            img {
-                width: 100%;
-                height: 100%;
-            }
-            h3 {
-                margin-top: auto;
-                color: $color-black;
-                text-transform: capitalize;
-            }
-        }
+    & > a:nth-child(2) {
+      grid-area: 1 / 2 / 2 / 3;
     }
+    & > a:nth-child(3) {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    & > a:nth-child(4) {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    & > a:nth-child(5) {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+    .gridItem {
+      .imgBox {
+        width: 100%;
+        aspect-ratio: 1/1;
+        position: relative;
+        overflow: hidden;
+        background: white;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      h3 {
+        margin-top: 10px;
+        color: $color-black;
+        font-size: 28px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  transition: all 0.15s ease-in-out;
 }

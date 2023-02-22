@@ -1,62 +1,68 @@
 @import '../../base/module';
 
 .header {
-	
-	height: 104px;
-	background: $color-cream;
-	padding: 0 20px;
-	.skip_button {
-	  border-radius: 3px;
-	  width: 150px;
-	  padding: 8px 8px 12px;
-	  background-color: white;
-	  border: 2px solid black;
-	  font-size: 18px;
-	  font-weight: 400;
-	  letter-spacing: 0.025em;
-	  text-align: center;
-	  
-	  text-decoration: none;
-	  left: 50%;
-	  position: absolute;
-	  transform: translateY(-100%);
-	  transition: transform 0.3s;
-	  z-index: 3;
+  height: 104px;
+  width: 100%;
+  background: $color-cream;
+  padding: 0 20px;
+  position: fixed;
+  z-index: 100;
+  .skip_button {
+    border-radius: 3px;
+    width: 150px;
+    padding: 8px 8px 12px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    text-align: center;
 
-	  &:focus{
-	    transform: translateY(0%);
-	  }
-	}
+    text-decoration: none;
+    left: 50%;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    z-index: 3;
+
+    &:focus {
+      transform: translateY(0%);
+    }
+  }
 }
 .navBar {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 .LogoWrap {
-	height: 100%;
-	width: 496px;
-	max-width: 50%;
-	position: relative;
-	.logo {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		height: auto;
-	}
+  height: 100%;
+  width: 496px;
+  max-width: 50%;
+  position: relative;
+  .logo {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-25%);
+    width: 100%;
+    height: auto;
+  }
 }
 .MenuLinks {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 20px;
-	flex: 1 1 400px;
-	justify-content: flex-end;
-	a {
-		color: $color-black;
-	}
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  flex: 1 1 400px;
+  padding-top: 20px;
+
+  justify-content: centre;
+  transform: translateX(10%);
+  a {
+    color: $color-black;
+  }
 }

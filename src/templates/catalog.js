@@ -2,10 +2,10 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from "../components/Components"
+import { Container } from '../components/Components'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
-import { CenterText } from '../components/_catalog/center-text';
+import { CenterText } from '../components/_catalog/center-text'
 import { ShopByRoom } from '../components/collections-grid/shop-by-room'
 import { AlternatingTextImage } from '../components/_catalog/alternating-text-image'
 import { ProductGallery } from '../components/_catalog/product-gallery'
@@ -18,8 +18,14 @@ const CatalogTemplate = ({ data }) => {
   const products = productsNodes.nodes || {}
   const catalog = catalogContent.data || {}
   const menu = data.prismicMenu || {}
+  const home = data.prismicHome || {}
 
   const { lang, type, url } = catalogContent || {}
+  const node = home.data
+  //Using catalogByRoomGallery now to match the design shown.
+  //When we change from shopify products the query for the room gallery can be removed.
+  const catalogByRoomGallery = node.catalog_by_room_gallery
+
   const alternateLanguages = catalogContent.alternate_languages || []
   const activeDoc = {
     lang,
@@ -30,28 +36,28 @@ const CatalogTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <CenterText 
+      <CenterText
         Title={catalog.title}
         Description={catalog.description}
         Btn={catalog.shop_btn_label}
       />
-      <Container><ShopByRoom /></Container>
-      
-      <AlternatingTextImage 
-        Sections={catalog.alternating_collections}
-      />
-      <ProductGallery 
+      <Container>
+        <ShopByRoom gallery={catalogByRoomGallery} />
+      </Container>
+
+      <AlternatingTextImage Sections={catalog.alternating_collections} />
+      <ProductGallery
         Title={catalog.product_carousel_title}
         Gallery={catalog.product_carousel}
         Products={products}
-      /> 
+      />
     </Layout>
   )
 }
 
 export const query = graphql`
   query catalogQuery($id: String, $lang: String) {
-    prismicCatalog(id: { eq: $id },lang: { eq: $lang }) {
+    prismicCatalog(id: { eq: $id }, lang: { eq: $lang }) {
       _previewable
       alternate_languages {
         uid
@@ -108,7 +114,30 @@ export const query = graphql`
       ...TopMenuFragment
       ...BottomMenuFragment
     }
+    prismicHome(lang: { eq: $lang }) {
+      _previewable
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
+      data {
+        catalog_by_room_header {
+          richText
+        }
+        catalog_by_room_gallery {
+          image {
+            gatsbyImageData
+            alt
+          }
+          room_label
+        }
+      }
+    }
   }
 `
 
-export default withPrismicPreview(CatalogTemplate);
+export default withPrismicPreview(CatalogTemplate)
