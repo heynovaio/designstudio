@@ -1,10 +1,16 @@
 @import '../../base/module';
 
+.AlternatingTextImage {
+  position: relative;
+}
+
 .FlexWrap {
   flex-wrap: wrap;
   align-items: center;
   gap: 40px;
   margin-bottom: 0px;
+  margin-top: 100px;
+  padding-top: 100px;
 }
 .copyWrap {
   max-width: 600px;
@@ -29,7 +35,7 @@
   height: 580px;
   aspect-ratio: 1/1;
   right: 0;
-  top: 750px;
+  top: 0;
   transform: translateX(55%);
   border-radius: 50%;
   border: 40px solid #dae2dd;

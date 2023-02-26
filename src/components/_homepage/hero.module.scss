@@ -155,7 +155,7 @@
     padding: 1.5px;
   }
 }
-.Hero:before {
+.Hero::before {
   position: absolute;
   height: 580px;
   aspect-ratio: 1/1;

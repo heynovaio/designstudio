@@ -34,9 +34,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 40px;
 }
 .LogoWrap {
   height: 100%;
@@ -55,14 +53,25 @@
 .MenuLinks {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  flex-grow: 1;
   gap: 40px;
-  flex: 1 1 400px;
   padding-top: 20px;
+  padding-left: 165px;
 
-  justify-content: centre;
-  transform: translateX(10%);
   a {
+    color: $color-black;
+  }
+}
+.navBarIcons {
+  //Use justify-content:flex-end if possible here
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 30px;
+  margin-right: 150px;
+
+  a {
+    padding: 0 10px;
     color: $color-black;
   }
 }

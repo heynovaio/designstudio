@@ -7,6 +7,10 @@
   font-family: 'Montserrat';
   display: block;
 }
+
+.TextImage section {
+  padding-bottom: 0;
+}
 .TextImage h1 {
   font-weight: 600;
   font-size: 42px;
@@ -14,6 +18,17 @@
 .FlexWrap {
   align-items: center;
   flex-wrap: wrap-reverse;
+  margin-top: 100px;
+  margin-bottom: 0;
+
+  button {
+    background-color: $color-lightorange;
+  }
+}
+
+.buttonWrap {
+  margin-top: 50px;
+  margin-left: 0;
 }
 .copyWrap {
   max-width: 575px;

@@ -1,2 +1,34 @@
 @import '../../base/module';
 
+.ProductGallery {
+  padding-bottom: 100px;
+}
+.headerWrap {
+  padding-bottom: 40px;
+}
+
+.carouselButtonGroup {
+  position: absolute;
+  border-top-right-radius: 2.5%;
+  border-bottom-right-radius: 2.5%;
+
+  bottom: 0px;
+  right: 0px;
+  height: 270px;
+  width: 60px;
+  margin-bottom: 65px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  cursor: pointer;
+
+  .next {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: $color-lightorange;
+    padding-top: 10px;
+  }
+}

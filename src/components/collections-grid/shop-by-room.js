@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
-import { Container, Button } from '../Components'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { PrismicLink } from '@prismicio/react'
 import { getShopifyImage } from 'gatsby-source-shopify'
 
 import * as sty from './collections-grid.module.scss'
@@ -43,7 +42,7 @@ export const ShopByRoom = ({ gallery }) => {
           <PrismicLink
             className={sty.gridItem}
             key={`collection:${index}`}
-            href={`./collection/${item.room_label}`}
+            href={`./collection/${item.room_link_label}`}
           >
             <div className={sty.imgBox}>
               <GatsbyImage

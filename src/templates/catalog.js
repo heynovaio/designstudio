@@ -15,6 +15,10 @@ const CatalogTemplate = ({ data }) => {
 
   const catalogContent = data.prismicCatalog || {}
   const productsNodes = data.allShopifyProduct || {}
+  const bestSellerCollections = data.allShopifyCollection?.nodes || []
+  const bestSellerProducts = bestSellerCollections.flatMap(
+    (collection) => collection.products || [],
+  )
   const products = productsNodes.nodes || {}
   const catalog = catalogContent.data || {}
   const menu = data.prismicMenu || {}
@@ -48,8 +52,7 @@ const CatalogTemplate = ({ data }) => {
       <AlternatingTextImage Sections={catalog.alternating_collections} />
       <ProductGallery
         Title={catalog.product_carousel_title}
-        Gallery={catalog.product_carousel}
-        Products={products}
+        bestSellerProducts={bestSellerProducts}
       />
     </Layout>
   )
@@ -110,6 +113,40 @@ export const query = graphql`
         title
       }
     }
+
+    allShopifyCollection(
+      filter: {
+        handle: {
+          in: ["best-sellers", "favourites", "entertain-in-style-this-fall"]
+        }
+      }
+    ) {
+      nodes {
+        handle
+        title
+        products {
+          featuredImage {
+            height
+            originalSrc
+            width
+          }
+          handle
+          priceRangeV2 {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          title
+        }
+        image {
+          height
+          originalSrc
+          width
+        }
+      }
+    }
+
     prismicMenu(lang: { eq: $lang }) {
       ...TopMenuFragment
       ...BottomMenuFragment
@@ -134,6 +171,7 @@ export const query = graphql`
             alt
           }
           room_label
+          room_link_label
         }
       }
     }

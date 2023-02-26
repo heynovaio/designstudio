@@ -19,7 +19,7 @@ export const Contact = ({ marker, header, description, cta }) => {
   return (
     <section className={sty.contact}>
       <Container>
-        <div className={sty.flexWrap}>
+        <div className={sty.flexWrap} id="contactUs">
           <div className={sty.map}>
             <Map
               initialViewState={{

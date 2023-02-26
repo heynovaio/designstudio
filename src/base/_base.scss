@@ -20,7 +20,10 @@ body {
   font-family: $font-primary;
   letter-spacing: 0;
   background: $color-cream;
+  //This is a fix to make sure the background circles don't cause the page to widen to the right
+  overflow-x: hidden;
 }
+
 section {
   padding: 100px 0;
 }

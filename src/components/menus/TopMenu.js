@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import { PrismicLink, PrismicText } from '@prismicio/react'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
+import { BiShoppingBag, BiHeart, BiSearch } from 'react-icons/bi'
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
@@ -26,8 +27,25 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
             </PrismicLink>
           ))}
         </div>
+        <NavBarIcons />
       </div>
     </header>
+  )
+}
+
+const NavBarIcons = () => {
+  return (
+    <div className={sty.navBarIcons}>
+      <PrismicLink className={sty.icon} href={'/'}>
+        <BiHeart size={25} />
+      </PrismicLink>
+      <PrismicLink href={'/collection/in-stock'}>
+        <BiSearch size={25} />
+      </PrismicLink>
+      <PrismicLink href={'/'}>
+        <BiShoppingBag size={25} />
+      </PrismicLink>
+    </div>
   )
 }
 

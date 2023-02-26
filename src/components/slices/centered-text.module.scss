@@ -1,11 +1,12 @@
 @import '../../base/module';
 
-.centerWrap{
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-    text-align: center;
+.centerWrap {
+  max-width: 600px;
+  margin: 100px auto;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
 }

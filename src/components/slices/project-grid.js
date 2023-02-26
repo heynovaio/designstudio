@@ -25,7 +25,6 @@ export const ProjectGrid = ({ slice }) => {
     }
   `)
   const products = data.allPrismicProject?.nodes || {}
-  console.log(products[0])
   function tagProd(tag) {
     return products.filter(
       (prod) => prod.tags[0].toLowerCase() == tag.toLowerCase(),
@@ -59,7 +58,7 @@ export const ProjectGrid = ({ slice }) => {
                       href={`/project/${prod.uid}`}
                       className={sty.link}
                     >
-                      View Projec
+                      View Project
                     </PrismicLink>
                   </div>
                 </div>

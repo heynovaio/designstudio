@@ -10,7 +10,7 @@ export const BottomMenu = ({ menu }) => {
     <footer className={sty.footer}>
       <div className={sty.navBar}>
         <div className={sty.MenuLinks}>
-          <div className={sty.MenuLinkTitle}>The Studio</div>
+          <div className={sty.MenuLinkTitle}>{menu.menu_links_title.text}</div>
           {menu.menu_links.map((item, index) => (
             <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
               <p>{item.label}</p>
@@ -18,15 +18,22 @@ export const BottomMenu = ({ menu }) => {
           ))}
         </div>
         <div className={sty.MenuLinks}>
-          <div className={sty.MenuLinkTitle}>Our Catelog</div>
+          <div className={sty.MenuLinkTitle}>
+            {menu.catalog_links_title.text}
+          </div>
           {menu.catalog_links.map((item, index) => (
-            <PrismicLink href={item.link?.url} key={`categoryLink:${index}`}>
+            <PrismicLink
+              href={
+                item.link ? item.link.url : `/collection/${item.catalog_handle}`
+              }
+              key={`categoryLink:${index}`}
+            >
               <p>{item.label}</p>
             </PrismicLink>
           ))}
         </div>
         <div className={sty.MenuLinks}>
-          <div className={sty.MenuLinkTitle}>Legal</div>
+          <div className={sty.MenuLinkTitle}>{menu.legal_links_title.text}</div>
           {menu.legal_links.map((item, index) => (
             <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
               <p> {item.label}</p>
@@ -113,12 +120,22 @@ export const query = graphql`
           url
         }
         label
+        catalog_handle
       }
       legal_links {
         link {
           url
         }
         label
+      }
+      legal_links_title {
+        text
+      }
+      catalog_links_title {
+        text
+      }
+      menu_links_title {
+        text
       }
       caymans_email
       caymans_phone

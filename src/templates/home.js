@@ -136,6 +136,7 @@ export const query = graphql`
           }
 
           room_label
+          room_link_label
         }
         instagram_header {
           richText
