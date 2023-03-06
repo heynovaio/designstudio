@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet'
 import { TopMenu } from './menus/TopMenu'
 import { BottomMenu } from './menus/BottomMenu'
 
+import * as sty from './Layout.scss'
+
 export const Layout = ({ children, menu, activeDocMeta }) => {
   const queryData = useStaticQuery(graphql`
     query SiteQuery {
@@ -38,7 +40,7 @@ export const Layout = ({ children, menu, activeDocMeta }) => {
         />
       </Helmet>
       <TopMenu menu={menu} activeDocMeta={activeDocMeta} />
-      <main id="main">{children}</main>
+      <main className="main" id="main">{children}</main>
       <BottomMenu menu={menu}/>
     </>
   )

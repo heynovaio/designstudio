@@ -13,5 +13,5 @@ export const components = {
   alternating_text_image: AlternatingTextImage,
   faculty_grid: FacultyGrid,
   awards_gallery: AwardsGallery,
-  press_list: PressList,
+  press_list: PressList
 }
