@@ -1,12 +1,17 @@
 @import '../../base/module';
 
 .header {
+  @extend .Container;
+
   height: 104px;
   width: 100%;
   background: $color-cream;
   padding: 0 20px;
   position: fixed;
+  transform: translateX(-50%);
+  left: 50%;
   z-index: 100;
+
   .skip_button {
     border-radius: 3px;
     width: 150px;
@@ -36,39 +41,39 @@
   display: flex;
   align-items: center;
 }
+
 .LogoWrap {
-  height: 100%;
-  width: 496px;
-  max-width: 50%;
+  width: 100%;
+  max-width: 450px;
   position: relative;
+  padding-right: 20px;
+
   .logo {
-    position: absolute;
-    top: 40%;
-    left: 10%;
-    transform: translateY(-25%);
-    width: 100%;
-    height: auto;
+    object-fit: contain;
+  }
+
+  @media (min-width: $desktop) {
+    padding-right: 90px;
   }
 }
+
 .MenuLinks {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
+  align-self: flex-start;
+  padding-top: 25px;
   gap: 40px;
-  padding-top: 20px;
-  padding-left: 165px;
 
   a {
     color: $color-black;
   }
 }
 .navBarIcons {
-  //Use justify-content:flex-end if possible here
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  padding-top: 30px;
-  margin-right: 150px;
+  align-self: flex-start;
+  padding-top: 25px;
 
   a {
     padding: 0 10px;
