@@ -22,6 +22,12 @@ body {
   background: $color-cream;
   //This is a fix to make sure the background circles don't cause the page to widen to the right
   overflow-x: hidden;
+
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 section {
