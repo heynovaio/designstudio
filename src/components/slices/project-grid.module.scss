@@ -17,7 +17,7 @@
   width: 743px;
   max-width: 100%;
   aspect-ratio: 10/7;
-  border-radius: 4px;
+  border-radius: $bradius;
   overflow: hidden;
   display: flex;
   .image {
