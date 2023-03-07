@@ -5,6 +5,9 @@ $tablet: 1024px;
 $mobile: 768px;
 
 $slices: 12;
+$gap: 20px;
+
+// $colBase: calc(100% - 20px);
 
 $width-copy_sm: 450px;
 $width-copy_m: 580px;
@@ -21,9 +24,3 @@ $color-darkgreen: #28706F;
 $color-lightgreen: #00A28C;
 $color-cream: #FEF9F4;
 $color-black: #061D1B;
-
-
-
-@function width($num) {
-	@return 100% / $slices * $num;
-}

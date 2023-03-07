@@ -8,10 +8,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // flex-wrap: wrap;
+
+  @media (min-width: $desktop) {
+    flex-wrap: wrap;
+  }
 }
+
 .copy {
-  width: width(4.5);
+  width: width(10);
 
   .title {
     margin-bottom: 100px;
@@ -22,9 +26,9 @@
     font-weight: lighter;
   }
 
-  // @media (min-width: $full) {
-  //   max-width: $width-copy_sm;
-  // }
+  @media (min-width: $desktop) {
+    width: width(4.5);
+  }
 }
 .btnWrap {
   display: flex;
@@ -34,15 +38,15 @@
 }
 .gallery {
   position: relative;
-  width: width(7.5);;
+  width: width(12);
 
   ul li {
     margin-bottom: 16px;
   }
 
-  // @media (min-width: $desktop) {
-  //   max-width: 1024px;
-  // }
+  @media (min-width: $desktop) {
+    width: width(7.5);
+  }
 }
 
 .grid {

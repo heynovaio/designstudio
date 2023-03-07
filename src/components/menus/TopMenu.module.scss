@@ -40,10 +40,11 @@
   height: 100%;
   display: flex;
   align-items: center;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .LogoWrap {
-  width: width(4.5);
   position: relative;
 
   .logo {
@@ -51,9 +52,9 @@
     max-width: 450px;
   }
 
-  // @media (min-width: $desktop) {
-  //   padding-right: 90px;
-  // }
+  @media (min-width: $desktop) {
+    width: width(4.5);
+  }
 }
 
 .NavWrap {

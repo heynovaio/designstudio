@@ -1,0 +1,4 @@
+@function width($num) {
+	$width: 100%/ $slices * $num;
+	@return unquote('calc(#{$width} - #{$gap})');
+}
