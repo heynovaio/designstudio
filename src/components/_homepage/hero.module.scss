@@ -8,10 +8,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 .copy {
-  max-width: $width-copy_sm;
+  width: width(4.5);
+
   .title {
     margin-bottom: 100px;
   }
@@ -20,6 +21,10 @@
     padding-top: 20px;
     font-weight: lighter;
   }
+
+  // @media (min-width: $full) {
+  //   max-width: $width-copy_sm;
+  // }
 }
 .btnWrap {
   display: flex;
@@ -29,12 +34,15 @@
 }
 .gallery {
   position: relative;
-  max-width: 1024px;
-  width: 100%;
+  width: width(7.5);;
 
   ul li {
     margin-bottom: 16px;
   }
+
+  // @media (min-width: $desktop) {
+  //   max-width: 1024px;
+  // }
 }
 
 .grid {

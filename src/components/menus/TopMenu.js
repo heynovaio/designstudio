@@ -20,14 +20,16 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
             className={sty.logo}
           />
         </PrismicLink>
-        <div className={sty.MenuLinks}>
-          {menu.menu_links.map((item, index) => (
-            <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
-              {item.label}
-            </PrismicLink>
-          ))}
+        <div className={sty.NavWrap}>
+          <div className={sty.MenuLinks}>
+            {menu.menu_links.map((item, index) => (
+              <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
+                {item.label}
+              </PrismicLink>
+            ))}
+          </div>
+          <NavBarIcons />
         </div>
-        <NavBarIcons />
       </div>
     </header>
   )
