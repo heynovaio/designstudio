@@ -46,21 +46,6 @@ export const Hero = ({
     <section className={sty.Hero}>
       <Container>
         <div className={sty.flexWrap}>
-          <div className={sty.copy}>
-            {title && (
-              <PrismicRichText field={title.richText} className={sty.title} />
-            )}
-            <p className={sty.description}>{description}</p>
-
-            <div className={sty.btnWrap}>
-              <PrismicLink href={'/'}>
-                <Button>{catalogLabel}</Button>
-              </PrismicLink>
-              <PrismicLink href={'/'}>
-                <Button variant="Secondary">{worksLabel}</Button>
-              </PrismicLink>
-            </div>
-          </div>
           <div className={sty.gallery}>
             <MultiCarousel
               ssr={true}
@@ -119,6 +104,21 @@ export const Hero = ({
               <div className={sty.carouselCounter}>
                 <b>{slideIndex + 1} </b> of {slideLength}
               </div>
+            </div>
+          </div>
+          <div className={sty.copy}>
+            {title && (
+              <PrismicRichText field={title.richText} className={sty.title} />
+            )}
+            <p className={sty.description}>{description}</p>
+
+            <div className={sty.btnWrap}>
+              <PrismicLink href={'/'}>
+                <Button>{catalogLabel}</Button>
+              </PrismicLink>
+              <PrismicLink href={'/'}>
+                <Button variant="Secondary">{worksLabel}</Button>
+              </PrismicLink>
             </div>
           </div>
         </div>

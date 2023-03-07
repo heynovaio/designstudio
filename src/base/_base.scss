@@ -28,6 +28,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  color: $color-black;
 }
 
 section {
@@ -82,12 +83,30 @@ span.BtnSecondary {
   color: $color-darkgreen;
   font-weight: 600;
 }
+
 .flexWrap,
 .FlexWrap {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: $gap;
+  flex-wrap: wrap;
+
+  @media (min-width: $desktop) {
+    justify-content: center;
+  }
 }
+
+.btnWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+
+  @media (min-width: $desktop) {
+    justify-content: flex-start;
+  }
+}
+
 .Container {
   max-width: 1600px;
   margin: 0 auto;

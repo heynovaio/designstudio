@@ -40,12 +40,13 @@
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: $gap;
   justify-content: space-between;
 }
 
 .LogoWrap {
   position: relative;
+  width: width(3);
 
   .logo {
     object-fit: contain;
@@ -53,14 +54,26 @@
   }
 
   @media (min-width: $desktop) {
+    width: width(4);
+  }
+
+  @media (min-width: $full) {
     width: width(4.5);
   }
 }
 
 .NavWrap {
   display: flex;
-  padding-top: 25px;
-  width: width(7.5);
+  width: width(9);
+
+  @media (min-width: $desktop) {
+    width: width(8);
+  }
+
+  @media (min-width: $full) {
+    width: width(7.5);
+    padding-top: 25px;
+  }
 }
 
 .MenuLinks {
@@ -68,7 +81,11 @@
   flex-wrap: wrap;
   flex-grow: 1;
   align-self: flex-start;
-  gap: 40px;
+  gap: $gap;
+
+  @media (min-width: $desktop) {
+    gap: 40px;
+  }
 
   a {
     color: $color-black;
