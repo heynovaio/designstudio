@@ -63,16 +63,16 @@
 }
 
 .NavWrap {
-  display: flex;
   width: width(9);
+  display: none;
 
   @media (min-width: $desktop) {
     width: width(8);
+    display: flex;
   }
 
   @media (min-width: $full) {
     width: width(7.5);
-    padding-top: 25px;
   }
 }
 
