@@ -49,19 +49,19 @@
   font-family: $font-header;
   text-align: center;
   letter-spacing: 0.04em;
-  color: #ffffff;
+  color: $color-white;
   display: block;
   width: max-content;
   padding: 13px 30px;
   background-color: $color-darkgreen;
-  border-radius: 5px;
+  border-radius: $bradius;
 
   margin-top: 60px;
 }
 .dot {
   width: 15px;
   height: 15px;
-  border: 1px solid #000000;
+  border: 1px solid $color-black;
   border-radius: 50%;
 }
 .dotList {
@@ -115,7 +115,7 @@
   padding: 20px 35px;
   font-size: 20px;
   font-family: $font-header;
-  border-radius: 4px;
+  border-radius: $bradius;
   p {
     line-height: 1;
   }
@@ -127,7 +127,7 @@
   width: 49px;
 
   background: #eea078;
-  border-radius: 4px;
+  border-radius: $bradius;
   svg {
     font-size: 26px;
   }

@@ -35,7 +35,7 @@
   width: 876px;
   max-width: 100%;
   aspect-ratio: 3/2;
-  border-radius: 4px;
+  border-radius: $bradius;
   overflow: hidden;
   .image {
     top: 50%;

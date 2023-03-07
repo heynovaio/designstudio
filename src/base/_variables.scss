@@ -7,20 +7,28 @@ $mobile: 768px;
 $slices: 12;
 $gap: 20px;
 
-// $colBase: calc(100% - 20px);
-
 $width-copy_sm: 450px;
 $width-copy_m: 580px;
 $width-copy_lg: 860px;
 
 /* Colors */
-$color-text: #061D1B;
-$color-text-alt: #ffffff;
-$color-bg: #ffffff;
-$color-hl: #fff7c7;
+$color-pyellow: #fff7c7;
 $color-lightorange: #F9B58E;
 $color-rustorange: #CE6034;
 $color-darkgreen: #28706F;
 $color-lightgreen: #00A28C;
 $color-cream: #FEF9F4;
+$color-grey: #dae2dd;
 $color-black: #061D1B;
+$color-white: #fff;
+
+$color-text: $color-black;
+$color-text-alt: $color-white;
+$color-bg:  $color-white;
+
+$color-hl: $color-pyellow;
+
+
+/* Defaults */
+
+$bradius: 5px;

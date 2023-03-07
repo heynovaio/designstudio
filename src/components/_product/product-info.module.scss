@@ -18,7 +18,7 @@
         aspect-ratio: 7/5;
     }
     .featuredImg,.subImg{
-        background: #FFFFFF;
+        background: $color-white;
         border: 1px solid rgba($color-black, 0.3);
 
         position: relative;
@@ -50,9 +50,9 @@
             margin-bottom: 10px;
         }
         input{
-            background: #FFFFFF;
+            background: $color-white;
     
-            border: 1px solid #061D1B;
+            border: 1px solid $color-text;
             border-radius: 5px;
             padding: 11px 20px;
     
