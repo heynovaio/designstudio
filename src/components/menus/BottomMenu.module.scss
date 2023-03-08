@@ -2,37 +2,62 @@
 
 .footer {
   background: $color-darkgreen;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   color: $color-white;
-}
-.navBar {
-  width: width(12);
-  display: flex;
 
   @media (min-width: $desktop) {
-    width: width(7);
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.container-footer {
+  justify-content: space-between;
+}
+
+.navBar {
+  width: width(12);
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    display: flex;
+    text-align: left;
+  }
+
+  @media (min-width: $desktop) {
+    width: width(6.5);
     order: 1;
   }
 }
 
-.LogoWrap {
-  width: 100%;
-
-  .logo {
-    object-fit: contain;
-  }
-}
 .MenuLinks {
-  flex: 1 1 100px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  text-align: center;
+
+  ul {
+    column-count: 2;
+    li {
+      padding-bottom: 10px;
+    }
+  }
+
   a {
     color: $color-white;
-  }
-  p {
     font-size: 0.78em;
-    padding-bottom: 10px;
+  }
+
+  @media (min-width: $tablet) {
+    flex: 1 1 100px;
+
+    ul {
+      column-count: 1;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 
@@ -45,34 +70,51 @@
 }
 
 .ContactColumn {
+  border-top: 1px solid $color-lightorange;
+  border-bottom: 1px solid $color-lightorange;
+  text-align: center;
+  width: width(12);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+
   .info {
     p {
       font-size: 0.78em;
+
+      &.address {
+        padding-top: 8px;
+      }
     }  
   }
 
   @media (min-width: $desktop) {
-    width: width(2);
+    width: width(3);
     padding-right: width(.5);
     order: 2;
+    border: 0;
+    text-align: left;
+    margin-top: 0;
   }
 }
 
 .SocialColumn {
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
   justify-content: space-between;
   align-items: center;
+  width: width(12);
 
   @media (min-width: $desktop) {
     width: width(2.5);
     order: 3;
+    padding-left: 30px;
   }
 
   .SocialGroup {
     text-align: center;
     .SocialLinks {
+      display: flex;
       align-items: center;
       justify-content: center;
   
@@ -80,6 +122,22 @@
         padding-left: 10px;
         padding-right: 10px;
       }    
+    }
+  }
+
+  .LogoWrap {
+    width: 100%;
+    max-width: 300px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  
+    .logo {
+      object-fit: contain;
+    }
+
+    @media (min-width: $desktop) {
+      padding-top: 60px;
+      padding-bottom: 0;
     }
   }
 }

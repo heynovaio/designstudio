@@ -52,8 +52,8 @@ h6,.H6 {
 
 p {
   font-weight: 300;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1.125em;
+  line-height: 1.5em;
 }
 
 pre {
@@ -76,6 +76,12 @@ ol {
 
 ul {
   list-style: disc;
+
+  &.list-no-style {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }
 
 strong {

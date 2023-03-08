@@ -9,22 +9,24 @@ import * as sty from './BottomMenu.module.scss'
 export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
-      <Container className='flex'>
+      <Container className={`flex ${sty.containerFooter} `}>
         <div className={sty.SocialColumn}>
             <div className={sty.SocialGroup}>
               <div className={sty.MenuLinkTitle}>Follow Us</div>
-              <ul className={sty.SocialLinks}>
+              <ul className={`list-no-style ${sty.SocialLinks}`}>
                 {menu.socials.map((item, index) => (
-                  <PrismicLink
-                    href={'/'}
-                    key={`socialLink:${index}`}
-                    className={sty.SocialLink}
-                  >
-                    <GatsbyImage
-                      image={item?.social_icon?.gatsbyImageData}
-                      alt={item.social_icon?.alt || ''}
-                    />
-                  </PrismicLink>
+                  <li>
+                    <PrismicLink
+                      href={'/'}
+                      key={`socialLink:${index}`}
+                      className={sty.SocialLink}
+                    >
+                      <GatsbyImage
+                        image={item?.social_icon?.gatsbyImageData}
+                        alt={item.social_icon?.alt || ''}
+                      />
+                    </PrismicLink>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -39,34 +41,46 @@ export const BottomMenu = ({ menu }) => {
         <div className={sty.navBar}>
           <div className={sty.MenuLinks}>
             <div className={sty.MenuLinkTitle}>{menu.menu_links_title.text}</div>
-            {menu.menu_links.map((item, index) => (
-              <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
-                <p>{item.label}</p>
-              </PrismicLink>
-            ))}
+            <ul className='list-no-style'>
+              {menu.menu_links.map((item, index) => (
+                <li>
+                  <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
+                    {item.label}
+                  </PrismicLink>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={sty.MenuLinks}>
             <div className={sty.MenuLinkTitle}>
               {menu.catalog_links_title.text}
             </div>
-            {menu.catalog_links.map((item, index) => (
-              <PrismicLink
-                href={
-                  item.link ? item.link.url : `/collection/${item.catalog_handle}`
-                }
-                key={`categoryLink:${index}`}
-              >
-                <p>{item.label}</p>
-              </PrismicLink>
-            ))}
+            <ul className='list-no-style'>
+              {menu.catalog_links.map((item, index) => (
+                <li>
+                  <PrismicLink
+                    href={
+                      item.link ? item.link.url : `/collection/${item.catalog_handle}`
+                    }
+                    key={`categoryLink:${index}`}
+                  >
+                    {item.label}
+                  </PrismicLink>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={sty.MenuLinks}>
             <div className={sty.MenuLinkTitle}>{menu.legal_links_title.text}</div>
-            {menu.legal_links.map((item, index) => (
-              <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
-                <p> {item.label}</p>
-              </PrismicLink>
-            ))}
+            <ul className='list-no-style'>
+              {menu.legal_links.map((item, index) => (
+                <li>
+                  <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
+                    {item.label}
+                  </PrismicLink>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className={sty.ContactColumn}>
@@ -77,11 +91,11 @@ export const BottomMenu = ({ menu }) => {
             <div className={sty.info}>
               <p>{menu.caymans_phone}</p>
             </div>
-            <div className={sty.info}>
-              <p>
-                Add address here amet ullamco dolor proident Exercitation velit ea{' '}
+            {/* <div className={sty.info}>
+              <p className={sty.address}>
+                {menu.caymans_address}
               </p>
-            </div>
+            </div> */}
 
             <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
             <div className={sty.info}>
@@ -90,11 +104,11 @@ export const BottomMenu = ({ menu }) => {
             <div className={sty.info}>
               <p>{menu.turks_and_caicos_phone}</p>
             </div>
-            <div className={sty.info}>
+            {/* <div className={sty.info}>
               <p>
-                Add address here amet ullamco dolor proident Exercitation velit ea{' '}
+                {menu.turks_and_caicos_address}
               </p>
-            </div>
+            </div> */}
           </div>
       </Container>
       <div className={sty.Copyright}>
