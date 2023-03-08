@@ -17,60 +17,56 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
   const TOKEN =
     'pk.eyJ1IjoiYWh2ZG9kZCIsImEiOiJjbGFzcnIzbWsyNjR2M3FtaThia2UwbmY5In0.iW4eOap84EcSZuzCRTZYWA'
   return (
-    <section className={sty.contact}>
-      <Container>
-        <div className={sty.flexWrap} id="contactUs">
-          <div className={sty.map}>
-            <Map
-              initialViewState={{
-                latitude: marker.latitude,
-                longitude: marker.longitude,
-                zoom: 14.5,
-              }}
-              mapStyle="mapbox://styles/ahvdodd/clasrv0ht000014pkszdj5t8j"
-              mapboxAccessToken={TOKEN}
-              style={{ width: '100%', height: '100%' }}
+    <section className={sty.contact} id="contactUs">
+      <Container className='flex'>
+        <div className={sty.map}>
+          <Map
+            initialViewState={{
+              latitude: marker.latitude,
+              longitude: marker.longitude,
+              zoom: 14.5,
+            }}
+            mapStyle="mapbox://styles/ahvdodd/clasrv0ht000014pkszdj5t8j"
+            mapboxAccessToken={TOKEN}
+            style={{ width: '100%', height: '100%' }}
+          >
+            <Marker
+              longitude={marker.longitude}
+              latitude={marker.latitude}
+              anchor="bottom"
             >
-              <Marker
-                longitude={marker.longitude}
-                latitude={marker.latitude}
-                anchor="bottom"
-              >
-                <FaMapMarkerAlt style={{ fontSize: 100, color: '#CE6034' }} />
-              </Marker>
-              <Popup
-                longitude={marker.longitude}
-                latitude={marker.latitude}
-                anchor="top-left"
-                closeButton={false}
-                className={sty.infoBox}
-              >
-                Design Studio
-              </Popup>
-            </Map>
-          </div>
-          <div className={sty.copy}>
-            <PrismicRichText field={header?.richText} />
-            <p className={sty.description}>{description}</p>
-            <div className={sty.contactList}>
-              <div className={sty.info}>
-                <FaEnvelope />
-                <p>{email}</p>
-              </div>
-              <div className={sty.info}>
-                <FaPhoneAlt />
-                <p>{phone}</p>
-              </div>
-              <div className={sty.info}>
-                <FaMapMarkerAlt />
-                <p>
-                  Add address here amet ullamco dolor proident Exercitation
-                  velit ea{' '}
-                </p>
-              </div>
+              <FaMapMarkerAlt style={{ fontSize: 80, color: '#CE6034' }} />
+            </Marker>
+            <Popup
+              longitude={marker.longitude}
+              latitude={marker.latitude}
+              anchor="top-left"
+              closeButton={false}
+              className={sty.infoBox}
+            >
+              Design Studio
+            </Popup>
+          </Map>
+        </div>
+        <div className={sty.copy}>
+          <PrismicRichText field={header?.richText} />
+          <p className={sty.description}>{description}</p>
+          <div className={sty.contactList}>
+            <div className={sty.info}>
+              <p><FaEnvelope /> {email}</p>
             </div>
-            <p className={sty.cta}>{cta}</p>
+            <div className={sty.info}>
+              <p><FaPhoneAlt /> {phone}</p>
+            </div>
+            <div className={sty.info}>
+              <p>
+                <FaMapMarkerAlt />
+                Add address here amet ullamco dolor proident Exercitation
+                velit ea{' '}
+              </p>
+            </div>
           </div>
+          <p className={sty.cta}>{cta}</p>
         </div>
       </Container>
     </section>

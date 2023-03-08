@@ -4,6 +4,7 @@
 	}
 	@else {
 		$width: 100%/ $slices * $num;
+		$gap: $gap/2;
 		@return unquote('calc(#{$width} - #{$gap})');
 	}
 }

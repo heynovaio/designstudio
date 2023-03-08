@@ -17,7 +17,8 @@
 }
 
 .navBar {
-  width: width(12);
+  width: 100%;
+  max-width: width(12);
   text-align: center;
 
   @media (min-width: $tablet) {
@@ -26,7 +27,7 @@
   }
 
   @media (min-width: $desktop) {
-    width: width(6.5);
+    max-width: width(6.5);
     order: 1;
   }
 }
@@ -73,7 +74,8 @@
   border-top: 1px solid $color-lightorange;
   border-bottom: 1px solid $color-lightorange;
   text-align: center;
-  width: width(12);
+  width: 100%;
+  max-width: width(12);
   margin-top: 30px;
   margin-bottom: 20px;
   padding-bottom: 30px;
@@ -89,7 +91,7 @@
   }
 
   @media (min-width: $desktop) {
-    width: width(3);
+    max-width: width(3);
     padding-right: width(.5);
     order: 2;
     border: 0;
@@ -103,10 +105,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: width(12);
+  width: 100%;
+  max-width: width(12);
 
   @media (min-width: $desktop) {
-    width: width(2.5);
+    max-width: width(2.5);
     order: 3;
     padding-left: 30px;
   }
