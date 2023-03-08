@@ -26,6 +26,7 @@ const HomeTemplate = ({ data }) => {
     alternateLanguages,
   }
   const node = homepage.data
+  const menuNode = menu.data
 
   const heroTitle = node.hero_title
   const heroDescription = node.hero_description
@@ -50,6 +51,9 @@ const HomeTemplate = ({ data }) => {
   const contactHeader = node.contact_header
   const contactDesc = node.contact_description
   const contactCTA = node.contact_cta
+  const contactEmail = menuNode.caymans_email
+  const contactPhone = menuNode.caymans_phone
+
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
@@ -82,6 +86,8 @@ const HomeTemplate = ({ data }) => {
         header={contactHeader}
         description={contactDesc}
         cta={contactCTA}
+        email={contactEmail}
+        phone={contactPhone}
       />
     </Layout>
   )
@@ -155,7 +161,6 @@ export const query = graphql`
             gatsbyImageData
             alt
           }
-
           testimonial_richtext {
             richText
           }
@@ -173,6 +178,11 @@ export const query = graphql`
       }
     }
     prismicMenu(lang: { eq: $lang }) {
+      _previewable
+      data {
+        caymans_email
+        caymans_phone
+      }
       ...TopMenuFragment
       ...BottomMenuFragment
     }

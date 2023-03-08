@@ -13,7 +13,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import MapMaker from './../../images/marker.svg'
 import * as sty from './contact.module.scss'
 
-export const Contact = ({ marker, header, description, cta }) => {
+export const Contact = ({ marker, header, description, cta, email, phone }) => {
   const TOKEN =
     'pk.eyJ1IjoiYWh2ZG9kZCIsImEiOiJjbGFzcnIzbWsyNjR2M3FtaThia2UwbmY5In0.iW4eOap84EcSZuzCRTZYWA'
   return (
@@ -45,7 +45,7 @@ export const Contact = ({ marker, header, description, cta }) => {
                 closeButton={false}
                 className={sty.infoBox}
               >
-                <p>Design Studio</p>
+                Design Studio
               </Popup>
             </Map>
           </div>
@@ -55,11 +55,11 @@ export const Contact = ({ marker, header, description, cta }) => {
             <div className={sty.contactList}>
               <div className={sty.info}>
                 <FaEnvelope />
-                <p>info@designstudio.ky</p>
+                <p>{email}</p>
               </div>
               <div className={sty.info}>
                 <FaPhoneAlt />
-                <p>(649) 941-4848</p>
+                <p>{phone}</p>
               </div>
               <div className={sty.info}>
                 <FaMapMarkerAlt />
