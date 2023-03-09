@@ -18,9 +18,16 @@ export const Testimonials = ({ testimonials, background }) => {
     }
   }
   return (
-    <section style={{ background: background }}>
-      <Container>
-        <div className={sty.flexWrap}>
+    <section className={sty.testimonials}>
+      <div className={sty.testimonialContainer} style={{ background: background}}>
+        <Container className='flex'>
+          <div className={sty.imageWrap}>
+            <GatsbyImage
+              image={curTest.testimonial_image?.gatsbyImageData}
+              alt={curTest.testimonial_image?.alt || ''}
+              className={sty.image}
+            />
+          </div>
           <div className={sty.quotes}>
             {testimonials.map((item, index) => (
               <div
@@ -35,13 +42,6 @@ export const Testimonials = ({ testimonials, background }) => {
             ))}
           </div>
           <div className={sty.quoteNav}>
-            <div className={sty.imageWrap}>
-              <GatsbyImage
-                image={curTest.testimonial_image?.gatsbyImageData}
-                alt={curTest.testimonial_image?.alt || ''}
-                className={sty.image}
-              />
-            </div>
             <div className={sty.controlWrap}>
               <div className={sty.quoteControls}>
                 <div>
@@ -64,8 +64,8 @@ export const Testimonials = ({ testimonials, background }) => {
               </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   )
 }

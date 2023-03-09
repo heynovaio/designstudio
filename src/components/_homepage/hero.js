@@ -30,6 +30,12 @@ export const Hero = ({
   const ButtonGroup = ({ next, previous }) => {
     return (
       <div className={sty.carouselButtonGroup}>
+        <div className={sty.carouselTitleGroup}>
+          <div className={sty.carouselTitle}>Beachhouse & Sunset Drive</div>
+          <div className={sty.carouselCounter}>
+            <b>{slideIndex + 1} </b> of {slideLength}
+          </div>
+        </div>
         <div
           className={sty.next}
           onClick={() => {
@@ -99,12 +105,6 @@ export const Hero = ({
                 </div>
               )}
             </MultiCarousel>
-            <div className={sty.carouselNavBar}>
-              <div className={sty.carouselTitle}>Beachhouse & Sunset Drive</div>
-              <div className={sty.carouselCounter}>
-                <b>{slideIndex + 1} </b> of {slideLength}
-              </div>
-            </div>
           </div>
           <div className={sty.copy}>
             {title && (

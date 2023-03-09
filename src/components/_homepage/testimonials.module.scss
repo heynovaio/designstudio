@@ -1,26 +1,50 @@
 @import '../../base/module';
 
-.flexWrap {
-  display: flex;
-  justify-content: space-between;
-  min-height: 200px;
-  align-items: flex-start;
+// .flexWrap {
+//   display: flex;
+//   justify-content: space-between;
+//   min-height: 200px;
+//   align-items: flex-start;
+// }
+
+.testimonials {
+  padding-top: 80px;
+  overflow: hidden;
+
+  .testimonial-container {
+    padding-top: $v-padding;
+    padding-bottom: $v-padding;
+    position: relative;
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: 0;
+  }
 }
+
 .quotes {
   display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: width(12);
+
+	@media (min-width: $desktop) {
+    max-width: width(9);
+  }
 }
 .quoteWrap {
   max-width: 0;
   width: 0;
   visibility: hidden;
   position: relative;
-  padding: 60px 80px;
+  padding: 60px 140px 60px 40px;
   display: none;
+
   p {
     font-weight: 300;
-    font-size: 25px;
-    line-height: 150%;
+    font-size: 1.3em;
   }
+
   &:before {
     content: '“';
     font-size: 93px;
@@ -33,7 +57,16 @@
     font-family: 'Poller One';
     color: $color-rustorange;
   }
+
+  @media (min-width: $desktop) {
+    padding: 60px 80px;
+
+    p {
+      font-size: 1.56em;
+    }
+  }
 }
+
 .quoteWrapActive {
   @extend .quoteWrap;
   max-width: $width-copy_lg;
@@ -58,49 +91,52 @@
 
   margin-top: 60px;
 }
-.dot {
-  width: 15px;
-  height: 15px;
-  border: 1px solid $color-black;
-  border-radius: 50%;
-}
-.dotList {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 10px;
 
-  align-items: center;
-}
-.activeDot {
-  @extend .dot;
-  background: $color-lightgreen;
-}
 .quoteNav {
-  max-width: 369px;
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-.imageWrap {
   width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 25px solid #d5dfdb;
-  outline: 25px solid white;
-  transform: translateY(-50%);
-  .image {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  max-width: width(12);
+
+  @media (min-width: $tablet) {
+    min-height: 400px;
+  }
+  
+	@media (min-width: $desktop) {
+    max-width: width(4);
   }
 }
+
+.imageWrap {
+  width: 250px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  border: 15px solid $color-grey;
+  outline: 15px solid $color-white;
+  top: -60px;
+  right: -60px;
+
+  .image {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  @media (min-width: $tablet) {
+    width: 350px;
+    top: -25%;
+    right: 10%;
+    border: 25px solid $color-grey;
+    outline: 25px solid $color-white;
+  }
+}
+
 .controlWrap {
   display: flex;
   width: 80%;
@@ -108,26 +144,44 @@
 }
 .quoteControls {
   background: $color-lightorange;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
-  padding: 20px 35px;
-  font-size: 20px;
+  padding: 10px 30px;
+  font-size: 1.25em;
   font-family: $font-header;
-  border-radius: $bradius;
-  p {
-    line-height: 1;
+  border-radius: $bradius 0  0 $bradius;
+  line-height: 1em;
+
+  .dotList {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 5px;
+
+    > div {
+      width: 15px;
+      height: 15px;
+      border: 1px solid $color-black;
+      border-radius: 99em;
+
+      &.activeDot {
+        background: $color-lightgreen;
+      }
+    }
   }
 }
+
 .nextBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 49px;
+  width: 50px;
+  margin-left: -2px;
+  border-radius: 0 $bradius $bradius 0;
 
-  background: #eea078;
-  border-radius: $bradius;
+	background: darken($color-lightorange, 8%);
   svg {
     font-size: 26px;
   }

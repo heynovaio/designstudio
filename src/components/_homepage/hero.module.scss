@@ -3,6 +3,23 @@
 .Hero {
   padding: 0 0 80px;
   position: relative;
+
+  &::before {
+    position: absolute;
+    height: 580px;
+    aspect-ratio: 1/1;
+    left: 0;
+    bottom: -80px;
+    transform: translateX(-60%);
+    border-radius: 50%;
+  
+    border: 40px solid $color-white;
+    outline: 40px solid $color-cream;
+    box-sizing: content-box;
+    background: $color-cream;
+    content: '';
+    z-index: 0;
+  }
 }
 
 .flexWrap {
@@ -52,6 +69,7 @@
   grid-column-gap: 18px;
   grid-row-gap: 14px;
 }
+
 .item {
   position: relative;
   overflow: hidden;
@@ -70,6 +88,7 @@
   grid-area: 2 / 2 / 3 / 3;
   padding-top: 346px / 280px * 100%;
 }
+
 .image {
   position: absolute;
   top: 50%;
@@ -85,42 +104,100 @@
     height: 110%;
   }
 }
-.carouselNavBar {
+
+.carouselTitleGroup {
   width: 100%;
-  background: $color-lightorange;
-  height: 66px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  padding: 10px 20% 10px 15px;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet) {
+    padding-right: 15%;
+  }
+
+  @media (min-width: $desktop) {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    height: 65px;
+  }
 }
+
+.carouselButtonGroup {
+  background: $color-lightorange;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: $bradius;
+
+  .next {
+    background: darken($color-lightorange, 8%);
+    width: 60px;
+    font-size: 1.875em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0 $bradius $bradius 0;
+    z-index: 3;
+  }
+}
+
 .carouselTitle {
-  flex-direction: row;
   color: $color-black;
-  padding-right: 50px;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1em;
+  line-height: 1.4em;
   font-family: $font-header;
+  width: 90%;
+
+  @media (min-width: $tablet) {
+    text-align: right;
+    padding-right: 50px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 1.25em;
+  }
 }
 
 .carouselCounter {
   flex-direction: row;
   color: $color-black;
-  padding-right: 200px;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1em;
+  line-height: 1.4em;
   font-family: $font-header;
+
+
+  @media (min-width: $desktop) {
+    font-size: 1.25em;
+  }
 }
+
 .gallery ul:global(.react-multi-carousel-dot-list) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   width: max-content;
   margin-left: auto;
   right: 0;
-  padding-right: 70px;
+  padding-right: 50px;
   max-width: 50%;
+  bottom: 0.5%;
+
+  li {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet) {
+    padding-right: 70px;
+    bottom: 2%;
+  }
 }
+
 .gallery li:global(.react-multi-carousel-dot) button {
-  border: 1px solid #061d1b;
+  border: 1px solid $color-black;
   width: 20px;
   height: 20px;
   background: transparent;
@@ -129,34 +206,7 @@
   background: $color-rustorange;
 }
 
-.dotGroup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 5px;
-}
 
-.carouselButtonGroup {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: rgba(206, 96, 52, 0.25);
-  height: 66px;
-  width: 63px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-  cursor: pointer;
-
-  .next {
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
 .bottom {
   padding: 120px 0;
   position: relative;
@@ -164,22 +214,7 @@
     padding: 1.5px;
   }
 }
-.Hero::before {
-  position: absolute;
-  height: 580px;
-  aspect-ratio: 1/1;
-  left: 0;
-  bottom: -80px;
-  transform: translateX(-60%);
-  border-radius: 50%;
 
-  border: 40px solid $color-white;
-  outline: 40px solid $color-cream;
-  box-sizing: content-box;
-  background: $color-cream;
-  content: '';
-  z-index: 0;
-}
 .bottomCopy {
   max-width: 860px;
   margin: 0 auto;
