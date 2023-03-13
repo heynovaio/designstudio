@@ -35,7 +35,7 @@
     &:focus {
       transform: translateY(0%);
     }
-}   
+  }   
 }
 .navBar {
   width: 100%;
@@ -84,6 +84,7 @@
   color: $color-rustorange;
 
   @media (min-width: $desktop) {
+    display: none;
   }
 }
 
