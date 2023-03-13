@@ -29,6 +29,10 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   color: $color-black;
+
+  &.modal-open {
+    overflow: hidden;
+  }
 }
 
 section {
@@ -97,6 +101,7 @@ span.BtnSecondary {
 
   @media (min-width: $desktop) {
     justify-content: center;
+    flex-wrap: nowrap;
   }
 }
 

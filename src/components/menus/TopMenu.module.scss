@@ -1,14 +1,19 @@
 @import '../../base/module';
 
 .header {
-  height: 100px;
+  height: 60px;
   width: 100%;
   background: $color-cream;
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   transform: translateX(-50%);
   left: 50%;
   z-index: 100;
+
+  @media (min-width: $desktop) {
+    height: 100px;
+    padding: 20px;
+  }
 
   .skip_button {
     // border-radius: 3px;
@@ -37,64 +42,153 @@
   height: 100%;
   display: flex;
   align-items: center;
-  gap: $gap;
+  gap: 0;
   justify-content: space-between;
+
+  .icon-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: $desktop) {
+    gap: $gap;
+  }
 }
 
 .LogoWrap {
   position: relative;
-  width: width(3);
+  width: 100%;
+  max-width: width(5);
 
   .logo {
     object-fit: contain;
     max-width: 450px;
   }
 
+  @media (min-width: $tablet) {
+    max-width: width(3);
+  }
+
   @media (min-width: $desktop) {
-    width: width(4);
+    max-width: width(4);
   }
 
   @media (min-width: $full) {
-    width: width(4.5);
+    max-width: width(4.5);
   }
 }
+
+.mobileBtn {
+  cursor: pointer;
+  background: transparent;
+  color: $color-rustorange;
+
+  @media (min-width: $desktop) {
+  }
+}
+
+
 
 .NavWrap {
-  width: width(9);
-  display: none;
+  width: 100%;
+
+  //Mobile Nav 
+  background: $color-cream;
+  padding: 5%;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+
+  .MenuLinks {
+    display: block;
+    font-size: 1.8em;
+
+    a {
+      color: $color-black;
+      margin-bottom: 15px;
+      display: block;
+    }
+  
+    @media (min-width: $desktop) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      align-self: flex-start;
+      gap: $gap*2;
+      font-size: 1em;
+
+      a {
+        display: inline;
+        margin: 0;
+      }
+    }
+  }
+
+  .SocialGroup {
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+
+    .SocialLinks {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  
+      .SocialLink {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: $color-black;
+      }    
+    }
+  }
+
+  &.nav-open {
+    transform: translateX(0);
+
+    .SocialGroup {
+      display: block;
+    }
+  }
 
   @media (min-width: $desktop) {
-    width: width(8);
+    max-width: width(8);
+    position: relative;
+    height: auto;
     display: flex;
+    transform: none;
+    top: initial;
+    left: initial;
+    right: initial;
+    bottom: initial;
+    padding: 0;
+    background: transparent;
   }
 
   @media (min-width: $full) {
-    width: width(7.5);
+    max-width: width(7.5);
   }
 }
 
-.MenuLinks {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  align-self: flex-start;
-  gap: $gap;
-
-  @media (min-width: $desktop) {
-    gap: 40px;
-  }
-
-  a {
-    color: $color-black;
-  }
-}
 .navBarIcons {
   display: flex;
   justify-content: flex-end;
-  align-self: flex-start;
+  align-items: center;
 
   a {
-    padding: 0 10px;
+    padding: 0 5px;
     color: $color-black;
+  }
+
+  @media (min-width: $tablet) {
+    a {
+      padding: 0 10px;
+      color: $color-black;
+    }  
   }
 }

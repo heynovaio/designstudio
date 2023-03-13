@@ -12,22 +12,42 @@
     column-gap: 20px;
     row-gap: 30px;
     & > a:nth-child(1) {
-      grid-area: 1 / 1 / 3 / 2;
+      grid-area: 1 / 1 / 2 / 4;
       .imgBox {
         aspect-ratio: 8/9;
       }
+
+      @media (min-width: $tablet) {
+        grid-area: 1 / 1 / 3 / 2;
+      }
     }
     & > a:nth-child(2) {
-      grid-area: 1 / 2 / 2 / 3;
+      grid-area: 2 / 1 / 3 / 2;
+
+      @media (min-width: $tablet) {
+        grid-area: 1 / 2 / 2 / 3;
+      }
     }
     & > a:nth-child(3) {
-      grid-area: 1 / 3 / 2 / 4;
+      grid-area: 3 / 2 / 4 / 3;
+
+      @media (min-width: $tablet) {
+        grid-area: 1 / 3 / 2 / 4;
+      }
     }
     & > a:nth-child(4) {
       grid-area: 2 / 2 / 3 / 3;
+
+      @media (min-width: $tablet) {
+        grid-area: 2 / 2 / 3 / 3;
+      }
     }
     & > a:nth-child(5) {
       grid-area: 2 / 3 / 3 / 4;
+
+      @media (min-width: $tablet) {
+        grid-area: 2 / 3 / 3 / 4;
+      }
     }
     .gridItem {
       .imgBox {
