@@ -1,19 +1,20 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText,PrismicLink } from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
 import { Container } from "../Components"
 
 import * as sty from './centered-text.module.scss';
 
 export const CenteredText = ({ slice }) => {
   return (
-    <section className="CenteredText">
-      <Container>
-        <div className={sty.centerWrap}>
-          <PrismicRichText field={slice.primary.richtext?.richText}/>
-        </div>
-      </Container>
+    <section className={sty.CenteredText}>
+      <div className={sty.centerContainer}>
+        <Container>
+          <div className={sty.centerWrap}>
+            <PrismicRichText field={slice.primary.richtext?.richText}/>
+          </div>
+        </Container>
+      </div>
     </section>
   )
 }

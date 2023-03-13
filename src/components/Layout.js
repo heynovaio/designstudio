@@ -8,6 +8,8 @@ import { BottomMenu } from './menus/BottomMenu'
 import * as sty from './Layout.scss'
 
 export const Layout = ({ children, menu, activeDocMeta }) => {
+  document.body.classList.remove('modal-open');
+
   const queryData = useStaticQuery(graphql`
     query SiteQuery {
       site {

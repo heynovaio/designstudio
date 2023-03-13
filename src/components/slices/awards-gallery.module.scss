@@ -9,8 +9,8 @@
   flex-wrap: wrap;
 }
 .imageWrap {
-  width: 495px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 495px;
   aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
@@ -25,21 +25,4 @@
     transform: translate(-50%, -50%);
     height: 100%;
   }
-}
-
-.AwardsGallery:before {
-  position: absolute;
-  height: 580px;
-  aspect-ratio: 1/1;
-  right: 0;
-  top: 250px;
-  transform: translateX(60%);
-  border-radius: 50%;
-
-  border: 40px solid $color-grey;
-  outline: 40px solid $color-cream;
-  box-sizing: content-box;
-  background: $color-cream;
-  content: '';
-  z-index: -5;
 }

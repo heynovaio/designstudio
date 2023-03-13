@@ -1,16 +1,21 @@
 @import '../../base/module';
 
 .CenterText {
-  padding-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+
+  @media (min-width: $desktop) {
+    overflow: initial;
+  }
 }
 
 .copy {
-  max-width: 720px;
-  margin: 100px auto;
-  margin-bottom: 0;
+  max-width: width(12);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 36px;
   text-align: center;
 
@@ -22,22 +27,35 @@
     padding-top: 20px;
     font-weight: lighter;
   }
+
+  @media (min-width: $desktop) {
+    max-width: width(6);
+  }
 }
 
-.CenterText::before {
-  position: absolute;
-  height: 500px;
-  aspect-ratio: 1/1;
-  margin-left: 100%;
-  right: 0;
-  top: 100px;
-  transform: translateX(60%);
+.center-container {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 
-  border-radius: 50%;
+  &::before {
+    position: absolute;
+    height: 580px;
+    aspect-ratio: 1/1;
+    right: -250px;
+    top: 100px;
+    border-radius: 99em;
+    border: 40px solid $color-grey;
+    outline: 40px solid $color-cream;
+    background: $color-cream;
+    content: '';
+    z-index: -1;
+  }
 
-  border: 40px solid $color-grey;
-  outline: 40px solid $color-cream;
-  background: $color-cream;
-  content: '';
-  z-index: -1;
+  @media (min-width: $desktop) {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
 }
