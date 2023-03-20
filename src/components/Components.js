@@ -2,7 +2,7 @@ import * as React from 'react'
 
 export const Container = ({children, className}) => {
   return (
-    <div className={`Container ${className}`}>
+    <div className={`Container ${className || ''}`}>
       {children}
     </div>
   )

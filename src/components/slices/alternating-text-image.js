@@ -23,23 +23,25 @@ export const AlternatingTextImage = ({ slice }) => {
   )
   return (
     <section className={sty.AlternatingTextImage}>
-      <Container>
-        {slice.items.map((item, index) => (
-          <div className={sty.FlexWrap} key={`text-image:${index}`}>
-            {index % 2 === starter ? (
-              <>
-                <Image image={item.image} />
-                <Copy text={item.text} />
-              </>
-            ) : (
-              <>
-                <Copy text={item.text} />
-                <Image image={item.image} />
-              </>
-            )}
-          </div>
-        ))}
-      </Container>
+      <div className={sty.circleContainer}>
+        <Container className='flex'>
+          {slice.items.map((item, index) => (
+            <div className={sty.FlexWrap} key={`text-image:${index}`}>
+              {index % 2 === starter ? (
+                <>
+                  <Image image={item.image} />
+                  <Copy text={item.text} />
+                </>
+              ) : (
+                <>
+                  <Copy text={item.text} />
+                  <Image image={item.image} />
+                </>
+              )}
+            </div>
+          ))}
+        </Container>
+      </div>
     </section>
   )
 }

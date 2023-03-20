@@ -30,18 +30,29 @@
   }
 }
 
-.AlternatingTextImage:before {
-  position: absolute;
-  height: 580px;
-  aspect-ratio: 1/1;
-  right: 0;
-  top: 0;
-  transform: translateX(55%);
-  border-radius: 50%;
-  border: 40px solid $color-grey;
-  outline: 40px solid $color-cream;
-  box-sizing: content-box;
-  background: $color-cream;
-  content: '';
-  z-index: -5;
+.circle-container {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    height: 580px;
+    aspect-ratio: 1/1;
+    right: -250px;
+    top: 100px;
+    border-radius: 99em;
+    border: 40px solid $color-grey;
+    outline: 40px solid $color-cream;
+    background: $color-cream;
+    content: '';
+    z-index: -1;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
 }
