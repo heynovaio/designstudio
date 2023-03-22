@@ -6,6 +6,8 @@ import { ProductMap } from '../product-map/product-map'
 import { ShopByRoom } from '../collections-grid/shop-by-room'
 import * as sty from './catalog.module.scss'
 
+import { Parallax } from 'react-scroll-parallax';
+
 export const Catalog = ({
   description,
   image,
@@ -20,7 +22,9 @@ export const Catalog = ({
           <div className={sty.copy}>
             <PrismicRichText field={description.richText} />
           </div>
+          <Parallax translateY={[-10, 0]}>
           <ProductMap image={image} products={products} />
+          </Parallax>
         </div>
         <div className={sty.gridWrap}>
           <ShopByRoom gallery={gallery} />

@@ -13,12 +13,22 @@
     transform: translateX(-60%);
     border-radius: 50%;
   
-    border: 40px solid $color-white;
+    border: 40px solid #DAE2DD;
     outline: 40px solid $color-cream;
     box-sizing: content-box;
     background: $color-cream;
     content: '';
     z-index: 0;
+  }
+  h1 {
+    font-size: 58px;
+    max-width: 500px;
+    margin-bottom: 10px;
+  }
+  h1 + p {
+    max-width: 440px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
   }
 }
 
@@ -222,4 +232,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  p {
+    padding: 23px 0 10px;
+  }
 }

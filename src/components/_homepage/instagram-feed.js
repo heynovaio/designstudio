@@ -21,7 +21,12 @@ export const InstagramFeed = ({ header, viewBtnLabel, media }) => {
 
 					</div>
 				</div>
-				<div className={sty.media}>
+				<div className={sty.media}
+					data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          data-sal-duration="750"
+				>
 					<span>AS SEEN IN</span>
 					{media.map((item,index) => (
 						<div className={sty.mediaWrap} key={`media:${index}`}>

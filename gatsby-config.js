@@ -34,6 +34,8 @@ module.exports = {
         display: 'swap',
       },
     },
+    `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-transition-link`,
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',

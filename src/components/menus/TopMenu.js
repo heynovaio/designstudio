@@ -4,6 +4,7 @@ import { PrismicLink, PrismicText } from '@prismicio/react'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
 import { BiShoppingBag, BiHeart, BiSearch, BiMenu, BiXCircle } from 'react-icons/bi'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
@@ -16,11 +17,15 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
   }
 
   return (
+    <>
     <header className={sty.header}>
+      <a className={sty.skip_button} href="#main">
+        Skip to Content
+      </a>
+      <div className={sty.topBar}>
+        <select><option>Cayman Island</option></select>
+      </div>
       <Container>
-        <a className={sty.skip_button} href="#main">
-          Skip to Content
-        </a>
         <div className={sty.navBar}>
           <PrismicLink className={sty.LogoWrap} href="/">
             <GatsbyImage
@@ -32,9 +37,9 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
           <div className={`${sty.NavWrap} ${mobileMenu? sty.navOpen : sty.navClosed}`}>
             <div className={sty.MenuLinks}>
               {menu.menu_links.map((item, index) => (
-                <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
-                  {item.label}
-                </PrismicLink>
+              <AniLink paintDrip to={item.link?.url} hex="#DAE2DD" duration={1} key={`menuLink:${index}`}>
+                {item.label}
+              </AniLink>
               ))}
             </div>
             <div className={sty.SocialGroup}>
@@ -65,15 +70,16 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
         </div>
       </Container>
     </header>
+    </>
   )
 }
 
 const NavBarIcons = () => {
   return (
     <div className={sty.navBarIcons}>
-      <PrismicLink className={sty.icon} href={'/'}>
+      {/* <PrismicLink className={sty.icon} href={'/'}>
         <BiHeart size={25} />
-      </PrismicLink>
+      </PrismicLink> */}
       <PrismicLink href={'/collection/in-stock'}>
         <BiSearch size={25} />
       </PrismicLink>

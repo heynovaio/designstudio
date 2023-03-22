@@ -7,6 +7,8 @@ import MultiCarousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import * as sty from './hero.module.scss'
 
+import { Parallax } from 'react-scroll-parallax';
+
 export const Hero = ({
   title,
   description,
@@ -52,79 +54,90 @@ export const Hero = ({
     <section className={sty.Hero}>
       <Container>
         <div className={sty.flexWrap}>
-          <div className={sty.gallery}>
-            <MultiCarousel
-              ssr={true}
-              infinite={true}
-              arrows={false}
-              swipeable={true}
-              responsive={responsive}
-              showDots={true}
-              renderDotsOutside={true}
-              renderButtonGroupOutside={true}
-              customButtonGroup={<ButtonGroup />}
-              dotListClass={sty.dotGroup}
-            >
-              {gallery && (
-                <div className={sty.grid}>
-                  {gallery.map((item, index) => (
-                    <div key={index} className={sty.item}>
-                      <GatsbyImage
-                        image={item.image?.gatsbyImageData}
-                        alt={item.image?.alt || ''}
-                        className={sty.image}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-              {gallery && (
-                <div className={sty.grid}>
-                  {gallery.map((item, index) => (
-                    <div key={index} className={sty.item}>
-                      <GatsbyImage
-                        image={item.image?.gatsbyImageData}
-                        alt={item.image?.alt || ''}
-                        className={sty.image}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-              {gallery && (
-                <div className={sty.grid}>
-                  {gallery.map((item, index) => (
-                    <div key={index} className={sty.item}>
-                      <GatsbyImage
-                        image={item.image?.gatsbyImageData}
-                        alt={item.image?.alt || ''}
-                        className={sty.image}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </MultiCarousel>
-          </div>
-          <div className={sty.copy}>
-            {title && (
-              <PrismicRichText field={title.richText} className={sty.title} />
-            )}
-            <p className={sty.description}>{description}</p>
-
-            <div className={sty.btnWrap}>
-              <PrismicLink href={'/'}>
-                <Button>{catalogLabel}</Button>
-              </PrismicLink>
-              <PrismicLink href={'/'}>
-                <Button variant="Secondary">{worksLabel}</Button>
-              </PrismicLink>
+            <div className={sty.gallery}>
+              <MultiCarousel
+                ssr={true}
+                infinite={true}
+                arrows={false}
+                swipeable={true}
+                responsive={responsive}
+                showDots={true}
+                renderDotsOutside={true}
+                renderButtonGroupOutside={true}
+                customButtonGroup={<ButtonGroup />}
+                dotListClass={sty.dotGroup}
+              >
+                {gallery && (
+                  <div className={sty.grid}>
+                    {gallery.map((item, index) => (
+                      <div key={index} className={sty.item}>
+                        <GatsbyImage
+                          image={item.image?.gatsbyImageData}
+                          alt={item.image?.alt || ''}
+                          className={sty.image}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {gallery && (
+                  <div className={sty.grid}>
+                    {gallery.map((item, index) => (
+                      <div key={index} className={sty.item}>
+                        <GatsbyImage
+                          image={item.image?.gatsbyImageData}
+                          alt={item.image?.alt || ''}
+                          className={sty.image}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {gallery && (
+                  <div className={sty.grid}>
+                    {gallery.map((item, index) => (
+                      <div key={index} className={sty.item}>
+                        <GatsbyImage
+                          image={item.image?.gatsbyImageData}
+                          alt={item.image?.alt || ''}
+                          className={sty.image}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </MultiCarousel>
             </div>
-          </div>
+
+            <div className={sty.copy}>
+              <Parallax translateY={[-50, 50]}>  
+              {title && (
+                <PrismicRichText field={title.richText} className={sty.title} />
+              )}
+              <p className={sty.description}>{description}</p>
+
+              <div className={sty.btnWrap}>
+                <PrismicLink href={'/'}>
+                  <Button>{catalogLabel}</Button>
+                </PrismicLink>
+                <PrismicLink href={'/'}>
+                  <Button variant="Secondary">{worksLabel}</Button>
+                </PrismicLink>
+              </div>
+              </Parallax>   
+            </div>
         </div>
-        <div className={sty.bottom}>
+
+        <div 
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          data-sal-duration="750"
+          className={sty.bottom}>
           <div className={sty.bottomCopy}>
+          <Parallax translateY={[0, 30]}>  
             <PrismicRichText field={bottom.richText} />
+           </Parallax>   
           </div>
         </div>
       </Container>

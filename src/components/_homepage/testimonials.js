@@ -4,6 +4,7 @@ import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
 import { FaChevronRight } from 'react-icons/fa'
 import { Container, Button } from '../Components'
 import * as sty from './testimonials.module.scss'
+import { Parallax } from 'react-scroll-parallax';
 
 export const Testimonials = ({ testimonials, background }) => {
   const [slide, setSlide] = React.useState(0)
@@ -21,13 +22,17 @@ export const Testimonials = ({ testimonials, background }) => {
     <section className={sty.testimonials}>
       <div className={sty.testimonialContainer} style={{ background: background}}>
         <Container className='flex'>
-          <div className={sty.imageWrap}>
-            <GatsbyImage
-              image={curTest.testimonial_image?.gatsbyImageData}
-              alt={curTest.testimonial_image?.alt || ''}
-              className={sty.image}
-            />
-          </div>
+
+            <div className={sty.imageWrap}>
+              <Parallax translateY={[0, 30]}>
+                <GatsbyImage
+                  image={curTest.testimonial_image?.gatsbyImageData}
+                  alt={curTest.testimonial_image?.alt || ''}
+                  className={sty.image}
+                />
+              </Parallax>  
+            </div>
+
           <div className={sty.quotes}>
             {testimonials.map((item, index) => (
               <div
