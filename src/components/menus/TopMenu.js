@@ -4,10 +4,13 @@ import { PrismicLink, PrismicText } from '@prismicio/react'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
 import { BiShoppingBag, BiHeart, BiSearch, BiMenu, BiXCircle } from 'react-icons/bi'
+import { CartButton } from '../cart-button'
+import { StoreContext } from '../../context/store-context'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
+
   const [mobileMenu, setMobileMenu] = React.useState(false)
 
   const toggleMenu = () => {
@@ -75,6 +78,12 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
 }
 
 const NavBarIcons = () => {
+  const { checkout } = React.useContext(StoreContext)
+  const items = checkout ? checkout.lineItems : []
+
+  const quantity = items.reduce((total, item) => {
+    return total + item.quantity
+  }, 0)
   return (
     <div className={sty.navBarIcons}>
       {/* <PrismicLink className={sty.icon} href={'/'}>
@@ -84,7 +93,7 @@ const NavBarIcons = () => {
         <BiSearch size={25} />
       </PrismicLink>
       <PrismicLink href={'/'}>
-        <BiShoppingBag size={25} />
+        <CartButton quantity={quantity} />
       </PrismicLink>
     </div>
   )

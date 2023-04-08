@@ -70,7 +70,7 @@ export const StoreProvider = ({ children }) => {
     initializeCheckout()
   }, [])
 
-  const addVariantToCart = (variantId, quantity) => {
+  const addVariantToCart = async (variantId, quantity) => {
     setLoading(true)
 
     const checkoutID = checkout.id
@@ -82,40 +82,34 @@ export const StoreProvider = ({ children }) => {
       },
     ]
 
-    return client.checkout
+    const res = await client.checkout
       .addLineItems(checkoutID, lineItemsToUpdate)
-      .then((res) => {
-        setCheckout(res)
-        setLoading(false)
-        setDidJustAddToCart(true)
-        setTimeout(() => setDidJustAddToCart(false), 3000)
-      })
+    setCheckout(res)
+    setLoading(false)
+    setDidJustAddToCart(true)
+    setTimeout(() => setDidJustAddToCart(false), 3000)
   }
 
-  const removeLineItem = (checkoutID, lineItemID) => {
+  const removeLineItem = async (checkoutID, lineItemID) => {
     setLoading(true)
 
-    return client.checkout
+    const res = await client.checkout
       .removeLineItems(checkoutID, [lineItemID])
-      .then((res) => {
-        setCheckout(res)
-        setLoading(false)
-      })
+    setCheckout(res)
+    setLoading(false)
   }
 
-  const updateLineItem = (checkoutID, lineItemID, quantity) => {
+  const updateLineItem = async (checkoutID, lineItemID, quantity) => {
     setLoading(true)
 
     const lineItemsToUpdate = [
       { id: lineItemID, quantity: parseInt(quantity, 10) },
     ]
 
-    return client.checkout
+    const res = await client.checkout
       .updateLineItems(checkoutID, lineItemsToUpdate)
-      .then((res) => {
-        setCheckout(res)
-        setLoading(false)
-      })
+    setCheckout(res)
+    setLoading(false)
   }
 
   return (

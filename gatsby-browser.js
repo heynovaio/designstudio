@@ -8,18 +8,24 @@ import { repositoryConfigs } from './src/utils/prismicPreviews'
 import { linkResolver } from './src/utils/linkResolver'
 
 import './src/base/module.scss'
+import { StoreProvider } from './src/context/store-context';
 
 export const wrapRootElement = ({ element }) => (
+  <StoreProvider>
   <ParallaxProvider>
-    <PrismicProvider
-      linkResolver={linkResolver}
-      internalLinkComponent={({ href, ...props }) => (
-        <Link to={href} {...props} />
-      )}
-    >
-      <PrismicPreviewProvider repositoryConfigs={repositoryConfigs}>
-        {element}
-      </PrismicPreviewProvider>
-    </PrismicProvider>
+      <PrismicProvider
+        linkResolver={linkResolver}
+        internalLinkComponent={({ href, ...props }) => (
+          <Link to={href} {...props} />
+        )}
+      >
+        <PrismicPreviewProvider repositoryConfigs={repositoryConfigs}>
+          
+            {element}
+          
+        </PrismicPreviewProvider>
+      </PrismicProvider>
+
   </ParallaxProvider>
+  </StoreProvider>
 )

@@ -38,18 +38,14 @@ const ProductTemplate = ({ data }) => {
   const TotalInventory = product.totalInventory;
   const RelatedProds = product.collections[0]?.products.slice(0,4);
   const VendorProds = product.collections[1]?.products.slice(0,4);
+  const Variants = product.variants;
 
   const temp="A chance to sell users on the story of the product or the vendors who made them so they connect with it on a deeper level. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus suspendisse faucibus interdum posuere lorem ipsum. A cras semper auctor neque vitae tempus quam. Mauris nunc congue nisi vitae suscipit tellus mauris."
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <ProductInfo 
-        featuredImage={FeaturedImage}
-        images={SubImgs}
-        title={ProductTitle}
-        description={ProductDesc}
-        price={Price}
-        storefront={Storefront}
+        product={product}
       />
       <VendorInfo header={"About this product or vendor"} description={temp}/>
       <RelatedProducts header={"Style it with"}  description={"Something like: Our designers love the look of these with this product"} products={RelatedProds}/>
@@ -111,6 +107,20 @@ export const query = graphql`
             height
             width
           }
+        }
+      }
+      options {
+        name
+        values
+      }
+      variants {
+        availableForSale
+        storefrontId
+        title
+        price
+        selectedOptions {
+          name
+          value
         }
       }
     }

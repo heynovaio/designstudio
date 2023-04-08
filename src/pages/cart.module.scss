@@ -1,0 +1,141 @@
+.title {
+
+  margin: 0;
+
+}
+
+.table {
+  flex: 1;
+  max-width: 1024px;
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr min-content;
+
+}
+
+.table th {
+  text-align: left;
+  text-transform: uppercase;
+
+}
+
+.table tr,
+.table thead,
+.table tbody {
+  display: contents;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+}
+
+.totals,
+.table th.totals {
+  text-align: right;
+}
+
+// .summary {
+
+// }
+
+// .grandTotal {
+
+// }
+
+.checkoutButton {
+  align-items: center;
+
+  display: flex;
+
+  justify-content: center;
+
+  width: max-content;
+
+}
+
+// .checkoutButton:hover {
+
+// }
+
+
+.summary ~ .summary td {
+  padding-top: 0;
+}
+
+.summary .labelColumn {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.summary .totals {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.grandTotal .labelColumn {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.collapseColumn {
+  display: none;
+}
+
+.productHeader {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.imageHeader {
+  position: fixed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.emptyStateContainer {
+  text-align: center;
+  max-width: 48ch;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+// .emptyStateHeading {
+
+// }
+
+.emptyStateLink {
+  display: inline-block;
+
+}
+
+@media (min-width: 640px) {
+  .summary .labelColumn,
+  .summary .totals,
+  .grandTotal .labelColumn {
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
+
+  .collapseColumn {
+    display: block;
+  }
+
+  .table {
+    grid-template-columns: 80px 1fr repeat(3, min-content);
+  }
+}
+
+@media (min-width: 1024px) {
+  .table {
+    grid-template-columns: max-content 1fr repeat(3, max-content);
+  }
+}

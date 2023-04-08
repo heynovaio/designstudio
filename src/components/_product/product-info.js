@@ -4,14 +4,85 @@ import { getShopifyImage } from 'gatsby-source-shopify'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { Container, Button } from "../Components"
 import { AddToCart } from '../add-to-cart'
-
+import { StoreContext } from '../../context/store-context'
 import * as sty from "./product-info.module.scss"
+import { formatPrice } from '../../utils/format-price'
 
-export const ProductInfo = ({ featuredImage, images, title, description, price, storefront }) => {
+export const ProductInfo = ({ product }) => {
+	const {
+		options,
+    variants,
+    variants: [initialVariant],
+    priceRangeV2,
+    title,
+    description,
+		featuredImage,
+    images,
+		media
+	} = product
 	function getImage(img, w, h, lay){
 		return getShopifyImage({image: img, width: w, height: h, layout: lay});
 	}
-	const [quantity, setQuantity] = React.useState(0);
+
+	const { client } = React.useContext(StoreContext)
+
+  const [variant, setVariant] = React.useState({ ...initialVariant })
+  const [quantity, setQuantity] = React.useState(1)
+
+  const productVariant =
+    client.product.helpers.variantForOptions(product, variant) || variant
+
+  const [available, setAvailable] = React.useState(
+    productVariant.availableForSale
+  )
+
+  const checkAvailablity = React.useCallback(
+    (productId) => {
+      client.product.fetch(productId).then((fetchedProduct) => {
+        const result =
+          fetchedProduct?.variants.filter(
+            (variant) => variant.id === productVariant.storefrontId
+          ) ?? []
+
+        if (result.length > 0) {
+          setAvailable(result[0].available)
+        }
+      })
+    },
+    [productVariant.storefrontId, client.product]
+  )
+
+  const handleOptionChange = (index, event) => {
+    const value = event.target.value
+
+    if (value === "") {
+      return
+    }
+
+    const currentOptions = [...variant.selectedOptions]
+
+    currentOptions[index] = {
+      ...currentOptions[index],
+      value,
+    }
+
+    const selectedVariant = variants.find((variant) => {
+      return isEqual(currentOptions, variant.selectedOptions)
+    })
+
+    setVariant({ ...selectedVariant })
+  }
+
+  React.useEffect(() => {
+    checkAvailablity(product.storefrontId)
+  }, [productVariant.storefrontId, checkAvailablity, product.storefrontId])
+
+  const price = formatPrice(
+    priceRangeV2.minVariantPrice.currencyCode,
+    variant.price
+  )
+
+  const hasVariants = variants.length > 1
  
 	return (
 		<section style={{background: "#FAEDE5"}}>
@@ -25,7 +96,7 @@ export const ProductInfo = ({ featuredImage, images, title, description, price, 
 								className={sty.image}
 							/>
 						</div>
-						{images.slice(1,3).map((item,index) => (
+						{media.slice(1,3).map((item,index) => (
 							<div className={sty.subImg} key={`subImg:${index}`}>
 								<GatsbyImage 
 									image={getImage(item.image,350,293,"constrained")}
@@ -37,14 +108,14 @@ export const ProductInfo = ({ featuredImage, images, title, description, price, 
 					</div>
 					<div className={sty.productInfo}>
 						<h3>{title}</h3>
-						<span className={sty.price}>${price.minVariantPrice.amount} {price.minVariantPrice.currencyCode}</span>
+						<span className={sty.price}>{price}</span>
 						<div className={sty.purchase}>
 							<p>Quantity</p>
-							<input type='number' min='1' max="100" onChange={() => {setQuantity(value)}}/>
+							<input type='number' min='1' max="100" onChange={(e) => {setQuantity(e.target.value)}}/>
 							<AddToCart
-								variantId={storefront}
-								quantity={1}
-								available={true}
+								variantId={productVariant.storefrontId}
+								quantity={quantity}
+								available={available}
 							/>
 						</div>
 						<div className={sty.description}>
