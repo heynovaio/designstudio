@@ -112,6 +112,7 @@ export const query = graphql`
       options {
         name
         values
+        shopifyId
       }
       variants {
         availableForSale

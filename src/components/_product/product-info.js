@@ -67,7 +67,7 @@ export const ProductInfo = ({ product }) => {
     }
 
     const selectedVariant = variants.find((variant) => {
-      return isEqual(currentOptions, variant.selectedOptions)
+      return currentOptions === variant.selectedOptions
     })
 
     setVariant({ ...selectedVariant })
@@ -116,6 +116,7 @@ export const ProductInfo = ({ product }) => {
 								variantId={productVariant.storefrontId}
 								quantity={quantity}
 								available={available}
+								disabled={!quantity > 0}
 							/>
 						</div>
 						<div className={sty.description}>

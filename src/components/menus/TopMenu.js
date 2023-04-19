@@ -10,7 +10,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
-
+  const { updateLocale,location,locationOptions } = React.useContext(StoreContext)
   const [mobileMenu, setMobileMenu] = React.useState(false)
 
   const toggleMenu = () => {
@@ -18,6 +18,10 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
     document.body.classList.remove('modal-open');
     document.body.classList.toggle('modal-open', !mobileMenu);
   }
+  const handleChange = (e) => {
+    updateLocale(e.target.value)
+  }
+
 
   return (
     <>
@@ -26,7 +30,11 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
         Skip to Content
       </a>
       <div className={sty.topBar}>
-        <select><option>Cayman Island</option></select>
+        <select onChange={handleChange} value={location.name}>
+          {locationOptions.map((local, i) => (
+            <option value={local}>{local}</option>
+          ))}
+        </select>
       </div>
       <Container>
         <div className={sty.navBar}>
@@ -92,9 +100,7 @@ const NavBarIcons = () => {
       <PrismicLink href={'/collection/in-stock'}>
         <BiSearch size={25} />
       </PrismicLink>
-      <PrismicLink href={'/'}>
-        <CartButton quantity={quantity} />
-      </PrismicLink>
+      <CartButton quantity={quantity} />
     </div>
   )
 }

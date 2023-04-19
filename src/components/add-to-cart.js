@@ -13,10 +13,13 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
   return (
     <button
       type="submit"
-      className={addToCartStyle}
+      className="BtnPrimary"
       onClick={addToCart}
-      disabled={!available || loading}
+      disabled={!available || loading || props.disabled}
       {...props}
+      style = {{
+        cursor: 'pointer'
+      }}
     >
       {available ? "Add to Cart" : "Out of Stock"}
     </button>
