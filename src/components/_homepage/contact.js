@@ -19,6 +19,7 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
     'pk.eyJ1IjoiYWh2ZG9kZCIsImEiOiJjbGFzcnIzbWsyNjR2M3FtaThia2UwbmY5In0.iW4eOap84EcSZuzCRTZYWA'
 
   const { location } = React.useContext(StoreContext)
+  const { map: mapCoords, contact } = location || {}
   const [viewState, setViewState] = React.useState({
     latitude: marker.latitude,
     longitude: marker.longitude,
@@ -26,8 +27,8 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
   });
   React.useEffect(() => (
     setViewState({
-        latitude: location?.map.latitude,
-        longitude: location?.map.longitude,
+        latitude:  mapCoords?.latitude,
+        longitude:  mapCoords?.longitude,
         zoom: 14.5,
       })
   ),[location])
@@ -43,15 +44,15 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
             style={{ width: '100%', height: '100%' }}
           >
             <Marker
-              longitude={location?.map.longitude}
-              latitude={location?.map.latitude}
+              longitude={ mapCoords?.longitude}
+              latitude={ mapCoords?.latitude}
               anchor="bottom"
             >
               <FaMapMarkerAlt style={{ fontSize: 80, color: '#CE6034' }} />
             </Marker>
             <Popup
-              longitude={location?.map.longitude}
-              latitude={location?.map.latitude}
+              longitude={ mapCoords?.longitude}
+              latitude={ mapCoords?.latitude}
               anchor="top-left"
               closeButton={false}
               className={sty.infoBox}
@@ -65,10 +66,10 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
           <p className={sty.description}>{description}</p>
           <div className={sty.contactList}>
             <div className={sty.info}>
-              <p><FaEnvelope /> {location?.contact.email}</p>
+              <p><FaEnvelope /> {contact?.email}</p>
             </div>
             <div className={sty.info}>
-              <p><FaPhoneAlt /> {location?.contact.phone}</p>
+              <p><FaPhoneAlt /> {contact?.phone}</p>
             </div>
             <div className={sty.info}>
               <p>
@@ -77,7 +78,7 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
               </p>
             </div>
           </div>
-          <p className={sty.cta}>{location?.contact.cta}</p>
+          <p className={sty.cta}>{contact?.cta}</p>
         </div>
       </Container>
     </section>
