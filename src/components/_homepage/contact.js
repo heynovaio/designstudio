@@ -26,8 +26,8 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
   });
   React.useEffect(() => (
     setViewState({
-        latitude: location.map.latitude,
-        longitude: location.map.longitude,
+        latitude: location?.map.latitude,
+        longitude: location?.map.longitude,
         zoom: 14.5,
       })
   ),[location])
@@ -43,15 +43,15 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
             style={{ width: '100%', height: '100%' }}
           >
             <Marker
-              longitude={location.map.longitude}
-              latitude={location.map.latitude}
+              longitude={location?.map.longitude}
+              latitude={location?.map.latitude}
               anchor="bottom"
             >
               <FaMapMarkerAlt style={{ fontSize: 80, color: '#CE6034' }} />
             </Marker>
             <Popup
-              longitude={location.map.longitude}
-              latitude={location.map.latitude}
+              longitude={location?.map.longitude}
+              latitude={location?.map.latitude}
               anchor="top-left"
               closeButton={false}
               className={sty.infoBox}
