@@ -15,8 +15,11 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
 
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
-    document.body.classList.remove('modal-open');
-    document.body.classList.toggle('modal-open', !mobileMenu);
+    if (typeof document !== `undefined`) {
+      document.body.classList.remove('modal-open');
+      document.body.classList.toggle('modal-open', !mobileMenu);
+    }
+    
   }
   const handleChange = (e) => {
     updateLocale(e.target.value)
@@ -31,7 +34,7 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
       </a>
       <div className={sty.topBar}>
         <select onChange={handleChange} value={location.name}>
-          {locationOptions.map((local, i) => (
+          {locationOptions?.map((local, i) => (
             <option value={local}>{local}</option>
           ))}
         </select>
