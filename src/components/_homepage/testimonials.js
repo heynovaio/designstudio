@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
+import { GatsbyImage} from 'gatsby-plugin-image'
+import { PrismicRichText} from '@prismicio/react'
 import { FaChevronRight } from 'react-icons/fa'
-import { Container, Button } from '../Components'
+import { Container} from '../Components'
 import * as sty from './testimonials.module.scss'
 import { Parallax } from 'react-scroll-parallax';
 
@@ -22,9 +22,8 @@ export const Testimonials = ({ testimonials, background }) => {
     <section className={sty.testimonials}>
       <div className={sty.testimonialContainer} style={{ background: background}}>
         <Container className='flex'>
-
             <div className={sty.imageWrap}>
-              <Parallax translateY={[0, 30]}>
+              <Parallax translateY={[-20, 10]}>
                 <GatsbyImage
                   image={curTest.testimonial_image?.gatsbyImageData}
                   alt={curTest.testimonial_image?.alt || ''}

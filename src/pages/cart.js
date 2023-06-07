@@ -42,7 +42,7 @@ export default function CartPage ({data}){
           <div className={wrap}>
             {emptyCart ? (
               <div className={emptyStateContainer}>
-                <h1 className={emptyStateHeading}>Your cart is empty</h1>
+                <h1 className={[emptyStateHeading, title].join(" ")}>Your cart is empty</h1>
                 <p>
                   Looks like you haven’t found anything yet. We understand that
                   sometimes it’s hard to choose — maybe this helps:

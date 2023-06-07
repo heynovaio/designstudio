@@ -123,14 +123,18 @@
   right: -60px;
 
   .image {
-    object-fit: cover;
+    // object-fit: cover;
     min-width: 100%;
     min-height: 100%;
   }
 
+  > div {
+    height: 350px;
+  }
+
   @media (min-width: $tablet) {
     width: 350px;
-    top: -25%;
+    top: -18%;
     right: 10%;
     border: 25px solid $color-grey;
     outline: 25px solid $color-white;
@@ -180,6 +184,7 @@
   width: 50px;
   margin-left: -2px;
   border-radius: 0 $bradius $bradius 0;
+  cursor: pointer;
 
 	background: darken($color-lightorange, 8%);
   svg {
