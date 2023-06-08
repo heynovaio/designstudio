@@ -35,7 +35,7 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
       <div className={sty.topBar}>
         <select onChange={handleChange} value={location.name}>
           {locationOptions?.map((local, i) => (
-            <option value={local}>{local}</option>
+            <option value={local} key={i}>{local}</option>
           ))}
         </select>
       </div>

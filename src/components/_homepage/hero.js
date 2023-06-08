@@ -86,7 +86,8 @@ export const Hero = ({
                           alt={item.image_3?.alt || ''}
                           className={sty.image} />
                       </div>
-                    </div><div key={index} className={sty.carouselTitle}>{item.project_name}</div></>
+                    </div>
+                    </>
                   ))}
           
               </MultiCarousel>

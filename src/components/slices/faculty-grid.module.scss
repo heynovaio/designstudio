@@ -1,6 +1,7 @@
 @import '../../base/module';
 .FacultyGrid {
     position: relative;
+    padding-top: 0;
 }
 .grid {
     display: grid;
@@ -18,7 +19,7 @@
 .employeeCard{
     .imageWrap {
         width: 100%;
-        aspect-ratio: 7/5;
+        aspect-ratio: 4/5;
         position: relative;
         margin-bottom: 20px;
         .image {
@@ -27,10 +28,8 @@
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-    
         }
     }
-    
     
     .subName {
         margin-bottom: 10px;
