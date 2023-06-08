@@ -22,22 +22,26 @@ export const Testimonial = ({Banner,Title,Quote,Name,Gallery}) => {
 					}
 					
 				</div>
-				<div className={sty.copyWrap}>
-					<h2>{Title}</h2>
-					<p>{Quote}</p>
-					<span className={sty.author}>{Name}</span>
-				</div>
-				<div className={sty.galleryWrap}>
-					{Gallery.map((item,index) => (
-						<div className={sty.imageWrap} key={`galleryItem: ${index}`}>
-							<GatsbyImage
-								image={item.image?.gatsbyImageData}
-								alt={item.image?.alt || ""}
-								className={sty.image}
-							/>
-						</div>
-					))}
-				</div>
+				{Quote &&
+					<div className={sty.copyWrap}>
+						<h2>{Title}</h2>
+						<p>{Quote}</p>
+						<span className={sty.author}>{Name}</span>
+					</div>
+				}
+				{Gallery.length > 1 &&
+					<div className={sty.galleryWrap}>
+						{Gallery.map((item,index) => (
+							<div className={sty.imageWrap} key={`galleryItem: ${index}`}>
+								<GatsbyImage
+									image={item.image?.gatsbyImageData}
+									alt={item.image?.alt || ""}
+									className={sty.image}
+								/>
+							</div>
+						))}
+					</div>
+				}
 			</Container>
 		</section>
 	);
