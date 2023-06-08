@@ -28,14 +28,7 @@ const ProductTemplate = ({ data }) => {
   };
 
  
-  const FeaturedImage = product.featuredImage;
-  const SubImgs = product.media;
-  const ProductTitle = product.title;
-  const Price = product.priceRangeV2;
-  const ProductDesc = product.descriptionHtml;
-  const Storefront = product.storefontId;
-  const Vendor = product.vendor;
-  const TotalInventory = product.totalInventory;
+
   const RelatedProds = product.collections[0]?.products.slice(0,4);
   const VendorProds = product.collections[1]?.products.slice(0,4);
   const Variants = product.variants;
@@ -59,6 +52,7 @@ export const query = graphql`
   query productQuery($id: String) {
     shopifyProduct(id: { eq: $id }) {
       title
+      description
       descriptionHtml
       handle
       vendor

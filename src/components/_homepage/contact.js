@@ -3,6 +3,10 @@ import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
 import { Container, Button } from '../Components'
 import Map, { Marker, Popup } from 'react-map-gl'
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxgl from '!mapbox-gl';
+  
 import {
   FaMapMarkerAlt,
   FaEnvelope,
@@ -14,6 +18,7 @@ import MapMaker from './../../images/marker.svg'
 import * as sty from './contact.module.scss'
 import { StoreContext } from '../../context/store-context'
 
+
 export const Contact = ({ marker, header, description, cta, email, phone }) => {
   const TOKEN =
     'pk.eyJ1IjoiYWh2ZG9kZCIsImEiOiJjbGFzcnIzbWsyNjR2M3FtaThia2UwbmY5In0.iW4eOap84EcSZuzCRTZYWA'
@@ -21,8 +26,8 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
   const { location } = React.useContext(StoreContext)
   const { map: mapCoords, contact } = location || {}
   const [viewState, setViewState] = React.useState({
-    latitude: marker.latitude,
-    longitude: marker.longitude,
+    latitude: marker?.latitude,
+    longitude: marker?.longitude,
     zoom: 14.5,
   });
   React.useEffect(() => (

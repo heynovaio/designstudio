@@ -17,12 +17,14 @@
     .featuredImg {
         grid-column: 1/span 2;
         aspect-ratio: 7/5;
+        
     }
     .featuredImg,.subImg{
         background: $color-white;
         border: 1px solid rgba($color-black, 0.3);
 
         position: relative;
+        overflow: hidden;
         
     }
     .subImg {
