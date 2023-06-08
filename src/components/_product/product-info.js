@@ -91,7 +91,7 @@ export const ProductInfo = ({ product }) => {
 					<div className={sty.productImages}>
 						<div className={sty.featuredImg}>
 							<GatsbyImage 
-								image={getImage(featuredImage,715,512,"constrained")} 
+								image={getImage(featuredImage,715,512)} 
 								alt=""
 								className={sty.image}
 							/>
@@ -99,7 +99,7 @@ export const ProductInfo = ({ product }) => {
 						{media.slice(1,3).map((item,index) => (
 							<div className={sty.subImg} key={`subImg:${index}`}>
 								<GatsbyImage 
-									image={getImage(item.image,350,293,"constrained")}
+									image={getImage(item.image,350,293)}
 									alt=""
 									className={sty.image}
 								/>
