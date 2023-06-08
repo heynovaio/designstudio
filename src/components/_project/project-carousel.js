@@ -23,13 +23,11 @@ export const ProjectCarousel = ({Gallery,Description}) => {
 	};
 	const ButtonGroup = ({ next, previous }) => {
 		return (
-			<div className="carousel-button-group">
-				<button className="next" onClick={() => { 
-						next(); 
-					}}>
-					<IoIosArrowForward />
-				</button>
-			</div>
+		<button className={sty.carouselNext} onClick={() => { 
+				next(); 
+			}}>
+			<IoIosArrowForward />
+		</button>
 		);
 	};
 	return (

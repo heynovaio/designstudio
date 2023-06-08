@@ -25,3 +25,17 @@
 .copyWrap {
     max-width: 866px;
 }
+
+.carouselNext {
+    margin: 20px 15px 20px auto;
+    background: darken($color-lightorange, 8%);
+    width: 60px;
+    font-size: 1.875em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: $bradius;
+    z-index: 3;
+}
+  
