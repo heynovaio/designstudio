@@ -41,7 +41,7 @@ export const ProjectGrid = ({ slice }) => {
             </div>
             <div className={sty.grid}>
               {tagProd(item.project_tag).map((prod, index) => (
-                <div key={`prod:${index}`}>
+                <div className={sty.project} key={`prod:${index}`}>
                   <PrismicLink
                     className={sty.imageWrap}
                     href={`/project/${prod.uid}`}
