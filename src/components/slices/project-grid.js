@@ -27,7 +27,7 @@ export const ProjectGrid = ({ slice }) => {
   const products = data.allPrismicProject?.nodes || {}
   function tagProd(tag) {
     return products.filter(
-      (prod) => prod.tags[0].toLowerCase() == tag.toLowerCase(),
+      (prod) => prod.tags[0]?.toLowerCase() == tag.toLowerCase(),
     )
   }
 
