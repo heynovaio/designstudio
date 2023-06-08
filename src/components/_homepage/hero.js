@@ -23,7 +23,6 @@ export const Hero = ({
       items: 1,
     },
   }
-  const labels = ['Beachhouse & Sunset Drive', 'test 2']
   const [slideIndex, setSlideIndex] = React.useState(0)
   const slideLength = gallery.length
   const handleSlide = () => {
@@ -33,7 +32,6 @@ export const Hero = ({
     return (
       <div className={sty.carouselButtonGroup}>
         <div className={sty.carouselTitleGroup}>
-          <div className={sty.carouselTitle}>Beachhouse & Sunset Drive</div>
           <div className={sty.carouselCounter}>
             <b>{slideIndex + 1} </b> of {slideLength}
           </div>
@@ -67,45 +65,30 @@ export const Hero = ({
                 customButtonGroup={<ButtonGroup />}
                 dotListClass={sty.dotGroup}
               >
-                {gallery && (
-                  <div className={sty.grid}>
-                    {gallery.map((item, index) => (
+     
+                  {gallery.map((item, index) => (
+                    <><div className={sty.grid}>
                       <div key={index} className={sty.item}>
                         <GatsbyImage
                           image={item.image?.gatsbyImageData}
                           alt={item.image?.alt || ''}
-                          className={sty.image}
-                        />
+                          className={sty.image} />
                       </div>
-                    ))}
-                  </div>
-                )}
-                {gallery && (
-                  <div className={sty.grid}>
-                    {gallery.map((item, index) => (
                       <div key={index} className={sty.item}>
                         <GatsbyImage
-                          image={item.image?.gatsbyImageData}
-                          alt={item.image?.alt || ''}
-                          className={sty.image}
-                        />
+                          image={item.image_2?.gatsbyImageData}
+                          alt={item.image_2?.alt || ''}
+                          className={sty.image} />
                       </div>
-                    ))}
-                  </div>
-                )}
-                {gallery && (
-                  <div className={sty.grid}>
-                    {gallery.map((item, index) => (
                       <div key={index} className={sty.item}>
                         <GatsbyImage
-                          image={item.image?.gatsbyImageData}
-                          alt={item.image?.alt || ''}
-                          className={sty.image}
-                        />
+                          image={item.image_3?.gatsbyImageData}
+                          alt={item.image_3?.alt || ''}
+                          className={sty.image} />
                       </div>
-                    ))}
-                  </div>
-                )}
+                    </div><div key={index} className={sty.carouselTitle}>{item.project_name}</div></>
+                  ))}
+          
               </MultiCarousel>
             </div>
 

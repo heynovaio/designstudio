@@ -117,6 +117,15 @@ export const query = graphql`
             gatsbyImageData
             alt
           }
+          image_2 {
+            gatsbyImageData
+            alt
+          }
+          image_3 {
+            gatsbyImageData
+            alt
+          }
+          project_name
         }
         below_hero_richtext {
           richText
