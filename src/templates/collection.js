@@ -190,9 +190,10 @@ const CollectionTemplate = ({ data }) => {
                       <div className={sty.imageBox}>
                         {item.featuredImage &&
                           <GatsbyImage 
-                            image={getShopifyImage({image: item.featuredImage, width: 322, height: 265, layout: "constrained"})}
+                            image={getShopifyImage({image: item.featuredImage})}
                             alt=""
                             className={sty.image}
+                            imgStyle={{objectFit: 'contain'}}
                           />
                         }
                         
