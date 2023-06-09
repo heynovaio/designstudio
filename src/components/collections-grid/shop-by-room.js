@@ -42,7 +42,7 @@ export const ShopByRoom = ({ gallery }) => {
           <PrismicLink
             className={sty.gridItem}
             key={`collection:${index}`}
-            href={`./collection/${item.room_link_label}`}
+            href={`/collection/${item.room_link_label}`}
           >
             <div className={sty.imgBox}>
               <GatsbyImage

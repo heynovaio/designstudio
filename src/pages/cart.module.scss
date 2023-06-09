@@ -10,7 +10,6 @@
 
 .table {
   flex: 1;
-  
   margin: auto;
   width: 100%;
   display: grid;
@@ -21,7 +20,6 @@
 .table th {
   text-align: left;
   text-transform: uppercase;
-
 }
 
 .table tr,
@@ -29,9 +27,11 @@
 .table tbody {
   display: contents;
 }
+
 .legend th{
   padding-bottom: 20px;
 }
+
 .wrap {
   display: flex;
   flex-direction: column;

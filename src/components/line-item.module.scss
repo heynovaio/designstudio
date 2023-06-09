@@ -5,7 +5,12 @@
   font-weight: bold;
   line-height: 1;
   padding-bottom: 16px;
+
+  @media (max-width: $tablet) {
+    font-size: 1em;
+  }
 }
+
 .tableCell {
   padding-right: 16px;
   padding-bottom: 16px;
