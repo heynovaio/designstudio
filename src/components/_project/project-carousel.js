@@ -32,32 +32,33 @@ export const ProjectCarousel = ({Gallery,Description}) => {
 	};
 	return (
 		<>
-		{Gallery.length > 1 &&
 			<section>
 				<Container>
-					<div className={sty.carouselWrap}>
-						<MultiCarousel
-							ssr={true}
-							infinite={true}
-							arrows={false}
-							swipeable={true}
-							responsive={responsive}
-							showDots={false}
-							renderButtonGroupOutside={true}
-							customButtonGroup={<ButtonGroup />}
-							
-						>
-							{Gallery.map((item,index) => (
-								<div className={sty.galleryItem} key={`gallery:${index}`}>
-									<GatsbyImage
-										image={item.image?.gatsbyImageData}
-										alt={item.image?.alt || ""}
-										className={sty.image}
-									/>
-								</div>
-							))}
-						</MultiCarousel>
-					</div>
+					{Gallery.length > 1 &&
+						<div className={sty.carouselWrap}>
+							<MultiCarousel
+								ssr={true}
+								infinite={true}
+								arrows={false}
+								swipeable={true}
+								responsive={responsive}
+								showDots={false}
+								renderButtonGroupOutside={true}
+								customButtonGroup={<ButtonGroup />}
+								
+							>
+								{Gallery.map((item,index) => (
+									<div className={sty.galleryItem} key={`gallery:${index}`}>
+										<GatsbyImage
+											image={item.image?.gatsbyImageData}
+											alt={item.image?.alt || ""}
+											className={sty.image}
+										/>
+									</div>
+								))}
+							</MultiCarousel>
+						</div>
+					}
 					<div className={sty.Content}>
 						<div className={sty.copyWrap}>
 							<PrismicRichText field={Description.richText}/>
@@ -65,7 +66,6 @@ export const ProjectCarousel = ({Gallery,Description}) => {
 					</div>
 				</Container>
 			</section>
-		}
 		</>
 	);
 };
