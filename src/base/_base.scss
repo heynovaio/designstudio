@@ -72,6 +72,7 @@ span.BtnSecondary {
   border: 2px solid $color-lightorange;
   background: $color-lightorange;
   padding: 14px 23px;
+  max-width: 100%;
 
   &:hover {
     border-color: $color-black;

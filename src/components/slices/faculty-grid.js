@@ -11,10 +11,16 @@ export const FacultyGrid = ({ slice }) => {
 
   const handleClick = (e) => {
     setActiveBio(e.target.value);
-    console.log(e.target.value);
+  
+    if (typeof document !== `undefined`) {
+      document.body.classList.toggle('modal-open');
+    }
   }
   const handleClose = (e) => {
     setActiveBio(-1);
+    if (typeof document !== `undefined`) {
+      document.body.classList.remove('modal-open');
+    }
   }
   return (
     <section className={sty.FacultyGrid}>
@@ -25,13 +31,12 @@ export const FacultyGrid = ({ slice }) => {
         <div className={sty.grid}>
           {slice.items.map((item,index) => (
             <div className={sty.employeeCard}>
-              <div className={sty.imageWrap}>
-                <GatsbyImage
-                  image={item.image?.gatsbyImageData}
-                  alt={item.image?.alt || ""}
-                  className={sty.image}
+              <GatsbyImage
+                image={item.image?.gatsbyImageData}
+                alt={item.image?.alt || ""}
+                className={sty.image}
+                imgStyle={{ objectPosition: 'right 20%' }}
                 />
-              </div>
               <div className={sty.copyWrap}>
                 <span className={sty.name}>{item.name}</span>
                 <p className={sty.subName}>
@@ -49,13 +54,6 @@ export const FacultyGrid = ({ slice }) => {
         {activeBio != -1 && ( 
           <div className={sty.bioModalWrap} >
             <div className={sty.bioModal}>
-              <div className={sty.imageWrap}>
-                <GatsbyImage
-                  image={slice.items[activeBio]?.image?.gatsbyImageData}
-                  alt={slice.items[activeBio]?.image?.alt || ""}
-                  className={sty.image}
-                />
-              </div>
               <div className={sty.copyWrap}>
                 <div className={sty.close} onClick={handleClose}>
                   <IoClose/>
@@ -67,8 +65,14 @@ export const FacultyGrid = ({ slice }) => {
                 <PrismicRichText field={slice.items[activeBio]?.bio?.richText}/>
               
               </div>
+              <div className={sty.imageWrapModal}>
+                <GatsbyImage
+                  image={slice.items[activeBio]?.image?.gatsbyImageData}
+                  alt={slice.items[activeBio]?.image?.alt || ""}
+                  className={sty.image}
+                />
+              </div>
             </div>
-            <button className={sty.bioBack} onClick={handleClose}/>
           </div>
         )}
       </Container>
