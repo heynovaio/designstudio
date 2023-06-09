@@ -35,6 +35,9 @@ export const Hero = ({
       <div className={sty.carouselButtonGroup}>
         <div className={sty.carouselTitleGroup}>
           <div className={sty.carouselCounter}>
+              {gallery.map((item, index) => (
+                <span key={index} className={sty.carouselTitle}>{item.project_name}</span>
+              ))}
             <b>{slideIndex + 1} </b> of {slideLength}
           </div>
         </div>
