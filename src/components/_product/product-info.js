@@ -21,7 +21,7 @@ export const ProductInfo = ({ product }) => {
 		media
 	} = product
 	function getImage(img, w, h, lay){
-		return getShopifyImage({image: img, width: w, height: h, layout: lay});
+		return getShopifyImage({image: img, layout: lay});
 	}
 
 	const { client } = React.useContext(StoreContext)
@@ -91,17 +91,19 @@ export const ProductInfo = ({ product }) => {
 					<div className={sty.productImages}>
 						<div className={sty.featuredImg}>
 							<GatsbyImage 
-								image={getImage(featuredImage,715,512)} 
+								image={getImage(featuredImage)} 
 								alt=""
 								className={sty.image}
+								imgStyle={{objectFit: 'contain'}}
 							/>
 						</div>
 						{media.slice(1,3).map((item,index) => (
 							<div className={sty.subImg} key={`subImg:${index}`}>
 								<GatsbyImage 
-									image={getImage(item.image,350,293)}
+									image={getImage(item.image)}
 									alt=""
 									className={sty.image}
+									imgStyle={{objectFit: 'contain'}}
 								/>
 							</div>
 						))}
@@ -111,7 +113,7 @@ export const ProductInfo = ({ product }) => {
 						<span className={sty.price}>{price}</span>
 						<div className={sty.purchase}>
 							<p>Quantity</p>
-							<input type='number' min='1' max="100" onChange={(e) => {setQuantity(e.target.value)}}/>
+							<input type='number' min='1' max="100" value={quantity} onChange={(e) => {setQuantity(e.target.value)}}/>
 							<AddToCart
 								variantId={productVariant.storefrontId}
 								quantity={quantity}
@@ -122,8 +124,8 @@ export const ProductInfo = ({ product }) => {
 						<div className={sty.description}>
 							<span className={sty.tabHeader}>Overview</span>
 							
-							<div dangerouslySetInnerHTML={{__html: description}} className={sty.overview}/>
-							<Button variant="White">Save in Wishlist</Button>
+							<div dangerouslySetInnerHTML={{__html: product?.descriptionHtml}} className={sty.overview}/>
+							{/* <Button variant="White">Save in Wishlist</Button> */}
 						</div>
 					</div>
 				</div>
