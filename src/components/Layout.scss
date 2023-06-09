@@ -3,8 +3,10 @@
 //this is compensating for the space taken up by the top menu
 .main {
   padding-top: 60px;
+  overflow-x: hidden;
+}
 
-  @media (min-width: $tablet) {
-    padding-top: 30px;
-  }
+//tl-edges fix with sticky menu
+.tl-wrapper {
+  transform: none!important
 }
