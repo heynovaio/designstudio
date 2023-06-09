@@ -10,14 +10,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-prismic-previews',
-      options: {
-        repositoryName: prismicConfig.prismicRepo,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-        linkResolver: require('./src/utils/linkResolver').linkResolver,
-      },
-    },
-    {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: prismicConfig.prismicRepo,  
