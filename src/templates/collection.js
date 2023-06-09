@@ -119,7 +119,7 @@ const CollectionTemplate = ({ data }) => {
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <section style={{paddingTop: 20}}>
         <Container>
-          {Collection.image && (
+          {/* {Collection.image && (
             <div className={sty.bannerWrap}>
             
               <GatsbyImage
@@ -128,7 +128,7 @@ const CollectionTemplate = ({ data }) => {
                 className={sty.image}
               />
             </div>
-          )}
+          )} */}
           <div style={{marginBottom: 80}}>
             <h1 style={{fontSize:42, fontWeight: "600"}}>{Collection.title}</h1>
           </div>
