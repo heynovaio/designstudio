@@ -96,7 +96,7 @@ export const Hero = ({
             </div>
 
             <div className={sty.copy}>
-              <Parallax translateY={[-50, 50]}>  
+              <Parallax translateY={[-20, 50]}>  
               {title && (
                 <PrismicRichText field={title.richText} className={sty.title} />
               )}

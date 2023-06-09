@@ -5,6 +5,14 @@
     border-radius: $bradius;
     height: max-content;
     width: max-content;
+
+    .product-image {
+        display: none;
+
+        @media (min-width: $tablet) {
+            display: block;
+        }
+    }
 }
 .product {
     position: absolute;

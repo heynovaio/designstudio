@@ -17,25 +17,24 @@ export const InstagramFeed = ({ header, viewLabel, viewBtnLabel, viewBtnLink,med
 			<Container>
 				<div className={sty.feed}>
 					<PrismicRichText field={header.richText}/>
-					<div className={sty.grid}>
-
-					</div>
 				</div>
 				<div className={sty.media}
 					data-sal="slide-up"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          data-sal-duration="750"
+					data-sal-delay="300"
+					data-sal-easing="ease"
+					data-sal-duration="750"
 				>
 					<span>{viewLabel}</span>
-					{media.map((item,index) => (
-						<div className={sty.mediaWrap} key={`media:${index}`}>
-							<GatsbyImage
-								image={item.media_image?.gatsbyImageData}
-								alt={item.media_image?.alt}
-							/>
-						</div>
-					))}
+					<div className={sty.logoSoup}>
+						{media.map((item,index) => (
+							<div className={sty.mediaWrap} key={`media:${index}`}>
+								<GatsbyImage
+									image={item.media_image?.gatsbyImageData}
+									alt={item.media_image?.alt}
+								/>
+							</div>
+						))}
+					</div>
 					<PrismicLink href={viewBtnLink?.url}>
 						{viewBtnLabel}
 					</PrismicLink>

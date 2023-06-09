@@ -38,16 +38,20 @@
 
 .copy {
   width: 100%;
-  max-width: width(10);
   text-align: center;
   margin: 0 auto;
   padding-top: $v-padding;
   padding-bottom: $v-padding;
 
+
   .description {
     margin-bottom: 23px;
     padding-top: 20px;
     font-weight: lighter;
+  }
+
+  @media (min-width: $tablet) {
+    max-width: width(10);
   }
 
   @media (min-width: $desktop) {

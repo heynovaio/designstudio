@@ -4,10 +4,17 @@
 	display: flex;
 }
 .media {
-	display: flex;
-	gap: 40px;
 	align-items: center;
 	padding: 80px 0 0;
+	text-align: center;
+
+	.logo-soup {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px;
+		justify-content: center;
+		margin: 20px 0;
+	}
 
 	span {
 		font-weight: 600;
@@ -20,6 +27,15 @@
 		line-height: 28px;
 		text-decoration: underline;
 		color: $color-rustorange;
+	}
+
+	@media (min-width: $tablet) {
+		display: flex;
+		gap: 40px;
+
+		.logo-soup {
+			margin: 0;
+		}
 	}
 }
 

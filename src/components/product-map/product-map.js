@@ -12,6 +12,7 @@ export const ProductMap = ({ image, products }) => {
 			<GatsbyImage
 				image={image?.gatsbyImageData}
 				alt={image?.alt || ""}
+				className={sty.productImage}
 			/>
 			{products.map((item, index) => (
 				<div 
