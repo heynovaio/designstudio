@@ -13,7 +13,7 @@ export const CenterText = ({ Title, Description, Btn }) => {
             <div className={sty.copy}>
               <h1>{Title}</h1>
               <p>{Description}</p>
-              <PrismicLink href={'/collection/in-stock'}>
+              <PrismicLink href={'/collection/all'}>
                 <Button>{Btn}</Button>
               </PrismicLink>
             </div>

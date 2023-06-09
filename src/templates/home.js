@@ -32,6 +32,8 @@ const HomeTemplate = ({ data }) => {
   const heroDescription = node.hero_description
   const catalogBtnLabel = node.catalog_btn_label
   const worksBtnLabel = node.works_btn_label
+  const btn1 = node.btn_1
+  const btn2 = node.btn_2
   const heroGallery = node.hero_gallery
   const bellowHero = node.below_hero_richtext
 
@@ -42,7 +44,9 @@ const HomeTemplate = ({ data }) => {
   const catalogByRoomGallery = node.catalog_by_room_gallery
 
   const instaHeader = node.instagram_header
+  const viewLabel = node.view_media_label
   const viewBtnLabel = node.view_media_btn_label
+  const viewBtnLink = node.view_media_btn_link
   const media = node.all_media
 
   const testimonials = node.testimonials
@@ -61,7 +65,9 @@ const HomeTemplate = ({ data }) => {
         title={heroTitle}
         description={heroDescription}
         catalogLabel={catalogBtnLabel}
+        catalogLink={btn1}
         worksLabel={worksBtnLabel}
+        worksLink={btn2}
         gallery={heroGallery}
         bottom={bellowHero}
       />
@@ -74,7 +80,9 @@ const HomeTemplate = ({ data }) => {
       />
       <InstagramFeed
         header={instaHeader}
+        viewLabel={viewLabel}
         viewBtnLabel={viewBtnLabel}
+        viewBtnLink={viewBtnLink}
         media={media}
       />
       <Testimonials
@@ -112,6 +120,12 @@ export const query = graphql`
         hero_description
         catalog_btn_label
         works_btn_label
+        btn_1 {
+          url
+        }
+        btn_2 {
+          url
+        }
         hero_gallery {
           image {
             gatsbyImageData
@@ -164,7 +178,9 @@ export const query = graphql`
           }
         }
         view_media_btn_label
-
+        view_media_btn_link {
+          url
+        }
         testimonials {
           testimonial_image {
             gatsbyImageData

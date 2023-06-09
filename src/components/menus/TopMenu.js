@@ -100,7 +100,7 @@ const NavBarIcons = () => {
       {/* <PrismicLink className={sty.icon} href={'/'}>
         <BiHeart size={25} />
       </PrismicLink> */}
-      <PrismicLink href={'/collection/in-stock'}>
+      <PrismicLink href={'/collection/all'}>
         <BiSearch size={25} />
       </PrismicLink>
       <CartButton quantity={quantity} />

@@ -5,7 +5,7 @@ import { Container, Button } from "../Components"
 
 import * as sty from "./instagram-feed.module.scss"
 
-export const InstagramFeed = ({ header, viewBtnLabel, media }) => {
+export const InstagramFeed = ({ header, viewLabel, viewBtnLabel, viewBtnLink,media }) => {
 	const responsive = {
 		mobile: {
 			breakpoint: { max: 10000, min: 0 },
@@ -27,7 +27,7 @@ export const InstagramFeed = ({ header, viewBtnLabel, media }) => {
           data-sal-easing="ease"
           data-sal-duration="750"
 				>
-					<span>AS SEEN IN</span>
+					<span>{viewLabel}</span>
 					{media.map((item,index) => (
 						<div className={sty.mediaWrap} key={`media:${index}`}>
 							<GatsbyImage
@@ -36,7 +36,7 @@ export const InstagramFeed = ({ header, viewBtnLabel, media }) => {
 							/>
 						</div>
 					))}
-					<PrismicLink href={"/"}>
+					<PrismicLink href={viewBtnLink?.url}>
 						{viewBtnLabel}
 					</PrismicLink>
 				</div>

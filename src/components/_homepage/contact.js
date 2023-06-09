@@ -28,7 +28,7 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
     'pk.eyJ1IjoiYWh2ZG9kZCIsImEiOiJjbGFzcnIzbWsyNjR2M3FtaThia2UwbmY5In0.iW4eOap84EcSZuzCRTZYWA'
 
   const { location } = React.useContext(StoreContext)
-  const { map: mapCoords, contact } = location || {}
+  const { map: mapCoords, contact, name } = location || {}
   const [viewState, setViewState] = React.useState({
     latitude: marker?.latitude,
     longitude: marker?.longitude,
@@ -71,7 +71,7 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
           </Map>
         </div>
         <div className={sty.copy}>
-          <PrismicRichText field={header?.richText} />
+          <h2>Contact Us at {name}</h2>
           <p className={sty.description}>{description}</p>
           <div className={sty.contactList}>
             <div className={sty.info}>
@@ -83,7 +83,7 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
             <div className={sty.info}>
               <p>
                 <FaMapMarkerAlt />
-                48 Market St, Camana Bay, Grand Cayman, Cayman Islands
+                {contact?.address}
               </p>
             </div>
           </div>

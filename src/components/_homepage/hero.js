@@ -14,6 +14,8 @@ export const Hero = ({
   description,
   catalogLabel,
   worksLabel,
+  worksLink,
+  catalogLink,
   gallery,
   bottom,
 }) => {
@@ -101,10 +103,10 @@ export const Hero = ({
               <p className={sty.description}>{description}</p>
 
               <div className={sty.btnWrap}>
-                <PrismicLink href={'/'}>
+                <PrismicLink href={catalogLink?.url}>
                   <Button>{catalogLabel}</Button>
                 </PrismicLink>
-                <PrismicLink href={'/'}>
+                <PrismicLink href={worksLink?.url}>
                   <Button variant="Secondary">{worksLabel}</Button>
                 </PrismicLink>
               </div>
