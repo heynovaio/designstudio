@@ -38,7 +38,8 @@
     "react-scroll-parallax": "^3.3.2",
     "sass": "^1.58.0",
     "shopify-buy": "^2.17.1",
-    "urql": "^3.0.3"
+    "urql": "^3.0.3",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
