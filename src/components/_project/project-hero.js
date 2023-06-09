@@ -26,8 +26,12 @@ export const ProjectHero = ({Banner, Tags, Name, Type, Moment}) => {
 						<span className={sty.tag}>{Tags.map((tag => tag)
 						)}</span>
 						<h2>{Name}</h2>
+						{Type && 
 						<p><b>Project Type:</b> {Type}</p>
+						}
+						{Moment && 
 						<p><b>Favorite Moment:</b> {Moment}</p>
+						}
 					</div>
 				</div>
 				
