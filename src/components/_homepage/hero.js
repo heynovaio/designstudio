@@ -28,16 +28,15 @@ export const Hero = ({
   const [slideIndex, setSlideIndex] = React.useState(0)
   const slideLength = gallery.length
   const handleSlide = () => {
-    slideIndex >= 1 ? setSlideIndex(0) : setSlideIndex(slideIndex + 1)
+    slideIndex + 1 >= gallery?.length ? setSlideIndex(0) : setSlideIndex(slideIndex + 1)
   }
   const ButtonGroup = ({ next, previous }) => {
     return (
       <div className={sty.carouselButtonGroup}>
         <div className={sty.carouselTitleGroup}>
           <div className={sty.carouselCounter}>
-              {gallery.map((item, index) => (
-                <span key={index} className={sty.carouselTitle}>{item.project_name}</span>
-              ))}
+            <span  className={sty.carouselTitle}>{gallery[slideIndex].project_name}
+            </span>
             <b>{slideIndex + 1} </b> of {slideLength}
           </div>
         </div>
