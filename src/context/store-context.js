@@ -46,7 +46,7 @@ const locationValues = {
     contact: {
       email: 'michelle@designstudio.ky',
       phone: '(345) 945.4977',
-      cta: 'Check out our Turks and Caicos location',
+      cta: '',
       address: '48 Market St, Camana Bay, Grand Cayman, Cayman Islands'
     },
   },
@@ -60,7 +60,7 @@ const locationValues = {
     contact: {
       email: 'faye@designstudio.tc',
       phone: '(649) 941.4848',
-      cta: 'Check out our Cayman location',
+      cta: '',
       address: 'Unit B104 Regent St, Grace Bay TKCA 1ZZ, Turks and Caicos Islands'
     }
   },

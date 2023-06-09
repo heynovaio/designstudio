@@ -29,7 +29,7 @@ export const Testimonial = ({Banner,Title,Quote,Name,Gallery}) => {
 						<span className={sty.author}>{Name}</span>
 					</div>
 				}
-				{Gallery.length > 1 &&
+				{Gallery &&
 					<div className={sty.galleryWrap}>
 						{Gallery.map((item,index) => (
 							<div className={sty.imageWrap} key={`galleryItem: ${index}`}>

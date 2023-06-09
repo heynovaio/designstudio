@@ -34,7 +34,7 @@ export const ProjectCarousel = ({Gallery,Description}) => {
 		<>
 			<section>
 				<Container>
-					{Gallery.length > 1 &&
+					{Gallery.length > 0 &&
 						<div className={sty.carouselWrap}>
 							<MultiCarousel
 								ssr={true}
