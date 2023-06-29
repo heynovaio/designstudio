@@ -1,11 +1,5 @@
 @import '../../base/module';
 
-// .flexWrap {
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: space-between;
-// 	gap: 40px;
-// }
 .copy {
 	width: 100%;
 	max-width: width(12);
@@ -15,8 +9,8 @@
 	justify-content: center;
 
 	@media (min-width: $desktop) {
-    max-width: width(4);
-  }
+    	max-width: width(4);
+  	}
 
 	.description {
 		padding-top: $v-padding/2;
@@ -51,10 +45,11 @@
 .map {
 	width: 100%;
 	max-width: width(12);
-	aspect-ratio: 8/5;
+	aspect-ratio: 6/5;
 
 	@media (min-width: $desktop) {
     max-width: width(8);
+	aspect-ratio: 8/5;
   }
 }
 

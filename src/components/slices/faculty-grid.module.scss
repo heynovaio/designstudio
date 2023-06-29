@@ -67,7 +67,7 @@
 .bioModal {
     width: 90%;
     max-width: 1440px;
-    margin: 180px auto 0 auto;
+    margin: 120px auto 0 auto;
     padding: 20px 20px 40px 20px;
     background: $color-cream;
     z-index: 11;
@@ -91,6 +91,7 @@
 
     @media (min-width: $tablet) {
         display: flex;
+        margin: 180px auto 0 auto;
 
         .image-wrap-modal {
             order: 1;
