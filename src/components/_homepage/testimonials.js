@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { GatsbyImage} from 'gatsby-plugin-image'
-import { PrismicRichText} from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { PrismicRichText } from '@prismicio/react'
 import { FaChevronRight } from 'react-icons/fa'
-import { Container} from '../Components'
+import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax'
 
 export const Testimonials = ({ testimonials, background }) => {
   const [slide, setSlide] = React.useState(0)
@@ -20,9 +20,12 @@ export const Testimonials = ({ testimonials, background }) => {
   }
   return (
     <section className={sty.testimonials}>
-      <div className={sty.testimonialContainer} style={{ background: background}}>
+      <div
+        className={sty.testimonialContainer}
+        style={{ background: background }}
+      >
         <Container className={sty.flex}>
-        <div className={sty.quoteNav}>
+          <div className={sty.quoteNav}>
             <div className={sty.controlWrap}>
               <div className={sty.quoteControls}>
                 <div>
@@ -31,7 +34,7 @@ export const Testimonials = ({ testimonials, background }) => {
                 <div className={sty.dotList}>
                   {testimonials.map((item, index) => (
                     <div
-                      className={index === slide ? sty.activeDot : sty.dot}
+                      className={index === slide ? sty.activeDot : ''}
                       onClick={() => {
                         setSlide(index)
                       }}
@@ -53,7 +56,7 @@ export const Testimonials = ({ testimonials, background }) => {
                 alt={curTest.testimonial_image?.alt || ''}
                 className={sty.image}
               />
-            </Parallax>  
+            </Parallax>
           </div>
 
           <div className={sty.quotes}>
