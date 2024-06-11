@@ -9,7 +9,7 @@ export const CenterText = ({ Title, Description, Btn }) => {
     <section className={sty.CenterText}>
       <div className={sty.centerContainer}>
         <Container>
-          <div className={sty.centerWrap}>
+          <div>
             <div className={sty.copy}>
               <h1>{Title}</h1>
               <p>{Description}</p>
