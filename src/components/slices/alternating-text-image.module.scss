@@ -9,8 +9,13 @@
   align-items: center;
   gap: 40px;
   margin-bottom: 0px;
-  margin-top: 100px;
-  padding-top: 100px;
+  margin-top: 0;
+  padding-top: 50px;
+
+  @media (min-width: $desktop) {
+    margin-top: 100px;
+    padding-top: 100px;
+  }
 }
 .copyWrap {
   max-width: 600px;

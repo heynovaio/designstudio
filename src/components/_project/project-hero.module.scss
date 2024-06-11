@@ -6,8 +6,8 @@
 }
 .bannerWrap {
   width: calc(100% + 40px);
-  aspect-ratio: 7/3;
-  margin: 0 -20px 95px;
+  aspect-ratio: 5/3;
+  margin: 0 -20px 45px;
   position: relative;
   overflow: hidden;
   background: $color-darkgreen;
@@ -19,6 +19,11 @@
     transform: translate(-50%, -50%);
     width: calc(100%);
     height: 100%;
+  }
+
+  @media (min-width: $desktop) {
+    aspect-ratio: 7/3;
+    margin: 0 -20px 95px;
   }
 }
 .Content {

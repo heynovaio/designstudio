@@ -11,15 +11,23 @@ $width-copy_m: 580px;
 $width-copy_lg: 860px;
 
 /* Colors */
-$color-pyellow: #fff7c7;
-$color-lightorange: #F9B58E;
-$color-rustorange: #CE6034;
-$color-darkgreen: #28706F;
-$color-lightgreen: #00A28C;
-$color-cream: #FEF9F4;
-$color-grey: #dae2dd;
-$color-black: #061D1B;
+$color-orange: #F68623;
+$color-sage: #A8C3BE;
+$color-sagelt: #D7E5E2;
+$color-dove: #F5F3F2;
+$color-greymd: #87888E;
+$color-black: #53555E;
 $color-white: #fff;
+
+/* Remaps */
+$color-pyellow: $color-dove;
+$color-lightorange: $color-dove;
+$color-rustorange: $color-orange;
+$color-darkgreen: $color-sage;
+$color-lightgreen: $color-sagelt;
+$color-cream: $color-dove;
+$color-grey: $color-dove;
+
 
 $color-text: $color-black;
 $color-text-alt: $color-white;

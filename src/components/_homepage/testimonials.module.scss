@@ -1,24 +1,26 @@
 @import '../../base/module';
 
-// .flexWrap {
-//   display: flex;
-//   justify-content: space-between;
-//   min-height: 200px;
-//   align-items: flex-start;
-// }
+.flex {
+  display: block;
+
+  @media (min-width: $tablet) {
+    display: flex;
+  }
+}
 
 .testimonials {
   padding-top: 80px;
   overflow: hidden;
 
   .testimonial-container {
-    padding-top: $v-padding;
+    padding-top: 20px;
     padding-bottom: $v-padding;
     position: relative;
   }
 
   @media (min-width: $desktop) {
     margin-top: 0;
+    padding-top: $v-padding;
   }
 }
 
@@ -28,17 +30,23 @@
   width: 100%;
   max-width: width(12);
 
+  @media (min-width: $tablet) {
+    max-width: width(9);
+  }
+  
 	@media (min-width: $desktop) {
     max-width: width(9);
   }
 }
+
 .quoteWrap {
   max-width: 0;
   width: 0;
   visibility: hidden;
   position: relative;
-  padding: 60px 140px 60px 40px;
   display: none;
+  padding: 80px 0 0 0;
+  margin-top: 20px;
 
   p {
     font-weight: 300;
@@ -59,7 +67,8 @@
   }
 
   @media (min-width: $desktop) {
-    padding: 60px 80px;
+    padding: 60px 140px 0 40px;
+    margin-top: 0;
 
     p {
       font-size: 1.56em;
@@ -75,9 +84,9 @@
   display: block;
   flex: 1;
 }
+
 .author {
   font-weight: 700;
-  font-size: 27px;
   line-height: 28px;
   font-family: $font-header;
   text-align: center;
@@ -88,8 +97,12 @@
   padding: 13px 30px;
   background-color: $color-darkgreen;
   border-radius: $bradius;
+  margin-top: 15px;
 
-  margin-top: 60px;
+  @media (min-width: $desktop) {
+    font-size: 27px;
+    margin-top: 60px;
+  }
 }
 
 .quoteNav {
@@ -103,27 +116,23 @@
   max-width: width(12);
 
   @media (min-width: $tablet) {
-    min-height: 400px;
+    order: 2;
   }
   
 	@media (min-width: $desktop) {
     max-width: width(4);
+    min-height: 500px;
   }
 }
 
 .imageWrap {
-  width: 250px;
   aspect-ratio: 1/1;
-  border-radius: 50%;
+  border-radius: 99em;
   position: absolute;
   overflow: hidden;
-  border: 15px solid $color-grey;
-  outline: 15px solid $color-white;
-  top: -60px;
-  right: -60px;
+  display: none;
 
   .image {
-    // object-fit: cover;
     min-width: 100%;
     min-height: 100%;
   }
@@ -133,9 +142,10 @@
   }
 
   @media (min-width: $tablet) {
+    display: block;
     width: 350px;
-    top: -18%;
-    right: 10%;
+    top: -5%;
+    right: 6%;
     border: 25px solid $color-grey;
     outline: 25px solid $color-white;
   }
@@ -143,9 +153,10 @@
 
 .controlWrap {
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 49px;
 }
+
 .quoteControls {
   background: $color-lightorange;
   width: 100%;
