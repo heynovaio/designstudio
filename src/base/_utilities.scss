@@ -1,10 +1,9 @@
 @function width($num) {
-	@if($num == 12) {
-		@return 100%;
-	}
-	@else {
-		$width: 100%/ $slices * $num;
-		$gap: $gap/2;
-		@return unquote('calc(#{$width} - #{$gap})');
-	}
+  @if ($num == 12) {
+    @return 100%;
+  } @else {
+    $width: calc(100% / $slices) * $num;
+    $gap: calc($gap/2);
+    @return unquote('calc(#{$width} - #{$gap})');
+  }
 }
