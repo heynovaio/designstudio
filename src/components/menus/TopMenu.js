@@ -10,7 +10,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
-  const { updateLocale,location,locationOptions } = React.useContext(StoreContext)
+  const { updateLocale, location, locationOptions } = React.useContext(StoreContext)
   const [mobileMenu, setMobileMenu] = React.useState(false)
 
   const toggleMenu = () => {
@@ -22,7 +22,7 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
     
   }
   const handleChange = (e) => {
-    updateLocale(e.target.value)
+    updateLocale(e.target.dataValue)
   }
 
 
@@ -32,12 +32,12 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
       <a className={sty.skip_button} href="#main">
         Skip to Content
       </a>
-      <div className={sty.topBar}>
-        <select onChange={handleChange} value={location.name}>
-          {locationOptions?.map((local, i) => (
-            <option value={local} key={i}>{local}</option>
-          ))}
-        </select>
+        <div className={sty.topBar}>
+          <div>{location}</div>
+        {locationOptions?.map((local, i) => (
+          <button value={local} key={i} onClick={handleChange} className={location === local ? 'active' : ''}
+          >{local}</button>
+        ))}
       </div>
       <Container>
         <div className={sty.navBar}>
@@ -48,9 +48,9 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
               className={sty.logo}
             />
           </PrismicLink>
-          <div className={`${sty.NavWrap} ${mobileMenu? sty.navOpen : sty.navClosed}`}>
-            <div className={sty.MenuLinks}>
-              {menu.menu_links.map((item, index) => (
+          <div className={`${sty.NavWrap} ${mobileMenu ? sty.navOpen : sty.navClosed}`}>
+              <div className={sty.MenuLinks}>
+              {menu.simple_menu.map((item, index) => (
               <AniLink paintDrip to={item.link?.url} hex="#DAE2DD" duration={1} key={`menuLink:${index}`}>
                 {item.label}
               </AniLink>
@@ -118,7 +118,7 @@ export const query = graphql`
         gatsbyImageData
         alt
       }
-      menu_links {
+      simple_menu {
         link {
           url
         }
