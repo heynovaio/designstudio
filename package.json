@@ -38,7 +38,7 @@
     "react-multi-carousel": "^2.8.2",
     "react-scroll-parallax": "^3.3.2",
     "sass": "^1.58.0",
-    "shopify-buy": "^2.17.1",
+    "shopify-buy": "^2.22.0",
     "urql": "^3.0.3",
     "worker-loader": "^3.0.8"
   },
