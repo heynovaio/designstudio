@@ -58,7 +58,6 @@ const HomeTemplate = ({ data }) => {
   const contactEmail = menuNode.caymans_email
   const contactPhone = menuNode.caymans_phone
 
-
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <Hero
@@ -85,10 +84,7 @@ const HomeTemplate = ({ data }) => {
         viewBtnLink={viewBtnLink}
         media={media}
       />
-      <Testimonials
-        testimonials={testimonials}
-        background={'rgba(249, 181, 142, 0.4)'}
-      />
+      <Testimonials testimonials={testimonials} background={'#A8C3BE'} />
       <Contact
         marker={contactMapMarker}
         header={contactHeader}
