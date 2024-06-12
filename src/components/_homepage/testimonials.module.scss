@@ -27,6 +27,7 @@
 .quotes {
   display: flex;
   align-items: center;
+  flex-direction: column;
   width: 100%;
   max-width: width(12);
 
@@ -37,6 +38,24 @@
   @media (min-width: $desktop) {
     max-width: width(9);
   }
+}
+
+.quotesHead {
+  font-family: 'Commuters Sans';
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.62rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 50px;
+}
+
+.quotesHead p {
+  text-transform: uppercase;
+}
+
+.quotesHead h2 {
+  font-style: italic;
 }
 
 .quoteWrap {
@@ -65,7 +84,7 @@
 
 .quoteWrapActive {
   @extend .quoteWrap;
-  max-width: $width-copy_lg;
+  max-width: 100%;
   width: 100%;
   visibility: visible;
   display: block;
@@ -78,13 +97,14 @@
   font-family: $font-header;
   text-align: center;
   letter-spacing: 0.04em;
-  color: $color-white;
+  color: $color-black;
   display: block;
   width: max-content;
-  padding: 13px 30px;
+  padding: 13px 0px;
   background-color: $color-darkgreen;
   border-radius: $bradius;
   margin-top: 15px;
+  text-transform: uppercase;
 
   @media (min-width: $desktop) {
     font-size: 27px;

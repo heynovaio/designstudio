@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { GatsbyImage} from 'gatsby-plugin-image'
-import { PrismicRichText} from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { PrismicRichText } from '@prismicio/react'
 import { FaChevronRight } from 'react-icons/fa'
-import { Container} from '../Components'
+import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax'
 
 export const Testimonials = ({ testimonials, background }) => {
   const [slide, setSlide] = React.useState(0)
@@ -20,9 +20,12 @@ export const Testimonials = ({ testimonials, background }) => {
   }
   return (
     <section className={sty.testimonials}>
-      <div className={sty.testimonialContainer} style={{ background: background}}>
+      <div
+        className={sty.testimonialContainer}
+        style={{ background: background }}
+      >
         <Container className={sty.flex}>
-        <div className={sty.quoteNav}>
+          <div className={sty.quoteNav}>
             <div className={sty.controlWrap}>
               <div className={sty.quoteControls}>
                 <div>
@@ -53,7 +56,7 @@ export const Testimonials = ({ testimonials, background }) => {
                 alt={curTest.testimonial_image?.alt || ''}
                 className={sty.image}
               />
-            </Parallax>  
+            </Parallax>
           </div>
 
           <div className={sty.quotes}>
@@ -64,6 +67,10 @@ export const Testimonials = ({ testimonials, background }) => {
                 }
                 key={`testimonial:${index}`}
               >
+                <div className={sty.quotesHead}>
+                  <p>We love what we do</p>
+                  <h2>Kind Words from Clients</h2>
+                </div>
                 <PrismicRichText field={item.testimonial_richtext?.richText} />
                 <span className={sty.author}>{item.testimonial_author}</span>
               </div>
