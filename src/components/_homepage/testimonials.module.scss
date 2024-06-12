@@ -53,19 +53,6 @@
     font-size: 1.3em;
   }
 
-  &:before {
-    content: '“';
-    font-size: 93px;
-    font-weight: 400;
-    top: 0;
-    left: 0;
-    position: absolute;
-    height: 0;
-
-    font-family: 'Poller One';
-    color: $color-rustorange;
-  }
-
   @media (min-width: $desktop) {
     padding: 60px 140px 0 40px;
     margin-top: 0;
