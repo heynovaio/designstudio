@@ -34,6 +34,14 @@ module.exports = {
         display: 'swap',
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'wpa8mum'
+        }
+      },
+    },
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-transition-link`,
     'gatsby-plugin-image',
