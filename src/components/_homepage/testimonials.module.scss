@@ -26,7 +26,7 @@
 
 .quotes {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   width: 100%;
   max-width: width(12);
@@ -56,6 +56,7 @@
 
 .quotesHead h2 {
   font-style: italic;
+  font-weight: 400;
 }
 
 .quoteWrap {
@@ -160,12 +161,11 @@
 
 .controlWrap {
   display: flex;
-  width: 100%;
-  height: 49px;
+  width: 30%;
+  margin-top: 1.62rem;
 }
 
 .quoteControls {
-  background: $color-lightorange;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -189,7 +189,7 @@
       border-radius: 99em;
 
       &.activeDot {
-        background: $color-lightgreen;
+        background: $color-black;
       }
     }
   }
@@ -204,7 +204,6 @@
   border-radius: 0 $bradius $bradius 0;
   cursor: pointer;
 
-  background: darken($color-lightorange, 8%);
   svg {
     font-size: 26px;
   }
