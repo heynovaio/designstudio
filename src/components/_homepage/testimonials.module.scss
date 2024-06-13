@@ -41,7 +41,7 @@
 }
 
 .quotesHead {
-  font-family: 'Commuters Sans';
+  font-family: $font-secondary;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
@@ -55,6 +55,7 @@
 }
 
 .quotesHead h2 {
+  font-family: $font-header;
   font-style: italic;
   font-weight: 400;
 }
@@ -93,9 +94,9 @@
 }
 
 .author {
-  font-weight: 700;
   line-height: 28px;
-  font-family: $font-header;
+  font-family: $font-secondary;
+  font-weight: 600;
   text-align: center;
   letter-spacing: 0.04em;
   color: $color-black;
@@ -156,7 +157,6 @@
   align-items: center;
   padding: 10px 2.5rem;
   font-size: 1.25em;
-  font-family: $font-header;
   border-radius: $bradius 0 0 $bradius;
   line-height: 1.5em;
 
@@ -193,6 +193,6 @@
 }
 
 .counter {
-  font-family: 'Commuters Sans';
+  font-family: '$font-secondary';
   font-size: 1.2em;
 }
