@@ -12,7 +12,7 @@ export const AwardsGallery = ({ slice }) => {
       <Container>
         <div className={sty.awardRow}>
           {slice.items.map((item, index) => (
-            <div className={sty.award} key={`Award:${index}`}>
+            <div key={`Award:${index}`}>
               <div className={sty.imageWrap}>
                 <GatsbyImage
                   image={item.image?.gatsbyImageData}
