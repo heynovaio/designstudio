@@ -49,6 +49,8 @@ const HomeTemplate = ({ data }) => {
   const viewBtnLink = node.view_media_btn_link
   const media = node.all_media
 
+  const dsCircleLogo = node.ds_circle_logo
+
   const testimonials = node.testimonials
 
   const contactMapMarker = node.contact_map_marker
@@ -84,7 +86,11 @@ const HomeTemplate = ({ data }) => {
         viewBtnLink={viewBtnLink}
         media={media}
       />
-      <Testimonials testimonials={testimonials} background={'#A8C3BE'} />
+      <Testimonials
+        testimonials={testimonials}
+        background={'#A8C3BE'}
+        ds_circle_logo={dsCircleLogo}
+      />
       <Contact
         marker={contactMapMarker}
         header={contactHeader}
@@ -177,11 +183,11 @@ export const query = graphql`
         view_media_btn_link {
           url
         }
+        ds_circle_logo {
+          gatsbyImageData
+          alt
+        }
         testimonials {
-          testimonial_image {
-            gatsbyImageData
-            alt
-          }
           testimonial_richtext {
             richText
           }

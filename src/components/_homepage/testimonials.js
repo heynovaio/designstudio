@@ -6,7 +6,7 @@ import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
 import { Parallax } from 'react-scroll-parallax'
 
-export const Testimonials = ({ testimonials, background }) => {
+export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
   const [slide, setSlide] = React.useState(0)
   const slideLength = testimonials.length
   const curTest = testimonials[slide]
@@ -26,13 +26,11 @@ export const Testimonials = ({ testimonials, background }) => {
       >
         <Container className={sty.flex}>
           <div className={sty.imageWrap}>
-            <Parallax translateY={[-20, 10]}>
-              <GatsbyImage
-                image={curTest.testimonial_image?.gatsbyImageData}
-                alt={curTest.testimonial_image?.alt || ''}
-                className={sty.image}
-              />
-            </Parallax>
+            <GatsbyImage
+              image={ds_circle_logo}
+              alt={curTest.testimonial_image?.alt || ''}
+              className={sty.image}
+            />
           </div>
 
           <div className={sty.quotes}>
