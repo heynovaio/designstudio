@@ -51,11 +51,11 @@ export const Testimonials = ({ testimonials, background }) => {
 
           <div className={sty.imageWrap}>
             <Parallax translateY={[-20, 10]}>
-              <GatsbyImage
+              {/* <GatsbyImage
                 image={curTest.testimonial_image?.gatsbyImageData}
                 alt={curTest.testimonial_image?.alt || ''}
                 className={sty.image}
-              />
+              /> */}
             </Parallax>
           </div>
 

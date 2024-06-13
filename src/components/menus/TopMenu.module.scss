@@ -35,11 +35,15 @@
 .navBar {
   width: 100%;
   height: 100%;
-  padding: 20px 0 25px;
+  padding: 25px 0 18px;
   display: flex;
   align-items: center;
   gap: 0;
   justify-content: space-between;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 10%;
 
   .icon-nav {
     display: flex;
@@ -49,48 +53,34 @@
   @media (min-width: $desktop) {
     gap: $gap;
   }
-}
-
-.topBar {
-  height: 40px;
-  background: $color-darkgreen;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  select {
-    background: none;
-    color: #fff;
-    font-weight: 700;
-    /* margin: 0 auto 0 0; */
+  @media (max-width: $tablet) {
     justify-content: flex-end;
-    align-items: flex-end;
-    display: block;
-    margin-right: 20px;
-    padding-right: 3px;
   }
 }
 
-.LogoWrap {
-  position: relative;
-  width: 100%;
-  max-width: width(5);
+.locationBtn {
+  background: transparent;
+  font-family: $font-secondary;
+  opacity: 50%;
+  text-transform: uppercase;
+  font-weight: 600;
+  vertical-align: top;
+  letter-spacing: 10%;
+  cursor: pointer;
 
-  .logo {
-    object-fit: contain;
-    max-width: 450px;
+  &:first-child::after {
+    content: '';
+    height: 20px;
+    width: 2px;
+    margin: 0 8px;
+    background: $color-orange;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 700;
   }
-
-  @media (min-width: $tablet) {
-    max-width: width(3);
-  }
-
-  @media (min-width: $desktop) {
-    max-width: width(4);
-  }
-
-  @media (min-width: $full) {
-    max-width: width(4.5);
-  }
+}
+.activeBtn {
+  opacity: 100%;
 }
 
 .mobileBtn {
@@ -136,7 +126,7 @@
       flex-wrap: wrap;
       flex-grow: 1;
       align-self: flex-start;
-      gap: $gap*2;
+      gap: 15px;
       font-size: 1em;
 
       a {

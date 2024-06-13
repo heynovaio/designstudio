@@ -182,10 +182,6 @@ export const query = graphql`
           url
         }
         testimonials {
-          testimonial_image {
-            gatsbyImageData
-            alt
-          }
           testimonial_richtext {
             richText
           }
