@@ -25,8 +25,6 @@ export const Testimonials = ({ testimonials, background }) => {
         style={{ background: background }}
       >
         <Container className={sty.flex}>
-          <div className={sty.quoteNav}></div>
-
           <div className={sty.imageWrap}>
             <Parallax translateY={[-20, 10]}>
               <GatsbyImage
@@ -69,9 +67,9 @@ export const Testimonials = ({ testimonials, background }) => {
                     />
                   ))}
                 </div>
-              </div>
-              <div className={sty.nextBtn} onClick={handleClick}>
-                <FaChevronRight />
+                <div className={sty.nextBtn} onClick={handleClick}>
+                  <FaChevronRight />
+                </div>
               </div>
             </div>
           </div>

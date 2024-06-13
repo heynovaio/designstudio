@@ -113,26 +113,6 @@
   }
 }
 
-.quoteNav {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  max-width: width(12);
-
-  @media (min-width: $tablet) {
-    order: 2;
-  }
-
-  @media (min-width: $desktop) {
-    max-width: width(4);
-    min-height: 500px;
-  }
-}
-
 .imageWrap {
   aspect-ratio: 1/1;
   border-radius: 99em;
@@ -151,9 +131,10 @@
 
   @media (min-width: $tablet) {
     display: block;
+    position: absolute;
     width: 350px;
-    top: -5%;
-    right: 6%;
+    top: 25%;
+    right: 4%;
     border: 25px solid $color-grey;
     outline: 25px solid $color-white;
   }
@@ -200,7 +181,7 @@
   align-items: center;
   justify-content: center;
   width: 50px;
-  margin-left: -2px;
+  margin-left: 12px;
   border-radius: 0 $bradius $bradius 0;
   cursor: pointer;
 
