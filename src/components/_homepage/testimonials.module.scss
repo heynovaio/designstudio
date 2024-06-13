@@ -115,7 +115,6 @@
 
 .imageWrap {
   aspect-ratio: 1/1;
-  border-radius: 99em;
   position: absolute;
   overflow: hidden;
   display: none;
@@ -126,7 +125,7 @@
   }
 
   > div {
-    height: 350px;
+    height: auto;
   }
 
   @media (min-width: $tablet) {
@@ -136,8 +135,11 @@
     top: 50%;
     transform: translateY(-50%);
     position: absolute;
-    width: 350px;
-    right: 4%;
+    width: 300px;
+    right: 1%;
+  }
+  @media (min-width: $desktop) {
+    width: 500px;
   }
 }
 
@@ -148,21 +150,21 @@
 }
 
 .quoteControls {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 15px;
   align-items: center;
-  padding: 10px 30px;
+  padding: 10px 2.5rem;
   font-size: 1.25em;
   font-family: $font-header;
   border-radius: $bradius 0 0 $bradius;
-  line-height: 1em;
+  line-height: 1.5em;
 
   .dotList {
     display: flex;
     gap: 10px;
     align-items: center;
-    padding-top: 5px;
+    padding-top: 2px;
 
     > div {
       width: 15px;
@@ -180,13 +182,17 @@
 .nextBtn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 50px;
-  margin-left: 12px;
   border-radius: 0 $bradius $bradius 0;
   cursor: pointer;
 
   svg {
     font-size: 26px;
   }
+}
+
+.counter {
+  font-family: 'Commuters Sans';
+  font-size: 1.2em;
 }

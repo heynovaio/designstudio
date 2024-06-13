@@ -27,8 +27,8 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
         <Container className={sty.flex}>
           <div className={sty.imageWrap}>
             <GatsbyImage
-              image={ds_circle_logo.gatsbyImageData}
-              alt={curTest.testimonial_image?.alt || ''}
+              image={ds_circle_logo?.gatsbyImageData}
+              alt={ds_circle_logo?.alt || ''}
               className={sty.image}
             />
           </div>
@@ -51,7 +51,7 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
             ))}
             <div className={sty.controlWrap}>
               <div className={sty.quoteControls}>
-                <div>
+                <div className={sty.counter}>
                   <b>{slide + 1}</b> of {slideLength}
                 </div>
                 <div className={sty.dotList}>
@@ -65,9 +65,9 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
                     />
                   ))}
                 </div>
-                <div className={sty.nextBtn} onClick={handleClick}>
-                  <FaChevronRight />
-                </div>
+              </div>
+              <div className={sty.nextBtn} onClick={handleClick}>
+                <FaChevronRight />
               </div>
             </div>
           </div>
