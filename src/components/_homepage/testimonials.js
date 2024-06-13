@@ -27,7 +27,7 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
         <Container className={sty.flex}>
           <div className={sty.imageWrap}>
             <GatsbyImage
-              image={ds_circle_logo}
+              image={ds_circle_logo.gatsbyImageData}
               alt={curTest.testimonial_image?.alt || ''}
               className={sty.image}
             />

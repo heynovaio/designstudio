@@ -130,13 +130,14 @@
   }
 
   @media (min-width: $tablet) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
     position: absolute;
     width: 350px;
-    top: 25%;
     right: 4%;
-    border: 25px solid $color-grey;
-    outline: 25px solid $color-white;
   }
 }
 

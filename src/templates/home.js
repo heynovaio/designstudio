@@ -89,7 +89,7 @@ const HomeTemplate = ({ data }) => {
       <Testimonials
         testimonials={testimonials}
         background={'#A8C3BE'}
-        ds_circle_logo={dsCircleLogo}
+        ds_circle_logo={catalogImage}
       />
       <Contact
         marker={contactMapMarker}
@@ -185,7 +185,6 @@ export const query = graphql`
         }
         ds_circle_logo {
           gatsbyImageData
-          alt
         }
         testimonials {
           testimonial_richtext {
