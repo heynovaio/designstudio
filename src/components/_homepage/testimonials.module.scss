@@ -43,16 +43,15 @@
 .quotesHead {
   font-size: 1.29em;
   font-family: $font-secondary;
-  font-style: normal;
-  font-weight: 600;
+
   line-height: 1.62rem;
   letter-spacing: 0.15rem;
   margin-bottom: 50px;
-  font-weight: 600;
 }
 
 .quotesHead p {
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .quotesHead h2 {
@@ -73,7 +72,6 @@
   font-size: 0.75em;
 
   p {
-    font-weight: 300;
     font-size: 1.3em;
   }
 
