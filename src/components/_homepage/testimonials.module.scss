@@ -73,6 +73,9 @@
 
   p {
     font-size: 1.3em;
+    @media (min-width: $tablet) {
+      width: 85%;
+    }
   }
 
   @media (min-width: $desktop) {
@@ -154,7 +157,7 @@
 .quoteControls {
   display: flex;
   justify-content: flex-start;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
 
   font-size: 1.25em;
@@ -191,8 +194,12 @@
   border-radius: 0 $bradius $bradius 0;
   color: $color-forestgreen;
   cursor: pointer;
+  margin-left: 15px;
   svg {
     font-size: 26px;
+  }
+  @media (min-width: $desktop) {
+    margin-left: -10px;
   }
 }
 
