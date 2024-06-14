@@ -11,37 +11,39 @@ export const BottomMenu = ({ menu }) => {
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
         <div className={sty.SocialColumn}>
-            <div className={sty.SocialGroup}>
-              <div className={sty.MenuLinkTitle}>Follow Us</div>
-              <ul className={`list-no-style ${sty.SocialLinks}`}>
-                {menu.socials.map((item, index) => (
-                  <li>
-                    <PrismicLink
-                      href={'/'}
-                      key={`socialLink:${index}`}
-                      className={sty.SocialLink}
-                    >
-                      <GatsbyImage
-                        image={item?.social_icon?.gatsbyImageData}
-                        alt={item.social_icon?.alt || ''}
-                      />
-                    </PrismicLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <PrismicLink className={sty.LogoWrap} href={'/'}>
-              <GatsbyImage
-                image={menu.logo_alt?.gatsbyImageData}
-                alt={menu.logo_alt?.alt || ''}
-                className={sty.logo}
-              />
-            </PrismicLink>
+          <div className={sty.SocialGroup}>
+            <div className={sty.MenuLinkTitle}>Follow Us</div>
+            <ul className={`list-no-style ${sty.SocialLinks}`}>
+              {menu.socials.map((item, index) => (
+                <li>
+                  <PrismicLink
+                    href={'/'}
+                    key={`socialLink:${index}`}
+                    className={sty.SocialLink}
+                  >
+                    <GatsbyImage
+                      image={item?.social_icon?.gatsbyImageData}
+                      alt={item.social_icon?.alt || ''}
+                    />
+                  </PrismicLink>
+                </li>
+              ))}
+            </ul>
           </div>
+          <PrismicLink className={sty.LogoWrap} href={'/'}>
+            <GatsbyImage
+              image={menu.logo_alt?.gatsbyImageData}
+              alt={menu.logo_alt?.alt || ''}
+              className={sty.logo}
+            />
+          </PrismicLink>
+        </div>
         <div className={sty.navBar}>
           <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>{menu.menu_links_title.text}</div>
-            <ul className='list-no-style'>
+            <div className={sty.MenuLinkTitle}>
+              {menu.menu_links_title.text}
+            </div>
+            <ul className="list-no-style">
               {menu.menu_links.map((item, index) => (
                 <li>
                   <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
@@ -55,12 +57,14 @@ export const BottomMenu = ({ menu }) => {
             <div className={sty.MenuLinkTitle}>
               {menu.catalog_links_title.text}
             </div>
-            <ul className='list-no-style'>
+            <ul className="list-no-style">
               {menu.catalog_links.map((item, index) => (
                 <li>
                   <PrismicLink
                     href={
-                      item.link ? item.link.url : `/collection/${item.catalog_handle}`
+                      item.link
+                        ? item.link.url
+                        : `/collection/${item.catalog_handle}`
                     }
                     key={`categoryLink:${index}`}
                   >
@@ -71,8 +75,10 @@ export const BottomMenu = ({ menu }) => {
             </ul>
           </div>
           <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>{menu.legal_links_title.text}</div>
-            <ul className='list-no-style'>
+            <div className={sty.MenuLinkTitle}>
+              {menu.legal_links_title.text}
+            </div>
+            <ul className="list-no-style">
               {menu.legal_links.map((item, index) => (
                 <li>
                   <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
@@ -84,36 +90,44 @@ export const BottomMenu = ({ menu }) => {
           </div>
         </div>
         <div className={sty.ContactColumn}>
-            <div className={sty.MenuLinkTitle}> Caymans Contact</div>
-            <div className={sty.info}>
-              <p>{menu.caymans_email}</p>
-            </div>
-            <div className={sty.info}>
-              <p>{menu.caymans_phone}</p>
-            </div>
-            {/* <div className={sty.info}>
+          <div className={sty.MenuLinkTitle}> Caymans Contact</div>
+          <div className={sty.info}>
+            <p>{menu.caymans_email}</p>
+          </div>
+          <div className={sty.info}>
+            <p>{menu.caymans_phone}</p>
+          </div>
+          {/* <div className={sty.info}>
               <p className={sty.address}>
                 {menu.caymans_address}
               </p>
             </div> */}
 
-            <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
-            <div className={sty.info}>
-              <p>{menu.turks_and_caicos_email}</p>
-            </div>
-            <div className={sty.info}>
-              <p>{menu.turks_and_caicos_phone}</p>
-            </div>
-            {/* <div className={sty.info}>
+          <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
+          <div className={sty.info}>
+            <p>{menu.turks_and_caicos_email}</p>
+          </div>
+          <div className={sty.info}>
+            <p>{menu.turks_and_caicos_phone}</p>
+          </div>
+          {/* <div className={sty.info}>
               <p>
                 {menu.turks_and_caicos_address}
               </p>
             </div> */}
-          </div>
+        </div>
       </Container>
       <div className={sty.Copyright}>
-        <Container>
-          <p>{menu.copyright}</p>
+        <Container className={sty.bottomBar}>
+          <div>
+            <p>{menu.copyright} 2024 Copyright</p>
+          </div>
+          <div>
+            <p>say hello message</p>
+          </div>
+          <div>
+            <p>socials</p>
+          </div>
         </Container>
       </div>
     </footer>
