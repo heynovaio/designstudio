@@ -4,7 +4,7 @@
   background: $color-lightorange;
   padding-top: 40px;
   padding-bottom: 40px;
-  color: $color-black;
+  color: $color-greymd;
   font-family: $font-secondary;
 
   @media (min-width: $desktop) {
@@ -29,7 +29,7 @@
   }
 
   a {
-    color: $color-black;
+    color: $color-greymd;
     font-size: 0.78em;
   }
 
@@ -50,10 +50,12 @@
 
 .MenuLinkTitle {
   font-family: $font-header;
+  color: $color-black;
   padding-bottom: 20px;
   padding-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .ContactColumn {
