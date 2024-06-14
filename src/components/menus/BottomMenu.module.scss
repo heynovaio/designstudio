@@ -5,6 +5,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
   color: $color-black;
+  font-family: $font-secondary;
 
   @media (min-width: $desktop) {
     padding-top: 80px;
@@ -15,22 +16,6 @@
 .container-footer {
   display: flex;
   justify-content: space-between;
-}
-
-.navBar {
-  width: 100%;
-  max-width: width(12);
-  text-align: center;
-
-  @media (min-width: $tablet) {
-    display: flex;
-    text-align: left;
-  }
-
-  @media (min-width: $desktop) {
-    max-width: width(6.5);
-    order: 1;
-  }
 }
 
 .MenuLinks {

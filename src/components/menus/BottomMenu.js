@@ -11,9 +11,8 @@ export const BottomMenu = ({ menu }) => {
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
         <div classNam={sty.contactCol}>
-          {' '}
           <div className={sty.ContactColumn}>
-            <div className={sty.MenuLinkTitle}> Caymans Contact</div>
+            <div className={sty.MenuLinkTitle}> Cayman Islands</div>
             <div className={sty.info}>
               <p>{menu.caymans_email}</p>
             </div>
@@ -26,7 +25,7 @@ export const BottomMenu = ({ menu }) => {
               </p>
             </div> */}
 
-            <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
+            <div className={sty.MenuLinkTitle}> Turks & Caicos</div>
             <div className={sty.info}>
               <p>{menu.turks_and_caicos_email}</p>
             </div>
@@ -52,9 +51,6 @@ export const BottomMenu = ({ menu }) => {
         </div>
         <div classNam={sty.linksCol}>
           <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>
-              {menu.menu_links_title.text}
-            </div>
             <ul className="list-no-style">
               {menu.menu_links.map((item, index) => (
                 <li>
