@@ -10,7 +10,47 @@ export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
-        <div className={sty.navBar}>
+        <div classNam={sty.contactCol}>
+          {' '}
+          <div className={sty.ContactColumn}>
+            <div className={sty.MenuLinkTitle}> Caymans Contact</div>
+            <div className={sty.info}>
+              <p>{menu.caymans_email}</p>
+            </div>
+            <div className={sty.info}>
+              <p>{menu.caymans_phone}</p>
+            </div>
+            {/* <div className={sty.info}>
+              <p className={sty.address}>
+                {menu.caymans_address}
+              </p>
+            </div> */}
+
+            <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
+            <div className={sty.info}>
+              <p>{menu.turks_and_caicos_email}</p>
+            </div>
+            <div className={sty.info}>
+              <p>{menu.turks_and_caicos_phone}</p>
+            </div>
+            {/* <div className={sty.info}>
+              <p>
+                {menu.turks_and_caicos_address}
+              </p>
+            </div> */}
+          </div>
+        </div>
+        <div classNam={sty.middleCol}>
+          <PrismicLink className={sty.LogoWrap} href={'/'}>
+            <GatsbyImage
+              image={menu.logo_alt?.gatsbyImageData}
+              alt={menu.logo_alt?.alt || ''}
+              className={sty.logo}
+            />
+          </PrismicLink>
+          {/*subscribe box*/}
+        </div>
+        <div classNam={sty.linksCol}>
           <div className={sty.MenuLinks}>
             <div className={sty.MenuLinkTitle}>
               {menu.menu_links_title.text}
@@ -19,27 +59,6 @@ export const BottomMenu = ({ menu }) => {
               {menu.menu_links.map((item, index) => (
                 <li>
                   <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
-                    {item.label}
-                  </PrismicLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>
-              {menu.catalog_links_title.text}
-            </div>
-            <ul className="list-no-style">
-              {menu.catalog_links.map((item, index) => (
-                <li>
-                  <PrismicLink
-                    href={
-                      item.link
-                        ? item.link.url
-                        : `/collection/${item.catalog_handle}`
-                    }
-                    key={`categoryLink:${index}`}
-                  >
                     {item.label}
                   </PrismicLink>
                 </li>
@@ -60,33 +79,6 @@ export const BottomMenu = ({ menu }) => {
               ))}
             </ul>
           </div>
-        </div>
-        <div className={sty.ContactColumn}>
-          <div className={sty.MenuLinkTitle}> Caymans Contact</div>
-          <div className={sty.info}>
-            <p>{menu.caymans_email}</p>
-          </div>
-          <div className={sty.info}>
-            <p>{menu.caymans_phone}</p>
-          </div>
-          {/* <div className={sty.info}>
-              <p className={sty.address}>
-                {menu.caymans_address}
-              </p>
-            </div> */}
-
-          <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
-          <div className={sty.info}>
-            <p>{menu.turks_and_caicos_email}</p>
-          </div>
-          <div className={sty.info}>
-            <p>{menu.turks_and_caicos_phone}</p>
-          </div>
-          {/* <div className={sty.info}>
-              <p>
-                {menu.turks_and_caicos_address}
-              </p>
-            </div> */}
         </div>
       </Container>
       <div className={sty.Copyright}>
@@ -123,13 +115,29 @@ export const BottomMenu = ({ menu }) => {
   )
 }
 
-// <PrismicLink className={sty.LogoWrap} href={'/'}>
-// <GatsbyImage
-//   image={menu.logo_alt?.gatsbyImageData}
-//   alt={menu.logo_alt?.alt || ''}
-//   className={sty.logo}
-// />
-// </PrismicLink>
+{
+  /* <div className={sty.MenuLinks}>
+<div className={sty.MenuLinkTitle}>
+  {menu.catalog_links_title.text}
+</div>
+<ul className="list-no-style">
+  {menu.catalog_links.map((item, index) => (
+    <li>
+      <PrismicLink
+        href={
+          item.link
+            ? item.link.url
+            : `/collection/${item.catalog_handle}`
+        }
+        key={`categoryLink:${index}`}
+      >
+        {item.label}
+      </PrismicLink>
+    </li>
+  ))}
+</ul>
+</div> */
+}
 
 export const query = graphql`
   fragment BottomMenuFragment on PrismicMenu {
