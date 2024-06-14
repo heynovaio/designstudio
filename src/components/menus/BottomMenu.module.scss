@@ -1,10 +1,10 @@
 @import '../../base/module';
 
 .footer {
-  background: $color-darkgreen;
+  background: $color-lightorange;
   padding-top: 40px;
   padding-bottom: 40px;
-  color: $color-white;
+  color: $color-black;
 
   @media (min-width: $desktop) {
     padding-top: 80px;
@@ -43,7 +43,7 @@
   }
 
   a {
-    color: $color-white;
+    color: $color-black;
     font-size: 0.78em;
   }
 
@@ -87,12 +87,12 @@
       &.address {
         padding-top: 8px;
       }
-    }  
+    }
   }
 
   @media (min-width: $desktop) {
     max-width: width(3);
-    padding-right: width(.5);
+    padding-right: width(0.5);
     order: 2;
     border: 0;
     text-align: left;
@@ -120,11 +120,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-  
+
       .SocialLink {
         padding-left: 10px;
         padding-right: 10px;
-      }    
+      }
     }
   }
 
@@ -133,7 +133,7 @@
     max-width: 300px;
     padding-top: 30px;
     padding-bottom: 30px;
-  
+
     .logo {
       object-fit: contain;
     }
