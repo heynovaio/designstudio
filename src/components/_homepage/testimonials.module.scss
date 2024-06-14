@@ -190,13 +190,12 @@
   width: 50px;
   border-radius: 0 $bradius $bradius 0;
   cursor: pointer;
-
   svg {
     font-size: 26px;
   }
 }
 
 .counter {
-  font-family: '$font-secondary';
   font-size: 1.2em;
+  font-family: $font-secondary;
 }
