@@ -177,7 +177,7 @@
       border-radius: 99em;
 
       &.activeDot {
-        background: $color-black;
+        background: $color-forestgreen;
       }
     }
   }
@@ -189,6 +189,7 @@
   justify-content: flex-start;
   width: 50px;
   border-radius: 0 $bradius $bradius 0;
+  color: $color-forestgreen;
   cursor: pointer;
   svg {
     font-size: 26px;
