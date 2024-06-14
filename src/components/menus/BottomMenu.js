@@ -10,34 +10,6 @@ export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
-        <div className={sty.SocialColumn}>
-          <div className={sty.SocialGroup}>
-            <div className={sty.MenuLinkTitle}>Follow Us</div>
-            <ul className={`list-no-style ${sty.SocialLinks}`}>
-              {menu.socials.map((item, index) => (
-                <li>
-                  <PrismicLink
-                    href={'/'}
-                    key={`socialLink:${index}`}
-                    className={sty.SocialLink}
-                  >
-                    <GatsbyImage
-                      image={item?.social_icon?.gatsbyImageData}
-                      alt={item.social_icon?.alt || ''}
-                    />
-                  </PrismicLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <PrismicLink className={sty.LogoWrap} href={'/'}>
-            <GatsbyImage
-              image={menu.logo_alt?.gatsbyImageData}
-              alt={menu.logo_alt?.alt || ''}
-              className={sty.logo}
-            />
-          </PrismicLink>
-        </div>
         <div className={sty.navBar}>
           <div className={sty.MenuLinks}>
             <div className={sty.MenuLinkTitle}>
@@ -125,14 +97,39 @@ export const BottomMenu = ({ menu }) => {
           <div>
             <p>say hello message</p>
           </div>
-          <div>
-            <p>socials</p>
+          <div className={sty.SocialColumn}>
+            <div className={sty.SocialGroup}>
+              <ul className={`list-no-style ${sty.SocialLinks}`}>
+                {menu.socials.map((item, index) => (
+                  <li>
+                    <PrismicLink
+                      href={'/'}
+                      key={`socialLink:${index}`}
+                      className={sty.SocialLink}
+                    >
+                      <GatsbyImage
+                        image={item?.social_icon?.gatsbyImageData}
+                        alt={item.social_icon?.alt || ''}
+                      />
+                    </PrismicLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </div>
     </footer>
   )
 }
+
+// <PrismicLink className={sty.LogoWrap} href={'/'}>
+// <GatsbyImage
+//   image={menu.logo_alt?.gatsbyImageData}
+//   alt={menu.logo_alt?.alt || ''}
+//   className={sty.logo}
+// />
+// </PrismicLink>
 
 export const query = graphql`
   fragment BottomMenuFragment on PrismicMenu {
