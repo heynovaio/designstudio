@@ -106,6 +106,7 @@ export const BottomMenu = ({ menu }) => {
                     </PrismicLink>
                   </li>
                 ))}
+                <p>DesignStudioInteriors</p>
               </ul>
             </div>
           </div>

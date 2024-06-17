@@ -58,7 +58,6 @@ const HomeTemplate = ({ data }) => {
   const contactEmail = menuNode.caymans_email
   const contactPhone = menuNode.caymans_phone
 
-
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <Hero
@@ -182,10 +181,6 @@ export const query = graphql`
           url
         }
         testimonials {
-          testimonial_image {
-            gatsbyImageData
-            alt
-          }
           testimonial_richtext {
             richText
           }
