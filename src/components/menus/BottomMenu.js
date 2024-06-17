@@ -40,7 +40,7 @@ export const BottomMenu = ({ menu }) => {
           </div>
         </div>
         <div className={sty.middleCol}>
-          <PrismicLink className={sty.LogoWrap} href={'/'}>
+          <PrismicLink href={'/'}>
             <GatsbyImage
               image={menu.logo_alt?.gatsbyImageData}
               alt={menu.logo_alt?.alt || ''}
@@ -84,7 +84,7 @@ export const BottomMenu = ({ menu }) => {
       <div className={sty.Copyright}>
         <Container className={sty.bottomBar}>
           <div>
-            <p>{menu.copyright} 2024 Copyright</p>
+            <p>{menu.copyright}</p>
           </div>
           <div>
             <p>say hello message</p>

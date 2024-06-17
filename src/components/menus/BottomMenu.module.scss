@@ -7,6 +7,7 @@
   color: $color-greymd;
   font-family: $font-secondary;
   letter-spacing: 0.1rem;
+  width: 100%;
 
   @media (min-width: $desktop) {
     padding-top: 80px;
@@ -17,6 +18,16 @@
 .container-footer {
   display: flex;
   justify-content: space-between;
+}
+
+.leftCol,
+.middleCol,
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
 }
 
 .MenuLinks {
@@ -44,8 +55,6 @@
 
   @media (min-width: $desktop) {
     text-align: left;
-    justify-content: flex-start;
-    align-items: flex-start;
   }
 }
 
@@ -94,7 +103,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   max-width: width(12);
 
   @media (min-width: $desktop) {
@@ -118,21 +126,6 @@
   }
 }
 
-.LogoWrap {
-  width: 100%;
-  max-width: 300px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-
-  .logo {
-    object-fit: contain;
-  }
-
-  @media (min-width: $desktop) {
-    padding-top: 60px;
-    padding-bottom: 0;
-  }
-}
 .subscribe {
   text-align: center;
   padding-top: 30px;
