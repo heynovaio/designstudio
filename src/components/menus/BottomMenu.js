@@ -47,7 +47,11 @@ export const BottomMenu = ({ menu }) => {
               className={sty.logo}
             />
           </PrismicLink>
-          {/*subscribe box*/}
+          <div className={sty.subscribe}>
+            <p>Let's be friends</p>
+            <p>Interiors in your Inbox</p>
+            {/**FORM FIELD */}
+          </div>
         </div>
         <div classNam={sty.linksCol}>
           <div className={sty.MenuLinks}>
