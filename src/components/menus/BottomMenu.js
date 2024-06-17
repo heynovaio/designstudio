@@ -10,7 +10,7 @@ export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
-        <div classNam={sty.contactCol}>
+        <div className={sty.leftCol}>
           <div className={sty.ContactColumn}>
             <div className={sty.MenuLinkTitle}> Cayman Islands</div>
             <div className={sty.info}>
@@ -39,7 +39,7 @@ export const BottomMenu = ({ menu }) => {
             </div> */}
           </div>
         </div>
-        <div classNam={sty.middleCol}>
+        <div className={sty.middleCol}>
           <PrismicLink className={sty.LogoWrap} href={'/'}>
             <GatsbyImage
               image={menu.logo_alt?.gatsbyImageData}
@@ -53,7 +53,7 @@ export const BottomMenu = ({ menu }) => {
             {/**FORM FIELD */}
           </div>
         </div>
-        <div classNam={sty.linksCol}>
+        <div className={sty.rightCol}>
           <div className={sty.MenuLinks}>
             <ul className="list-no-style">
               {menu.menu_links.map((item, index) => (

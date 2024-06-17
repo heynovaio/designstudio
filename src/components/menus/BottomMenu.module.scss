@@ -116,24 +116,23 @@
       }
     }
   }
-
-  .LogoWrap {
-    width: 100%;
-    max-width: 300px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-    .logo {
-      object-fit: contain;
-    }
-
-    @media (min-width: $desktop) {
-      padding-top: 60px;
-      padding-bottom: 0;
-    }
-  }
 }
 
+.LogoWrap {
+  width: 100%;
+  max-width: 300px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .logo {
+    object-fit: contain;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+}
 .subscribe {
   text-align: center;
   padding-top: 30px;
