@@ -52,10 +52,10 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
               <div className={sty.SocialGroup}>
                 <ul className={`list-no-style ${sty.SocialLinks}`}>
                   {menu.socials.map((item, index) => (
-                    <li key={index}>
+                    <li key={`socialLink:${index}`}
+>
                       <PrismicLink
                         href={'/'}
-                        key={`socialLink:${index}`}
                         className={sty.SocialLink}
                       >
                         <GatsbyImage
