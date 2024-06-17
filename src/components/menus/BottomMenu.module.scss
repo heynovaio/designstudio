@@ -6,7 +6,7 @@
   padding-bottom: 40px;
   color: $color-greymd;
   font-family: $font-secondary;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
 
   @media (min-width: $desktop) {
     padding-top: 80px;
@@ -132,6 +132,12 @@
       padding-bottom: 0;
     }
   }
+}
+
+.subscribe {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .Copyright {
