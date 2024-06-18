@@ -14,29 +14,20 @@ export const BottomMenu = ({ menu }) => {
           <div className={sty.ContactColumn}>
             <div className={sty.MenuLinkTitle}> Cayman Islands</div>
             <div className={sty.info}>
-              <p>{menu.caymans_email}</p>
-            </div>
-            <div className={sty.info}>
               <p>{menu.caymans_phone}</p>
+              <p>{menu.caymans_street}</p>
+              <p>{menu.caymans_city}</p>
+              <p>{menu.caymans_location}</p>
             </div>
-            {/* <div className={sty.info}>
-              <p className={sty.address}>
-                {menu.caymans_address}
-              </p>
-            </div> */}
-
             <div className={sty.MenuLinkTitle}> Turks & Caicos</div>
             <div className={sty.info}>
+              <p>{menu.turks_and_caicos_phone}</p>
+              <p>{menu.turks_and_caicos_complex}</p>
+              <p>{menu.turks_and_caicos_street}</p>
+              <p>{menu.turks_and_caicos_city}</p>
+              <p>{menu.turks_and_caicos_location}</p>
               <p>{menu.turks_and_caicos_email}</p>
             </div>
-            <div className={sty.info}>
-              <p>{menu.turks_and_caicos_phone}</p>
-            </div>
-            {/* <div className={sty.info}>
-              <p>
-                {menu.turks_and_caicos_address}
-              </p>
-            </div> */}
           </div>
         </div>
         <div className={sty.middleCol}>
@@ -88,7 +79,10 @@ export const BottomMenu = ({ menu }) => {
             <p>{menu.copyright}</p>
           </div>
           <div>
-            <p>say hello message</p>
+            <p>
+              <span className={sty.helloText}>Say Hello </span>
+              <span className={sty.emailText}>Email</span>
+            </p>
           </div>
           <div className={sty.SocialColumn}>
             <div className={sty.SocialGroup}>
@@ -155,9 +149,15 @@ export const query = graphql`
       menu_links_title {
         text
       }
-      caymans_email
       caymans_phone
+      caymans_street
+      caymans_city
+      caymans_location
       turks_and_caicos_email
+      turks_and_caicos_complex
+      turks_and_caicos_street
+      turks_and_caicos_city
+      turks_and_caicos_location
       turks_and_caicos_phone
       socials {
         social_icon {

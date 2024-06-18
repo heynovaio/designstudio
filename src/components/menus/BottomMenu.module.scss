@@ -28,12 +28,14 @@
   width: 33%;
 }
 
-.friendsText {
+.friendsText,
+.emailText {
   color: $color-black;
   text-transform: uppercase;
   font-size: 0.9rem;
 }
-.inboxText {
+.inboxText,
+.helloText {
   color: $color-black;
   font-family: $font-header;
   font-style: italic;
@@ -79,15 +81,6 @@
 }
 
 .ContactColumn {
-  border-top: 1px solid $color-lightorange;
-  border-bottom: 1px solid $color-lightorange;
-  text-align: center;
-  width: 100%;
-  max-width: width(12);
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding-bottom: 30px;
-
   .info {
     p {
       font-size: 0.78em;
@@ -97,15 +90,6 @@
       }
     }
   }
-
-  @media (min-width: $desktop) {
-    max-width: width(3);
-    padding-right: width(0.5);
-    order: 2;
-    border: 0;
-    text-align: left;
-    margin-top: 0;
-  }
 }
 
 .SocialColumn {
@@ -114,6 +98,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: width(12);
+  text-transform: uppercase;
 
   @media (min-width: $desktop) {
     max-width: width(2.5);
