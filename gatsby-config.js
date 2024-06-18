@@ -6,13 +6,14 @@ const prismicConfig = require('./prismic-configuration')
 module.exports = {
   siteMetadata: {
     title: 'Basic HeyNova Prismic Build',
-    description: 'Barebones prismic starter with Prismic CMS & Gatsby.js for HeyNova Projects',
+    description:
+      'Barebones prismic starter with Prismic CMS & Gatsby.js for HeyNova Projects',
   },
   plugins: [
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: prismicConfig.prismicRepo,  
+        repositoryName: prismicConfig.prismicRepo,
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         linkResolver: require('./src/utils/linkResolver').linkResolver,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
@@ -30,7 +31,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Open Sans\:400,600,700`, `Poppins\:400,600,700`, `Playfair Display\:400,600,700`,`Poller One\:400`, `Poller One\:400`],
+        fonts: [
+          `Open Sans\:400,600,700`,
+          `Poppins\:400,600,700`,
+          `Playfair Display\:italic,400,600,700`,
+          `Poller One\:400`,
+          `Poller One\:400`,
+        ],
         display: 'swap',
       },
     },
@@ -38,8 +45,8 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
-          id: 'wpa8mum'
-        }
+          id: 'wpa8mum',
+        },
       },
     },
     `gatsby-plugin-scroll-reveal`,

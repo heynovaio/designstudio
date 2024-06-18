@@ -4,9 +4,8 @@ import { PrismicRichText } from '@prismicio/react'
 import { FaChevronRight } from 'react-icons/fa'
 import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
-import { Parallax } from 'react-scroll-parallax'
 
-export const Testimonials = ({ testimonials, background }) => {
+export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
   const [slide, setSlide] = React.useState(0)
   const slideLength = testimonials.length
   const curTest = testimonials[slide]
@@ -25,10 +24,33 @@ export const Testimonials = ({ testimonials, background }) => {
         style={{ background: background }}
       >
         <Container className={sty.flex}>
-          <div className={sty.quoteNav}>
+          <div className={sty.imageWrap}>
+            <GatsbyImage
+              image={ds_circle_logo?.gatsbyImageData}
+              alt={ds_circle_logo?.alt || ''}
+              className={sty.image}
+            />
+          </div>
+
+          <div className={sty.quotes}>
+            {testimonials.map((item, index) => (
+              <div
+                className={
+                  index === slide ? sty.quoteWrapActive : sty.quoteWrap
+                }
+                key={`testimonial:${index}`}
+              >
+                <div className={sty.quotesHead}>
+                  <p>We love what we do</p>
+                  <h2>Kind Words from Clients</h2>
+                </div>
+                <PrismicRichText field={item.testimonial_richtext?.richText} />
+                <span className={sty.author}>{item.testimonial_author}</span>
+              </div>
+            ))}
             <div className={sty.controlWrap}>
               <div className={sty.quoteControls}>
-                <div>
+                <div className={sty.counter}>
                   <b>{slide + 1}</b> of {slideLength}
                 </div>
                 <div className={sty.dotList}>
@@ -47,30 +69,6 @@ export const Testimonials = ({ testimonials, background }) => {
                 <FaChevronRight />
               </div>
             </div>
-          </div>
-
-          <div className={sty.imageWrap}>
-            <Parallax translateY={[-20, 10]}>
-              {/* <GatsbyImage
-                image={curTest.testimonial_image?.gatsbyImageData}
-                alt={curTest.testimonial_image?.alt || ''}
-                className={sty.image}
-              /> */}
-            </Parallax>
-          </div>
-
-          <div className={sty.quotes}>
-            {testimonials.map((item, index) => (
-              <div
-                className={
-                  index === slide ? sty.quoteWrapActive : sty.quoteWrap
-                }
-                key={`testimonial:${index}`}
-              >
-                <PrismicRichText field={item.testimonial_richtext?.richText} />
-                <span className={sty.author}>{item.testimonial_author}</span>
-              </div>
-            ))}
           </div>
         </Container>
       </div>
