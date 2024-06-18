@@ -169,7 +169,7 @@
 
   .dotList {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     padding-top: 2px;
 
@@ -199,7 +199,7 @@
     font-size: 26px;
   }
   @media (min-width: $desktop) {
-    margin-left: -10px;
+    margin-left: -25px;
   }
 }
 
