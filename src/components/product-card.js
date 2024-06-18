@@ -11,7 +11,7 @@ export const ProductCard = ({ Image, Title, Price, Width: number, handle }) => {
     Price.minVariantPrice?.amount,
   )
   return (
-    <div className={sty.ProductCard}>
+    <div>
       <PrismicLink href={`./product/${handle}`}>
         <div className={sty.imageWrap}>
           {Image && (

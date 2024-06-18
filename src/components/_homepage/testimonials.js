@@ -56,7 +56,7 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
                 <div className={sty.dotList}>
                   {testimonials.map((item, index) => (
                     <div
-                      className={index === slide ? sty.activeDot : sty.dot}
+                      className={index === slide ? sty.activeDot : ''}
                       onClick={() => {
                         setSlide(index)
                       }}

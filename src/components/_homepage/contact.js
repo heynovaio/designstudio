@@ -4,13 +4,14 @@ import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
 import { Container, Button } from '../Components'
 import Map, { Marker, Popup } from 'react-map-gl'
 
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl'
 // The following is required to stop "npm build" from transpiling mapbox code.
 // notice the exclamation point in the import.
 // @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
-  
+mapboxgl.workerClass =
+  require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
+
 import {
   FaMapMarkerAlt,
   FaEnvelope,
@@ -22,7 +23,6 @@ import MapMaker from './../../images/marker.svg'
 import * as sty from './contact.module.scss'
 import { StoreContext } from '../../context/store-context'
 
-
 export const Contact = ({ marker, header, description, cta, email, phone }) => {
   const TOKEN =
     'pk.eyJ1IjoiYWh2ZG9kZCIsImEiOiJjbGFzcnIzbWsyNjR2M3FtaThia2UwbmY5In0.iW4eOap84EcSZuzCRTZYWA'
@@ -33,35 +33,37 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
     latitude: marker?.latitude,
     longitude: marker?.longitude,
     zoom: 14.5,
-  });
-  React.useEffect(() => (
-    setViewState({
-        latitude:  mapCoords?.latitude,
-        longitude:  mapCoords?.longitude,
+  })
+  React.useEffect(
+    () =>
+      setViewState({
+        latitude: mapCoords?.latitude,
+        longitude: mapCoords?.longitude,
         zoom: 14.5,
-      })
-  ),[location])
+      }),
+    [location],
+  )
   return (
-    <section className={sty.contact} id="contactUs">
-      <Container className='flex'>
+    <section id="contactUs">
+      <Container className="flex">
         <div className={sty.map}>
           <Map
             {...viewState}
-            onMove={e => setViewState(e.viewState)}
+            onMove={(e) => setViewState(e.viewState)}
             mapStyle="mapbox://styles/ahvdodd/clasrv0ht000014pkszdj5t8j"
             mapboxAccessToken={TOKEN}
             style={{ width: '100%', height: '100%' }}
           >
             <Marker
-              longitude={ mapCoords?.longitude}
-              latitude={ mapCoords?.latitude}
+              longitude={mapCoords?.longitude}
+              latitude={mapCoords?.latitude}
               anchor="bottom"
             >
               <FaMapMarkerAlt style={{ fontSize: 80, color: '#CE6034' }} />
             </Marker>
             <Popup
-              longitude={ mapCoords?.longitude}
-              latitude={ mapCoords?.latitude}
+              longitude={mapCoords?.longitude}
+              latitude={mapCoords?.latitude}
               anchor="top-left"
               closeButton={false}
               className={sty.infoBox}
@@ -73,12 +75,16 @@ export const Contact = ({ marker, header, description, cta, email, phone }) => {
         <div className={sty.copy}>
           <h2>Contact Us at {name}</h2>
           <p className={sty.description}>{description}</p>
-          <div className={sty.contactList}>
+          <div>
             <div className={sty.info}>
-              <p><FaEnvelope /> {contact?.email}</p>
+              <p>
+                <FaEnvelope /> {contact?.email}
+              </p>
             </div>
             <div className={sty.info}>
-              <p><FaPhoneAlt /> {contact?.phone}</p>
+              <p>
+                <FaPhoneAlt /> {contact?.phone}
+              </p>
             </div>
             <div className={sty.info}>
               <p>
