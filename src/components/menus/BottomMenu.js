@@ -44,12 +44,13 @@ export const BottomMenu = ({ menu }) => {
             <GatsbyImage
               image={menu.logo_alt?.gatsbyImageData}
               alt={menu.logo_alt?.alt || ''}
-              className={sty.logo}
             />
           </PrismicLink>
           <div className={sty.subscribe}>
-            <p>Let's be friends</p>
-            <p>Interiors in your Inbox</p>
+            <p>
+              <span className={sty.friendsText}>Let's be friends </span>
+              <span className={sty.inboxText}>Interiors in your Inbox</span>
+            </p>
             {/**FORM FIELD */}
           </div>
         </div>
@@ -114,30 +115,6 @@ export const BottomMenu = ({ menu }) => {
       </div>
     </footer>
   )
-}
-
-{
-  /* <div className={sty.MenuLinks}>
-<div className={sty.MenuLinkTitle}>
-  {menu.catalog_links_title.text}
-</div>
-<ul className="list-no-style">
-  {menu.catalog_links.map((item, index) => (
-    <li>
-      <PrismicLink
-        href={
-          item.link
-            ? item.link.url
-            : `/collection/${item.catalog_handle}`
-        }
-        key={`categoryLink:${index}`}
-      >
-        {item.label}
-      </PrismicLink>
-    </li>
-  ))}
-</ul>
-</div> */
 }
 
 export const query = graphql`
