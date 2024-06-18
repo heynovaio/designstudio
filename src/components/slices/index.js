@@ -5,6 +5,7 @@ import { AlternatingTextImage } from './alternating-text-image';
 import { FacultyGrid } from './faculty-grid';
 import { AwardsGallery } from './awards-gallery';
 import { PressList } from './press-list';
+import { HeroBanner } from './hero-banner';
 
 export const components = {
   text_image: TextImage,
@@ -13,5 +14,6 @@ export const components = {
   alternating_text_image: AlternatingTextImage,
   faculty_grid: FacultyGrid,
   awards_gallery: AwardsGallery,
-  press_list: PressList
+  press_list: PressList,
+  hero_banner: HeroBanner,
 }
