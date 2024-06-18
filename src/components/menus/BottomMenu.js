@@ -73,8 +73,8 @@ export const BottomMenu = ({ menu }) => {
           </div>
         </div>
       </Container>
-      <div className={sty.Copyright}>
-        <Container className={sty.bottomBar}>
+      <div className={sty.bottomBar}>
+        <Container className={sty.bottomContainer}>
           <div>
             <p>{menu.copyright}</p>
           </div>
