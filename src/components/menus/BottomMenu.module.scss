@@ -84,10 +84,7 @@
   .info {
     p {
       font-size: 0.78em;
-
-      &.address {
-        padding-top: 8px;
-      }
+      line-height: 1.2rem;
     }
   }
 }

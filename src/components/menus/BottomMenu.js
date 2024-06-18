@@ -81,7 +81,7 @@ export const BottomMenu = ({ menu }) => {
           <div>
             <p>
               <span className={sty.helloText}>Say Hello </span>
-              <span className={sty.emailText}>Email</span>
+              <span className={sty.emailText}>{menu.caymans_email}</span>
             </p>
           </div>
           <div className={sty.SocialColumn}>
@@ -153,6 +153,7 @@ export const query = graphql`
       caymans_street
       caymans_city
       caymans_location
+      caymans_email
       turks_and_caicos_email
       turks_and_caicos_complex
       turks_and_caicos_street
