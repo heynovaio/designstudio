@@ -4,7 +4,6 @@ import { PrismicRichText } from '@prismicio/react'
 import { FaChevronRight } from 'react-icons/fa'
 import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
-import { Parallax } from 'react-scroll-parallax'
 
 export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
   const [slide, setSlide] = React.useState(0)
