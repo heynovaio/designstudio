@@ -31,7 +31,7 @@ export const HeroBanner = ({ slice }) => {
 }
 
 export const query = graphql`
-  fragment PageDataBodyHeroBanner on PrismicPageDataBodyHeroBanner {
+  fragment HomeDataBodyHeroBanner on PrismicHomeDataBodyHeroBanner {
     id
     primary {
       richtext {

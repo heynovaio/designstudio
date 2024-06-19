@@ -10,6 +10,7 @@ import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
 import { Contact } from '../components/_homepage/contact'
+import { components } from '../components/slices'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -61,16 +62,7 @@ const HomeTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <Hero
-        title={heroTitle}
-        description={heroDescription}
-        catalogLabel={catalogBtnLabel}
-        catalogLink={btn1}
-        worksLabel={worksBtnLabel}
-        worksLink={btn2}
-        gallery={heroGallery}
-        bottom={bellowHero}
-      />
+      <SliceZone slices={node.body} components={components} context={{lang: lang}}/>
       <Catalog
         description={catalogDesc}
         image={catalogImage}
@@ -114,6 +106,7 @@ export const query = graphql`
       url
       type
       data {
+        ...HomeDataBodyHeroBanner
         hero_title {
           richText
         }
