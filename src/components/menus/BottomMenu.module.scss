@@ -93,7 +93,8 @@
   }
 }
 
-.MenuLinkTitle {
+.MenuLinkTitle,
+.legalTitle {
   font-family: $font-header;
   color: $color-black;
   padding-bottom: 20px;
@@ -101,6 +102,13 @@
   font-size: 24px;
   font-style: italic;
   font-weight: 400;
+}
+
+.MenuLinkTitle::before {
+  content: '\2756';
+  margin-right: 5px;
+  color: $color-sage;
+  font-size: 18px;
 }
 
 .contacts {
