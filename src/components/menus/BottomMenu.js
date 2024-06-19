@@ -11,7 +11,7 @@ export const BottomMenu = ({ menu }) => {
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
         <div className={sty.leftCol}>
-          <div className={sty.ContactColumn}>
+          <div className={sty.contacts}>
             <div className={sty.MenuLinkTitle}> Cayman Islands</div>
             <div className={sty.info}>
               <p>{menu.caymans_phone}</p>

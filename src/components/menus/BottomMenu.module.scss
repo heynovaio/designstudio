@@ -16,6 +16,9 @@
 .container-footer {
   display: flex;
   justify-content: space-between;
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
 }
 
 .leftCol,
@@ -25,7 +28,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 33%;
+  width: 100%;
+  @media (min-width: $tablet) {
+    width: 33%;
+  }
+}
+
+.leftCol {
+  text-align: center;
+  .info {
+    p {
+      font-size: 0.78em;
+      line-height: 1.2rem;
+    }
+  }
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
 }
 
 .friendsText,
@@ -46,7 +65,7 @@
   text-align: center;
 
   ul {
-    column-count: 2;
+    column-count: 1;
     li {
       padding-bottom: 10px;
     }
@@ -80,12 +99,16 @@
   font-weight: 400;
 }
 
-.ContactColumn {
+.contacts {
+  text-align: center;
   .info {
     p {
       font-size: 0.78em;
       line-height: 1.2rem;
     }
+  }
+  @media (min-width: $desktop) {
+    text-align: left;
   }
 }
 
@@ -128,7 +151,13 @@
   margin-top: 40px;
   color: $color-black;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+
   p {
     font-size: 0.78em;
   }
@@ -137,5 +166,14 @@
 .bottomContainer {
   color: $color-black;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
