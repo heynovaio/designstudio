@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
-import { PrismicLink, PrismicText } from '@prismicio/react'
-import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import { graphql } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
 
 import * as sty from './BottomMenu.module.scss'

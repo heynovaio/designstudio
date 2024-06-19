@@ -79,6 +79,8 @@
   a {
     color: $color-greymd;
     font-size: 0.78em;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 
   @media (min-width: $desktop) {
@@ -117,7 +119,9 @@
   .info {
     p {
       font-size: 0.78em;
-      line-height: 1.2rem;
+      line-height: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
     }
     @media (min-width: $desktop) {
       flex-direction: row;
