@@ -12,7 +12,7 @@ export const HeroBanner = ({ slice }) => {
     <section className={sty.HeroBanner} style={{ paddingBottom: 0 }}>
       <Container className="flex">
         <div className={sty.copyWrap}>
-          <PrismicRichText field={slice.primary.richtext?.richText} />
+          <PrismicRichText field={slice.primary.page_title?.richText} />
           <PrismicLink href={'/#contactUs'} className={sty.BtnPrimary}>
             Get in touch
           </PrismicLink>
@@ -34,10 +34,10 @@ export const query = graphql`
   fragment HomeDataBodyHeroBanner on PrismicHomeDataBodyHeroBanner {
     id
     primary {
-      richtext {
+      page_title {
         richText
       }
-      image {
+      hero_banner_image {
         gatsbyImageData
         alt
       }

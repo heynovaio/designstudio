@@ -106,7 +106,14 @@ export const query = graphql`
       url
       type
       data {
-        ...HomeDataBodyHeroBanner
+        body {
+           ... on PrismicSlice {
+            id
+            slice_type
+            slice_label
+          }
+          ...HomeDataBodyHeroBanner
+        }
         hero_title {
           richText
         }
