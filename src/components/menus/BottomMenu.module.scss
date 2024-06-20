@@ -26,9 +26,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  @media (min-width: $desktop) {
-    width: 33%;
-  }
 }
 
 .leftCol {
@@ -64,15 +61,15 @@
   font-family: $font-header;
   font-style: italic;
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .MenuLinks {
   text-align: center;
-
   ul {
     column-count: 1;
     li {
-      padding-bottom: 10px;
+      line-height: 180%;
     }
   }
 
@@ -96,12 +93,15 @@
   }
 }
 
+.legalTitle {
+  margin-top: 25px;
+}
+
 .MenuLinkTitle,
 .legalTitle {
   font-family: $font-header;
   color: $color-black;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 5px;
   font-size: 24px;
   font-style: italic;
   font-weight: 400;
@@ -114,12 +114,15 @@
   font-size: 18px;
 }
 
+.info {
+  margin-bottom: 30px;
+}
 .contacts {
   text-align: center;
   .info {
     p {
       font-size: 0.78em;
-      line-height: 1.3rem;
+      line-height: 180%;
       font-weight: 600;
       letter-spacing: 0.1rem;
     }

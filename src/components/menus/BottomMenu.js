@@ -12,15 +12,16 @@ export const BottomMenu = ({ menu }) => {
       <Container className={`flex ${sty.containerFooter} `}>
         <div className={sty.leftCol}>
           <div className={sty.contacts}>
-            <div className={sty.MenuLinkTitle}>Cayman Islands</div>
             <div className={sty.info}>
+              <div className={sty.MenuLinkTitle}>Cayman Islands</div>
               <p>{menu.caymans_phone}</p>
               <p>{menu.caymans_street}</p>
               <p>{menu.caymans_city}</p>
               <p>{menu.caymans_location}</p>
             </div>
-            <div className={sty.MenuLinkTitle}>Turks & Caicos</div>
+
             <div className={sty.info}>
+              <div className={sty.MenuLinkTitle}>Turks & Caicos</div>
               <p>{menu.turks_and_caicos_phone}</p>
               <p>{menu.turks_and_caicos_complex}</p>
               <p>{menu.turks_and_caicos_street}</p>
@@ -55,18 +56,22 @@ export const BottomMenu = ({ menu }) => {
                   </PrismicLink>
                 </li>
               ))}
-            </ul>
-          </div>
-          <div className={sty.MenuLinks}>
-            <div className={sty.legalTitle}>{menu.legal_links_title.text}</div>
-            <ul className="list-no-style">
-              {menu.legal_links.map((item, index) => (
-                <li>
-                  <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
-                    {item.label}
-                  </PrismicLink>
-                </li>
-              ))}
+
+              <div className={sty.legalTitle}>
+                {menu.legal_links_title.text}
+              </div>
+              <ul className="list-no-style">
+                {menu.legal_links.map((item, index) => (
+                  <li>
+                    <PrismicLink
+                      href={item.link?.url}
+                      key={`legalLink:${index}`}
+                    >
+                      {item.label}
+                    </PrismicLink>
+                  </li>
+                ))}
+              </ul>
             </ul>
           </div>
         </div>
