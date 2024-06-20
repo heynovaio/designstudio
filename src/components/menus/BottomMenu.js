@@ -31,7 +31,7 @@ export const BottomMenu = ({ menu }) => {
             </div>
           </div>
         </div>
-        <div className={sty.middleCol}>
+        <div className={sty.logoColumn}>
           <PrismicLink href={'/'}>
             <GatsbyImage
               image={menu.logo_alt?.gatsbyImageData}
