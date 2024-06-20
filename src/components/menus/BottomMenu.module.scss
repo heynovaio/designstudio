@@ -18,9 +18,9 @@
   }
 }
 
-.leftCol,
+.contactColumn,
 .middleCol,
-.rightCol {
+.linksColumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-.leftCol {
+.contactColumn {
   order: 3;
   @media (min-width: $desktop) {
     order: 0;
@@ -41,7 +41,7 @@
   }
 }
 
-.rightCol {
+.linksColumn {
   order: 2;
   @media (min-width: $desktop) {
     order: 0;

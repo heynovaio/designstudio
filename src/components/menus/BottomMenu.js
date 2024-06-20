@@ -10,7 +10,7 @@ export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
-        <div className={sty.leftCol}>
+        <div className={sty.contactColumn}>
           <div className={sty.contacts}>
             <div className={sty.info}>
               <div className={sty.MenuLinkTitle}>Cayman Islands</div>
@@ -46,7 +46,7 @@ export const BottomMenu = ({ menu }) => {
             {/**FORM FIELD */}
           </div>
         </div>
-        <div className={sty.rightCol}>
+        <div className={sty.linksColumn}>
           <div className={sty.MenuLinks}>
             <ul className="list-no-style">
               {menu.menu_links.map((item, index) => (
@@ -78,15 +78,11 @@ export const BottomMenu = ({ menu }) => {
       </Container>
       <div className={sty.bottomBar}>
         <Container className={sty.bottomContainer}>
-          <div>
-            <p>{menu.copyright}</p>
-          </div>
-          <div>
-            <p>
-              <span className={sty.helloText}>Say Hello </span>
-              <span className={sty.emailText}>{menu.caymans_email}</span>
-            </p>
-          </div>
+          <p>{menu.copyright}</p>
+          <p>
+            <span className={sty.helloText}>Say Hello </span>
+            <span className={sty.emailText}>{menu.caymans_email}</span>
+          </p>
           <div className={sty.SocialColumn}>
             <div className={sty.SocialGroup}>
               <ul className={`list-no-style ${sty.SocialLinks}`}>
