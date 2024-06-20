@@ -6,7 +6,7 @@
   padding-bottom: 20px;
   color: $color-greymd;
   font-family: $font-secondary;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1em;
   width: 100%;
 }
 
@@ -124,7 +124,7 @@
       font-size: 0.78em;
       line-height: 190%;
       font-weight: 600;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.13em;
     }
     @media (min-width: $desktop) {
       flex-direction: row;
