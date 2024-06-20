@@ -8,9 +8,6 @@
   font-family: $font-secondary;
   letter-spacing: 0.1em;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .container-footer {
@@ -183,6 +180,7 @@
   color: $color-black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   @media (min-width: $desktop) {
     flex-direction: row;
   }
@@ -200,6 +198,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 25px;
 
   @media (min-width: $desktop) {
     flex-direction: row;
