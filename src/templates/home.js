@@ -91,14 +91,6 @@ const HomeTemplate = ({ data }) => {
         background={'#A8C3BE'}
         ds_circle_logo={dsCircleLogo}
       />
-      <Contact
-        marker={contactMapMarker}
-        header={contactHeader}
-        description={contactDesc}
-        cta={contactCTA}
-        email={contactEmail}
-        phone={contactPhone}
-      />
     </Layout>
   )
 }
