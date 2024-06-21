@@ -13,7 +13,14 @@ export const FacultyGrid = ({ slice }) => {
           <p>{slice.primary.subtitle}</p>
           <h2>{slice.primary.title}</h2>
           <PrismicRichText field={slice.primary.description.richText} />
+          <GatsbyImage
+            image={slice.primary.faculty_header_image?.gatsbyImageData}
+            alt={slice.primary.faculty_header_image?.alt || ''}
+            className={sty.image}
+            imgStyle={{ objectPosition: 'right 20%' }}
+          />
         </div>
+
         <div className={sty.grid}>
           {slice.items.map((item, index) => (
             <div className={sty.employeeCard}>
@@ -43,6 +50,10 @@ export const query = graphql`
         richText
       }
       subtitle
+      faculty_header_image {
+        gatsbyImageData
+        alt
+      }
     }
     items {
       image {
