@@ -3,13 +3,16 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '../Components'
 import * as sty from './faculty-grid.module.scss'
+import { PrismicRichText } from '@prismicio/react'
 
 export const FacultyGrid = ({ slice }) => {
   return (
     <section className={sty.FacultyGrid}>
       <Container>
         <div style={{ marginBottom: 60, textAlign: 'center' }}>
+          <p>{slice.primary.subtitle}</p>
           <h2>{slice.primary.title}</h2>
+          <PrismicRichText field={slice.primary.description.richText} />
         </div>
         <div className={sty.grid}>
           {slice.items.map((item, index) => (
@@ -36,6 +39,10 @@ export const query = graphql`
     id
     primary {
       title
+      description {
+        richText
+      }
+      subtitle
     }
     items {
       image {
@@ -43,11 +50,6 @@ export const query = graphql`
         alt
       }
       name
-      favourite_style
-      mini_bio
-      bio {
-        richText
-      }
     }
   }
 `
