@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container } from '../Components'
+import { Container, Button } from '../Components'
 import * as sty from './faculty-grid.module.scss'
 import { PrismicRichText } from '@prismicio/react'
 
@@ -34,6 +34,8 @@ export const FacultyGrid = ({ slice }) => {
             </div>
           ))}
         </div>
+
+        <button>{slice.primary.button_text}</button>
       </Container>
     </section>
   )
@@ -52,6 +54,7 @@ export const query = graphql`
         gatsbyImageData
         alt
       }
+      button_text
     }
     items {
       image {
