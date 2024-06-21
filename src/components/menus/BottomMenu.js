@@ -93,11 +93,7 @@ export const BottomMenu = ({ menu }) => {
                 <ul className={`list-no-style ${sty.SocialLinks}`}>
                   {menu.socials.map((item, index) => (
                     <li>
-                      <PrismicLink
-                        href={'/'}
-                        key={`socialLink:${index}`}
-                        className={sty.SocialLink}
-                      >
+                      <PrismicLink href={'/'} key={`socialLink:${index}`}>
                         <GatsbyImage
                           image={item?.social_icon?.gatsbyImageData}
                           alt={item.social_icon?.alt || ''}
