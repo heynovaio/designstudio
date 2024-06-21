@@ -9,7 +9,6 @@ import { Hero } from '../components/_homepage/hero'
 import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
-import { Contact } from '../components/_homepage/contact'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -52,13 +51,6 @@ const HomeTemplate = ({ data }) => {
   const dsCircleLogo = node.ds_circle_logo
 
   const testimonials = node.testimonials
-
-  const contactMapMarker = node.contact_map_marker
-  const contactHeader = node.contact_header
-  const contactDesc = node.contact_description
-  const contactCTA = node.contact_cta
-  const contactEmail = menuNode.caymans_email
-  const contactPhone = menuNode.caymans_phone
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
@@ -185,16 +177,6 @@ export const query = graphql`
           }
           testimonial_author
         }
-        contact_map_marker {
-          latitude
-          longitude
-        }
-        contact_header {
-          richText
-        }
-        contact_description
-        contact_cta
-      }
     }
     prismicMenu(lang: { eq: $lang }) {
       _previewable
