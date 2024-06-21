@@ -36,7 +36,6 @@ module.exports = {
           `Poppins\:400,600,700`,
           `Playfair Display\:italic,400,600,700`,
           `Poller One\:400`,
-          `Poller One\:400`,
         ],
         display: 'swap',
       },

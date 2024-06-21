@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
-import { PrismicLink, PrismicText } from '@prismicio/react'
-import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import { graphql } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
 
 import * as sty from './BottomMenu.module.scss'
@@ -10,38 +10,45 @@ export const BottomMenu = ({ menu }) => {
   return (
     <footer className={sty.footer}>
       <Container className={`flex ${sty.containerFooter} `}>
-        <div className={sty.SocialColumn}>
-            <div className={sty.SocialGroup}>
-              <div className={sty.MenuLinkTitle}>Follow Us</div>
-              <ul className={`list-no-style ${sty.SocialLinks}`}>
-                {menu.socials.map((item, index) => (
-                  <li>
-                    <PrismicLink
-                      href={'/'}
-                      key={`socialLink:${index}`}
-                      className={sty.SocialLink}
-                    >
-                      <GatsbyImage
-                        image={item?.social_icon?.gatsbyImageData}
-                        alt={item.social_icon?.alt || ''}
-                      />
-                    </PrismicLink>
-                  </li>
-                ))}
-              </ul>
+        <div className={sty.contactColumn}>
+          <div className={sty.contacts}>
+            <div className={sty.info}>
+              <div className={sty.MenuLinkTitle}>Cayman Islands</div>
+              <p>{menu.caymans_phone}</p>
+              <p>{menu.caymans_street}</p>
+              <p>{menu.caymans_city}</p>
+              <p>{menu.caymans_location}</p>
             </div>
-            <PrismicLink className={sty.LogoWrap} href={'/'}>
-              <GatsbyImage
-                image={menu.logo_alt?.gatsbyImageData}
-                alt={menu.logo_alt?.alt || ''}
-                className={sty.logo}
-              />
-            </PrismicLink>
+
+            <div className={sty.info}>
+              <div className={sty.MenuLinkTitle}>Turks & Caicos</div>
+              <p>{menu.turks_and_caicos_phone}</p>
+              <p>{menu.turks_and_caicos_complex}</p>
+              <p>{menu.turks_and_caicos_street}</p>
+              <p>{menu.turks_and_caicos_city}</p>
+              <p>{menu.turks_and_caicos_location}</p>
+              <p>{menu.turks_and_caicos_email}</p>
+            </div>
           </div>
-        <div className={sty.navBar}>
+        </div>
+        <div className={sty.logoColumn}>
+          <PrismicLink href={'/'}>
+            <GatsbyImage
+              image={menu.logo_alt?.gatsbyImageData}
+              alt={menu.logo_alt?.alt || ''}
+            />
+          </PrismicLink>
+          <div className={sty.subscribe}>
+            <p>
+              <span className={sty.friendsText}>Let's be friends </span>
+              <span className={sty.inboxText}>Interiors in your Inbox</span>
+            </p>
+            {/**FORM FIELD */}
+          </div>
+        </div>
+        <div className={sty.linksColumn}>
           <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>{menu.menu_links_title.text}</div>
-            <ul className='list-no-style'>
+            <ul className="list-no-style">
               {menu.menu_links.map((item, index) => (
                 <li>
                   <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
@@ -49,71 +56,60 @@ export const BottomMenu = ({ menu }) => {
                   </PrismicLink>
                 </li>
               ))}
-            </ul>
-          </div>
-          <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>
-              {menu.catalog_links_title.text}
-            </div>
-            <ul className='list-no-style'>
-              {menu.catalog_links.map((item, index) => (
-                <li>
-                  <PrismicLink
-                    href={
-                      item.link ? item.link.url : `/collection/${item.catalog_handle}`
-                    }
-                    key={`categoryLink:${index}`}
-                  >
-                    {item.label}
-                  </PrismicLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={sty.MenuLinks}>
-            <div className={sty.MenuLinkTitle}>{menu.legal_links_title.text}</div>
-            <ul className='list-no-style'>
-              {menu.legal_links.map((item, index) => (
-                <li>
-                  <PrismicLink href={item.link?.url} key={`legalLink:${index}`}>
-                    {item.label}
-                  </PrismicLink>
-                </li>
-              ))}
+
+              <div className={sty.legalTitle}>
+                {menu.legal_links_title.text}
+              </div>
+              <ul className="list-no-style">
+                {menu.legal_links.map((item, index) => (
+                  <li>
+                    <PrismicLink
+                      href={item.link?.url}
+                      key={`legalLink:${index}`}
+                    >
+                      {item.label}
+                    </PrismicLink>
+                  </li>
+                ))}
+              </ul>
             </ul>
           </div>
         </div>
-        <div className={sty.ContactColumn}>
-            <div className={sty.MenuLinkTitle}> Caymans Contact</div>
-            <div className={sty.info}>
-              <p>{menu.caymans_email}</p>
-            </div>
-            <div className={sty.info}>
-              <p>{menu.caymans_phone}</p>
-            </div>
-            {/* <div className={sty.info}>
-              <p className={sty.address}>
-                {menu.caymans_address}
-              </p>
-            </div> */}
-
-            <div className={sty.MenuLinkTitle}> Turks & Caicos Contact</div>
-            <div className={sty.info}>
-              <p>{menu.turks_and_caicos_email}</p>
-            </div>
-            <div className={sty.info}>
-              <p>{menu.turks_and_caicos_phone}</p>
-            </div>
-            {/* <div className={sty.info}>
-              <p>
-                {menu.turks_and_caicos_address}
-              </p>
-            </div> */}
-          </div>
       </Container>
-      <div className={sty.Copyright}>
-        <Container>
-          <p>{menu.copyright}</p>
+      <div className={sty.bottomBar}>
+        <Container className={sty.bottomContainer}>
+          <div className={sty.bottomBarInfoWrap}>
+            <p>{menu.copyright}</p>
+          </div>
+          <div className={sty.bottomBarInfoWrap}>
+            <p>
+              <span className={sty.helloText}>Say Hello </span>
+              <span className={sty.emailText}>{menu.caymans_email}</span>
+            </p>
+          </div>
+          <div className={sty.bottomBarInfoWrap}>
+            <div className={sty.SocialColumn}>
+              <div className={sty.SocialGroup}>
+                <ul className={`list-no-style ${sty.SocialLinks}`}>
+                  {menu.socials.map((item, index) => (
+                    <li>
+                      <PrismicLink
+                        href={'/'}
+                        key={`socialLink:${index}`}
+                        className={sty.SocialLink}
+                      >
+                        <GatsbyImage
+                          image={item?.social_icon?.gatsbyImageData}
+                          alt={item.social_icon?.alt || ''}
+                        />
+                      </PrismicLink>
+                    </li>
+                  ))}
+                  <p>DesignStudioInteriors</p>
+                </ul>
+              </div>
+            </div>
+          </div>
         </Container>
       </div>
     </footer>
@@ -158,9 +154,16 @@ export const query = graphql`
       menu_links_title {
         text
       }
-      caymans_email
       caymans_phone
+      caymans_street
+      caymans_city
+      caymans_location
+      caymans_email
       turks_and_caicos_email
+      turks_and_caicos_complex
+      turks_and_caicos_street
+      turks_and_caicos_city
+      turks_and_caicos_location
       turks_and_caicos_phone
       socials {
         social_icon {
