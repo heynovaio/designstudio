@@ -177,6 +177,7 @@ export const query = graphql`
           }
           testimonial_author
         }
+      }
     }
     prismicMenu(lang: { eq: $lang }) {
       _previewable
