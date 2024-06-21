@@ -1,68 +1,110 @@
 @import '../../base/module';
 
 .heroBanner {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 }
 
 .heroContainer {
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  @media (min-width: $desktop) {
     padding: 50px;
+    min-height: 65vh;
+  }
 }
 
 .homeHero {
-    min-height: 80vh;
+  min-height: 50vh;
+  @media (min-width: $desktop) {
+    min-height: 90vh;
+  }
 }
 
 .heroImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  &::before { 
+    display: block;
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    &::before { 
-        display: block;
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: $color-black;
-        z-index: 1;
-        opacity: 10%;
-    }
+    background: $color-black;
+    z-index: 1;
+    opacity: 10%;
+  }
 }
 
 .logoWrap,
 .copyWrap {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
+}
+
+.logoWrap {
+  @media (max-width: $tablet) {
+    max-width: 250px;
+  }
 }
 
 .copyWrap {
-    color: $color-white;
-    font-family: $font-secondary;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    vertical-align: middle;
-    text-align: center;
-    min-height: 30vh;
+  color: $color-white;
+  font-family: $font-secondary;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  vertical-align: middle;
+  text-align: center;
+  min-height: 25vh;
 
-    strong {
-        font-family:$font-header;
-        text-transform: lowercase;
-        font-size: 2em;
-        display: inline-block;
-        margin-top: -0.4em;
-        vertical-align: middle;
+  h1 {
+    font-style: italic;
+    text-transform: none;
+    font-size: 3.75rem;
+    @media (min-width: $desktop) {
+      font-size: 5.7em;
     }
+  }
+
+  @media (min-width: $desktop) {
+      font-size: 1.4rem;
+  }
+
+  strong {
+    font-family:$font-header;
+    text-transform: lowercase;
+    font-size: 1.5em;
+    display: inline-block;
+    margin-top: -0.5em;
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+}
+
+.homeCopy {
+  @media (min-width: $desktop) {
+    min-height: 40vh;
+    font-size: 1.4rem;
+  }
+}
+
+.HeroBtn {
+  margin-top: 1em;
+  margin: 1em auto 0 auto;
+  @media (max-width: $tablet) {
+    font-size: 0.875em !important;
+  }
 }

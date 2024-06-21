@@ -2,8 +2,9 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from '../Components'
-import { Button } from '../Components'
+import {
+  BiArrowBack
+} from 'react-icons/bi'
 
 import * as sty from './hero-banner.module.scss'
 
@@ -21,11 +22,11 @@ export const HeroBanner = ({ slice }) => {
           className={sty.image}
         />
       </div>
-        <div className={sty.copyWrap}>
+        <div className={`${sty.copyWrap} ${location.pathname === '/' ? sty.homeCopy : ''}`}>
           <PrismicRichText field={slice.primary.page_title?.richText} />
           {slice.primary.callout_link && (
-            <PrismicLink href={slice.primary.callout_link.url} className={sty.BtnPrimary}>
-              {slice.primary.callout_label}
+            <PrismicLink href={slice.primary.callout_link.url} className={`BtnPrimary ${sty.HeroBtn}`}>
+              {slice.primary.callout_label} <BiArrowBack size={18} style={{transform: 'scaleX(-1)', marginLeft: '0.5em'}} />
             </PrismicLink>
           )}
         </div>
