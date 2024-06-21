@@ -78,30 +78,36 @@ export const BottomMenu = ({ menu }) => {
       </Container>
       <div className={sty.bottomBar}>
         <Container className={sty.bottomContainer}>
-          <p>{menu.copyright}</p>
-          <p>
-            <span className={sty.helloText}>Say Hello </span>
-            <span className={sty.emailText}>{menu.caymans_email}</span>
-          </p>
-          <div className={sty.SocialColumn}>
-            <div className={sty.SocialGroup}>
-              <ul className={`list-no-style ${sty.SocialLinks}`}>
-                {menu.socials.map((item, index) => (
-                  <li>
-                    <PrismicLink
-                      href={'/'}
-                      key={`socialLink:${index}`}
-                      className={sty.SocialLink}
-                    >
-                      <GatsbyImage
-                        image={item?.social_icon?.gatsbyImageData}
-                        alt={item.social_icon?.alt || ''}
-                      />
-                    </PrismicLink>
-                  </li>
-                ))}
-                <p>DesignStudioInteriors</p>
-              </ul>
+          <div className={sty.bottomBarInfoWrap}>
+            <p>{menu.copyright}</p>
+          </div>
+          <div className={sty.bottomBarInfoWrap}>
+            <p>
+              <span className={sty.helloText}>Say Hello </span>
+              <span className={sty.emailText}>{menu.caymans_email}</span>
+            </p>
+          </div>
+          <div className={sty.bottomBarInfoWrap}>
+            <div className={sty.SocialColumn}>
+              <div className={sty.SocialGroup}>
+                <ul className={`list-no-style ${sty.SocialLinks}`}>
+                  {menu.socials.map((item, index) => (
+                    <li>
+                      <PrismicLink
+                        href={'/'}
+                        key={`socialLink:${index}`}
+                        className={sty.SocialLink}
+                      >
+                        <GatsbyImage
+                          image={item?.social_icon?.gatsbyImageData}
+                          alt={item.social_icon?.alt || ''}
+                        />
+                      </PrismicLink>
+                    </li>
+                  ))}
+                  <p>DesignStudioInteriors</p>
+                </ul>
+              </div>
             </div>
           </div>
         </Container>

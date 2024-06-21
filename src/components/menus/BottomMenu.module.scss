@@ -145,11 +145,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: width(12);
+
   text-transform: uppercase;
 
   @media (min-width: $desktop) {
-    max-width: width(2.5);
     order: 3;
     padding-left: 30px;
   }
@@ -160,6 +159,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 15px;
     }
   }
@@ -199,9 +199,15 @@
   align-items: center;
   text-align: center;
   gap: 25px;
+  width: 100%;
 
   @media (min-width: $desktop) {
     flex-direction: row;
     justify-content: space-between;
+    gap: 13.5em;
   }
+}
+
+.bottomBarInfoWrap {
+  width: 100%;
 }
