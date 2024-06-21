@@ -1,31 +1,14 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { PrismicRichText } from '@prismicio/react'
-import { Container, Button } from '../Components'
-import { IoClose } from 'react-icons/io5'
+import { Container } from '../Components'
 import * as sty from './faculty-grid.module.scss'
 
 export const FacultyGrid = ({ slice }) => {
-  const [activeBio, setActiveBio] = React.useState(-1)
-
-  const handleClick = (e) => {
-    setActiveBio(e.target.value)
-
-    if (typeof document !== `undefined`) {
-      document.body.classList.toggle('modal-open')
-    }
-  }
-  const handleClose = (e) => {
-    setActiveBio(-1)
-    if (typeof document !== `undefined`) {
-      document.body.classList.remove('modal-open')
-    }
-  }
   return (
     <section className={sty.FacultyGrid}>
       <Container>
-        <div style={{ marginBottom: 60 }}>
+        <div style={{ marginBottom: 60, textAlign: 'center' }}>
           <h2>{slice.primary.title}</h2>
         </div>
         <div className={sty.grid}>
@@ -43,31 +26,6 @@ export const FacultyGrid = ({ slice }) => {
             </div>
           ))}
         </div>
-        {activeBio != -1 && (
-          <div className={sty.bioModalWrap}>
-            <div className={sty.bioModal}>
-              <div className={sty.copyWrap}>
-                <div className={sty.close} onClick={handleClose}>
-                  <IoClose />
-                </div>
-                <span className={sty.name}>{slice.items[activeBio]?.name}</span>
-                <p className={sty.subName}>
-                  Favourite Style: {slice.items[activeBio]?.favourite_style}
-                </p>
-                <PrismicRichText
-                  field={slice.items[activeBio]?.bio?.richText}
-                />
-              </div>
-              <div className={sty.imageWrapModal}>
-                <GatsbyImage
-                  image={slice.items[activeBio]?.image?.gatsbyImageData}
-                  alt={slice.items[activeBio]?.image?.alt || ''}
-                  className={sty.image}
-                />
-              </div>
-            </div>
-          </div>
-        )}
       </Container>
     </section>
   )
