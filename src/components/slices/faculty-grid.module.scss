@@ -3,6 +3,13 @@
   position: relative;
   padding-top: 0;
 }
+
+.photoContainer {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));

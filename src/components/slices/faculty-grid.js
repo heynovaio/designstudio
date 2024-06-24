@@ -8,12 +8,12 @@ import { PrismicRichText } from '@prismicio/react'
 export const FacultyGrid = ({ slice }) => {
   return (
     <section className={sty.FacultyGrid}>
-      <Container>
-        <div className={sty.gridHead}>
-          <p>{slice.primary.subtitle}</p>
-          <h2>{slice.primary.title}</h2>
-          <PrismicRichText field={slice.primary.description.richText} />
-        </div>
+      <div className={sty.gridHead}>
+        <p>{slice.primary.subtitle}</p>
+        <h2>{slice.primary.title}</h2>
+        <PrismicRichText field={slice.primary.description.richText} />
+      </div>
+      <Container className={sty.photoContainer}>
         <GatsbyImage
           image={slice.primary.faculty_header_image?.gatsbyImageData}
           alt={slice.primary.faculty_header_image?.alt || ''}
