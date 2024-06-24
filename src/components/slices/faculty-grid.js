@@ -33,11 +33,14 @@ export const FacultyGrid = ({ slice }) => {
             </div>
           ))}
         </div>
-
+      </Container>
+      <div className={sty.buttonArea}>
+        <div className={sty.horizontalLine}></div>
         <button className={sty.viewWorkButton}>
           {slice.primary.button_text}
         </button>
-      </Container>
+        <div className={sty.horizontalLine}></div>
+      </div>
     </section>
   )
 }
