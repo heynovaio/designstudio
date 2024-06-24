@@ -2,12 +2,12 @@
 
 //this is compensating for the space taken up by the top menu
 .main {
-  padding-top: 120px;
+  padding-top: 58px;
   overflow-x: hidden;
 
-  @media (min-width: $tablet) {
-    padding-top: 160px;
-  }
+  // @media (min-width: $tablet) {
+  //   padding-top: 160px;
+  // }
 }
 
 //tl-edges fix with sticky menu

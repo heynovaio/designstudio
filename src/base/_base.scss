@@ -56,12 +56,15 @@ span.BtnSecondary {
   align-items: center;
   text-align: center;
   width: max-content;
-  border-radius: 52px;
+  border-radius: 0;
   color: $color-black;
-  font-weight: 700;
+  font-weight: 600;
   box-sizing: border-box;
   line-height: 1;
   transition: all 400ms ease-in-out;
+  font-family: $font-secondary;
+  letter-spacing: 10%;
+  font-size: 1.25rem;
   a {
     color: $color-black;
     line-height: 1;
@@ -69,9 +72,10 @@ span.BtnSecondary {
 }
 .BtnPrimary {
   @extend .Btn;
-  border: 2px solid $color-lightorange;
-  background: $color-lightorange;
-  padding: 14px 23px;
+  border: 2px solid $color-orange;
+  background: $color-orange;
+  color: $color-white;
+  padding: 0.7em 1.15em;
   max-width: 100%;
 
   &:hover {
