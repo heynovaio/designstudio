@@ -19,7 +19,6 @@ export const HeroBanner = ({ slice }) => {
           width={378}
           height={182}
           layout="constrained"
-          className={sty.image}
         />
       </div>
         <div className={`${sty.copyWrap} ${location.pathname === '/' ? sty.homeCopy : ''}`}>
