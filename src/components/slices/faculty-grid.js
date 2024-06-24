@@ -35,7 +35,9 @@ export const FacultyGrid = ({ slice }) => {
           ))}
         </div>
 
-        <button>{slice.primary.button_text}</button>
+        <button className={sty.viewWorkButton}>
+          {slice.primary.button_text}
+        </button>
       </Container>
     </section>
   )
