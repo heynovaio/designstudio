@@ -13,6 +13,13 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+
+.gridHead {
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: $color-sage;
+  padding: 70px 60px 200px 60px;
+}
 .name {
   font-weight: 600;
   font-size: 25px;
