@@ -10,7 +10,7 @@ export const FacultyGrid = ({ slice }) => {
     <section className={sty.FacultyGrid}>
       <div className={sty.gridHead}>
         <p className={sty.headSubtitle}>{slice.primary.subtitle}</p>
-        <h2>{slice.primary.title}</h2>
+        <PrismicRichText field={slice.primary.faculty_title.richText} />
         <PrismicRichText field={slice.primary.description.richText} />
       </div>
       <Container className={sty.photoContainer}>
@@ -49,7 +49,9 @@ export const query = graphql`
   fragment PageDataBodyFacultyGrid on PrismicPageDataBodyFacultyGrid {
     id
     primary {
-      title
+      faculty_title {
+        richText
+      }
       description {
         richText
       }

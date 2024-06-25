@@ -46,15 +46,20 @@
     margin: 0 auto;
     width: 100%;
     text-align: center;
+    font-size: 1em;
     @media (min-width: $tablet) {
       width: 60%;
+      font-size: 1.125em;
     }
   }
   h2 {
-    margin-bottom: 15px;
-    font-size: 3.125em;
+    margin-bottom: 25px;
+    font-size: 1.875em;
     font-weight: 400;
     font-family: $font-header;
+    @media (min-width: $tablet) {
+      font-size: 3.125em;
+    }
   }
   @media (min-width: $tablet) {
     padding: 70px 60px 200px 60px;
@@ -64,7 +69,10 @@
 .headSubtitle {
   text-transform: uppercase;
   font-family: $font-secondary;
-  font-size: 1.5em;
+  font-size: 1.25em;
+  @media (min-width: $tablet) {
+    font-size: 1.5em;
+  }
 }
 
 .name {
@@ -72,13 +80,14 @@
   font-family: $font-secondary;
   color: $color-greydarker;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1.25em;
   line-height: 38px;
   display: block;
   margin-bottom: 16px;
   text-align: center;
   @media (min-width: $tablet) {
     margin-bottom: 0px;
+    font-size: 1.5em;
   }
 }
 .employeeCard {
@@ -86,9 +95,14 @@
   flex-direction: column;
   align-items: center;
   .imageWrap {
-    padding: 25px;
+    padding: 15px;
     background-color: $color-sage; // currently just sage so I can see it easier the other colors are similar
     margin-bottom: 20px;
+    @media (min-width: $tablet) {
+      margin-bottom: 0px;
+      font-size: 1.5em;
+      padding: 25px;
+    }
   }
   .image {
     width: 100%;
