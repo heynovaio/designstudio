@@ -2,14 +2,11 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
-
 import { Layout } from '../components/Layout'
-
-import { Hero } from '../components/_homepage/hero'
 import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
-import { Contact } from '../components/_homepage/contact'
+import { components } from '../components/slices'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -53,24 +50,12 @@ const HomeTemplate = ({ data }) => {
 
   const testimonials = node.testimonials
 
-  const contactMapMarker = node.contact_map_marker
-  const contactHeader = node.contact_header
-  const contactDesc = node.contact_description
-  const contactCTA = node.contact_cta
-  const contactEmail = menuNode.caymans_email
-  const contactPhone = menuNode.caymans_phone
-
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <Hero
-        title={heroTitle}
-        description={heroDescription}
-        catalogLabel={catalogBtnLabel}
-        catalogLink={btn1}
-        worksLabel={worksBtnLabel}
-        worksLink={btn2}
-        gallery={heroGallery}
-        bottom={bellowHero}
+      <SliceZone
+        slices={node.body}
+        components={components}
+        context={{ lang: lang }}
       />
       <Catalog
         description={catalogDesc}
@@ -91,14 +76,6 @@ const HomeTemplate = ({ data }) => {
         background={'#A8C3BE'}
         ds_circle_logo={dsCircleLogo}
       />
-      <Contact
-        marker={contactMapMarker}
-        header={contactHeader}
-        description={contactDesc}
-        cta={contactCTA}
-        email={contactEmail}
-        phone={contactPhone}
-      />
     </Layout>
   )
 }
@@ -116,6 +93,14 @@ export const query = graphql`
       url
       type
       data {
+        body {
+          ... on PrismicSlice {
+            id
+            slice_type
+            slice_label
+          }
+          ...HomeDataBodyHeroBanner
+        }
         hero_title {
           richText
         }
@@ -193,15 +178,6 @@ export const query = graphql`
           }
           testimonial_author
         }
-        contact_map_marker {
-          latitude
-          longitude
-        }
-        contact_header {
-          richText
-        }
-        contact_description
-        contact_cta
       }
     }
     prismicMenu(lang: { eq: $lang }) {

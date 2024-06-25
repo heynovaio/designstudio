@@ -76,12 +76,12 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
                 </button>
               ))}
               <NavBarIcons />
-              <button
+              {/* <button
                 onClick={toggleMenu}
                 className={`${sty.mobileBtn}  ${mobileMenu ?? sty.navOpen}`}
               >
                 {mobileMenu ? <BiXCircle size={25} /> : <BiMenu size={25} />}
-              </button>
+              </button> */}
             </div>
           </div>
         </Container>
