@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container, Button } from '../Components'
+import { Container } from '../Components'
 import * as sty from './faculty-grid.module.scss'
 import { PrismicRichText } from '@prismicio/react'
 
@@ -17,7 +17,7 @@ export const FacultyGrid = ({ slice }) => {
         <GatsbyImage
           image={slice.primary.faculty_header_image?.gatsbyImageData}
           alt={slice.primary.faculty_header_image?.alt || ''}
-          className={sty.image}
+          className={sty.headImage}
         />
         <div className={sty.grid}>
           {slice.items.map((item) => (
