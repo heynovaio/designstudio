@@ -2,10 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
-
 import { Layout } from '../components/Layout'
-
-import { Hero } from '../components/_homepage/hero'
 import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
