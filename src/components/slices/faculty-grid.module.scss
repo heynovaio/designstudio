@@ -50,14 +50,29 @@
       width: 60%;
     }
   }
+  h2 {
+    margin-bottom: 15px;
+    font-size: 3.125em;
+    font-weight: 400;
+    font-family: $font-header;
+  }
   @media (min-width: $tablet) {
     padding: 70px 60px 200px 60px;
   }
 }
 
+.headSubtitle {
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  font-size: 1.5em;
+}
+
 .name {
   font-weight: 600;
-  font-size: 25px;
+  font-family: $font-secondary;
+  color: $color-greydarker;
+  text-transform: uppercase;
+  font-size: 1.5em;
   line-height: 38px;
   display: block;
   margin-bottom: 16px;

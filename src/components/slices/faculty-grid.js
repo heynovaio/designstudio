@@ -9,7 +9,7 @@ export const FacultyGrid = ({ slice }) => {
   return (
     <section className={sty.FacultyGrid}>
       <div className={sty.gridHead}>
-        <p>{slice.primary.subtitle}</p>
+        <p className={sty.headSubtitle}>{slice.primary.subtitle}</p>
         <h2>{slice.primary.title}</h2>
         <PrismicRichText field={slice.primary.description.richText} />
       </div>
