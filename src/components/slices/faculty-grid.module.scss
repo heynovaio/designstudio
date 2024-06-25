@@ -31,7 +31,7 @@
   row-gap: 5px;
 
   @media (min-width: $tablet) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
     row-gap: 30px;
   }
 }
@@ -40,7 +40,7 @@
   margin-bottom: 60px;
   text-align: center;
   background-color: $color-sage;
-  padding: 40px 50px 130px 50px;
+  padding: 40px 40px 130px 40px;
   p {
     display: block;
     margin: 0 auto;
@@ -105,8 +105,9 @@
     }
   }
   .image {
-    width: 100%;
     position: relative;
+    border: 5px solid white;
+    border-radius: 150px;
   }
 }
 
