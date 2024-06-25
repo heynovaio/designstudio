@@ -49,6 +49,7 @@ export const query = graphql`
             slice_type
             slice_label
           }
+          ...PageDataBodyHeroBanner
           ...PageDataBodyTextImage
           ...PageDataBodyCenteredText
           ...PageDataBodyProjectGrid

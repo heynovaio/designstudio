@@ -67,6 +67,7 @@
   vertical-align: top;
   letter-spacing: 10%;
   cursor: pointer;
+  white-space: nowrap;
 
   &:first-child::after {
     content: '';
