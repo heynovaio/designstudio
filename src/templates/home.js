@@ -7,6 +7,7 @@ import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
 import { components } from '../components/slices'
+import { ShopByRoom } from '../components/collections-grid/shop-by-room'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -57,13 +58,8 @@ const HomeTemplate = ({ data }) => {
         components={components}
         context={{ lang: lang }}
       />
-      <Catalog
-        description={catalogDesc}
-        image={catalogImage}
-        products={catalogProducts}
-        gallery={catalogByRoomGallery}
-        background={'rgba(206, 96, 52, 0.08)'}
-      />
+
+      <ShopByRoom gallery={catalogByRoomGallery} />
       <InstagramFeed
         header={instaHeader}
         viewLabel={viewLabel}
