@@ -8,7 +8,7 @@ import { PrismicRichText } from '@prismicio/react'
 export const FacultyGrid = ({ slice }) => {
   return (
     <section className={sty.FacultyGrid}>
-      <div className={sty.gridHead}>
+      <div className={sty.facultyHead}>
         <p className={sty.headSubtitle}>{slice.primary.subtitle}</p>
         <PrismicRichText field={slice.primary.faculty_title.richText} />
         <PrismicRichText field={slice.primary.description.richText} />
@@ -19,7 +19,7 @@ export const FacultyGrid = ({ slice }) => {
           alt={slice.primary.faculty_header_image?.alt || ''}
           className={sty.headImage}
         />
-        <div className={sty.grid}>
+        <div className={sty.facultyMembers}>
           {slice.items.map((item) => (
             <div className={sty.employeeCard}>
               <div className={sty.imageWrap}>
