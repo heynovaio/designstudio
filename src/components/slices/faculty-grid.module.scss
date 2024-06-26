@@ -72,12 +72,10 @@
 .facultyMembers {
   display: flex;
   flex-direction: row;
-  height: 410px;
   gap: 15px;
   flex-wrap: wrap;
   @media (min-width: $tablet) {
     gap: 30px;
-    height: 210px;
   }
 }
 
