@@ -56,6 +56,11 @@ export const ShopByRoom = ({ gallery }) => {
           </PrismicLink>
         ))}
       </div>
+      <div className={sty.buttonArea}>
+        <div className={sty.horizontalLine}></div>
+        <button className={sty.viewWorkButton}>test text</button>
+        <div className={sty.horizontalLine}></div>
+      </div>
     </div>
   )
 }
