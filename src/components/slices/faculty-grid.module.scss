@@ -1,4 +1,5 @@
 @import '../../base/module';
+
 .FacultyGrid {
   position: relative;
   padding-top: 0;
@@ -24,15 +25,14 @@
     height: 500px;
   }
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, min(1fr));
-  column-gap: 30px;
-  row-gap: 5px;
 
+.grid {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: wrap;
   @media (min-width: $tablet) {
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
-    row-gap: 30px;
+    gap: 30px;
   }
 }
 
@@ -41,6 +41,7 @@
   text-align: center;
   background-color: $color-sage;
   padding: 40px 40px 130px 40px;
+
   p {
     display: block;
     margin: 0 auto;
@@ -52,6 +53,7 @@
       font-size: 1.125em;
     }
   }
+
   h2 {
     margin-bottom: 25px;
     font-size: 1.875em;
@@ -61,6 +63,7 @@
       font-size: 3.125em;
     }
   }
+
   @media (min-width: $tablet) {
     padding: 70px 60px 200px 60px;
   }
@@ -90,10 +93,17 @@
     font-size: 1.5em;
   }
 }
+
 .employeeCard {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 1 calc(50% - 30px);
+
+  @media (min-width: $tablet) {
+    flex: 1 1 calc(25% - 30px);
+  }
+
   .imageWrap {
     padding: 15px;
     background-color: $color-sage; // currently just sage so I can see it easier the other colors are similar
@@ -103,10 +113,19 @@
       padding: 25px;
     }
   }
+
   .image {
     position: relative;
     border: 5px solid white;
     border-radius: 150px;
+    width: 100%;
+    max-width: 160px;
+    aspect-ratio: 1/1;
+    max-height: 160px;
+    @media (min-width: $tablet) {
+      max-width: 300px;
+      max-height: 300px;
+    }
   }
 }
 
@@ -130,14 +149,14 @@
   letter-spacing: 0.125em;
   display: block;
   margin: 0 auto;
-  // DONT FORGOT TO CHECK ABOUT ARROW ICON ******
 }
 
 button::after {
   content: '\0279D';
   margin-left: 10px;
-  font-size: 1.1em; // Adjust size as needed
+  font-size: 1.1em;
 }
+
 .horizontalLine {
   width: 100%;
   height: 1px;
