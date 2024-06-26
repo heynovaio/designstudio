@@ -12,7 +12,7 @@
   position: relative;
   top: -165px;
   @media (min-width: $tablet) {
-    top: -215px;
+    top: -285px;
   }
 }
 
@@ -65,7 +65,7 @@
   }
 
   @media (min-width: $tablet) {
-    padding: 70px 60px 200px 60px;
+    padding: 70px 60px 270px 60px;
   }
 }
 
@@ -99,7 +99,6 @@
   flex-direction: column;
   align-items: center;
   flex: 1 1 calc(50% - 30px);
-
   @media (min-width: $tablet) {
     flex: 1 1 calc(25% - 30px);
   }
@@ -134,11 +133,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 25px;
+  @media (min-width: $tablet) {
+    gap: 50px;
+  }
 }
 
 .viewWorkButton {
-  min-width: 296px;
+  min-width: 250px;
   height: 65px;
   background: $color-orange;
   font-family: $font-secondary;
@@ -149,6 +151,9 @@
   letter-spacing: 0.125em;
   display: block;
   margin: 0 auto;
+  @media (min-width: $tablet) {
+    min-width: 296px;
+  }
 }
 
 button::after {
