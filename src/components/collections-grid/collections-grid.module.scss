@@ -13,12 +13,12 @@
     grid-template-rows: repeat(2, 1fr);
     column-gap: 50px;
     row-gap: 30px;
-    margin-bottom: 50px;
-    padding: 0 50px;
 
     @media (min-width: $tablet) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(1, 1fr);
+      margin: 70px 0px;
+      padding: 0 50px;
     }
 
     .gridItem {
@@ -38,13 +38,31 @@
         padding: 25px;
       }
       h3 {
-        margin-top: 10px;
-        color: $color-black;
-        font-size: 28px;
-        text-transform: capitalize;
+        margin-top: 40px;
+        font-family: $font-secondary;
+        color: $color-greydarker;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        line-height: 108%;
+        letter-spacing: 0.14em;
       }
     }
   }
+}
+
+.headerText p {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 108%;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+
+.headerText h2 {
+  font-weight: 400;
+  line-height: 124%;
 }
 
 .image {
@@ -87,7 +105,7 @@
 
 button::after {
   content: '\0279D';
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 1.1em;
 }
 

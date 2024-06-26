@@ -42,6 +42,7 @@ const HomeTemplate = ({ data }) => {
   const catalogByRoomGallery = node.catalog_by_room_gallery
   const shopByRoomHeader = node.shop_by_room_header
   const shopByRoomSubheader = node.shop_by_room_sub_header
+  const shopByRoomBtnText = node.shop_by_room_btn_text
 
   const instaHeader = node.instagram_header
   const viewLabel = node.view_media_label
@@ -65,6 +66,7 @@ const HomeTemplate = ({ data }) => {
         gallery={catalogByRoomGallery}
         header={shopByRoomHeader}
         subheader={shopByRoomSubheader}
+        btnText={shopByRoomBtnText}
       />
       <InstagramFeed
         header={instaHeader}
@@ -139,7 +141,6 @@ export const query = graphql`
         catalog_image {
           gatsbyImageData
         }
-
         catalog_products {
           item_x_value
           item_y_value
@@ -153,7 +154,9 @@ export const query = graphql`
         shop_by_room_sub_header {
           richText
         }
-
+        shop_by_room_btn_text {
+          richText
+        }
         catalog_by_room_gallery {
           image {
             gatsbyImageData

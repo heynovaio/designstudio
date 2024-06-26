@@ -7,11 +7,13 @@ import { PrismicRichText } from '@prismicio/react'
 
 import * as sty from './collections-grid.module.scss'
 
-export const ShopByRoom = ({ gallery, header, subheader }) => {
+export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
   return (
     <div className={sty.ShopByRoom}>
-      <PrismicRichText className={sty.headerText} field={subheader.richText} />
-      <PrismicRichText className={sty.subheaderText} field={header.richText} />
+      <div className={sty.headerText}>
+        <PrismicRichText field={subheader.richText} />
+        <PrismicRichText field={header.richText} />
+      </div>
       <div className={sty.collectionsGrid}>
         {gallery.map((item, index) => (
           <PrismicLink
@@ -32,7 +34,9 @@ export const ShopByRoom = ({ gallery, header, subheader }) => {
       </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
-        <button className={sty.viewWorkButton}>test text</button>
+        <button className={sty.viewWorkButton}>
+          <PrismicRichText field={btnText.richText} />
+        </button>
         <div className={sty.horizontalLine}></div>
       </div>
     </div>
