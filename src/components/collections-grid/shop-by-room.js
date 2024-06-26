@@ -3,41 +3,15 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { PrismicLink } from '@prismicio/react'
 import { getShopifyImage } from 'gatsby-source-shopify'
+import { PrismicRichText } from '@prismicio/react'
 
 import * as sty from './collections-grid.module.scss'
 
-export const ShopByRoom = ({ gallery }) => {
-  const collectionData = useStaticQuery(graphql`
-    query {
-      allShopifyCollection(
-        filter: {
-          handle: { in: ["bath", "office", "bedroom", "dining", "outdoor"] }
-        }
-      ) {
-        nodes {
-          handle
-          image {
-            src
-          }
-        }
-      }
-    }
-  `)
-  const collections = collectionData.allShopifyCollection.nodes
-  function getImage(shopImg) {
-    const imageData = getShopifyImage({
-      shopImg,
-      width: 800,
-      height: 800,
-      layout: 'fixed',
-    })
-    return imageData
-  }
-
+export const ShopByRoom = ({ gallery, header, subheader }) => {
   return (
     <div className={sty.ShopByRoom}>
-      <p>Shop Our Selection</p>
-      <h2>Elevate your home with island elements</h2>
+      <PrismicRichText className={sty.headerText} field={subheader.richText} />
+      <PrismicRichText className={sty.subheaderText} field={header.richText} />
       <div className={sty.collectionsGrid}>
         {gallery.map((item, index) => (
           <PrismicLink
