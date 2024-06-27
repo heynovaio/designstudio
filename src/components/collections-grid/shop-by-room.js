@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { PrismicLink } from '@prismicio/react'
-import { getShopifyImage } from 'gatsby-source-shopify'
 import { PrismicRichText } from '@prismicio/react'
+import { BiArrowBack } from 'react-icons/bi'
 
 import * as sty from './collections-grid.module.scss'
 
@@ -34,8 +33,14 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
       </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
-        <button className={sty.viewWorkButton}>
-          <PrismicRichText field={btnText.richText} />
+        <button className={sty.shopButton}>
+          <span className={sty.btnContent}>
+            <PrismicRichText field={btnText.richText}></PrismicRichText>
+            <BiArrowBack
+              size={18}
+              style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
+            />
+          </span>
         </button>
         <div className={sty.horizontalLine}></div>
       </div>

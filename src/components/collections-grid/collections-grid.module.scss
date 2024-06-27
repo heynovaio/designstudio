@@ -86,8 +86,9 @@
   }
 }
 
-.viewWorkButton {
+.shopButton {
   min-width: 250px;
+  cursor: pointer;
   height: 65px;
   background: $color-orange;
   font-family: $font-secondary;
@@ -96,17 +97,18 @@
   text-transform: uppercase;
   line-height: 108%;
   letter-spacing: 0.125em;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   @media (min-width: $tablet) {
     min-width: 296px;
   }
-}
 
-button::after {
-  content: '\0279D';
-  margin-left: 5px;
-  font-size: 1.1em;
+  .btnContent {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .horizontalLine {
