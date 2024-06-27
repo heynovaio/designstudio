@@ -11,12 +11,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    column-gap: 50px;
+    column-gap: 40px;
     row-gap: 30px;
+    padding: 0 20px;
+    margin-bottom: 50px;
 
     @media (min-width: $tablet) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(1, 1fr);
+      column-gap: 70px;
       margin: 70px 0px;
       padding: 0 50px;
     }
@@ -41,10 +44,13 @@
         margin-top: 40px;
         font-family: $font-secondary;
         color: $color-greydarker;
-        font-size: 1.5em;
+        font-size: 1em;
         text-transform: uppercase;
         line-height: 108%;
         letter-spacing: 0.14em;
+        @media (min-width: $tablet) {
+          font-size: 1.5em;
+        }
       }
     }
   }
