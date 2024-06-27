@@ -38,7 +38,10 @@
         border-radius: 250px;
         display: block;
         margin: 0 auto;
-        padding: 30px;
+        padding: 15px;
+        @media (min-width: $tablet) {
+          padding: 30px;
+        }
       }
       h3 {
         margin-top: 40px;
@@ -53,6 +56,13 @@
         }
       }
     }
+  }
+}
+
+.headerText {
+  padding: 0px 20px;
+  @media (min-width: $tablet) {
+    padding: 0px;
   }
 }
 
