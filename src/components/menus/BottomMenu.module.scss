@@ -8,6 +8,28 @@
   font-family: $font-secondary;
   letter-spacing: 0.1em;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 6%;
+    bottom: -10px;
+    z-index: 1;
+    width: 560px;
+    height: 390px;
+    background-color: #EDECEB;
+    mask: url('../../images/palm.svg') no-repeat 100% 100%;
+    mask-size: contain;
+    transform: rotate(-140deg);
+  }
 }
 
 .container-footer {
