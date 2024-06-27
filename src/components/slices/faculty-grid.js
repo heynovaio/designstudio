@@ -4,6 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '../Components'
 import * as sty from './faculty-grid.module.scss'
 import { PrismicRichText } from '@prismicio/react'
+import { BiArrowBack } from 'react-icons/bi'
 
 export const FacultyGrid = ({ slice }) => {
   return (
@@ -36,8 +37,18 @@ export const FacultyGrid = ({ slice }) => {
       </Container>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
+
         <button className={sty.viewWorkButton}>
-          {slice.primary.button_text}
+          <span className={sty.btnContent}>
+            {slice.primary.button_text}
+            <BiArrowBack
+              size={18}
+              style={{
+                transform: 'scaleX(-1)',
+                marginLeft: '0.5em',
+              }}
+            />
+          </span>
         </button>
         <div className={sty.horizontalLine}></div>
       </div>
