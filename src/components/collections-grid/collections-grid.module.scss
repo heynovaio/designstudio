@@ -27,22 +27,17 @@
     .gridItem {
       .imgBox {
         width: 100%;
+        height: auto;
+
         aspect-ratio: 1/1;
-        position: relative;
-        overflow: hidden;
         background: $color-sagelt;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 99em;
-        display: block;
-        margin: 0 auto;
-        padding: 15px;
-        @media (min-width: $tablet) {
-          padding: 30px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 99em;
         }
       }
+
       h3 {
         margin-top: 20px;
         font-family: $font-secondary;
@@ -80,16 +75,6 @@
 .headerText h2 {
   font-weight: 400;
   line-height: 124%;
-}
-
-.image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  transition: all 0.15s ease-in-out;
 }
 
 .buttonArea {
