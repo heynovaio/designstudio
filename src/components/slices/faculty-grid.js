@@ -14,27 +14,29 @@ export const FacultyGrid = ({ slice }) => {
         <PrismicRichText field={slice.primary.faculty_title.richText} />
         <PrismicRichText field={slice.primary.description.richText} />
       </div>
-      <Container className={sty.photoContainer}>
-        <GatsbyImage
-          image={slice.primary.faculty_header_image?.gatsbyImageData}
-          alt={slice.primary.faculty_header_image?.alt || ''}
-          className={sty.headImage}
-        />
-        <div className={sty.facultyMembers}>
-          {slice.items.map((item) => (
-            <div className={sty.employeeCard}>
-              <div className={sty.imageWrap}>
-                <GatsbyImage
-                  image={item.image?.gatsbyImageData}
-                  alt={item.image?.alt || ''}
-                  className={sty.image}
-                />
+      <div className={sty.imageSection}>
+        <Container className={sty.photoContainer}>
+          <GatsbyImage
+            image={slice.primary.faculty_header_image?.gatsbyImageData}
+            alt={slice.primary.faculty_header_image?.alt || ''}
+            className={sty.headImage}
+          />
+          <div className={sty.facultyMembers}>
+            {slice.items.map((item) => (
+              <div className={sty.employeeCard}>
+                <div className={sty.imageWrap}>
+                  <GatsbyImage
+                    image={item.image?.gatsbyImageData}
+                    alt={item.image?.alt || ''}
+                    className={sty.image}
+                  />
+                </div>
+                <span className={sty.name}>{item.name}</span>
               </div>
-              <span className={sty.name}>{item.name}</span>
-            </div>
-          ))}
-        </div>
-      </Container>
+            ))}
+          </div>
+        </Container>
+      </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
 
