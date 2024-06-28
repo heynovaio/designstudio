@@ -8,22 +8,30 @@
   .logo-soup {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
     margin: 20px 0;
+    @media (min-width: $tablet) {
+      gap: 60px;
+    }
   }
 
   span {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
+    font-family: $font-header;
+    color: $color-black;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 175%;
   }
   a {
     font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 178%;
     text-decoration: underline;
-    color: $color-rustorange;
+    color: $color-black;
+    font-family: $font-secondary;
+    text-transform: uppercase;
   }
 
   @media (min-width: $tablet) {
