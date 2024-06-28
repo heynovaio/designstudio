@@ -23,6 +23,7 @@
     "gatsby-source-prismic": "^6.0.0-alpha.17",
     "gatsby-source-shopify": "7.13.0",
     "gsap": "^3.11.5",
+    "instagram-graph-api": "^6.1.0",
     "isomorphic-fetch": "^3.0.0",
     "leaflet": "^1.9.2",
     "mapbox-gl": "^2.11.0",
