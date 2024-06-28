@@ -64,17 +64,18 @@ const HomeTemplate = ({ data }) => {
         gallery={catalogByRoomGallery}
         background={'rgba(206, 96, 52, 0.08)'}
       />
+
+      <Testimonials
+        testimonials={testimonials}
+        background={'#A8C3BE'}
+        ds_circle_logo={dsCircleLogo}
+      />
       <InstagramFeed
         header={instaHeader}
         viewLabel={viewLabel}
         viewBtnLabel={viewBtnLabel}
         viewBtnLink={viewBtnLink}
         media={media}
-      />
-      <Testimonials
-        testimonials={testimonials}
-        background={'#A8C3BE'}
-        ds_circle_logo={dsCircleLogo}
       />
     </Layout>
   )
