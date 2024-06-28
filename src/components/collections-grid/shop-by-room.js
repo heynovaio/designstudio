@@ -20,12 +20,14 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
             key={`collection:${index}`}
             href={`/collection/${item.room_link_label}`}
           >
-            <div className={sty.imgBox}>
-              <GatsbyImage
-                image={item.image?.gatsbyImageData}
-                alt={item.image?.alt || ''}
-                className={sty.image}
-              />
+            <div className={sty.imgContainer}>
+              <div className={sty.imgBox}>
+                <GatsbyImage
+                  image={item.image?.gatsbyImageData}
+                  alt={item.image?.alt || ''}
+                  className={sty.image}
+                />
+              </div>
             </div>
             <h3>{item.room_label}</h3>
           </PrismicLink>
