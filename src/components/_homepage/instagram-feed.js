@@ -21,15 +21,12 @@ export const InstagramFeed = ({
   return (
     <section>
       <Container>
-        <div>
-          <PrismicRichText field={header.richText} />
-        </div>
         <div
           className={sty.media}
-          data-sal="slide-up"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          data-sal-duration="750"
+          // data-sal="slide-up"
+          // data-sal-delay="300"
+          // data-sal-easing="ease"
+          // data-sal-duration="750"
         >
           <span>{viewLabel}</span>
           <div className={sty.logoSoup}>
@@ -43,6 +40,12 @@ export const InstagramFeed = ({
             ))}
           </div>
           <PrismicLink href={viewBtnLink?.url}>{viewBtnLabel}</PrismicLink>
+        </div>
+        <div className={sty.instagramLink}>
+          <p>Link</p>
+        </div>
+        <div className={sty.instagramGrid}>
+          <p>pics grid</p>
         </div>
       </Container>
     </section>

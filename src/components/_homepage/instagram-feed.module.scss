@@ -1,47 +1,52 @@
 @import '../../base/module';
 
-.flexWrap {
-	display: flex;
-}
 .media {
-	align-items: center;
-	padding: 80px 0 0;
-	text-align: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 
-	.logo-soup {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 15px;
-		justify-content: center;
-		margin: 20px 0;
-	}
+  .logo-soup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+  }
 
-	span {
-		font-weight: 600;
-		font-size: 20px;
-		line-height: 28px;
-	}
-	a {
-		font-weight: 600;
-		font-size: 18px;
-		line-height: 28px;
-		text-decoration: underline;
-		color: $color-rustorange;
-	}
+  span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  a {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: underline;
+    color: $color-rustorange;
+  }
 
-	@media (min-width: $tablet) {
-		display: flex;
-		gap: 40px;
+  @media (min-width: $tablet) {
+    display: flex;
+    gap: 40px;
 
-		.logo-soup {
-			margin: 0;
-		}
-	}
+    .logo-soup {
+      margin: 0;
+    }
+  }
 }
 
 .mediaWrap {
-	max-width: 150px;
-	img {
-		max-width: 100%;
-	}
+  max-width: 150px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.instagramLink {
+  text-align: center;
+}
+
+.instagramGrid {
+  text-align: center;
 }
