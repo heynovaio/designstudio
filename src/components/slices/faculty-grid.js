@@ -1,81 +1,59 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText,PrismicLink } from '@prismicio/react'
-import { Container, Button } from "../Components"
-import { IoClose } from "react-icons/io5"
-import * as sty from './faculty-grid.module.scss';
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { Container } from '../Components'
+import * as sty from './faculty-grid.module.scss'
+import { PrismicRichText } from '@prismicio/react'
+import { BiArrowBack } from 'react-icons/bi'
 
 export const FacultyGrid = ({ slice }) => {
-  const [activeBio, setActiveBio] = React.useState(-1);
-
-  const handleClick = (e) => {
-    setActiveBio(e.target.value);
-  
-    if (typeof document !== `undefined`) {
-      document.body.classList.toggle('modal-open');
-    }
-  }
-  const handleClose = (e) => {
-    setActiveBio(-1);
-    if (typeof document !== `undefined`) {
-      document.body.classList.remove('modal-open');
-    }
-  }
   return (
     <section className={sty.FacultyGrid}>
-      <Container>
-        <div style={{marginBottom: 60}}>
-          <h2>{slice.primary.title}</h2>
-        </div>
-        <div className={sty.grid}>
-          {slice.items.map((item,index) => (
-            <div className={sty.employeeCard}>
-              <GatsbyImage
-                image={item.image?.gatsbyImageData}
-                alt={item.image?.alt || ""}
-                className={sty.image}
-                imgStyle={{ objectPosition: 'right 20%' }}
-                />
-              <div className={sty.copyWrap}>
-                <span className={sty.name}>{item.name}</span>
-                <p className={sty.subName}>
-                  Favourite Style: {item.favourite_style}
-                </p>
-                <p style={{marginBottom: 20}}>{item.mini_bio}</p>
-                <Button>
-                  <button onClick={handleClick} value={index}>Read More About {item.name}</button>
-                </Button>
-               
-              </div>
-            </div>
-          ))}
-        </div>
-        {activeBio != -1 && ( 
-          <div className={sty.bioModalWrap} >
-            <div className={sty.bioModal}>
-              <div className={sty.copyWrap}>
-                <div className={sty.close} onClick={handleClose}>
-                  <IoClose/>
+      <div className={sty.facultyHead}>
+        <p className={sty.headSubtitle}>{slice.primary.subtitle}</p>
+        <PrismicRichText field={slice.primary.faculty_title.richText} />
+        <PrismicRichText field={slice.primary.description.richText} />
+      </div>
+      <div className={sty.imageSection}>
+        <Container className={sty.photoContainer}>
+          <GatsbyImage
+            image={slice.primary.faculty_header_image?.gatsbyImageData}
+            alt={slice.primary.faculty_header_image?.alt || ''}
+            className={sty.headImage}
+          />
+          <div className={sty.facultyMembers}>
+            {slice.items.map((item) => (
+              <div className={sty.employeeCard}>
+                <div className={sty.imageWrap}>
+                  <GatsbyImage
+                    image={item.image?.gatsbyImageData}
+                    alt={item.image?.alt || ''}
+                    className={sty.image}
+                  />
                 </div>
-                <span className={sty.name}>{slice.items[activeBio]?.name}</span>
-                <p className={sty.subName}>
-                  Favourite Style: {slice.items[activeBio]?.favourite_style}
-                </p>
-                <PrismicRichText field={slice.items[activeBio]?.bio?.richText}/>
-              
+                <span className={sty.name}>{item.name}</span>
               </div>
-              <div className={sty.imageWrapModal}>
-                <GatsbyImage
-                  image={slice.items[activeBio]?.image?.gatsbyImageData}
-                  alt={slice.items[activeBio]?.image?.alt || ""}
-                  className={sty.image}
-                />
-              </div>
-            </div>
+            ))}
           </div>
-        )}
-      </Container>
+        </Container>
+      </div>
+      <div className={sty.buttonArea}>
+        <div className={sty.horizontalLine}></div>
+
+        <button className={sty.viewWorkButton}>
+          <span className={sty.btnContent}>
+            {slice.primary.button_text}
+            <BiArrowBack
+              size={18}
+              style={{
+                transform: 'scaleX(-1)',
+                marginLeft: '0.5em',
+              }}
+            />
+          </span>
+        </button>
+        <div className={sty.horizontalLine}></div>
+      </div>
     </section>
   )
 }
@@ -84,19 +62,25 @@ export const query = graphql`
   fragment PageDataBodyFacultyGrid on PrismicPageDataBodyFacultyGrid {
     id
     primary {
-      title
+      faculty_title {
+        richText
+      }
+      description {
+        richText
+      }
+      subtitle
+      faculty_header_image {
+        gatsbyImageData
+        alt
+      }
+      button_text
     }
     items {
       image {
         gatsbyImageData
         alt
       }
-      name 
-      favourite_style
-      mini_bio
-      bio {
-        richText
-      }
+      name
     }
   }
 `
