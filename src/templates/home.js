@@ -7,6 +7,7 @@ import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
 import { components } from '../components/slices'
+import { ShopByRoom } from '../components/collections-grid/shop-by-room'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -39,6 +40,9 @@ const HomeTemplate = ({ data }) => {
   const catalogProducts = node.catalog_products
   const catalogByRoomHeader = node.catalog_by_room_header
   const catalogByRoomGallery = node.catalog_by_room_gallery
+  const shopByRoomHeader = node.shop_by_room_header
+  const shopByRoomSubheader = node.shop_by_room_sub_header
+  const shopByRoomBtnText = node.shop_by_room_btn_text
 
   const instaHeader = node.instagram_header
   const viewLabel = node.view_media_label
@@ -57,12 +61,12 @@ const HomeTemplate = ({ data }) => {
         components={components}
         context={{ lang: lang }}
       />
-      <Catalog
-        description={catalogDesc}
-        image={catalogImage}
-        products={catalogProducts}
+
+      <ShopByRoom
         gallery={catalogByRoomGallery}
-        background={'rgba(206, 96, 52, 0.08)'}
+        header={shopByRoomHeader}
+        subheader={shopByRoomSubheader}
+        btnText={shopByRoomBtnText}
       />
       <InstagramFeed
         header={instaHeader}
@@ -137,7 +141,6 @@ export const query = graphql`
         catalog_image {
           gatsbyImageData
         }
-
         catalog_products {
           item_x_value
           item_y_value
@@ -145,12 +148,20 @@ export const query = graphql`
         catalog_by_room_header {
           richText
         }
+        shop_by_room_header {
+          richText
+        }
+        shop_by_room_sub_header {
+          richText
+        }
+        shop_by_room_btn_text {
+          richText
+        }
         catalog_by_room_gallery {
           image {
             gatsbyImageData
             alt
           }
-
           room_label
           room_link_label
         }
