@@ -20,15 +20,18 @@
     content: '';
     display: block;
     position: absolute;
-    right: 6%;
+    left: 50%;
     bottom: -10px;
     z-index: 1;
     width: 560px;
     height: 390px;
-    background-color: #EDECEB;
+    background-color: $color-greylt;
     mask: url('../../images/palm.svg') no-repeat 100% 100%;
     mask-size: contain;
-    transform: rotate(-140deg);
+    transform: rotate(-140deg) translateX(20%) translateY(0%);
+    @media (min-width: $desktop) {
+      transform: rotate(-140deg) translateX(-10%) translateY(20%);
+    }
   }
 }
 
