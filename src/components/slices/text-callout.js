@@ -8,7 +8,7 @@ import * as sty from './text-callout.module.scss'
 export const TextCallout = ({ slice }) => {
   return (
     <Container>
-      <PrismicRichText render={text_callout_title.richText} />
+      <PrismicRichText field={slice.primary.text_callout_text.richText} />
     </Container>
   )
 }

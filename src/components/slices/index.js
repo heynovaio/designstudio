@@ -1,11 +1,12 @@
-import {TextImage} from './text-image';
-import { CenteredText } from './centered-text';
-import { ProjectGrid } from './project-grid';
-import { AlternatingTextImage } from './alternating-text-image';
-import { FacultyGrid } from './faculty-grid';
-import { AwardsGallery } from './awards-gallery';
-import { PressList } from './press-list';
-import { HeroBanner } from './hero-banner';
+import { TextImage } from './text-image'
+import { CenteredText } from './centered-text'
+import { ProjectGrid } from './project-grid'
+import { AlternatingTextImage } from './alternating-text-image'
+import { FacultyGrid } from './faculty-grid'
+import { AwardsGallery } from './awards-gallery'
+import { PressList } from './press-list'
+import { HeroBanner } from './hero-banner'
+import { TextCallout } from './text-callout'
 
 export const components = {
   text_image: TextImage,
@@ -16,4 +17,5 @@ export const components = {
   awards_gallery: AwardsGallery,
   press_list: PressList,
   hero_banner: HeroBanner,
+  text_callout: TextCallout,
 }
