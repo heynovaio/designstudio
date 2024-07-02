@@ -25,7 +25,6 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
                 <GatsbyImage
                   image={item.image?.gatsbyImageData}
                   alt={item.image?.alt || ''}
-                  className={sty.image}
                 />
               </div>
             </div>
