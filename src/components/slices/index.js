@@ -6,6 +6,7 @@ import { FacultyGrid } from './faculty-grid'
 import { AwardsGallery } from './awards-gallery'
 import { PressList } from './press-list'
 import { HeroBanner } from './hero-banner'
+import { IntroDescription } from './intro-description'
 
 export const components = {
   text_image: TextImage,
@@ -16,4 +17,5 @@ export const components = {
   awards_gallery: AwardsGallery,
   press_list: PressList,
   hero_banner: HeroBanner,
+  intro_description: IntroDescription,
 }
