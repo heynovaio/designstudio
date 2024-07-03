@@ -17,7 +17,24 @@ export const query = graphql`
   fragment HomeDataBodyTextCallout on PrismicHomeDataBodyTextCallout {
     id
     primary {
-      text_callout_title
+      text_callout_title {
+        richText
+      }
+      text_callout_text {
+        richText
+      }
+      text_callout_btn_label {
+        richText
+      }
+      text_callout_palm
+    }
+  }
+  fragment PageDataBodyTextCallout on PrismicPageDataBodyTextCallout {
+    id
+    primary {
+      text_callout_title {
+        richText
+      }
       text_callout_text {
         richText
       }

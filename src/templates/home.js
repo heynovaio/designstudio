@@ -105,7 +105,7 @@ export const query = graphql`
             slice_label
           }
           ...HomeDataBodyHeroBanner
-          ...HomeDataBodyTextCallout
+          HomeDataBodyTextCallout
         }
         hero_title {
           richText
