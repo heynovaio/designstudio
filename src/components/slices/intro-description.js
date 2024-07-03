@@ -5,7 +5,11 @@ import { PrismicRichText } from '@prismicio/react'
 import { Container, Button } from '../Components'
 
 export const IntroDescription = ({ slice }) => {
-  return <Container></Container>
+  return (
+    <Container>
+      <PrismicRichText field={slice.primary.intro_description_title.richText} />
+    </Container>
+  )
 }
 
 export const query = graphql`
