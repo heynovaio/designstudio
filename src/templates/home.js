@@ -3,10 +3,10 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
-import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
 import { components } from '../components/slices'
+import { ShopByRoom } from '../components/collections-grid/shop-by-room'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -23,22 +23,10 @@ const HomeTemplate = ({ data }) => {
     alternateLanguages,
   }
   const node = homepage.data
-  const menuNode = menu.data
-
-  const heroTitle = node.hero_title
-  const heroDescription = node.hero_description
-  const catalogBtnLabel = node.catalog_btn_label
-  const worksBtnLabel = node.works_btn_label
-  const btn1 = node.btn_1
-  const btn2 = node.btn_2
-  const heroGallery = node.hero_gallery
-  const bellowHero = node.below_hero_richtext
-
-  const catalogDesc = node.catalog_richtext
-  const catalogImage = node.catalog_image
-  const catalogProducts = node.catalog_products
-  const catalogByRoomHeader = node.catalog_by_room_header
   const catalogByRoomGallery = node.catalog_by_room_gallery
+  const shopByRoomHeader = node.shop_by_room_header
+  const shopByRoomSubHeader = node.shop_by_room_sub_header
+  const shopByRoomBtnText = node.shop_by_room_btn_text
 
   const instaHeader = node.instagram_header
   const viewLabel = node.view_media_label
@@ -57,12 +45,12 @@ const HomeTemplate = ({ data }) => {
         components={components}
         context={{ lang: lang }}
       />
-      <Catalog
-        description={catalogDesc}
-        image={catalogImage}
-        products={catalogProducts}
+
+      <ShopByRoom
         gallery={catalogByRoomGallery}
-        background={'rgba(206, 96, 52, 0.08)'}
+        header={shopByRoomHeader}
+        subheader={shopByRoomSubHeader}
+        btnText={shopByRoomBtnText}
       />
       <InstagramFeed
         header={instaHeader}
@@ -101,48 +89,13 @@ export const query = graphql`
           }
           ...HomeDataBodyHeroBanner
         }
-        hero_title {
+        shop_by_room_header {
           richText
         }
-        hero_description
-        catalog_btn_label
-        works_btn_label
-        btn_1 {
-          url
-        }
-        btn_2 {
-          url
-        }
-        hero_gallery {
-          image {
-            gatsbyImageData
-            alt
-          }
-          image_2 {
-            gatsbyImageData
-            alt
-          }
-          image_3 {
-            gatsbyImageData
-            alt
-          }
-          project_name
-        }
-        below_hero_richtext {
+        shop_by_room_btn_text {
           richText
         }
-        catalog_richtext {
-          richText
-        }
-        catalog_image {
-          gatsbyImageData
-        }
-
-        catalog_products {
-          item_x_value
-          item_y_value
-        }
-        catalog_by_room_header {
+        shop_by_room_sub_header {
           richText
         }
         catalog_by_room_gallery {
@@ -150,7 +103,6 @@ export const query = graphql`
             gatsbyImageData
             alt
           }
-
           room_label
           room_link_label
         }
