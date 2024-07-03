@@ -92,6 +92,12 @@ export const query = graphql`
         shop_by_room_header {
           richText
         }
+        shop_by_room_btn_text {
+          richText
+        }
+        shop_by_room_sub_header {
+          richText
+        }
         catalog_by_room_gallery {
           image {
             gatsbyImageData
