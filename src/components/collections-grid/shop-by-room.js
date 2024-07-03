@@ -10,7 +10,7 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
   return (
     <div className={sty.ShopByRoom}>
       <div className={sty.headerText}>
-        <PrismicRichText field={header.richText} />
+        {/* <PrismicRichText field={header.richText} /> */}
         {/* <PrismicRichText field={subheader.richText} /> */}
       </div>
       <div className={sty.collectionsGrid}>
@@ -36,7 +36,7 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
         <div className={sty.horizontalLine}></div>
         <button className={sty.shopButton}>
           <span className={sty.btnContent}>
-            <PrismicRichText field={btnText.richText}></PrismicRichText>
+            {/* <PrismicRichText field={btnText.richText}></PrismicRichText> */}
             <BiArrowBack
               size={18}
               style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}

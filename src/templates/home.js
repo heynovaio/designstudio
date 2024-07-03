@@ -24,9 +24,9 @@ const HomeTemplate = ({ data }) => {
   }
   const node = homepage.data
   const catalogByRoomGallery = node.catalog_by_room_gallery
-  const shopByRoomHeader = node.shop_by_room_header
+  // const shopByRoomHeader = node.shop_by_room_header
   // const shopByRoomSubHeader = node.shop_by_room_sub_header
-  const shopByRoomBtnText = node.shop_by_room_btn_text
+  // const shopByRoomBtnText = node.shop_by_room_btn_text
 
   const instaHeader = node.instagram_header
   const viewLabel = node.view_media_label
@@ -48,9 +48,9 @@ const HomeTemplate = ({ data }) => {
 
       <ShopByRoom
         gallery={catalogByRoomGallery}
-        header={shopByRoomHeader}
+        // header={shopByRoomHeader}
         // subheader={shopByRoomSubHeader}
-        btnText={shopByRoomBtnText}
+        // btnText={shopByRoomBtnText}
       />
       <InstagramFeed
         header={instaHeader}
@@ -88,41 +88,6 @@ export const query = graphql`
             slice_label
           }
           ...HomeDataBodyHeroBanner
-        }
-        hero_title {
-          richText
-        }
-        hero_description
-        works_btn_label
-        btn_1 {
-          url
-        }
-        btn_2 {
-          url
-        }
-        hero_gallery {
-          image {
-            gatsbyImageData
-            alt
-          }
-          image_2 {
-            gatsbyImageData
-            alt
-          }
-          image_3 {
-            gatsbyImageData
-            alt
-          }
-          project_name
-        }
-        below_hero_richtext {
-          richText
-        }
-        shop_by_room_header {
-          richText
-        }
-        shop_by_room_btn_text {
-          richText
         }
         catalog_by_room_gallery {
           image {
