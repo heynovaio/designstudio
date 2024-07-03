@@ -10,8 +10,8 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
   return (
     <div className={sty.ShopByRoom}>
       <div className={sty.headerText}>
-        {header && <PrismicRichText field={header.richText} />}
-        {subheader && <PrismicRichText field={subheader.richText} />}
+        <PrismicRichText field={header.richText} />
+        <PrismicRichText field={subheader.richText} />
       </div>
       <div className={sty.collectionsGrid}>
         {gallery.map((item, index) => (
