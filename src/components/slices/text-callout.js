@@ -5,6 +5,6 @@ import { PrismicRichText } from '@prismicio/react'
 import { Container, Button } from '../Components'
 import * as sty from './text-callout.module.scss'
 
-export const FacultyGrid = ({ slice }) => {
+export const TextCallout = ({ slice }) => {
   return <Container></Container>
 }
