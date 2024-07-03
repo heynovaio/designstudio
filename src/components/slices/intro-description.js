@@ -8,7 +8,11 @@ import { BiArrowBack } from 'react-icons/bi'
 
 export const IntroDescription = ({ slice }) => {
   return (
-    <div className={sty.introBox}>
+    <div
+      className={`${sty.introBox} ${
+        slice.primary.palm_displayed ? sty.palm : ''
+      }`}
+    >
       <div className={sty.textBox}>
         <div className={sty.titleText}>
           <PrismicRichText
@@ -70,6 +74,7 @@ export const query = graphql`
       intro_description_btn_label {
         richText
       }
+      palm_displayed
     }
   }
 `
