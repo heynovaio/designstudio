@@ -1,0 +1,73 @@
+@import '../../base/module';
+
+.introBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 0;
+  background-color: $color-dove;
+}
+
+.textBox {
+  width: 85%;
+  text-align: left;
+  margin-bottom: 30px;
+  p {
+    margin-bottom: 30px;
+  }
+  @media (min-width: $tablet) {
+    width: 60%;
+  }
+}
+
+.titleText {
+  text-align: center;
+  font-family: $font-secondary;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 108%;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.bodyText {
+  font-family: $font-primary;
+}
+
+.buttonArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  @media (min-width: $tablet) {
+    gap: 50px;
+  }
+}
+
+.viewWorkButton {
+  min-width: 240px;
+  height: 45px;
+  background: $color-orange;
+  font-family: $font-secondary;
+  font-weight: 600;
+  color: $color-white;
+  text-transform: uppercase;
+  line-height: 108%;
+  letter-spacing: 0.125em;
+  display: block;
+  margin: 0 auto;
+  @media (min-width: $tablet) {
+    min-width: 286px;
+    height: 60px;
+  }
+}
+
+.btnContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
