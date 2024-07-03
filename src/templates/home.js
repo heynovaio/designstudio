@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
-import { Catalog } from '../components/_homepage/catalog'
 import { InstagramFeed } from '../components/_homepage/instagram-feed'
 import { Testimonials } from '../components/_homepage/testimonials'
 import { components } from '../components/slices'
@@ -24,21 +23,6 @@ const HomeTemplate = ({ data }) => {
     alternateLanguages,
   }
   const node = homepage.data
-  const menuNode = menu.data
-
-  const heroTitle = node.hero_title
-  const heroDescription = node.hero_description
-  const catalogBtnLabel = node.catalog_btn_label
-  const worksBtnLabel = node.works_btn_label
-  const btn1 = node.btn_1
-  const btn2 = node.btn_2
-  const heroGallery = node.hero_gallery
-  const bellowHero = node.below_hero_richtext
-
-  const catalogDesc = node.catalog_richtext
-  const catalogImage = node.catalog_image
-  const catalogProducts = node.catalog_products
-  const catalogByRoomHeader = node.catalog_by_room_header
   const catalogByRoomGallery = node.catalog_by_room_gallery
   const shopByRoomHeader = node.shop_by_room_header
   const shopByRoomSubheader = node.shop_by_room_sub_header
@@ -109,7 +93,6 @@ export const query = graphql`
           richText
         }
         hero_description
-        catalog_btn_label
         works_btn_label
         btn_1 {
           url
@@ -133,19 +116,6 @@ export const query = graphql`
           project_name
         }
         below_hero_richtext {
-          richText
-        }
-        catalog_richtext {
-          richText
-        }
-        catalog_image {
-          gatsbyImageData
-        }
-        catalog_products {
-          item_x_value
-          item_y_value
-        }
-        catalog_by_room_header {
           richText
         }
         shop_by_room_header {
