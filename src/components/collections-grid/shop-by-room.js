@@ -6,11 +6,10 @@ import { BiArrowBack } from 'react-icons/bi'
 
 import * as sty from './collections-grid.module.scss'
 
-export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
+export const ShopByRoom = ({ gallery, header, btnText }) => {
   return (
     <div className={sty.ShopByRoom}>
       <div className={sty.headerText}>
-        <PrismicRichText field={subheader.richText} />
         <PrismicRichText field={header.richText} />
       </div>
       <div className={sty.collectionsGrid}>

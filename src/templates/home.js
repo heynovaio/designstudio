@@ -25,7 +25,6 @@ const HomeTemplate = ({ data }) => {
   const node = homepage.data
   const catalogByRoomGallery = node.catalog_by_room_gallery
   const shopByRoomHeader = node.shop_by_room_header
-  const shopByRoomSubheader = node.shop_by_room_sub_header
   const shopByRoomBtnText = node.shop_by_room_btn_text
 
   const instaHeader = node.instagram_header
@@ -49,7 +48,6 @@ const HomeTemplate = ({ data }) => {
       <ShopByRoom
         gallery={catalogByRoomGallery}
         header={shopByRoomHeader}
-        subheader={shopByRoomSubheader}
         btnText={shopByRoomBtnText}
       />
       <InstagramFeed
@@ -119,9 +117,6 @@ export const query = graphql`
           richText
         }
         shop_by_room_header {
-          richText
-        }
-        shop_by_room_sub_header {
           richText
         }
         shop_by_room_btn_text {
