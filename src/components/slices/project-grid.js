@@ -54,12 +54,12 @@ export const ProjectGrid = ({ slice }) => {
                   </PrismicLink>
                   <div className={sty.copyWrap}>
                     <h3>{prod.data.project_name}</h3>
-                    <PrismicLink
+                    {/* <PrismicLink
                       href={`/project/${prod.uid}`}
                       className={sty.link}
                     >
                       View Project
-                    </PrismicLink>
+                    </PrismicLink> */}
                   </div>
                 </div>
               ))}

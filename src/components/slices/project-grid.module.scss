@@ -12,7 +12,7 @@
   margin-bottom: 80px;
 
   .project {
-    width: 48%;
+    width: 30%;
 
     @media (max-width: $tablet) {
       width: 100%;
@@ -24,11 +24,12 @@
   position: relative;
   width: 743px;
   max-width: 100%;
-  aspect-ratio: 10/7;
+  aspect-ratio: 1/1;
   border-radius: $bradius;
   overflow: hidden;
   display: flex;
   background: $color-darkgreen;
+
   .image {
     top: 50%;
     left: 50%;
@@ -38,9 +39,17 @@
     height: 100%;
     transition: all 0.2s ease-in-out;
   }
-  &:hover .image {
-    width: 110%;
-    height: 110%;
+
+  &:hover .image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-transparentwhite;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 1;
   }
 }
 .copyWrap {
