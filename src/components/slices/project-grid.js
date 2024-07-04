@@ -37,7 +37,7 @@ export const ProjectGrid = ({ slice }) => {
         {slice.items.map((item, index) => (
           <div key={`tag:${index}`}>
             <div>
-              <h2 className={sty.Title}>{item.project_tag}</h2>
+              <PrismicRichText field={slice.items.project_title?.richText} />
             </div>
             <div className={sty.grid}>
               {tagProd(item.project_tag).map((prod, index) => (
@@ -77,6 +77,12 @@ export const query = graphql`
     items {
       project_tag
       max_projects
+      project_title {
+        richText
+      }
+      project_subtitle {
+        richText
+      }
     }
   }
 `
