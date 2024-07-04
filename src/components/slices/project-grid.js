@@ -37,8 +37,9 @@ export const ProjectGrid = ({ slice }) => {
       <Container>
         {slice.items.map((item, index) => (
           <div key={`tag:${index}`}>
-            <div>
-              <PrismicRichText field={slice.items.project_title} />
+            <div className={sty.headerText}>
+              <PrismicRichText field={item.project_subtitle.richText} />
+              <PrismicRichText field={item.project_title.richText} />
             </div>
             <div className={sty.grid}>
               {tagProd(item.project_tag).map((prod, index) => (

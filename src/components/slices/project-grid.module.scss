@@ -10,7 +10,7 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   margin-bottom: 80px;
   justify-content: center;
 
@@ -19,6 +19,31 @@
 
     @media (max-width: $tablet) {
       width: 43%;
+      gap: 40px;
+    }
+  }
+}
+
+.headerText {
+  p {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    @media (max-width: $tablet) {
+      font-size: 20px;
+    }
+  }
+  h2 {
+    font-family: $font-header;
+    font-size: 50px;
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: none;
+    @media (max-width: $tablet) {
+      font-size: 30px;
     }
   }
 }
@@ -63,6 +88,10 @@
       font-family: $font-secondary;
       letter-spacing: 0.13em;
       margin-bottom: 5px;
+      @media (max-width: $tablet) {
+        font-size: 14px;
+        margin-bottom: 0px;
+      }
     }
 
     p {
@@ -70,6 +99,9 @@
       font-style: italic;
       color: $color-rustorange;
       font-size: 36px;
+      @media (max-width: $tablet) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -87,9 +119,14 @@
     font-family: $font-secondary;
     text-transform: uppercase;
     letter-spacing: 0.13em;
+    margin-top: 0;
+    line-height: 1.3em;
 
     @media (max-width: $tablet) {
       font-size: 16px;
     }
+  }
+  @media (max-width: $tablet) {
+    margin-top: 15px;
   }
 }
