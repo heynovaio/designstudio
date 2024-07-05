@@ -1,0 +1,116 @@
+@import '../../base/module';
+
+.introBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 55px 0px 110px 0px;
+  background-color: $color-dove;
+  position: relative;
+  margin-bottom: 10px;
+  @media (min-width: $desktop) {
+    padding: 110px 0;
+  }
+}
+
+.titleText {
+  font-family: $font-secondary;
+  text-align: center;
+  margin-bottom: 30px;
+  @media (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
+}
+
+.titleText h2 {
+  font-size: 24px;
+  font-family: $font-secondary;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  line-height: 108%;
+}
+
+.palm::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  z-index: 1;
+  width: 360px;
+  height: 190px;
+  background-color: $color-sage;
+  mask: url('../../images/palm.svg') no-repeat 100% 100%;
+  mask-size: contain;
+  transform: rotate(-10deg) translateX(-50%) translateY(10%);
+  @media (min-width: $tablet) {
+    transform: rotate(-2deg) translateX(-27%) translateY(15%);
+    width: 420px;
+    height: 250px;
+  }
+
+  @media (min-width: $desktop) {
+    transform: rotate(-10deg) translateX(-15%) translateY(30%);
+    width: 560px;
+    height: 390px;
+  }
+}
+
+.textBox {
+  width: 85%;
+  text-align: left;
+  margin-bottom: 30px;
+  p {
+    margin-bottom: 30px;
+  }
+  @media (min-width: $desktop) {
+    width: 60%;
+  }
+}
+
+h2 {
+  font-family: $font-secondary;
+}
+
+.bodyText {
+  font-family: $font-primary;
+}
+
+.buttonArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 5px;
+  @media (min-width: $tablet) {
+    gap: 50px;
+  }
+}
+
+.viewWorkButton {
+  min-width: 240px;
+  height: 45px;
+  background: $color-orange;
+  font-family: $font-secondary;
+  font-weight: 600;
+  color: $color-white;
+  text-transform: uppercase;
+  line-height: 108%;
+  letter-spacing: 0.125em;
+  display: block;
+  margin: 0 auto;
+  @media (min-width: $tablet) {
+    min-width: 286px;
+    height: 60px;
+  }
+}
+
+.btnContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

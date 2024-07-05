@@ -88,6 +88,7 @@ export const query = graphql`
             slice_label
           }
           ...HomeDataBodyHeroBanner
+          ...HomeDataBodyIntroDescription
         }
         shop_by_room_header {
           richText
