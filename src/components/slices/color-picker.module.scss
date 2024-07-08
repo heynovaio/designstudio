@@ -1,0 +1,36 @@
+@import '../../base/module';
+
+.colorStoryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+  padding: 50px 0px;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  padding: 0px 10px;
+}
+
+.colorCircle {
+  width: 166px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 99em;
+}
+
+.titleText {
+  p {
+    font-family: $font-secondary;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    margin-bottom: 25px;
+  }
+}
