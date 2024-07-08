@@ -7,6 +7,7 @@ import { AwardsGallery } from './awards-gallery'
 import { PressList } from './press-list'
 import { HeroBanner } from './hero-banner'
 import { IntroDescription } from './intro-description'
+import { ColorPicker } from './color-picker'
 
 export const components = {
   text_image: TextImage,
@@ -18,4 +19,5 @@ export const components = {
   press_list: PressList,
   hero_banner: HeroBanner,
   intro_description: IntroDescription,
+  color_picker: ColorPicker,
 }
