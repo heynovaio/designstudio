@@ -35,10 +35,7 @@ const ProjectTemplate = ({ data }) => {
         Type={project.project_type}
         Moment={project.favorite_moment}
       />
-      <ProjectCarousel
-        Gallery={project.image_gallery}
-        Description={project.project_description}
-      />
+
       <Testimonial
         Banner={project.banner_image_2}
         Title={project.client_title}
