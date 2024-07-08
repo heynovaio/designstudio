@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { Container } from '../Components'
+import { SlArrowRightCircle } from 'react-icons/sl'
 
 import * as sty from './project-grid.module.scss'
 
@@ -36,8 +37,9 @@ export const ProjectGrid = ({ slice }) => {
       <Container>
         {slice.items.map((item, index) => (
           <div key={`tag:${index}`}>
-            <div>
-              <h2 className={sty.Title}>{item.project_tag}</h2>
+            <div className={sty.headerText}>
+              <PrismicRichText field={item.project_subtitle.richText} />
+              <PrismicRichText field={item.project_title.richText} />
             </div>
             <div className={sty.grid}>
               {tagProd(item.project_tag).map((prod, index) => (
@@ -45,21 +47,27 @@ export const ProjectGrid = ({ slice }) => {
                   <PrismicLink
                     className={sty.imageWrap}
                     href={`/project/${prod.uid}`}
+                    title={`View project ${prod.data.project_name}`}
                   >
                     <GatsbyImage
                       image={prod.data.banner_image?.gatsbyImageData}
-                      alt=""
+                      alt={`View project ${prod.data.project_name}`}
                       className={sty.image}
                     />
+                    <div className={sty.overlay}>
+                      <p>{prod.data.project_name}</p>
+                      <PrismicLink
+                        href={`/project/${prod.uid}`}
+                        className={sty.link}
+                        title={`View project ${prod.data.project_name}`}
+                      >
+                        View Project
+                      </PrismicLink>
+                      <SlArrowRightCircle color="#F68623" size="55px" />
+                    </div>
                   </PrismicLink>
                   <div className={sty.copyWrap}>
                     <h3>{prod.data.project_name}</h3>
-                    <PrismicLink
-                      href={`/project/${prod.uid}`}
-                      className={sty.link}
-                    >
-                      View Project
-                    </PrismicLink>
                   </div>
                 </div>
               ))}
@@ -77,6 +85,12 @@ export const query = graphql`
     items {
       project_tag
       max_projects
+      project_title {
+        richText
+      }
+      project_subtitle {
+        richText
+      }
     }
   }
 `

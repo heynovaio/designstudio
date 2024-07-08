@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from "../components/Components"
+import { Container } from '../components/Components'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
 
@@ -52,7 +52,7 @@ const ProjectTemplate = ({ data }) => {
 
 export const query = graphql`
   query projectQuery($id: String, $lang: String) {
-    prismicProject(id: { eq: $id },lang: { eq: $lang }) {
+    prismicProject(id: { eq: $id }, lang: { eq: $lang }) {
       _previewable
       alternate_languages {
         uid
@@ -81,10 +81,7 @@ export const query = graphql`
         project_description {
           richText
         }
-        banner_image_2 {
-          gatsbyImageData
-          alt
-        }
+
         client_title
         client_quote
         client
@@ -94,9 +91,7 @@ export const query = graphql`
             alt
           }
         }
-
       }
-      
     }
     prismicMenu(lang: { eq: $lang }) {
       ...TopMenuFragment
@@ -105,4 +100,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(ProjectTemplate);
+export default withPrismicPreview(ProjectTemplate)
