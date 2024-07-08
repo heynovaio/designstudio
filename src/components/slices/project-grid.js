@@ -47,10 +47,11 @@ export const ProjectGrid = ({ slice }) => {
                   <PrismicLink
                     className={sty.imageWrap}
                     href={`/project/${prod.uid}`}
+                    title={`View project ${prod.data.project_name}`}
                   >
                     <GatsbyImage
                       image={prod.data.banner_image?.gatsbyImageData}
-                      alt=""
+                      alt={`View project ${prod.data.project_name}`}
                       className={sty.image}
                     />
                     <div className={sty.overlay}>
@@ -58,6 +59,7 @@ export const ProjectGrid = ({ slice }) => {
                       <PrismicLink
                         href={`/project/${prod.uid}`}
                         className={sty.link}
+                        title={`View project ${prod.data.project_name}`}
                       >
                         View Project
                       </PrismicLink>

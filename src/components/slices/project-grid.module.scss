@@ -10,7 +10,7 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 15px;
   margin-bottom: 80px;
   justify-content: center;
 
@@ -28,22 +28,22 @@
   p {
     font-family: $font-secondary;
     text-transform: uppercase;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
     font-weight: 600;
     @media (max-width: $tablet) {
-      font-size: 20px;
+      font-size: 1.25rem;
     }
   }
   h2 {
     font-family: $font-header;
-    font-size: 50px;
+    font-size: 3.125rem;
     margin-bottom: 60px;
     text-align: center;
     font-weight: 400;
     text-transform: none;
     @media (max-width: $tablet) {
-      font-size: 30px;
+      font-size: 1.875rem;
     }
   }
 }
@@ -53,7 +53,6 @@
   width: 743px;
   max-width: 100%;
   aspect-ratio: 1/1;
-  border-radius: $bradius;
   overflow: hidden;
   display: flex;
   border: 10px solid $color-white;
@@ -73,7 +72,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color-transparentwhite, 0.8);
+    background-color: rgba($color-transparentwhite, 0.9);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -81,7 +80,7 @@
 
     .link {
       font-weight: 400;
-      font-size: 24px;
+      font-size: 1.5rem;
       text-decoration-line: none;
       text-transform: uppercase;
       color: $color-rustorange;
@@ -89,7 +88,7 @@
       letter-spacing: 0.13em;
       margin-bottom: 5px;
       @media (max-width: $tablet) {
-        font-size: 14px;
+        font-size: 0.875rem;
         margin-bottom: 0px;
       }
     }
@@ -98,9 +97,9 @@
       font-family: $font-header;
       font-style: italic;
       color: $color-rustorange;
-      font-size: 36px;
+      font-size: 2.25rem;
       @media (max-width: $tablet) {
-        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
   }
@@ -113,17 +112,25 @@
 }
 
 .copyWrap {
-  margin-top: 35px;
+  margin: 20px 0;
   h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: $font-secondary;
     text-transform: uppercase;
     letter-spacing: 0.13em;
     margin-top: 0;
     line-height: 1.3em;
 
+    @media (max-width: $desktop) {
+      font-size: 1rem;
+    }
+
     @media (max-width: $tablet) {
-      font-size: 16px;
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 0.775rem;
     }
   }
   @media (max-width: $tablet) {
