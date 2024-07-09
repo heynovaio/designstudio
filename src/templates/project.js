@@ -1,14 +1,13 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from '../components/Components'
+import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
 import { ProjectHero } from '../components/_project/project-hero'
 import { Testimonial } from '../components/_project/testimonial'
 
-const ProjectTemplate = ({ data, slice }) => {
+const ProjectTemplate = ({ data }) => {
   if (!data) return null
 
   const projectContent = data.prismicProject || {}
@@ -26,14 +25,14 @@ const ProjectTemplate = ({ data, slice }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <ProjectHero
+      {/* <ProjectHero
         Banner={project.banner_image}
         Tags={projectContent.tags}
         Type={project.project_type}
         Moment={project.favorite_moment}
-      />
+      /> */}
       <SliceZone
-        slices={projectContent.body}
+        slices={project.body}
         components={components}
         context={{ lang: lang }}
       />
@@ -63,6 +62,14 @@ export const query = graphql`
       id
       tags
       data {
+        body {
+          ... on PrismicSlice {
+            id
+            slice_type
+            slice_label
+          }
+          ...ProjectDataBodyHeroBanner
+        }
         banner_image {
           gatsbyImageData
           alt
@@ -87,20 +94,6 @@ export const query = graphql`
           image {
             gatsbyImageData
             alt
-          }
-        }
-        body {
-          ... on PrismicProjectDataBodyHeroBanner {
-            id
-            primary {
-              page_title {
-                richText
-              }
-              hero_banner_image {
-                gatsbyImageData(layout: FULL_WIDTH)
-                alt
-              }
-            }
           }
         }
       }
