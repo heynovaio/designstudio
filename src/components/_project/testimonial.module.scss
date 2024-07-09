@@ -2,6 +2,7 @@
 
 .Testimonial {
   padding-top: 0;
+  background-color: $color-white;
 }
 .bannerWrap {
   width: calc(100% + 40px);
@@ -21,10 +22,10 @@
 
 .copyWrap {
   max-width: 1250px;
-  margin: 100px auto;
+  margin: 100px 210px;
   position: relative;
   h2 {
-    margin-bottom: 14px;
+    margin-bottom: 25px;
     font-weight: 400;
   }
   p {
@@ -39,20 +40,21 @@
     line-height: 28px;
     letter-spacing: 0.04em;
     color: $color-orange;
+    font-family: $font-header;
   }
 }
 .copyWrap::before {
   position: absolute;
   content: '“';
-  font-size: 324.36px;
+  font-size: 354.36px;
   font-family: 'Poller One';
   line-height: 1;
-  top: -25px;
-  left: -180px;
+  top: -30px;
+  left: -225px;
   width: 0;
   height: 0;
-  color: $color-orange;
-  z-index: -1;
+  color: $color-greylt;
+  z-index: 1;
 }
 .galleryWrap {
   display: flex;
