@@ -25,12 +25,12 @@ const ProjectTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      {/* <ProjectHero
+      <ProjectHero
         Banner={project.banner_image}
         Tags={projectContent.tags}
         Type={project.project_type}
         Moment={project.favorite_moment}
-      /> */}
+      />
       <SliceZone
         slices={project.body}
         components={components}
