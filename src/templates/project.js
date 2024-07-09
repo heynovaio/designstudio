@@ -5,12 +5,10 @@ import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
 import { Container } from '../components/Components'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
-
 import { ProjectHero } from '../components/_project/project-hero'
-import { ProjectCarousel } from '../components/_project/project-carousel'
 import { Testimonial } from '../components/_project/testimonial'
 
-const ProjectTemplate = ({ data }) => {
+const ProjectTemplate = ({ data, slice }) => {
   if (!data) return null
 
   const projectContent = data.prismicProject || {}
@@ -31,9 +29,13 @@ const ProjectTemplate = ({ data }) => {
       <ProjectHero
         Banner={project.banner_image}
         Tags={projectContent.tags}
-        Name={project.project_name}
         Type={project.project_type}
         Moment={project.favorite_moment}
+      />
+      <SliceZone
+        slices={projectContent.body}
+        components={components}
+        context={{ lang: lang }}
       />
 
       <Testimonial
@@ -85,6 +87,20 @@ export const query = graphql`
           image {
             gatsbyImageData
             alt
+          }
+        }
+        body {
+          ... on PrismicProjectDataBodyHeroBanner {
+            id
+            primary {
+              page_title {
+                richText
+              }
+              hero_banner_image {
+                gatsbyImageData(layout: FULL_WIDTH)
+                alt
+              }
+            }
           }
         }
       }
