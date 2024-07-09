@@ -37,7 +37,6 @@ const ProjectTemplate = ({ data }) => {
       />
 
       <Testimonial
-        Banner={project.banner_image_2}
         Title={project.client_title}
         Quote={project.client_quote}
         Name={project.client}
