@@ -1,13 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from '../components/Components'
+import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
-
 import { ProjectHero } from '../components/_project/project-hero'
-import { ProjectCarousel } from '../components/_project/project-carousel'
 import { Testimonial } from '../components/_project/testimonial'
 
 const ProjectTemplate = ({ data }) => {
@@ -31,16 +28,16 @@ const ProjectTemplate = ({ data }) => {
       <ProjectHero
         Banner={project.banner_image}
         Tags={projectContent.tags}
-        Name={project.project_name}
         Type={project.project_type}
         Moment={project.favorite_moment}
       />
-      <ProjectCarousel
-        Gallery={project.image_gallery}
-        Description={project.project_description}
+      <SliceZone
+        slices={project.body}
+        components={components}
+        context={{ lang: lang }}
       />
+
       <Testimonial
-        Banner={project.banner_image_2}
         Title={project.client_title}
         Quote={project.client_quote}
         Name={project.client}
@@ -65,6 +62,14 @@ export const query = graphql`
       id
       tags
       data {
+        body {
+          ... on PrismicSlice {
+            id
+            slice_type
+            slice_label
+          }
+          ...ProjectDataBodyHeroBanner
+        }
         banner_image {
           gatsbyImageData
           alt
