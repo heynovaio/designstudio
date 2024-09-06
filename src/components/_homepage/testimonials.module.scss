@@ -8,118 +8,23 @@
   }
 }
 
-.testimonials {
-  padding-top: 80px;
-  overflow: hidden;
-  background-color: $color-white;
-
-  .testimonial-container {
-    padding-top: 20px;
-    padding-bottom: $v-padding;
-    position: relative;
-  }
-
-  @media (min-width: $desktop) {
-    margin-top: 0;
-    padding-top: $v-padding;
-  }
-}
-
-.quotes {
+.wrapper {
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 100%;
-  max-width: width(12);
-
-  @media (min-width: $tablet) {
-    max-width: width(9);
-  }
-
-  @media (min-width: $desktop) {
-    max-width: width(9);
-  }
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.quotesHead {
-  font-size: 1.29em;
-  font-family: $font-secondary;
-
-  line-height: 1.62rem;
-  letter-spacing: 0.15rem;
-  margin-bottom: 50px;
-}
-
-.quotesHead p {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.quotesHead h2 {
-  font-family: $font-header;
-  font-size: 3.25em;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.quoteWrap {
-  max-width: 0;
-  width: 0;
-  visibility: hidden;
-  position: relative;
-  display: none;
-  padding: 80px 0 0 0;
-  margin-top: 20px;
-  font-size: 0.75em;
-  min-height: 430px;
-  p {
-    font-size: 1.3em;
-    @media (min-width: $tablet) {
-      width: 85%;
-    }
-  }
-
-  @media (min-width: $desktop) {
-    padding: 60px 140px 0 40px;
-    margin-top: 0;
-    min-height: 525px;
-
-    p {
-      font-size: 1.56em;
-    }
-  }
-}
-
-.quoteWrapActive {
-  @extend .quoteWrap;
-  max-width: 100%;
-  width: 100%;
-  visibility: visible;
-  display: block;
-  flex: 1;
-}
-
-.author {
-  line-height: 28px;
-  font-family: $font-secondary;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: $color-black;
-  display: block;
-  width: max-content;
-  padding: 13px 0px;
+.background {
   background-color: $color-darkgreen;
-  border-radius: $bradius;
-  margin-top: 15px;
-  text-transform: uppercase;
-
-  @media (min-width: $desktop) {
-    font-size: 27px;
-    margin-top: 60px;
-  }
 }
 
+.image {
+  display: none;
+  @media (min-width: $tablet) {
+    width: 400px;
+    display: block;
+  }
+}
 .imageWrap {
   aspect-ratio: 1/1;
   position: absolute;
@@ -150,62 +55,136 @@
   }
 }
 
-.controlWrap {
+.textWrapper {
   display: flex;
-  width: 100%;
-  margin-top: 1.62rem;
-}
+  flex-direction: column;
+  gap: 60px;
+  .quotesHead {
+    font-size: 1.29em;
+    font-family: $font-secondary;
 
-.quoteControls {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-  align-items: center;
-
-  font-size: 1.25em;
-  border-radius: $bradius 0 0 $bradius;
-  line-height: 1.5em;
-  @media (min-width: $desktop) {
-    padding: 10px 2.5rem;
+    line-height: 1.62rem;
+    letter-spacing: 0.15rem;
   }
 
-  .dotList {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    padding-top: 2px;
+  .quotesHead p {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
 
-    > div {
-      width: 15px;
-      height: 15px;
-      border: 1px solid $color-black;
-      border-radius: 99em;
+  .quotesHead h2 {
+    font-family: $font-header;
+    font-size: 3.25em;
+    font-style: italic;
+    font-weight: 400;
+  }
 
-      &.activeDot {
-        background: $color-forestgreen;
+  .quoteWrap {
+    max-width: 0;
+    width: 0;
+    visibility: hidden;
+    position: relative;
+    display: none;
+
+    font-size: 0.75em;
+
+    p {
+      font-size: 1.3em;
+      @media (min-width: $tablet) {
+        width: 85%;
+      }
+    }
+
+    @media (min-width: $desktop) {
+      p {
+        font-size: 1.56em;
       }
     }
   }
-}
 
-.nextBtn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 50px;
-  border-radius: 0 $bradius $bradius 0;
-  color: $color-forestgreen;
-  cursor: pointer;
-  margin-left: 15px;
-  svg {
-    font-size: 26px;
+  .quoteWrapActive {
+    @extend .quoteWrap;
+    max-width: 100%;
+    width: 100%;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
   }
-  @media (min-width: $desktop) {
-    margin-left: -25px;
-  }
-}
 
-.counter {
-  font-size: 1.2em;
-  font-family: $font-secondary;
+  .author {
+    line-height: 28px;
+    font-family: $font-secondary;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $color-black;
+    display: block;
+    width: max-content;
+    background-color: $color-darkgreen;
+    border-radius: $bradius;
+    text-transform: uppercase;
+
+    @media (min-width: $desktop) {
+      font-size: 27px;
+    }
+  }
+
+  .controlWrap {
+    display: flex;
+    width: 100%;
+  }
+
+  .quoteControls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+
+    font-size: 1.25em;
+    border-radius: $bradius 0 0 $bradius;
+    line-height: 1.5em;
+    @media (min-width: $desktop) {
+      padding: 0px;
+    }
+
+    .dotList {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+
+      > div {
+        width: 15px;
+        height: 15px;
+        border: 1px solid $color-black;
+        border-radius: 99em;
+
+        &.activeDot {
+          background: $color-forestgreen;
+        }
+      }
+    }
+  }
+
+  .nextBtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50px;
+    border-radius: 0 $bradius $bradius 0;
+    color: $color-forestgreen;
+    cursor: pointer;
+
+    svg {
+      font-size: 26px;
+    }
+    @media (min-width: $desktop) {
+    }
+  }
+
+  .counter {
+    font-size: 1.2em;
+    font-family: $font-secondary;
+  }
 }
