@@ -57,13 +57,13 @@ span.BtnSecondary {
   width: max-content;
   border-radius: 0;
   color: $color-black;
-  font-weight: 600;
+  font-weight: 400;
   box-sizing: border-box;
   line-height: 1;
   transition: all 400ms ease-in-out;
   font-family: $font-secondary;
   letter-spacing: 10%;
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
   a {
     color: $color-black;
     line-height: 1;
