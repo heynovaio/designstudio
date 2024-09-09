@@ -101,32 +101,6 @@
   }
 }
 
-.shopButton {
-  min-width: 200px;
-  cursor: pointer;
-  height: 45px;
-  background: $color-orange;
-  font-family: $font-secondary;
-  font-weight: 600;
-  color: #fff;
-  text-transform: uppercase;
-  line-height: 108%;
-  letter-spacing: 0.125em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  @media (min-width: $tablet) {
-    min-width: 296px;
-    height: 60px;
-  }
-
-  .btnContent {
-    display: flex;
-    align-items: center;
-  }
-}
-
 .horizontalLine {
   width: 100%;
   height: 1px;

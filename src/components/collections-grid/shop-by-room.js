@@ -34,15 +34,15 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
       </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
-        <button className={sty.shopButton}>
-          <span className={sty.btnContent}>
+        <div>
+          <PrismicLink className="BtnPrimary" href="/">
             <PrismicRichText field={btnText?.richText}></PrismicRichText>
             <BiArrowBack
               size={18}
               style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
             />
-          </span>
-        </button>
+          </PrismicLink>
+        </div>
         <div className={sty.horizontalLine}></div>
       </div>
     </div>
