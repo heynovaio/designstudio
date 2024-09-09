@@ -26,9 +26,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  @media (min-width: $desktop) {
-    gap: 60px;
-  }
+
   .quotesHead {
     font-size: 1.29em;
     font-family: $font-secondary;
@@ -55,7 +53,7 @@
     visibility: hidden;
     position: relative;
     display: none;
-
+    min-height: 370px;
     font-size: 0.75em;
 
     p {
