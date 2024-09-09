@@ -1,28 +1,23 @@
 @import '../../base/module';
 
-.flex {
-  display: block;
-
-  @media (min-width: $tablet) {
-    display: flex;
-  }
-}
-
 .wrapper {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
+  gap: 2.5rem;
+  @media (min-width: 800px) {
+    flex-direction: row-reverse;
+  }
 }
 .background {
   background-color: $color-darkgreen;
 }
 
 .image {
-  display: none;
+  width: 300px;
   @media (min-width: $tablet) {
     width: 400px;
-    display: block;
   }
 }
 .imageWrap {
@@ -134,6 +129,7 @@
   .controlWrap {
     display: flex;
     width: 100%;
+    gap: 15px;
   }
 
   .quoteControls {
