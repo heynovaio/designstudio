@@ -129,7 +129,10 @@
   .controlWrap {
     display: flex;
     width: 100%;
-    gap: 15px;
+    gap: 10px;
+    @media (min-width: $desktop) {
+      gap: 15px;
+    }
   }
 
   .quoteControls {
