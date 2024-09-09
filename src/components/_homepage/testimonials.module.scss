@@ -6,13 +6,33 @@
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+
   @media (min-width: 800px) {
     flex-direction: row-reverse;
     padding: 0 15px;
   }
 }
 .background {
+  overflow: visible;
   background-color: $color-darkgreen;
+  &::before {
+    content: '';
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    z-index: 1;
+    width: 550px;
+    height: 380px;
+    background-color: $color-greylt;
+    mask: url('../../images/palm.svg') no-repeat 100% 100%;
+    mask-size: contain;
+    transform: rotate(-140deg) translateX(20%) translateY(0%);
+    @media (min-width: $desktop) {
+      display: block;
+      transform: rotate(-180deg) translateX(-93%) translateY(80%);
+    }
+  }
 }
 
 .image {
