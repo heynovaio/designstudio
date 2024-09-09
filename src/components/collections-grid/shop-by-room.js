@@ -6,7 +6,13 @@ import { BiArrowBack } from 'react-icons/bi'
 
 import * as sty from './collections-grid.module.scss'
 
-export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
+export const ShopByRoom = ({
+  gallery,
+  header,
+  subheader,
+  btnText,
+  btnLink,
+}) => {
   return (
     <div className={sty.ShopByRoom}>
       <div className={sty.headerText}>
@@ -35,7 +41,7 @@ export const ShopByRoom = ({ gallery, header, subheader, btnText }) => {
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
         <div>
-          <PrismicLink className="BtnPrimary" href="/">
+          <PrismicLink className="BtnPrimary" href={btnLink}>
             <PrismicRichText field={btnText?.richText}></PrismicRichText>
             <BiArrowBack
               size={18}
