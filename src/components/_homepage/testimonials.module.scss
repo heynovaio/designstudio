@@ -13,8 +13,8 @@
   }
 }
 .background {
-  overflow: visible;
   background-color: $color-darkgreen;
+
   &::before {
     content: '';
     display: none;
@@ -22,15 +22,15 @@
     left: 50%;
     bottom: -10px;
     z-index: 1;
-    width: 550px;
-    height: 380px;
+    width: 570px;
+    height: 400px;
     background-color: $color-greylt;
     mask: url('../../images/palm.svg') no-repeat 100% 100%;
     mask-size: contain;
     transform: rotate(-140deg) translateX(20%) translateY(0%);
     @media (min-width: $desktop) {
       display: block;
-      transform: rotate(-180deg) translateX(-93%) translateY(80%);
+      transform: rotate(-180deg) translateX(-90%) translateY(75%);
     }
   }
 }
