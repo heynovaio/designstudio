@@ -12,7 +12,8 @@ h6 {
   font-weight: 600;
 }
 
-h1,.H1 {
+h1,
+.H1 {
   font-weight: 400;
   font-size: 4em;
   line-height: 105%;
@@ -22,7 +23,8 @@ h1,.H1 {
   }
 }
 
-h2,.H2{
+h2,
+.H2 {
   font-size: 2em;
 
   @media (min-width: $desktop) {
@@ -30,22 +32,26 @@ h2,.H2{
   }
 }
 
-h3,.H3{
+h3,
+.H3 {
   font-size: 2.25rem;
   line-height: 2.6875rem;
 }
 
-h4,.H4{
+h4,
+.H4 {
   line-height: 2rem;
   font-size: 2.625rem;
 }
 
-h5,.H5{
+h5,
+.H5 {
   line-height: 2.25rem;
   font-size: 1.5rem;
 }
 
-h6,.H6 {
+h6,
+.H6 {
   line-height: 1.875rem;
   font-size: 1.25rem;
 }
@@ -67,7 +73,6 @@ pre {
 ol,
 ul {
   margin: 20px 0 20px 30px;
-
 }
 
 ol {
@@ -91,4 +96,3 @@ strong {
 em {
   font-style: italic;
 }
-

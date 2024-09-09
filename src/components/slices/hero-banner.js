@@ -2,21 +2,19 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
-import {
-  BiArrowBack
-} from 'react-icons/bi'
+import { BiArrowBack } from 'react-icons/bi'
 import { useLocation } from '@reach/router'
 
 import * as sty from './hero-banner.module.scss'
 
 export const HeroBanner = ({ slice }) => {
-  const location = useLocation(); // Use useLocation hook to get location object
-  const [local, setLocal] = React.useState('/'); // Initialize local state
+  const location = useLocation() // Use useLocation hook to get location object
+  const [local, setLocal] = React.useState('/') // Initialize local state
 
   React.useEffect(() => {
     // Set local state based on the current pathname
-    setLocal(location.pathname);
-  }, [location.pathname]); // Dependency array, effect runs only when pathname changes
+    setLocal(location.pathname)
+  }, [location.pathname]) // Dependency array, effect runs only when pathname changes
 
   return (
     <section className={sty.heroBanner} style={{ paddingBottom: 0 }}>
@@ -28,14 +26,21 @@ export const HeroBanner = ({ slice }) => {
               width={378}
               height={182}
               layout="constrained"
-              />
-            </a>
+            />
+          </a>
         </div>
         <div className={`${sty.copyWrap} ${sty.homeCopy}`}>
           <PrismicRichText field={slice.primary.page_title?.richText} />
           {slice.primary.callout_link && (
-            <PrismicLink href={slice.primary.callout_link.url} className={`BtnPrimary ${sty.HeroBtn}`}>
-              {slice.primary.callout_label} <BiArrowBack size={18} style={{transform: 'scaleX(-1)', marginLeft: '0.5em'}} />
+            <PrismicLink
+              href={slice.primary.callout_link.url}
+              className={`BtnPrimary ${sty.HeroBtn}`}
+            >
+              {slice.primary.callout_label}{' '}
+              <BiArrowBack
+                size={18}
+                style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
+              />
             </PrismicLink>
           )}
         </div>
@@ -44,10 +49,10 @@ export const HeroBanner = ({ slice }) => {
             className={sty.heroImage}
             image={slice.primary.hero_banner_image?.gatsbyImageData}
             alt={slice.primary.hero_banner_image?.alt || ''}
-            objectFit='cover'
-            objectPosition='50% 50%'
-            loading='eager'
-            />
+            objectFit="cover"
+            objectPosition="50% 50%"
+            loading="eager"
+          />
         )}
       </div>
     </section>
