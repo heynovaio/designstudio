@@ -27,6 +27,7 @@ const HomeTemplate = ({ data }) => {
   const shopByRoomHeader = node.shop_by_room_header
   const shopByRoomSubHeader = node.shop_by_room_sub_header
   const shopByRoomBtnText = node.shop_by_room_btn_text
+  const shopByRoomBtnLink = node.shop_by_room_btn_link
 
   const instaHeader = node.instagram_header
   const viewLabel = node.view_media_label
@@ -51,6 +52,7 @@ const HomeTemplate = ({ data }) => {
         header={shopByRoomHeader}
         subheader={shopByRoomSubHeader}
         btnText={shopByRoomBtnText}
+        btnLink={shopByRoomBtnLink}
       />
       <Testimonials
         testimonials={testimonials}
@@ -96,6 +98,9 @@ export const query = graphql`
         }
         shop_by_room_btn_text {
           richText
+        }
+        shop_by_room_btn_link {
+          url
         }
         shop_by_room_sub_header {
           richText
