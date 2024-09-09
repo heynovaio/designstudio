@@ -20,7 +20,7 @@ export const InstagramFeed = ({
   }
   return (
     <section>
-      <Container>
+      <Container className={sty.flex}>
         <div>
           <PrismicRichText field={header.richText} />
         </div>

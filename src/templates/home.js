@@ -52,17 +52,17 @@ const HomeTemplate = ({ data }) => {
         subheader={shopByRoomSubHeader}
         btnText={shopByRoomBtnText}
       />
-      <InstagramFeed
+      <Testimonials
+        testimonials={testimonials}
+        background={'#A8C3BE'}
+        ds_circle_logo={dsCircleLogo}
+      />
+       <InstagramFeed
         header={instaHeader}
         viewLabel={viewLabel}
         viewBtnLabel={viewBtnLabel}
         viewBtnLink={viewBtnLink}
         media={media}
-      />
-      <Testimonials
-        testimonials={testimonials}
-        background={'#A8C3BE'}
-        ds_circle_logo={dsCircleLogo}
       />
     </Layout>
   )
