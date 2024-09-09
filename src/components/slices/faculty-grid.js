@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '../Components'
 import * as sty from './faculty-grid.module.scss'
-import { PrismicRichText } from '@prismicio/react'
+import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { BiArrowBack } from 'react-icons/bi'
 
 export const FacultyGrid = ({ slice }) => {
@@ -39,19 +39,15 @@ export const FacultyGrid = ({ slice }) => {
       </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
-
-        <button className={sty.viewWorkButton}>
-          <span className={sty.btnContent}>
+        <div>
+          <PrismicLink className="BtnPrimary" href="/">
             {slice.primary.button_text}
             <BiArrowBack
               size={18}
-              style={{
-                transform: 'scaleX(-1)',
-                marginLeft: '0.5em',
-              }}
+              style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
             />
-          </span>
-        </button>
+          </PrismicLink>
+        </div>
         <div className={sty.horizontalLine}></div>
       </div>
     </section>
