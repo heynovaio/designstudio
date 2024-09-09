@@ -5,10 +5,9 @@ import { FaChevronRight } from 'react-icons/fa'
 import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
 
-export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
+export const Testimonials = ({ testimonials, ds_circle_logo }) => {
   const [slide, setSlide] = React.useState(0)
   const slideLength = testimonials.length
-  const curTest = testimonials[slide]
 
   const handleClick = () => {
     if (slide + 1 >= slideLength) {
@@ -18,13 +17,10 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
     }
   }
   return (
-    <section className={sty.testimonials}>
-      <div
-        className={sty.testimonialContainer}
-        style={{ background: background }}
-      >
-        <Container className={sty.flex}>
-          <div className={sty.imageWrap}>
+    <section className={sty.background}>
+      <Container>
+        <div className={sty.wrapper}>
+          <div>
             <GatsbyImage
               image={ds_circle_logo?.gatsbyImageData}
               alt={ds_circle_logo?.alt || ''}
@@ -32,7 +28,7 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
             />
           </div>
 
-          <div className={sty.quotes}>
+          <div className={sty.textWrapper}>
             {testimonials.map((item, index) => (
               <div
                 className={
@@ -70,8 +66,8 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
               </div>
             </div>
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </section>
   )
 }
