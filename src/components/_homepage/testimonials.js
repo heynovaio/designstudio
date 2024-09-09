@@ -5,10 +5,9 @@ import { FaChevronRight } from 'react-icons/fa'
 import { Container } from '../Components'
 import * as sty from './testimonials.module.scss'
 
-export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
+export const Testimonials = ({ testimonials, ds_circle_logo }) => {
   const [slide, setSlide] = React.useState(0)
   const slideLength = testimonials.length
-  const curTest = testimonials[slide]
 
   const handleClick = () => {
     if (slide + 1 >= slideLength) {
@@ -21,7 +20,7 @@ export const Testimonials = ({ testimonials, ds_circle_logo, background }) => {
     <section className={sty.background}>
       <Container>
         <div className={sty.wrapper}>
-          <div className={sty.imgWrapper}>
+          <div>
             <GatsbyImage
               image={ds_circle_logo?.gatsbyImageData}
               alt={ds_circle_logo?.alt || ''}
