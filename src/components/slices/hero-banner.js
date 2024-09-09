@@ -20,16 +20,18 @@ export const HeroBanner = ({ slice }) => {
 
   return (
     <section className={sty.heroBanner} style={{ paddingBottom: 0 }}>
-      <div className={`${sty.heroContainer} ${local === '/' ? sty.homeHero : ''}`}>
+      <div className={`${sty.heroContainer} ${sty.homeHero}`}>
         <div className={sty.logoWrap}>
-          <StaticImage
-            src="../../images/designstudio_logo.png"
-            width={378}
-            height={182}
-            layout="constrained"
-          />
+          <a href="/" alt="Back to Home">
+            <StaticImage
+              src="../../images/designstudio_logo.png"
+              width={378}
+              height={182}
+              layout="constrained"
+              />
+            </a>
         </div>
-        <div className={`${sty.copyWrap} ${local === '/' ? sty.homeCopy : ''}`}>
+        <div className={`${sty.copyWrap} ${sty.homeCopy}`}>
           <PrismicRichText field={slice.primary.page_title?.richText} />
           {slice.primary.callout_link && (
             <PrismicLink href={slice.primary.callout_link.url} className={`BtnPrimary ${sty.HeroBtn}`}>
