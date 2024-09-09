@@ -15,7 +15,7 @@
 }
 
 .image {
-  width: 300px;
+  width: 350px;
   @media (min-width: $tablet) {
     width: 400px;
   }
@@ -60,7 +60,7 @@
     p {
       font-size: 1.3em;
       @media (min-width: $tablet) {
-        width: 85%;
+        width: 95%;
       }
     }
 
