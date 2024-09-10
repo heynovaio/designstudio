@@ -6,6 +6,7 @@ import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
 import { ProjectCarousel } from '../components/_project/project-carousel'
 import { Testimonial } from '../components/_project/testimonial'
+import { ProjectHero } from '../components/_project/project-hero'
 
 const ProjectTemplate = ({ data }) => {
   if (!data) return null
@@ -26,7 +27,12 @@ const ProjectTemplate = ({ data }) => {
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <SliceZone slices={project.body} components={components} />
-
+      <ProjectHero
+        Tags={tags}
+        Name={project.project_name}
+        Type={project.project_type}
+        Moment={project.favorite_moment}
+      />
       <ProjectCarousel
         Gallery={project.image_gallery}
         Description={project.project_description}
