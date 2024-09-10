@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
-import { getShopifyImage } from 'gatsby-source-shopify'
+// import { getShopifyImage } from 'gatsby-source-shopify'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { getCurrencySymbol } from "../utils/format-price"
 import { SearchProvider } from "../context/search-provider"
@@ -188,14 +188,14 @@ const CollectionTemplate = ({ data }) => {
                       className={sty.productCard}
                     >
                       <div className={sty.imageBox}>
-                        {item.featuredImage &&
+                        {/* {item.featuredImage &&
                           <GatsbyImage 
                             image={getShopifyImage({image: item.featuredImage})}
                             alt=""
                             className={sty.image}
                             imgStyle={{objectFit: 'contain'}}
                           />
-                        }
+                        } */}
                         
                       </div>
                       <div style={{padding: "0 10px"}}>

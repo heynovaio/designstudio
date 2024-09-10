@@ -3,7 +3,7 @@ import debounce from "lodash.debounce"
 import { StoreContext } from "../context/store-context"
 import { formatPrice } from "../utils/format-price"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { getShopifyImage } from "gatsby-source-shopify"
+// import { getShopifyImage } from "gatsby-source-shopify"
 import {FaTimesCircle} from "react-icons/fa"
 
 import {
@@ -67,18 +67,18 @@ export function LineItem({ item }) {
     handleQuantityChange(Number(quantity || 0) - 1)
   }
 
-  const image = React.useMemo(
-    () =>
-      getShopifyImage({
-        image: variantImage,
-        layout: "constrained",
-        crop: "contain",
-        width: 160,
-        height: 160,
-      }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [variantImage.src]
-  )
+  // const image = React.useMemo(
+  //   () =>
+  //     getShopifyImage({
+  //       image: variantImage,
+  //       layout: "constrained",
+  //       crop: "contain",
+  //       width: 160,
+  //       height: 160,
+  //     }),
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   [variantImage.src]
+  // )
 
   return (
     <tr >
