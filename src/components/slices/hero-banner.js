@@ -18,7 +18,9 @@ export const HeroBanner = ({ slice }) => {
 
   return (
     <section className={sty.heroBanner} style={{ paddingBottom: 0 }}>
-      <div className={`${sty.heroContainer} ${sty.homeHero}`}>
+      <div
+        className={`${sty.heroContainer} ${local === '/' ? sty.homeHero : ''}`}
+      >
         <div className={sty.logoWrap}>
           <a href="/" alt="Back to Home">
             <StaticImage
@@ -29,7 +31,7 @@ export const HeroBanner = ({ slice }) => {
             />
           </a>
         </div>
-        <div className={`${sty.copyWrap} ${sty.homeCopy}`}>
+        <div className={`${sty.copyWrap} ${local === '/' ? sty.homeCopy : ''}`}>
           <PrismicRichText field={slice.primary.page_title?.richText} />
           {slice.primary.callout_link && (
             <PrismicLink
@@ -77,6 +79,22 @@ export const query = graphql`
     }
   }
   fragment PageDataBodyHeroBanner on PrismicPageDataBodyHeroBanner {
+    id
+    primary {
+      page_title {
+        richText
+      }
+      hero_banner_image {
+        gatsbyImageData(layout: FULL_WIDTH)
+        alt
+      }
+      callout_link {
+        url
+      }
+      callout_label
+    }
+  }
+  fragment ProjectDataBodyHeroBanner on PrismicProjectDataBodyHeroBanner {
     id
     primary {
       page_title {
