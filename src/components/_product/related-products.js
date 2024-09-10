@@ -22,11 +22,11 @@ export const RelatedProducts = ({header, description, products=null}) => {
 							href={`./${item.handle}`}
 						>
 							<div className={sty.imageWrap}>
-								<GatsbyImage 
+								{/* <GatsbyImage 
 								 	image={getShopifyImage({image: item.featuredImage, width: 368, height: 303, layout: "constrained"})}
 									alt=""
 									className={sty.image}
-								/>
+								/> */}
 							</div>
 							<div className={sty.infoWrap}>
 								<p>{item.title}</p>
