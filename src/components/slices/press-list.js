@@ -2,8 +2,8 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
-import { FaLongArrowAltRight } from 'react-icons/fa'
 import { Container, Button } from '../Components'
+import { BiArrowBack } from 'react-icons/bi'
 
 import * as sty from './press-list.module.scss'
 
@@ -28,7 +28,10 @@ export const PressList = ({ slice }) => {
                 <PrismicLink href={item.article_link?.url}>
                   <Button>
                     Read More &nbsp;
-                    <FaLongArrowAltRight />
+                    <BiArrowBack
+                      size={18}
+                      style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
+                    />
                   </Button>
                 </PrismicLink>
               </div>
