@@ -4,7 +4,6 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
-import { ProjectCarousel } from '../components/_project/project-carousel'
 import { Testimonial } from '../components/_project/testimonial'
 import { ProjectHero } from '../components/_project/project-hero'
 
@@ -32,10 +31,6 @@ const ProjectTemplate = ({ data }) => {
         Name={project.project_name}
         Type={project.project_type}
         Moment={project.favorite_moment}
-      />
-      <ProjectCarousel
-        Gallery={project.image_gallery}
-        Description={project.project_description}
       />
 
       <Testimonial
