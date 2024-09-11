@@ -6,6 +6,7 @@ import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
 import { Testimonial } from '../components/_project/testimonial'
 import { ProjectHero } from '../components/_project/project-hero'
+import { ProjectDescription } from '../components/_project/project-description'
 
 const ProjectTemplate = ({ data }) => {
   if (!data) return null
@@ -32,6 +33,7 @@ const ProjectTemplate = ({ data }) => {
         Type={project.project_type}
         Moment={project.favorite_moment}
       />
+      <ProjectDescription description={project.project_description.richText} />
 
       <Testimonial
         Banner={project.banner_image_2}
