@@ -33,7 +33,10 @@ const ProjectTemplate = ({ data }) => {
         Type={project.project_type}
         Moment={project.favorite_moment}
       />
-      <ProjectDescription description={project.project_description.richText} />
+      <ProjectDescription
+        description={project.project_description.richText}
+        gallery={project.image_gallery}
+      />
 
       <Testimonial
         Banner={project.banner_image_2}
