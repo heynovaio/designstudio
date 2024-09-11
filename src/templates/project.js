@@ -71,6 +71,7 @@ export const query = graphql`
             slice_label
           }
           ...ProjectDataBodyHeroBanner
+          ...ProjectDataBodyColorPicker
         }
         banner_image {
           gatsbyImageData
