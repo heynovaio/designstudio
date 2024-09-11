@@ -2,6 +2,8 @@
 
 .ProjectDescription {
   background-color: $color-dove;
+  padding-top: 20px;
+  padding-bottom: 0px;
   .galleryWrap {
     display: flex;
     flex-direction: column;
@@ -17,4 +19,9 @@
       }
     }
   }
+}
+
+.Content {
+  max-width: 1200px;
+  margin: 60px auto;
 }
