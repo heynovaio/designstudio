@@ -24,9 +24,14 @@ const ProjectTemplate = ({ data }) => {
     alternateLanguages,
   }
 
+  const heroBannerSlice =
+    project.body.find((slice) => slice.slice_type === 'hero_banner') || {}
+  const colorPickerSlice =
+    project.body.find((slice) => slice.slice_type === 'color_picker') || {}
+
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <SliceZone slices={project.body} components={components} />
+      <SliceZone slices={[heroBannerSlice]} components={components} />
       <ProjectHero
         Tags={tags}
         Name={project.project_name}
@@ -37,7 +42,7 @@ const ProjectTemplate = ({ data }) => {
         description={project.project_description.richText}
         gallery={project.image_gallery}
       />
-
+      <SliceZone slices={[colorPickerSlice]} components={components} />
       <Testimonial
         Banner={project.banner_image_2}
         Title={project.client_title}
