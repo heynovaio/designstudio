@@ -19,9 +19,12 @@
       }
     }
   }
-}
+  .Content {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
 
-.Content {
-  max-width: 1200px;
-  margin: 60px auto;
+  .copyWrap {
+    padding: 50px 0px;
+  }
 }
