@@ -45,4 +45,15 @@ export const query = graphql`
       color_picker_color
     }
   }
+  fragment ProjectDataBodyColorPicker on PrismicProjectDataBodyColorPicker {
+    id
+    primary {
+      color_picker_title {
+        richText
+      }
+    }
+    items {
+      color_picker_color
+    }
+  }
 `
