@@ -24,10 +24,12 @@ const ProjectTemplate = ({ data }) => {
     alternateLanguages,
   }
 
-  const heroBannerSlice =
-    project.body.find((slice) => slice.slice_type === 'hero_banner') || {}
-  const colorPickerSlice =
-    project.body.find((slice) => slice.slice_type === 'color_picker') || {}
+  const heroBannerSlice = project.body.find(
+    (slice) => slice.slice_type === 'hero_banner',
+  )
+  const colorPickerSlice = project.body.find(
+    (slice) => slice.slice_type === 'color_picker',
+  )
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
