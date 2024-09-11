@@ -12,8 +12,11 @@
 }
 .copyWrap {
   max-width: 1250px;
-  margin: 100px 210px;
+  margin: 60px 20px;
   position: relative;
+  @media (min-width: $desktop) {
+    margin: 100px 210px;
+  }
   h2 {
     margin-bottom: 25px;
     font-weight: 400;
@@ -21,8 +24,12 @@
   p {
     margin-bottom: 20px;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 20px;
+
     line-height: 150%;
+    @media (min-width: $desktop) {
+      font-size: 25px;
+    }
   }
   .author {
     font-weight: 800;
@@ -36,15 +43,20 @@
 .copyWrap::before {
   position: absolute;
   content: '“';
-  font-size: 354.36px;
   font-family: 'Poller One';
   line-height: 1;
-  top: -30px;
-  left: -225px;
+  font-size: 80px;
+  top: -25px;
+  left: -40px;
   width: 0;
   height: 0;
   color: $color-greylt;
   z-index: 1;
+  @media (min-width: $desktop) {
+    font-size: 354.36px;
+    top: -30px;
+    left: -225px;
+  }
 }
 .galleryWrap {
   display: flex;
