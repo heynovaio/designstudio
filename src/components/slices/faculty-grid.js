@@ -39,15 +39,13 @@ export const FacultyGrid = ({ slice }) => {
       </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
-        <div>
-          <PrismicLink className="BtnPrimary" href="/">
-            {slice.primary.button_text}
-            <BiArrowBack
-              size={18}
-              style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
-            />
-          </PrismicLink>
-        </div>
+        <PrismicLink className="BtnPrimary" href="/">
+          {slice.primary.button_text}
+          <BiArrowBack
+            size={18}
+            style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
+          />
+        </PrismicLink>
         <div className={sty.horizontalLine}></div>
       </div>
     </section>
