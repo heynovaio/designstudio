@@ -40,15 +40,15 @@ export const ShopByRoom = ({
       </div>
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
-        <div>
-          <PrismicLink className="BtnPrimary" href={btnLink}>
-            <PrismicRichText field={btnText?.richText}></PrismicRichText>
-            <BiArrowBack
-              size={18}
-              style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
-            />
-          </PrismicLink>
-        </div>
+
+        <PrismicLink className="BtnPrimary" href={btnLink}>
+          <PrismicRichText field={btnText?.richText}></PrismicRichText>
+          <BiArrowBack
+            size={18}
+            style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
+          />
+        </PrismicLink>
+
         <div className={sty.horizontalLine}></div>
       </div>
     </div>
