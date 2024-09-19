@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
-// import { getShopifyImage } from 'gatsby-source-shopify'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { Container, Button } from "../Components"
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';

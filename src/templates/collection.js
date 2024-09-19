@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
-// import { getShopifyImage } from 'gatsby-source-shopify'
+import { getShopifyImage } from 'gatsby-source-shopify'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { getCurrencySymbol } from "../utils/format-price"
 import { SearchProvider } from "../context/search-provider"
@@ -119,16 +119,16 @@ const CollectionTemplate = ({ data }) => {
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <section style={{paddingTop: 20}}>
         <Container>
-          {/* {Collection.image && (
+          {Collection?.image && (
             <div className={sty.bannerWrap}>
             
               <GatsbyImage
-                image={getShopifyImage({image: Collection.image, width: 1692, height: 326, layout: "constrained"})}
+                image={getShopifyImage({image: Collection?.image, width: 1692, height: 326, layout: "constrained"})}
                 alt=""
                 className={sty.image}
               />
             </div>
-          )} */}
+          )}
           <div style={{marginBottom: 80}}>
             <h1 style={{fontSize:42, fontWeight: "600"}}>{Collection.title}</h1>
           </div>
@@ -188,14 +188,14 @@ const CollectionTemplate = ({ data }) => {
                       className={sty.productCard}
                     >
                       <div className={sty.imageBox}>
-                        {/* {item.featuredImage &&
+                        {item?.featuredImage &&
                           <GatsbyImage 
-                            image={getShopifyImage({image: item.featuredImage})}
+                            image={getShopifyImage({image: item?.featuredImage})}
                             alt=""
                             className={sty.image}
                             imgStyle={{objectFit: 'contain'}}
                           />
-                        } */}
+                        }
                         
                       </div>
                       <div style={{padding: "0 10px"}}>
