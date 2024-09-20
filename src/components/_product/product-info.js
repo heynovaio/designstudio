@@ -20,9 +20,10 @@ export const ProductInfo = ({ product }) => {
     images,
 		media
 	} = product
-	// function getImage(img, w, h, lay){
-	// 	return getShopifyImage({image: img, layout: lay});
-	// }
+	function getImage(img, w, h, lay){
+		if(!img) return null;
+	 	return getShopifyImage({image: img, layout: lay});
+	}
 
 	const { client } = React.useContext(StoreContext)
 
@@ -90,21 +91,25 @@ export const ProductInfo = ({ product }) => {
 				<div className={sty.FlexWrap}>
 					<div className={sty.productImages}>
 						<div className={sty.featuredImg}>
-							{/* <GatsbyImage 
-								image={getImage(featuredImage)} 
-								alt=""
-								className={sty.image}
-								imgStyle={{objectFit: 'contain'}}
-							/> */}
+							{featuredImage && 
+								<GatsbyImage 
+									image={getImage(featuredImage)} 
+									alt=""
+									className={sty.image}
+									imgStyle={{objectFit: 'contain'}}
+								/>
+							}
 						</div>
 						{media.slice(1,3).map((item,index) => (
 							<div className={sty.subImg} key={`subImg:${index}`}>
-								{/* <GatsbyImage 
+								{item?.image &&
+								<GatsbyImage 
 									image={getImage(item.image)}
 									alt=""
 									className={sty.image}
 									imgStyle={{objectFit: 'contain'}}
-								/> */}
+								/>
+								}
 							</div>
 						))}
 					</div>

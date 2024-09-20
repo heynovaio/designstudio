@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
-// import { getShopifyImage } from 'gatsby-source-shopify'
+import { getShopifyImage } from 'gatsby-source-shopify'
 import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import MultiCarousel from 'react-multi-carousel'
@@ -65,11 +65,11 @@ export const ProductGallery = ({ Title, bestSellerProducts }) => {
           renderButtonGroupOutside={false}
           customButtonGroup={<ButtonGroup />}
         >
-          {/* {bestSellerProducts.map((item, index) => (
+          {bestSellerProducts?.map((item, index) => (
             <ProductCard
               key={`product:${index}`}
               Image={getShopifyImage({
-                image: item.featuredImage,
+                image: item?.featuredImage,
                 width: 322,
                 height: 265,
                 layout: 'constrained',
@@ -79,7 +79,7 @@ export const ProductGallery = ({ Title, bestSellerProducts }) => {
               Width={256}
               handle={item.handle}
             />
-          ))} */}
+          ))}
         </MultiCarousel>
       </Container>
     </section>
