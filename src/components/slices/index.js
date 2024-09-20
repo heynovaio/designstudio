@@ -8,6 +8,7 @@ import { PressList } from './press-list'
 import { HeroBanner } from './hero-banner'
 import { IntroDescription } from './intro-description'
 import { ColorPicker } from './color-picker'
+import { ColumnCallout } from './column-callout'
 
 export const components = {
   text_image: TextImage,
@@ -20,4 +21,5 @@ export const components = {
   hero_banner: HeroBanner,
   intro_description: IntroDescription,
   color_picker: ColorPicker,
+  column_callout: ColumnCallout,
 }
