@@ -38,13 +38,13 @@ export const BottomMenu = ({ menu }) => {
               alt={menu.logo_alt?.alt || ''}
             />
           </PrismicLink>
-          <div className={sty.subscribe}>
+          {/* <div className={sty.subscribe}>
             <p>
               <span className={sty.friendsText}>Let's be friends </span>
               <span className={sty.inboxText}>Interiors in your Inbox</span>
             </p>
-            {/**FORM FIELD */}
-          </div>
+           ** FORM FIELD WILL BE HERE **
+          </div> */}
         </div>
         <div className={sty.linksColumn}>
           <div className={sty.MenuLinks}>
