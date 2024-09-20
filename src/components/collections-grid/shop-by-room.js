@@ -16,7 +16,6 @@ export const ShopByRoom = ({
   return (
     <div className={sty.ShopByRoom}>
       <div className={sty.headerText}>
-        <PrismicRichText field={header?.richText} />
         <PrismicRichText field={subheader?.richText} />
       </div>
       <div className={sty.collectionsGrid}>
