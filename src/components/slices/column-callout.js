@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { PrismicRichText } from '@prismicio/react'
-
+import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import * as sty from './column-callout.module.scss'
 
 export const ColumnCallout = ({ slice }) => {
@@ -10,6 +10,26 @@ export const ColumnCallout = ({ slice }) => {
       <div className={sty.copyWrap}>
         <p className={sty.subtitle}>{slice.primary.subtitle}</p>
         <PrismicRichText field={slice.primary.title.richText} />
+      </div>
+      <div className={sty.columns}>
+        {slice.items.map((item) => (
+          <div className={sty.employeeCard}>
+            <div className={sty.imageWrap}>
+              <GatsbyImage
+                image={item.image?.gatsbyImageData}
+                alt={item.image?.alt || ''}
+                className={sty.image}
+              />
+            </div>
+            <div className={sty.itemText}>
+              <p>{item.title}</p>
+              <PrismicRichText field={item.description.richText} />
+              <PrismicLink href={item.link} className="BtnPrimary">
+                {item.link_label}
+              </PrismicLink>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
