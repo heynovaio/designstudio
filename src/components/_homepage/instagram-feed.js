@@ -21,15 +21,15 @@ export const InstagramFeed = ({
   return (
     <section>
       <Container className={sty.flex}>
-        <div>
+        {/* <div>
           <PrismicRichText field={header.richText} />
-        </div>
+        </div> */}
         <div
           className={sty.media}
-          data-sal="slide-up"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          data-sal-duration="750"
+          // data-sal="slide-up"
+          // data-sal-delay="300"
+          // data-sal-easing="ease"
+          // data-sal-duration="750"
         >
           <span>{viewLabel}</span>
           <div className={sty.logoSoup}>

@@ -59,7 +59,7 @@ const HomeTemplate = ({ data }) => {
         background={'#A8C3BE'}
         ds_circle_logo={dsCircleLogo}
       />
-       <InstagramFeed
+      <InstagramFeed
         header={instaHeader}
         viewLabel={viewLabel}
         viewBtnLabel={viewBtnLabel}
