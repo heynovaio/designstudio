@@ -30,7 +30,7 @@
     text-align: center;
     gap: 45px;
 
-    @media (min-width: $tablet) {
+    @media (min-width: $mobile) {
       flex-direction: row;
       gap: 15px;
     }
