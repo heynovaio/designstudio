@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from "../components/Components"
+import { Container } from '../components/Components'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
 
@@ -24,14 +24,18 @@ const PageTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <SliceZone slices={page.body} components={components} context={{lang: lang}}/>
+      <SliceZone
+        slices={page.body}
+        components={components}
+        context={{ lang: lang }}
+      />
     </Layout>
   )
 }
 
 export const query = graphql`
   query pageQuery($id: String, $lang: String) {
-    prismicPage(id: { eq: $id },lang: { eq: $lang }) {
+    prismicPage(id: { eq: $id }, lang: { eq: $lang }) {
       _previewable
       alternate_languages {
         uid
@@ -57,6 +61,7 @@ export const query = graphql`
           ...PageDataBodyFacultyGrid
           ...PageDataBodyAwardsGallery
           ...PageDataBodyPressList
+          ...PageDataBodyColumnCallout
         }
       }
     }
@@ -67,4 +72,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(PageTemplate);
+export default withPrismicPreview(PageTemplate)
