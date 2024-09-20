@@ -33,7 +33,7 @@ const ProjectTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <SliceZone slices={[heroBannerSlice]} components={components} />
+      {heroBannerSlice && <SliceZone slices={[heroBannerSlice]} components={components} />}
       <ProjectHero
         Tags={tags}
         Name={project.project_name}
@@ -44,7 +44,7 @@ const ProjectTemplate = ({ data }) => {
         description={project.project_description.richText}
         gallery={project.image_gallery}
       />
-      <SliceZone slices={[colorPickerSlice]} components={components} />
+      {colorPickerSlice && <SliceZone slices={[colorPickerSlice]} components={components} />}
       <Testimonial
         Banner={project.banner_image_2}
         Title={project.client_title}
