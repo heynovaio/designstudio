@@ -5,24 +5,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 2.75rem;
     font-family: $font-header;
     font-weight: 400;
+    margin-bottom: 15px;
+    @media (min-width: $tablet) {
+      margin-bottom: 30px;
+    }
 
     .subtitle {
       font-size: 1.5rem;
       font-family: $font-secondary;
       text-transform: uppercase;
       font-weight: 600;
+      letter-spacing: 0.13em;
     }
   }
 
   .columns {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    gap: 10px;
+    gap: 45px;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      gap: 15px;
+    }
 
     .imageWrap {
       width: 100%;
@@ -33,7 +44,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       padding: 15px;
       @media (min-width: $tablet) {
         padding: 25px;
@@ -52,11 +62,30 @@
         max-height: 400px;
       }
     }
+
+    .columnContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      @media (min-width: $tablet) {
+        gap: 40px;
+      }
+    }
   }
 
   .itemText {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .itemTitle {
+      font-family: $font-secondary;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      margin-bottom: 10px;
+    }
   }
 }

@@ -15,7 +15,7 @@ export const ColumnCallout = ({ slice }) => {
         </div>
         <div className={sty.columns}>
           {slice.items.map((item) => (
-            <div className={sty.employeeCard}>
+            <div className={sty.columnContent}>
               <div className={sty.imageWrap}>
                 <GatsbyImage
                   image={item.image?.gatsbyImageData}
@@ -24,12 +24,12 @@ export const ColumnCallout = ({ slice }) => {
                 />
               </div>
               <div className={sty.itemText}>
-                <p>{item.title}</p>
+                <p className={sty.itemTitle}>{item.title}</p>
                 <PrismicRichText field={item.description.richText} />
-                <PrismicLink href={item.link} className="BtnPrimary">
-                  {item.link_label}
-                </PrismicLink>
               </div>
+              <PrismicLink href={item.link} className="BtnPrimary">
+                {item.link_label}
+              </PrismicLink>
             </div>
           ))}
         </div>
