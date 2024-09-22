@@ -25,6 +25,8 @@ export const ProductInfo = ({ product }) => {
 	 	return getShopifyImage({image: img, layout: lay});
 	}
 
+	const { location } = React.useContext(StoreContext)					
+
 	const { client } = React.useContext(StoreContext)
 
   const [variant, setVariant] = React.useState({ ...initialVariant })
@@ -78,9 +80,11 @@ export const ProductInfo = ({ product }) => {
     checkAvailablity(product.storefrontId)
   }, [productVariant.storefrontId, checkAvailablity, product.storefrontId])
 
+  const convertedPrice = location.currency === "KYD" ? variant.price * 0.83 : variant.price;
+
   const price = formatPrice(
-    priceRangeV2.minVariantPrice.currencyCode,
-    variant.price
+	location.currency,
+  	convertedPrice
   )
 
   const hasVariants = variants.length > 1
@@ -115,7 +119,7 @@ export const ProductInfo = ({ product }) => {
 					</div>
 					<div className={sty.productInfo}>
 						<h3>{title}</h3>
-						<span className={sty.price}>{price}</span>
+						<span className={sty.price}>{price}{location.currency === "USD" && " USD"}</span>
 						<div className={sty.purchase}>
 							<p>Quantity</p>
 							<input type='number' min='1' max="100" value={quantity} onChange={(e) => {setQuantity(e.target.value)}}/>
