@@ -126,7 +126,7 @@ export default function CartPage({ data }) {
                 </button>
               ) : (
                 <button
-                  onClick={handleCheckout}
+                  onClick={()=> window.print()}
                   disabled={loading}
                   className="BtnPrimary"
                   style={{

@@ -8,7 +8,23 @@ html {
   padding: 0;
   border: 0;
   font-size: 100%;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
+
+@media print {
+  .skip_button {
+    display: none;
+  }
+  @page {
+    margin-left: 0.8in;
+    margin-right: 0.8in;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 ::selection {
   background: $color-hl; /* WebKit/Blink Browsers */
 }
