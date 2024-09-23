@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { getShopifyImage } from 'gatsby-source-shopify'
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
-import { Container, Button } from '../Components'
+import { Container } from '../Components'
 import { AddToCart } from '../add-to-cart'
 import { StoreContext } from '../../context/store-context'
 import * as sty from './product-info.module.scss'
@@ -10,13 +9,10 @@ import { getPrice } from '../../utils/get-price'
 
 export const ProductInfo = ({ product }) => {
   const {
-    options,
     variants,
     variants: [initialVariant],
     title,
-    description,
     featuredImage,
-    images,
     media,
   } = product
   function getImage(img, w, h, lay) {

@@ -2,8 +2,6 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { StoreContext } from '../context/store-context'
 import { Layout } from '../components/Layout'
-import { formatPrice } from '../utils/format-price'
-import { Container } from '../components/Components'
 import { LineItem } from '../components/line-item'
 import {
   table,

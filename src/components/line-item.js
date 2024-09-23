@@ -1,7 +1,6 @@
 import * as React from 'react'
 import debounce from 'lodash.debounce'
 import { StoreContext } from '../context/store-context'
-import { formatPrice } from '../utils/format-price'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { getShopifyImage } from 'gatsby-source-shopify'
 import { FaTimesCircle } from 'react-icons/fa'
