@@ -36,7 +36,7 @@ const ProductTemplate = ({ data }) => {
   const temp="A chance to sell users on the story of the product or the vendors who made them so they connect with it on a deeper level. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus suspendisse faucibus interdum posuere lorem ipsum. A cras semper auctor neque vitae tempus quam. Mauris nunc congue nisi vitae suscipit tellus mauris."
 
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc}>
+    <Layout menu={menu.data} activeDocMeta={activeDoc} title={product.title}>
       <ProductInfo 
         product={product}
       />

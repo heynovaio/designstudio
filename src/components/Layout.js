@@ -7,8 +7,7 @@ import { BottomMenu } from './menus/BottomMenu'
 
 import * as sty from './Layout.scss'
 
-export const Layout = ({ children, menu, activeDocMeta }) => {
- 
+export const Layout = ({ children, menu, activeDocMeta, title = '' }) => {
   if (typeof document !== `undefined`) {
     document.body.classList.remove('modal-open');
   }
@@ -27,7 +26,10 @@ export const Layout = ({ children, menu, activeDocMeta }) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{queryData.site.siteMetadata.title}</title>
+        <title>
+          {`Dynamic to be Design Studio 
+          ${title ? `| ${title}` : ''}`}
+        </title>
         <meta
           name="description"
           content={queryData.site.siteMetadata.description}

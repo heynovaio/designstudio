@@ -5,7 +5,7 @@ const prismicConfig = require('./prismic-configuration')
 
 module.exports = {
   siteMetadata: {
-    title: 'Basic HeyNova Prismic Build',
+    title: `Dynamic to be Design Studio`,
     description:
       'Barebones prismic starter with Prismic CMS & Gatsby.js for HeyNova Projects',
   },

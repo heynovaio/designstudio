@@ -40,7 +40,7 @@ const HomeTemplate = ({ data }) => {
   const testimonials = node.testimonials
 
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc}>
+    <Layout menu={menu.data} activeDocMeta={activeDoc} title={"Home"}>
       <SliceZone
         slices={node.body}
         components={components}
