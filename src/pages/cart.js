@@ -124,14 +124,14 @@ export default function CartPage({ data }) {
                 </button>
               ) : (
                 <button
-                  onClick={handleCheckout}
+                  onClick={()=> window.print()}
                   disabled={loading}
                   className="BtnPrimary"
                   style={{
                     marginTop: 40,
                   }}
                 >
-                  Print or Download PDF
+                  Print PDF
                 </button>
               )}
             </>
