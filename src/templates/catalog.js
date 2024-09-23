@@ -45,15 +45,20 @@ const CatalogTemplate = ({ data }) => {
         Description={catalog.description}
         Btn={catalog.shop_btn_label}
       />
-      <Container>
+      <SliceZone
+        slices={catalog.body}
+        components={components}
+        context={{ lang: lang }}
+      />
+      {/* <Container>
         <ShopByRoom gallery={catalogByRoomGallery} />
-      </Container>
+      </Container> */}
 
-      <AlternatingTextImage Sections={catalog.alternating_collections} />
+      {/* <AlternatingTextImage Sections={catalog.alternating_collections} />
       <ProductGallery
         Title={catalog.product_carousel_title}
         bestSellerProducts={bestSellerProducts}
-      />
+      /> */}
     </Layout>
   )
 }
@@ -72,6 +77,14 @@ export const query = graphql`
       type
       id
       data {
+        body {
+          ... on PrismicSlice {
+            id
+            slice_type
+            slice_label
+          }
+          ...CatalogDataBodyCatalogGrid
+        }
         title
         description
         shop_btn_label

@@ -9,6 +9,7 @@ import { HeroBanner } from './hero-banner'
 import { IntroDescription } from './intro-description'
 import { ColorPicker } from './color-picker'
 import { ColumnCallout } from './column-callout'
+import { CatalogGrid } from './catalog-grid'
 
 export const components = {
   text_image: TextImage,
@@ -22,4 +23,5 @@ export const components = {
   intro_description: IntroDescription,
   color_picker: ColorPicker,
   column_callout: ColumnCallout,
+  catalog_grid: CatalogGrid,
 }
