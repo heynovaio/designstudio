@@ -48,7 +48,7 @@ const CatalogTemplate = ({ data }) => {
       />
       <NewArrivals
         title={catalog.new_arrivals_title.richText}
-        arrivals={catalog.NewArrivals}
+        arrivals={catalog.new_arrivals}
       />
       <Container>
         <ShopByRoom gallery={catalogByRoomGallery} />

@@ -1,0 +1,23 @@
+@import '../../base/module';
+.NewArrivals {
+  .title {
+    text-align: center;
+    h2 {
+      font-weight: 400;
+    }
+  }
+  .imageGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .imageWrap {
+    border: 5px solid black;
+  }
+
+  .image {
+  }
+}
