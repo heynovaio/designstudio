@@ -24,12 +24,12 @@ export const CatalogGrid = ({ slice }) => {
                     image={item.catalog_grid_item_image?.gatsbyImageData}
                     className={sty.image}
                   />
+                  <div className={sty.overlay}>
+                    <SlArrowRightCircle color="#F68623" size="55px" />
+                  </div>
                 </div>
-                {/* <div className={sty.overlay}>
-                  <SlArrowRightCircle color="#F68623" size="55px" />
-                </div> */}
 
-                <div className={sty.copyWrap}>
+                <div className={sty.categoryName}>
                   <h3>{item.catalog_grid_item_name}</h3>
                 </div>
               </div>
