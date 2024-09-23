@@ -133,7 +133,7 @@ export default function CartPage({ data }) {
                     marginTop: 40,
                   }}
                 >
-                  Print or Download PDF
+                  Print PDF
                 </button>
               )}
             </>
