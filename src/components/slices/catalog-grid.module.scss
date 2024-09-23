@@ -4,6 +4,16 @@
   background-color: $color-dove;
   .title {
     text-align: center;
+    margin-bottom: 35px;
+    h2 {
+      font-weight: 400;
+    }
+    p {
+      text-transform: uppercase;
+      font-family: $font-secondary;
+      letter-spacing: 0.13em;
+      margin-bottom: 5px;
+    }
   }
 
   .grid {
@@ -52,31 +62,6 @@
       align-items: center;
       text-align: center;
       padding: 20px;
-
-      .link {
-        font-weight: 400;
-        font-size: 1.5rem;
-        text-decoration-line: none;
-        text-transform: uppercase;
-        color: $color-rustorange;
-        font-family: $font-secondary;
-        letter-spacing: 0.13em;
-        margin-bottom: 5px;
-        @media (max-width: $tablet) {
-          font-size: 0.875rem;
-          margin-bottom: 0px;
-        }
-      }
-
-      p {
-        font-family: $font-header;
-        font-style: italic;
-        color: $color-rustorange;
-        font-size: 2.25rem;
-        @media (max-width: $tablet) {
-          font-size: 1.125rem;
-        }
-      }
     }
 
     &:hover .overlay {
@@ -86,7 +71,7 @@
     }
   }
 
-  .copyWrap {
+  .categoryName {
     margin: 20px 0;
     text-align: center;
     h3 {
