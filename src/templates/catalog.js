@@ -9,6 +9,7 @@ import { CenterText } from '../components/_catalog/center-text'
 import { ShopByRoom } from '../components/collections-grid/shop-by-room'
 import { AlternatingTextImage } from '../components/_catalog/alternating-text-image'
 import { ProductGallery } from '../components/_catalog/product-gallery'
+import { NewArrivals } from '../components/_catalog/new-arrivals'
 
 const CatalogTemplate = ({ data }) => {
   if (!data) return null
@@ -45,6 +46,10 @@ const CatalogTemplate = ({ data }) => {
         Description={catalog.description}
         Btn={catalog.shop_btn_label}
       />
+      <NewArrivals
+        title={catalog.new_arrivals_title.richText}
+        arrivals={catalog.NewArrivals}
+      />
       <Container>
         <ShopByRoom gallery={catalogByRoomGallery} />
       </Container>
@@ -75,6 +80,16 @@ export const query = graphql`
         title
         description
         shop_btn_label
+        new_arrivals_title {
+          richText
+        }
+        new_arrivals {
+          new_arrival_image {
+            gatsbyImageData
+            alt
+          }
+          new_arrival_name
+        }
         alternating_collections {
           collection_handle
           collection_title
