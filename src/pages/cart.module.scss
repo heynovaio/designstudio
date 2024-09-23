@@ -14,7 +14,6 @@
   width: 100%;
   display: grid;
   grid-template-columns: 48px 1fr min-content;
-
 }
 
 .table th {
@@ -28,7 +27,7 @@
   display: contents;
 }
 
-.legend th{
+.legend th {
   padding-bottom: 20px;
 }
 
@@ -36,7 +35,6 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-
 }
 
 .totals,
@@ -53,7 +51,6 @@
   justify-content: center;
 
   width: max-content;
-
 }
 
 .summary ~ .summary td {
@@ -109,7 +106,6 @@
 
 .emptyStateLink {
   display: inline-block;
-
 }
 
 @media (min-width: 640px) {

@@ -4,6 +4,11 @@ import { addToCart as addToCartStyle } from "./add-to-cart.module.scss"
 
 export function AddToCart({ variantId, quantity, available, ...props }) {
   const { addVariantToCart, loading } = React.useContext(StoreContext)
+  const { location } = React.useContext(StoreContext)
+
+  const isWishlist = location.name === "Turks and Caicos" ? "Add to Wishlist" : "Add to Cart"
+  const isAvailable = available ? isWishlist : "Out of Stock"
+
 
   function addToCart(e) {
     e.preventDefault()
@@ -21,7 +26,7 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
         cursor: 'pointer'
       }}
     >
-      {available ? "Add to Cart" : "Out of Stock"}
+      {available ? isAvailable : "Out of Stock"}
     </button>
   )
 }
