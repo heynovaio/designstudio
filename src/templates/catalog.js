@@ -9,6 +9,7 @@ import { CenterText } from '../components/_catalog/center-text'
 import { ShopByRoom } from '../components/collections-grid/shop-by-room'
 import { AlternatingTextImage } from '../components/_catalog/alternating-text-image'
 import { ProductGallery } from '../components/_catalog/product-gallery'
+import { RelatedProducts } from '../components/_product/related-products'
 
 const CatalogTemplate = ({ data }) => {
   if (!data) return null
@@ -55,10 +56,8 @@ const CatalogTemplate = ({ data }) => {
       </Container> */}
 
       {/* <AlternatingTextImage Sections={catalog.alternating_collections} />*/}
-      <ProductGallery
-        Title={catalog.product_carousel_title}
-        bestSellerProducts={bestSellerProducts}
-      /> 
+
+      <RelatedProducts header={catalog.product_carousel_title}  products={bestSellerProducts}/> 
     </Layout>
   )
 }
