@@ -9,7 +9,7 @@ import * as sty from './Layout.scss'
 
 export const Layout = ({ children, menu, activeDocMeta, title = '' }) => {
   if (typeof document !== `undefined`) {
-    document.body.classList.remove('modal-open');
+    document.body.classList.remove('modal-open')
   }
   const queryData = useStaticQuery(graphql`
     query SiteQuery {
@@ -27,7 +27,7 @@ export const Layout = ({ children, menu, activeDocMeta, title = '' }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          {`Dynamic to be Design Studio 
+          {`Design Studio 
           ${title ? `| ${title}` : ''}`}
         </title>
         <meta
@@ -46,8 +46,10 @@ export const Layout = ({ children, menu, activeDocMeta, title = '' }) => {
         />
       </Helmet>
       <TopMenu menu={menu} activeDocMeta={activeDocMeta} />
-      <main className="main" id="main">{children}</main>
-      <BottomMenu menu={menu}/>
+      <main className="main" id="main">
+        {children}
+      </main>
+      <BottomMenu menu={menu} />
     </>
   )
 }
