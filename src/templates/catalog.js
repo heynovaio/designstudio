@@ -39,7 +39,7 @@ const CatalogTemplate = ({ data }) => {
   }
 
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc}>
+    <Layout menu={menu.data} activeDocMeta={activeDoc} title={catalog.title}>
       <CenterText
         Title={catalog.title}
         Description={catalog.description}

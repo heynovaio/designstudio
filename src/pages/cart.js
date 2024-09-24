@@ -42,7 +42,7 @@ export default function CartPage({ data }) {
 
   const isCayman = location.name === 'Cayman Islands'
   return (
-    <Layout menu={menu?.data}>
+    <Layout menu={menu?.data} title={"Your cart"}>
       <section className={cart}>
         <div className={wrap}>
           {emptyCart ? (

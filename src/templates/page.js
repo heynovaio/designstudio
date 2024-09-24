@@ -22,13 +22,11 @@ const PageTemplate = ({ data }) => {
     alternateLanguages,
   }
 
+  const title = page.body[0].primary.page_title.richText[0].text;
+
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc}>
-      <SliceZone
-        slices={page.body}
-        components={components}
-        context={{ lang: lang }}
-      />
+    <Layout menu={menu.data} activeDocMeta={activeDoc} title={title}>
+      <SliceZone slices={page.body} components={components} context={{lang: lang}}/>
     </Layout>
   )
 }
