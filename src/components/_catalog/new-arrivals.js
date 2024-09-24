@@ -14,12 +14,10 @@ export const NewArrivals = ({ title, arrivals }) => {
         <div className={sty.imageGroup}>
           {arrivals.map((arrival, index) => (
             <div className={sty.arrival} key={index}>
-              <div className={sty.imageWrap}>
-                <GatsbyImage
-                  image={arrival.new_arrival_image.gatsbyImageData}
-                  className={sty.image}
-                />
-              </div>
+              <GatsbyImage
+                image={arrival.new_arrival_image.gatsbyImageData}
+                className={sty.image}
+              />
               <p>{arrival.new_arrival_name}</p>
             </div>
           ))}
