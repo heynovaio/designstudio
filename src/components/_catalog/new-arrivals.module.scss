@@ -1,0 +1,44 @@
+@import '../../base/module';
+.NewArrivals {
+  .title {
+    text-align: center;
+    margin-bottom: 35px;
+    h2 {
+      font-weight: 400;
+    }
+  }
+  .imageGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    @media (min-width: $tablet) {
+      gap: 55px;
+    }
+  }
+
+  .arrival {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    object-fit: contain;
+    height: 200px;
+    @media (min-width: $tablet) {
+      height: 400px;
+    }
+  }
+
+  p {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+}
