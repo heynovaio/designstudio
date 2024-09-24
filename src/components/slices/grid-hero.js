@@ -9,10 +9,6 @@ export const GridHero = ({ slice }) => {
   return (
     <section className={sty.GridHero}>
       <div className={sty.grid}>
-        <GatsbyImage
-          image={slice.primary.first_image?.gatsbyImageData}
-          alt=""
-        />
         <div className={sty.text}>
           <p>{slice.primary.block1_subtitle}</p>
           <PrismicRichText field={slice.primary.block1_title.richText} />
@@ -27,6 +23,14 @@ export const GridHero = ({ slice }) => {
             />
           </PrismicLink>
         </div>
+        <GatsbyImage
+          image={slice.primary.first_image?.gatsbyImageData}
+          alt=""
+        />
+        <GatsbyImage
+          image={slice.primary.second_image?.gatsbyImageData}
+          alt=""
+        />
         <div className={sty.text}>
           <p>{slice.primary.block2_subtitle}</p>
           <PrismicRichText field={slice.primary.block2_title.richText} />
@@ -41,10 +45,6 @@ export const GridHero = ({ slice }) => {
             />
           </PrismicLink>
         </div>
-        <GatsbyImage
-          image={slice.primary.second_image?.gatsbyImageData}
-          alt=""
-        />
       </div>
     </section>
   )
