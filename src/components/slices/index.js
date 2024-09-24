@@ -10,6 +10,7 @@ import { IntroDescription } from './intro-description'
 import { ColorPicker } from './color-picker'
 import { ColumnCallout } from './column-callout'
 import { CatalogGrid } from './catalog-grid'
+import { GridHero } from './grid-hero'
 
 export const components = {
   text_image: TextImage,
@@ -24,4 +25,5 @@ export const components = {
   color_picker: ColorPicker,
   column_callout: ColumnCallout,
   catalog_grid: CatalogGrid,
+  grid_hero: GridHero,
 }
