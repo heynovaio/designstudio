@@ -24,9 +24,11 @@ export const CatalogGrid = ({ slice }) => {
                     image={item.catalog_grid_item_image?.gatsbyImageData}
                     className={sty.image}
                   />
-                  <div className={sty.overlay}>
-                    <SlArrowRightCircle color="#F68623" size="55px" />
-                  </div>
+                  <PrismicLink href={item.catalog_grid_item_link?.url}>
+                    <div className={sty.overlay}>
+                      <SlArrowRightCircle color="#F68623" size="55px" />
+                    </div>
+                  </PrismicLink>
                 </div>
 
                 <div className={sty.categoryName}>
