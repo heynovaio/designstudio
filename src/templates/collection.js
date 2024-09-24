@@ -116,7 +116,7 @@ const CollectionTemplate = ({ data }) => {
   },[filteredData, searchTerm, curSort]);
 
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc}>
+    <Layout menu={menu.data} activeDocMeta={activeDoc} title={Collection.title}>
       <section style={{paddingTop: 20}}>
         <Container>
           {Collection?.image && (

@@ -30,9 +30,8 @@ const ProjectTemplate = ({ data }) => {
   const colorPickerSlice = project.body.find(
     (slice) => slice.slice_type === 'color_picker',
   )
-
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc}>
+    <Layout menu={menu.data} activeDocMeta={activeDoc} title={project.project_name}>
       {heroBannerSlice && <SliceZone slices={[heroBannerSlice]} components={components} />}
       <ProjectHero
         Tags={tags}

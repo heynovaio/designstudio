@@ -7,10 +7,9 @@ import { BottomMenu } from './menus/BottomMenu'
 
 import * as sty from './Layout.scss'
 
-export const Layout = ({ children, menu, activeDocMeta }) => {
- 
+export const Layout = ({ children, menu, activeDocMeta, title = '' }) => {
   if (typeof document !== `undefined`) {
-    document.body.classList.remove('modal-open');
+    document.body.classList.remove('modal-open')
   }
   const queryData = useStaticQuery(graphql`
     query SiteQuery {
@@ -27,7 +26,10 @@ export const Layout = ({ children, menu, activeDocMeta }) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{queryData.site.siteMetadata.title}</title>
+        <title>
+          {`Design Studio 
+          ${title ? `| ${title}` : ''}`}
+        </title>
         <meta
           name="description"
           content={queryData.site.siteMetadata.description}
@@ -44,8 +46,10 @@ export const Layout = ({ children, menu, activeDocMeta }) => {
         />
       </Helmet>
       <TopMenu menu={menu} activeDocMeta={activeDocMeta} />
-      <main className="main" id="main">{children}</main>
-      <BottomMenu menu={menu}/>
+      <main className="main" id="main">
+        {children}
+      </main>
+      <BottomMenu menu={menu} />
     </>
   )
 }
