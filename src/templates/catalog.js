@@ -41,11 +41,11 @@ const CatalogTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc} title={catalog.title}>
-      <CenterText
+      {/* <CenterText
         Title={catalog.title}
         Description={catalog.description}
         Btn={catalog.shop_btn_label}
-      />
+      /> */}
       <SliceZone
         slices={catalog.body}
         components={components}
@@ -57,7 +57,10 @@ const CatalogTemplate = ({ data }) => {
 
       {/* <AlternatingTextImage Sections={catalog.alternating_collections} />*/}
 
-      <RelatedProducts header={catalog.product_carousel_title}  products={bestSellerProducts}/> 
+      <RelatedProducts
+        header={catalog.product_carousel_title}
+        products={bestSellerProducts}
+      />
     </Layout>
   )
 }
@@ -83,6 +86,7 @@ export const query = graphql`
             slice_label
           }
           ...CatalogDataBodyCatalogGrid
+          ...CatalogDataBodyGridHero
         }
         title
         description
@@ -129,7 +133,12 @@ export const query = graphql`
     allShopifyCollection(
       filter: {
         handle: {
-          in: ["all", "best-sellers", "favourites", "entertain-in-style-this-fall"]
+          in: [
+            "all"
+            "best-sellers"
+            "favourites"
+            "entertain-in-style-this-fall"
+          ]
         }
       }
     ) {
