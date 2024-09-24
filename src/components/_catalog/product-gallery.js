@@ -47,7 +47,10 @@ export const ProductGallery = ({ Title, bestSellerProducts }) => {
     )
     return prods
   }
-
+  function getImage(img, w, h, lay) {
+    if (!img) return null
+    return getShopifyImage({ image: img, layout: lay })
+  }
   return (
     <section className={sty.ProductGallery}>
       <Container>
@@ -68,12 +71,7 @@ export const ProductGallery = ({ Title, bestSellerProducts }) => {
           {bestSellerProducts?.map((item, index) => (
             <ProductCard
               key={`product:${index}`}
-              Image={getShopifyImage({
-                image: item?.featuredImage,
-                width: 322,
-                height: 265,
-                layout: 'constrained',
-              })}
+              Image={getImage(item?.featuredImage,322,265,'constrained')}
               Title={item.title}
               Price={item.priceRangeV2}
               Width={256}

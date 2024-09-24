@@ -54,11 +54,11 @@ const CatalogTemplate = ({ data }) => {
         <ShopByRoom gallery={catalogByRoomGallery} />
       </Container> */}
 
-      {/* <AlternatingTextImage Sections={catalog.alternating_collections} />
+      {/* <AlternatingTextImage Sections={catalog.alternating_collections} />*/}
       <ProductGallery
         Title={catalog.product_carousel_title}
         bestSellerProducts={bestSellerProducts}
-      /> */}
+      /> 
     </Layout>
   )
 }
@@ -130,7 +130,7 @@ export const query = graphql`
     allShopifyCollection(
       filter: {
         handle: {
-          in: ["best-sellers", "favourites", "entertain-in-style-this-fall"]
+          in: ["all", "best-sellers", "favourites", "entertain-in-style-this-fall"]
         }
       }
     ) {
