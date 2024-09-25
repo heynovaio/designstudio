@@ -16,12 +16,18 @@ export const HeroBanner = ({ slice }) => {
     setLocal(location.pathname)
   }, [location.pathname]) // Dependency array, effect runs only when pathname changes
 
+  const isReducedHeight = slice.primary.reduced_height
+
   return (
     <section className={sty.heroBanner} style={{ paddingBottom: 0 }}>
       <div
-        className={`${sty.heroContainer} ${local === '/' ? sty.homeHero : ''}`}
+        className={`${
+          isReducedHeight ? sty.reducedHeroContainer : sty.heroContainer
+        } ${local === '/' ? sty.homeHero : ''}`}
       >
-        <div className={sty.logoWrap}>
+        <div
+          className={`${isReducedHeight ? sty.reducedLogoWrap : sty.logoWrap}`}
+        >
           <a href="/" alt="Back to Home">
             <StaticImage
               src="../../images/designstudio_logo.png"
@@ -31,7 +37,11 @@ export const HeroBanner = ({ slice }) => {
             />
           </a>
         </div>
-        <div className={`${sty.copyWrap} ${local === '/' ? sty.homeCopy : ''}`}>
+        <div
+          className={`${sty.copyWrap} ${isReducedHeight ? sty.reducedH1 : ''} ${
+            local === '/' ? sty.homeCopy : ''
+          }`}
+        >
           <PrismicRichText field={slice.primary.page_title?.richText} />
           {slice.primary.callout_link && (
             <PrismicLink
@@ -76,6 +86,7 @@ export const query = graphql`
         url
       }
       callout_label
+      reduced_height
     }
   }
   fragment PageDataBodyHeroBanner on PrismicPageDataBodyHeroBanner {
@@ -92,6 +103,7 @@ export const query = graphql`
         url
       }
       callout_label
+      reduced_height
     }
   }
   fragment ProjectDataBodyHeroBanner on PrismicProjectDataBodyHeroBanner {
@@ -108,6 +120,7 @@ export const query = graphql`
         url
       }
       callout_label
+      reduced_height
     }
   }
   fragment CatalogDataBodyHeroBanner on PrismicCatalogDataBodyHeroBanner {
@@ -124,6 +137,7 @@ export const query = graphql`
         url
       }
       callout_label
+      reduced_height
     }
   }
 `
