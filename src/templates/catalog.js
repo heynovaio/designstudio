@@ -66,6 +66,7 @@ export const query = graphql`
           }
           ...CatalogDataBodyCatalogGrid
           ...CatalogDataBodyGridHero
+          ...CatalogDataBodyHeroBanner
         }
         title
         description
