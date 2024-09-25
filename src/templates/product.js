@@ -1,10 +1,10 @@
 import React, {
-	useRef,
-	useState,
-	useEffect,
-	useContext,
-	useCallback,
-} from 'react';
+  useRef,
+  useState,
+  useEffect,
+  useContext,
+  useCallback,
+} from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
@@ -13,7 +13,6 @@ import { ProductInfo } from '../components/_product/product-info'
 import { VendorInfo } from '../components/_product/vendor-info'
 import { RelatedProducts } from '../components/_product/related-products'
 import { VendorShowcase } from '../components/_product/vendor-showcase'
-
 
 const ProductTemplate = ({ data }) => {
   if (!data) return null
@@ -25,25 +24,24 @@ const ProductTemplate = ({ data }) => {
     type: 'product',
     url: `/product/${product.handle}/`,
     alternateLanguages: null,
-  };
+  }
 
- 
+  const RelatedProds = product.collections[0]?.products.slice(0, 4)
+  const VendorProds = product.collections[1]?.products.slice(0, 4)
+  const Variants = product.variants
 
-  const RelatedProds = product.collections[0]?.products.slice(0,4);
-  const VendorProds = product.collections[1]?.products.slice(0,4);
-  const Variants = product.variants;
-
-  const temp="A chance to sell users on the story of the product or the vendors who made them so they connect with it on a deeper level. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus suspendisse faucibus interdum posuere lorem ipsum. A cras semper auctor neque vitae tempus quam. Mauris nunc congue nisi vitae suscipit tellus mauris."
+  const temp =
+    'A chance to sell users on the story of the product or the vendors who made them so they connect with it on a deeper level. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus suspendisse faucibus interdum posuere lorem ipsum. A cras semper auctor neque vitae tempus quam. Mauris nunc congue nisi vitae suscipit tellus mauris.'
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc} title={product.title}>
-      <ProductInfo 
-        product={product}
+      <ProductInfo product={product} />
+      {/* <VendorInfo header={"About this product or vendor"} description={temp}/> */}
+      <RelatedProducts
+        header={'Staff Featured Products'}
+        products={RelatedProds}
       />
-      <VendorInfo header={"About this product or vendor"} description={temp}/>
-      <RelatedProducts header={"Staff Picks"} products={RelatedProds}/>
     </Layout>
-   
   )
 }
 
