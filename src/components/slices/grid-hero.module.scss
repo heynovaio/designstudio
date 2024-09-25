@@ -7,6 +7,30 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'text1 image1'
+      'image2 text2';
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        'image1'
+        'text1'
+        'image2'
+        'text2';
+    }
+    .text1 {
+      grid-area: text1;
+    }
+    .text2 {
+      grid-area: text2;
+    }
+    .image1 {
+      grid-area: image1;
+    }
+    .image2 {
+      grid-area: image2;
+    }
   }
 
   .text {
