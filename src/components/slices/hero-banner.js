@@ -110,4 +110,20 @@ export const query = graphql`
       callout_label
     }
   }
+  fragment CatalogDataBodyHeroBanner on PrismicCatalogDataBodyHeroBanner {
+    id
+    primary {
+      page_title {
+        richText
+      }
+      hero_banner_image {
+        gatsbyImageData(layout: FULL_WIDTH)
+        alt
+      }
+      callout_link {
+        url
+      }
+      callout_label
+    }
+  }
 `
