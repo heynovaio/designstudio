@@ -13,10 +13,10 @@ export const GridHero = ({ slice }) => {
           <p>{slice.primary.block1_subtitle}</p>
           <PrismicRichText field={slice.primary.block1_title.richText} />
           <PrismicLink
+            href={`/collection/${slice.primary.block1_label}`}
             className="BtnPrimary"
-            href={slice.primary.block1_btn_link?.url}
           >
-            {slice.primary.block1_btn_label}
+            {slice.primary.block1_btn_text}
             <BiArrowBack
               size={18}
               style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
@@ -35,10 +35,10 @@ export const GridHero = ({ slice }) => {
           <p>{slice.primary.block2_subtitle}</p>
           <PrismicRichText field={slice.primary.block2_title.richText} />
           <PrismicLink
+            href={`/collection/${slice.primary.block2_label}`}
             className="BtnPrimary"
-            href={slice.primary.block2_btn_link?.url}
           >
-            {slice.primary.block2_btn_label}
+            {slice.primary.block2_btn_text}
             <BiArrowBack
               size={18}
               style={{ transform: 'scaleX(-1)', marginLeft: '0.5em' }}
@@ -62,14 +62,10 @@ export const query = graphql`
       block2_title {
         richText
       }
-      block1_btn_label
-      block2_btn_label
-      block1_btn_link {
-        url
-      }
-      block2_btn_link {
-        url
-      }
+      block1_btn_text
+      block2_btn_text
+      block1_label
+      block2_label
       first_image {
         gatsbyImageData
         alt

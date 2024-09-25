@@ -40,7 +40,7 @@ export const ShopByRoom = ({
       <div className={sty.buttonArea}>
         <div className={sty.horizontalLine}></div>
 
-        <PrismicLink className="BtnPrimary" href={btnLink}>
+        <PrismicLink className="BtnPrimary" href={btnLink?.url}>
           <PrismicRichText field={btnText?.richText}></PrismicRichText>
           <BiArrowBack
             size={18}
