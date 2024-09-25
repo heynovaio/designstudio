@@ -1,15 +1,9 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { SliceZone, PrismicRichText, PrismicLink } from '@prismicio/react'
-import { Container } from '../components/Components'
+import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../components/slices'
-import { CenterText } from '../components/_catalog/center-text'
-import { ShopByRoom } from '../components/collections-grid/shop-by-room'
-import { AlternatingTextImage } from '../components/_catalog/alternating-text-image'
-import { ProductGallery } from '../components/_catalog/product-gallery'
-import { RelatedProducts } from '../components/_product/related-products'
 
 const CatalogTemplate = ({ data }) => {
   if (!data) return null
@@ -40,26 +34,11 @@ const CatalogTemplate = ({ data }) => {
   }
 
   return (
-    <Layout menu={menu.data} activeDocMeta={activeDoc} title={catalog.title}>
-      {/* <CenterText
-        Title={catalog.title}
-        Description={catalog.description}
-        Btn={catalog.shop_btn_label}
-      /> */}
+    <Layout menu={menu.data} activeDocMeta={activeDoc}>
       <SliceZone
         slices={catalog.body}
         components={components}
         context={{ lang: lang }}
-      />
-      {/* <Container>
-        <ShopByRoom gallery={catalogByRoomGallery} />
-      </Container> */}
-
-      {/* <AlternatingTextImage Sections={catalog.alternating_collections} />*/}
-
-      <RelatedProducts
-        header={catalog.product_carousel_title}
-        products={bestSellerProducts}
       />
     </Layout>
   )
