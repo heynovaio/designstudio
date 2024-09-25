@@ -40,20 +40,6 @@
   display: flex;
   align-items: center;
 
-  &::before {
-    position: absolute;
-    height: 580px;
-    aspect-ratio: 1/1;
-    right: -250px;
-    top: 100px;
-    border-radius: 99em;
-    border: 40px solid $color-grey;
-    outline: 40px solid $color-cream;
-    background: $color-cream;
-    content: '';
-    z-index: -1;
-  }
-
   @media (min-width: $desktop) {
     padding-top: 100px;
     padding-bottom: 80px;

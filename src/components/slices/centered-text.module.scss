@@ -14,7 +14,7 @@
   margin: 0 auto;
   margin-bottom: 0;
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   align-items: center;
   gap: 36px;
   text-align: center;
@@ -26,20 +26,6 @@ flex-direction: column;
   min-height: 500px;
   display: flex;
   align-items: center;
-
-  &::before {
-    position: absolute;
-    height: 580px;
-    aspect-ratio: 1/1;
-    right: -250px;
-    top: 100px;
-    border-radius: 99em;
-    border: 40px solid $color-grey;
-    outline: 40px solid $color-cream;
-    background: $color-cream;
-    content: '';
-    z-index: -1;
-  }
 
   @media (min-width: $desktop) {
     padding-top: 100px;
