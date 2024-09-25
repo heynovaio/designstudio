@@ -78,7 +78,7 @@ export const ProductInfo = ({ product }) => {
   const hasVariants = variants.length > 1
 
   return (
-    <section style={{ background: '#FAEDE5' }}>
+    <section className={sty.ProductInfo}>
       <Container>
         <div className={sty.FlexWrap}>
           <div className={sty.productImages}>
