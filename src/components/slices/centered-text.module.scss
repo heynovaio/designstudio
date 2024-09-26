@@ -3,9 +3,25 @@
 .CenteredText {
   padding: 0;
   overflow: hidden;
+  position: relative;
 
-  @media (min-width: $desktop) {
-    overflow: initial;
+  &.palmImage {
+    &::before {
+      content: '';
+      position: absolute;
+      left: -1%;
+      bottom: 0;
+      z-index: 1;
+      width: 523px;
+      height: 680px;
+      background-color: $color-sage;
+      mask: url('../../images/palm.svg') no-repeat 100% 100%;
+      mask-size: contain;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -25,6 +41,7 @@
     font-weight: 600;
     letter-spacing: 0.13em;
     font-size: 1.25rem;
+
     @media (min-width: $mobile) {
       font-size: 1.5rem;
     }
