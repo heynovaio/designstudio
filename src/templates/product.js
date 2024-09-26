@@ -41,8 +41,7 @@ const ProductTemplate = ({ data }) => {
         product={product}
       />
       <VendorInfo header={"About this product or vendor"} description={temp}/>
-      <RelatedProducts header={"Style it with"}  description={"Something like: Our designers love the look of these with this product"} products={RelatedProds}/>
-      <VendorShowcase header={"Ways to style your dining room"} description={"Something like: Our designers love the look of these with this product"} products={VendorProds}/>
+      <RelatedProducts header={"Staff Picks"} products={RelatedProds}/>
     </Layout>
    
   )

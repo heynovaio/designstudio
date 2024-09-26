@@ -22,11 +22,20 @@ export const VendorShowcase = ({header, description, products=null}) => {
 							href={`./products/${item.handle}`}
 						>
 							<div className={sty.imageWrap}>
-								<GatsbyImage 
-								 	image={getShopifyImage({image: item?.featuredImage, width: 385, height: 316, layout: "constrained"})}
-									alt=""
-									className={sty.image}
-								/>
+							{item?.featuredImage?.originalSrc ? (
+								<GatsbyImage
+                  image={getShopifyImage({
+                    image: item?.featuredImage?.originalSrc, // Ensure originalSrc is correctly accessed
+                    width: 385,
+                    height: 316,
+                    layout: "constrained"
+                  })}
+                  alt=""
+                  className={sty.image}
+                />
+							) : (
+								<div className={sty.imagePlaceholder}>Image not available</div>
+							)}
 							</div>
 						</PrismicLink>
 					))}
