@@ -55,7 +55,6 @@ export const ProjectGrid = ({ slice }) => {
                       className={sty.image}
                     />
                     <div className={sty.overlay}>
-                      <p>{prod.data.project_name}</p>
                       <PrismicLink
                         href={`/project/${prod.uid}`}
                         className={sty.link}
