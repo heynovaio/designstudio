@@ -26,9 +26,11 @@ h1,
 h2,
 .H2 {
   font-size: 2em;
+  font-style: italic;
+  font-weight: 400;
 
   @media (min-width: $desktop) {
-    font-size: 2.625em;
+    font-size: 3.125em;
   }
 }
 
