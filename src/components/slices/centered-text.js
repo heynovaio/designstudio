@@ -6,8 +6,12 @@ import { Container } from '../Components'
 import * as sty from './centered-text.module.scss'
 
 export const CenteredText = ({ slice }) => {
+  const hasPalmImage = !!slice.primary.palm_image
+
   return (
-    <section className={sty.CenteredText}>
+    <section
+      className={`${sty.CenteredText} ${hasPalmImage ? sty.palmImage : ''}`}
+    >
       <div className={sty.centerContainer}>
         <Container>
           <div className={sty.centerWrap}>
@@ -39,6 +43,7 @@ export const query = graphql`
       btn_link {
         url
       }
+      palm_image
     }
   }
 `
