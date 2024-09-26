@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { PrismicRichText } from '@prismicio/react'
-import { Container } from "../Components"
+import { PrismicLink, PrismicRichText } from '@prismicio/react'
+import { Container } from '../Components'
 
-import * as sty from './centered-text.module.scss';
+import * as sty from './centered-text.module.scss'
 
 export const CenteredText = ({ slice }) => {
   return (
@@ -11,7 +11,15 @@ export const CenteredText = ({ slice }) => {
       <div className={sty.centerContainer}>
         <Container>
           <div className={sty.centerWrap}>
-            <PrismicRichText field={slice.primary.richtext?.richText}/>
+            <p className={sty.title}>{slice.primary.text_title}</p>
+            <PrismicRichText field={slice.primary.richtext?.richText} />
+            <PrismicLink
+              href={slice.primary.btn_link?.url}
+              className="BtnPrimary"
+              title={slice.primary.btn_label}
+            >
+              {slice.primary.btn_label}
+            </PrismicLink>
           </div>
         </Container>
       </div>
@@ -25,6 +33,11 @@ export const query = graphql`
     primary {
       richtext {
         richText
+      }
+      text_title
+      btn_label
+      btn_link {
+        url
       }
     }
   }

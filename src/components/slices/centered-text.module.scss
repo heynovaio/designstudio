@@ -18,6 +18,17 @@
   align-items: center;
   gap: 36px;
   text-align: center;
+
+  .title {
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    font-size: 1.25rem;
+    @media (min-width: $mobile) {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .center-container {
