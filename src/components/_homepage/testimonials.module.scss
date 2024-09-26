@@ -49,19 +49,22 @@
     font-family: $font-secondary;
 
     line-height: 1.62rem;
-    letter-spacing: 0.15rem;
   }
 
   .quotesHead p {
     text-transform: uppercase;
     font-weight: 600;
+    letter-spacing: 0.13em;
   }
 
   .quotesHead h2 {
     font-family: $font-header;
-    font-size: 3.25em;
+    font-size: 2.1em;
     font-style: italic;
     font-weight: 400;
+    @media (min-width: $tablet) {
+      font-size: 3.25em;
+    }
   }
 
   .quoteWrap {
@@ -107,7 +110,7 @@
     font-family: $font-secondary;
     font-weight: 600;
     text-align: center;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.13em;
     color: $color-black;
     text-align: left;
     background-color: $color-darkgreen;
