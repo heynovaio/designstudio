@@ -59,7 +59,7 @@
         text-transform: uppercase;
         line-height: 108%;
         letter-spacing: 0.14em;
-        @media (min-width: $tablet) {
+        @media (min-width: $mobile) {
           font-size: 1.5em;
           margin-top: 40px;
         }
