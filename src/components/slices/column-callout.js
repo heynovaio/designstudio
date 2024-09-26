@@ -27,7 +27,7 @@ export const ColumnCallout = ({ slice }) => {
                 <p className={sty.itemTitle}>{item.title}</p>
                 <PrismicRichText field={item.description.richText} />
               </div>
-              <PrismicLink href={item.link} className="BtnPrimary">
+              <PrismicLink href={item.link?.url} className="BtnPrimary">
                 {item.link_label}
               </PrismicLink>
             </div>
