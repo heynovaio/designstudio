@@ -43,8 +43,11 @@
     p {
       font-family: $font-secondary;
       text-transform: uppercase;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       letter-spacing: 0.13em;
+      @media (min-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
     h2 {
       font-weight: 400;

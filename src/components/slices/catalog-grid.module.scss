@@ -13,7 +13,10 @@
       font-family: $font-secondary;
       letter-spacing: 0.13em;
       margin-bottom: 5px;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      @media (min-width: $tablet) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -92,7 +95,7 @@
       }
 
       @media (max-width: $mobile) {
-        font-size: 0.775rem;
+        font-size: 1rem;
       }
     }
     @media (max-width: $tablet) {
