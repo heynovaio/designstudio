@@ -4,6 +4,7 @@
   padding: 0;
   overflow: hidden;
   position: relative;
+  overflow: visible;
   &.palmImage {
     &::before {
       content: '';
@@ -11,12 +12,12 @@
       left: -1%;
       bottom: 0;
       z-index: 0;
-      width: 373px;
-      height: 520px;
+      width: 573px;
+      height: 720px;
       background-color: $color-sage;
       mask: url('../../images/palm.svg') no-repeat 100% 100%;
       mask-size: contain;
-      transform: translateY(-20%);
+      transform: translateY(10%);
       @media (max-width: $tablet) {
         display: none;
       }
