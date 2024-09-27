@@ -4,20 +4,19 @@
   padding: 0;
   overflow: hidden;
   position: relative;
-
   &.palmImage {
     &::before {
       content: '';
       position: absolute;
       left: -1%;
       bottom: 0;
-      z-index: 1;
-      width: 523px;
-      height: 680px;
+      z-index: 0;
+      width: 373px;
+      height: 520px;
       background-color: $color-sage;
       mask: url('../../images/palm.svg') no-repeat 100% 100%;
       mask-size: contain;
-
+      transform: translateY(-20%);
       @media (max-width: $tablet) {
         display: none;
       }

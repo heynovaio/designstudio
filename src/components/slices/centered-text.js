@@ -6,7 +6,7 @@ import { Container } from '../Components'
 import * as sty from './centered-text.module.scss'
 
 export const CenteredText = ({ slice }) => {
-  const hasPalmImage = !!slice.primary.palm_image
+  const hasPalmImage = slice.primary.palm_image
 
   return (
     <section
