@@ -33,7 +33,7 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
         </a>
         <Container>
           <div className={sty.navBar}>
-            <div className={`${sty.NavWrap} ${mobileMenu ?? sty.navOpen}`}>
+            <div className={`${sty.NavWrap} ${mobileMenu ? sty.navOpen : ''}`}>
               <div className={sty.MenuLinks}>
                 {menu.simple_menu.map((item, index) => (
                   <AniLink
