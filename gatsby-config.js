@@ -26,7 +26,7 @@ module.exports = {
         storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
         downloadImages: true,
         shopifyConnections: ['collections'],
-        salesChannel: 'Storefront API'
+        salesChannel: process.env.SHOPIFY_STOREFRONT
       },
     },
     {
