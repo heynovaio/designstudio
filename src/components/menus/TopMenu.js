@@ -3,17 +3,15 @@ import { graphql } from 'gatsby'
 import { PrismicLink } from '@prismicio/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from './../Components'
-import {
-  BiMenu,
-  BiXCircle,
-} from 'react-icons/bi'
+import { BiMenu, BiXCircle } from 'react-icons/bi'
 import { CartButton } from '../cart-button'
 import { StoreContext } from '../../context/store-context'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
-  const { updateLocale,  location,  locationOptions } = React.useContext(StoreContext)
+  const { updateLocale, location, locationOptions } =
+    React.useContext(StoreContext)
   const [mobileMenu, setMobileMenu] = React.useState(false)
 
   const toggleMenu = () => {
@@ -36,7 +34,7 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
         <Container>
           <div className={sty.navBar}>
             <div className={`${sty.NavWrap} ${mobileMenu ?? sty.navOpen}`}>
-                <div className={sty.MenuLinks}>
+              <div className={sty.MenuLinks}>
                 {menu.simple_menu.map((item, index) => (
                   <AniLink
                     paintDrip
@@ -52,12 +50,8 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
               <div className={sty.SocialGroup}>
                 <ul className={`list-no-style ${sty.SocialLinks}`}>
                   {menu.socials.map((item, index) => (
-                    <li key={`socialLink:${index}`}
->
-                      <PrismicLink
-                        href={'/'}
-                        className={sty.SocialLink}
-                      >
+                    <li key={`socialLink:${index}`}>
+                      <PrismicLink href={'/'} className={sty.SocialLink}>
                         <GatsbyImage
                           image={item?.social_icon?.gatsbyImageData}
                           alt={item.social_icon?.alt || ''}
@@ -70,18 +64,24 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
             </div>
             <div className={sty.iconNav}>
               {locationOptions?.map((local, i) => (
-                <button value={local} key={i} onClick={handleChange} className={`${sty.locationBtn} ${location.name === local ? sty.activeBtn : ''}`}
+                <button
+                  value={local}
+                  key={i}
+                  onClick={handleChange}
+                  className={`${sty.locationBtn} ${
+                    location.name === local ? sty.activeBtn : ''
+                  }`}
                 >
                   {local}
                 </button>
               ))}
               <NavBarIcons />
-              {/* <button
+              <button
                 onClick={toggleMenu}
                 className={`${sty.mobileBtn}  ${mobileMenu ?? sty.navOpen}`}
               >
                 {mobileMenu ? <BiXCircle size={25} /> : <BiMenu size={25} />}
-              </button> */}
+              </button>
             </div>
           </div>
         </Container>
