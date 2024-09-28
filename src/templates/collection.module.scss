@@ -89,17 +89,17 @@
 .value {
     display: flex;
     justify-content: space-between;
-    margin-left: 10px;
 }
 .filterItem {
     border-bottom: 1px solid rgba($color-black, 0.4);
     padding: 16px 0;
 }
 .filterTitle {
-    font-weight: 300;
     font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
     line-height: 36px;
-    
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     

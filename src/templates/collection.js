@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby'
 import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
@@ -15,7 +15,7 @@ import { Container, Button } from "../components/Components"
 
 import * as sty from "./collection.module.scss"
 
-const DEFAULT_PRODUCTS_PER_PAGE = 24
+const DEFAULT_PRODUCTS_PER_PAGE = 100
 
 
 
@@ -31,122 +31,137 @@ const CollectionTemplate = ({ data }) => {
     alternateLanguages: null,
   };
 
-
-
   const typesList = [];
-  var types = Collection.products.map((prod, index) => 
-      {prod.productType != "" && !typesList.includes(prod.productType) && typesList.push(prod.productType);}
-  );
-  typesList.sort(function(a, b) {
-    if(a.toLowerCase() < b.toLowerCase()) return -1;
-    if(a.toLowerCase() > b.toLowerCase()) return 1;
-      return 0;
-  });
+  const tagsList = [];
+  const collectionsList = [];
   
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [allData,setAllData] = React.useState([]);
-  const [filteredData,setFilteredData] = React.useState(allData);
-  const [searchedData,setSearchedData] = React.useState();
+  if (Collection.products) {
+    Collection.products.forEach((prod) => {
+      if (prod.productType && !typesList.includes(prod.productType)) {
+        typesList.push(prod.productType);
+      }
+      if (prod.tags) {
+        prod.tags.forEach((tag) => {
+          if (tag && !tagsList.includes(tag)) {
+            tagsList.push(tag);
+          }
+        });
+      }
+    });
+  }
+  
 
-  React.useEffect(() => {
-    setFilters(Array(typesList.length).fill(false));
-    setAllData(Collection.products);
-    setFilteredData(Collection.products);
-    setSearchedData(Collection.products);
-  }, []);
-  const [curSort, setCurSort] = React.useState("relevance");
-  const [filters, setFilters] = React.useState([]);
+  if (Collection.metafields) {
+    Collection.metafields.forEach((metafield) => {
+      if (metafield.key === 'collection_type' && metafield.value === 'Styles') {
+        collectionsList.push(Collection.title);
+      }
+    });
+  }
+
+  typesList.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  tagsList.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  collectionsList.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+  console.log('Types List:', typesList);
+  console.log('Tags List:', tagsList);
+  console.log('Collections List:', collectionsList);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [allData, setAllData] = useState(Collection.products || []);
+  const [filteredData, setFilteredData] = useState(allData);
+  const [searchedData, setSearchedData] = useState([]);
+  const [selectedTypes, setSelectedTypes] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedCollections, setSelectedCollections] = useState([]);
+  const [curSort, setCurSort] = useState("relevance");
+  
+
+  const handleFilter = (e) => {
+    const { name, checked } = e.target;
+    if (typesList.includes(name)) {
+      setSelectedTypes((prev) =>
+        checked ? [...prev, name] : prev.filter((type) => type !== name)
+      );
+    } else if (tagsList.includes(name)) {
+      setSelectedTags((prev) =>
+        checked ? [...prev, name] : prev.filter((tag) => tag !== name)
+      );
+    } else if (collectionsList.includes(name)) {
+      setSelectedCollections((prev) =>
+        checked ? [...prev, name] : prev.filter((collection) => collection !== name)
+      );
+    }
+  };
+
+
+  useEffect(() => {
+    const filtered = Collection.products.filter((prod) => {
+      const matchesType = selectedTypes.length === 0 || selectedTypes.includes(prod.productType);
+      const matchesTag = selectedTags.length === 0 || prod.tags.some((tag) => selectedTags.includes(tag));
+      const matchesCollection = selectedCollections.length === 0 || selectedCollections.includes(Collection.title);
+      return matchesType && matchesTag && matchesCollection;
+    });
+    setFilteredData(filtered.length === 0 ? allData : filtered);
+  }, [selectedTypes, selectedTags, selectedCollections, Collection.products]);
 
   const handleSort = (e) => {
     setCurSort(e.target.value);
   };
 
-  function sortData(data){
-    if(searchedData){
-      switch(curSort){
-        case 'relevance':{
-          return data;
-        };
-        case 'name': {
-          let temp = data;
-          temp.sort((a,b) => {
-            if(a.title.toLowerCase() < b.title.toLowerCase()) return -1;
-            if(a.title.toLowerCase() > b.title.toLowerCase()) return 1;
-            return 0;
-          });
-          return temp;
-        };
-        default: return data;
-      } 
-    } else return data;
-  }
-  const handleFilter = (e) => {
-    let index = e.target.value;
-    const newFilters = [...filters];
-    let val = !newFilters[index];
-    newFilters[index] = val;
-    setFilters(newFilters);
+  const sortData = (data) => {
+    switch (curSort) {
+      case 'relevance':
+        return data;
+      case 'name':
+        return data.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+      default:
+        return data;
+    }
   };
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
   
-  React.useEffect(() => {
-    let curVals = [];
-    filters.map((item,index) => {
-      if(item === true){
-        allData.map((a) => {
-          if(a.productType === typesList[index]){
-            curVals.push(a);
-          }
-        });
-      }
-    })
-    if(curVals.length === 0){
-      setFilteredData(allData);
-    } else setFilteredData(curVals);
-  },[filters]);
-
-  React.useEffect(() => {
-    let hits = [];
-    let value = searchTerm;
-    filteredData.map((prod,index) => prod.title.toLowerCase().includes(value) && hits.push(prod));
-    setSearchedData(hits);
-  },[filteredData, searchTerm, curSort]);
+  useEffect(() => {
+    const hits = filteredData.filter((prod) =>
+      prod.title.toLowerCase().includes(searchTerm)
+    );
+    setSearchedData(sortData(hits));
+  }, [filteredData, searchTerm, curSort]);
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc} title={Collection.title}>
-      <section style={{paddingTop: 20}}>
+      <section style={{paddingTop: 60}}>
         <Container>
-          {Collection?.image && (
-            <div className={sty.bannerWrap}>
-            
-              <GatsbyImage
-                image={getShopifyImage({image: Collection?.image, width: 1692, height: 326, layout: "constrained"})}
-                alt=""
-                className={sty.image}
-              />
-            </div>
-          )}
+          <nav className={sty.breadcrumb} style={{marginBottom: '1em'}}>
+            <PrismicLink href={`/catalog`}style={{color: "HighlightText"}}>Catalog</PrismicLink> &gt;
+            {Collection.handle !== 'all-products' && (
+              <>
+                <PrismicLink href={`/collection/all-products`} style={{color: "HighlightText"}}>All Products</PrismicLink> &gt;
+              </>
+            )}
+            {Collection.title}
+          </nav>
           <div style={{marginBottom: 80}}>
-            <h1 style={{fontSize:42, fontWeight: "600"}}>{Collection.title}</h1>
+            <h1 style={{fontStyle: "italic", fontWeight: "500"}}>{Collection.title}</h1>
           </div>
           <div className={sty.Content}>
           
             <div className={sty.Filter}>
-              <h3 style={{marginBottom:20, fontWeight: "500"}}>Filter</h3>
-              <details className={sty.filterItem}>
+              <h2 style={{marginBottom:20, fontWeight: "500", fontStyle: "italic", fontSize: "1.6em"}}>Filter by</h2>
+              <details open className={sty.filterItem}>
                 <summary className={sty.filterTitle}>Product Type </summary>
                 {
-                  typesList.map((item,index) => (
+                  typesList.map((type,index) => (
                     <>
-                      <label htmlFor={item} className={sty.value}>
-                        {item}
+                      <label key={type} htmlFor={type} className={sty.value}>
+                        {type}
                         <input 
                           type="checkbox" 
                           value={index} 
-                          name={item}
+                          name={type}
                           onChange={handleFilter}
                         />
                       </label>
@@ -155,7 +170,41 @@ const CollectionTemplate = ({ data }) => {
                 }
                 
               </details>
-              
+              <details open className={sty.filterItem}>
+                <summary className={sty.filterTitle}>Product Tags </summary>
+                {
+                  tagsList.map((tag, index) => (
+                    <>
+                      <label key={tag} htmlFor={tag} className={sty.value}>
+                        {tag}
+                        <input 
+                          type="checkbox" 
+                          value={index} 
+                          name={tag}
+                          onChange={handleFilter}
+                        />
+                      </label>
+                    </>
+                  ))
+                }
+                
+              </details>
+              {collectionsList.length > 0 && (
+              <details open className={sty.filterItem}>
+                <summary className={sty.filterTitle}>Style</summary>
+                {collectionsList.map((collection, index) => (
+                  <label key={collection} htmlFor={collection} className={sty.value}>
+                    {collection}
+                    <input
+                      type="checkbox"
+                      value={index}
+                      name={collection}
+                      onChange={handleFilter}
+                    />
+                  </label>
+                ))}
+              </details>
+              )}
             </div>
             <div className={sty.Box}>
               <div className={sty.searchBar}>
@@ -230,6 +279,7 @@ export const query = graphql`
         handle
         title
         productType
+        tags
         featuredImage {
           originalSrc
           width
@@ -247,7 +297,25 @@ export const query = graphql`
         }
         title
       }
+      metafields {
+        namespace
+        key
+        value
+      }
     }
+    allShopifyCollection(filter: { metafields: { elemMatch: { key: { eq: "collection_type" }, value: { eq: "Styles" } } } }) {
+      nodes {
+        handle
+        title
+        products {
+          handle
+          title
+          productType
+          tags
+        }
+      }
+    }
+      
     prismicMenu(lang: { eq: "en-ca" }) {
       ...TopMenuFragment
       ...BottomMenuFragment
