@@ -101,24 +101,16 @@
   h1 {
     font-style: italic;
     text-transform: none;
-    font-size: 3.75rem;
+    font-size: 1.75rem;
+    margin-top: 10px;
     @media (min-width: $desktop) {
-      font-size: 5.3em;
+      font-size: 2.5em;
+      margin-top: 0;
     }
   }
 
   @media (min-width: $desktop) {
     font-size: 1.4rem;
-  }
-
-  em {
-    font-family: $font-header;
-    text-transform: none;
-    font-size: 1.5em;
-    display: inline-block;
-    margin-top: -0.5em;
-    margin-left: 0.5em;
-    vertical-align: middle;
   }
 }
 

@@ -17,10 +17,13 @@
 
   .tag {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.75em;
     text-transform: uppercase;
     font-family: $font-secondary;
     letter-spacing: 0.13em;
+    @media (min-width: $mobile) {
+      font-size: 1.5rem;
+    }
   }
 }

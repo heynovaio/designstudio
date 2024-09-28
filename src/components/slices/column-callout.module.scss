@@ -6,20 +6,21 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 2.75rem;
-    font-family: $font-header;
-    font-weight: 400;
+
     margin-bottom: 15px;
     @media (min-width: $tablet) {
       margin-bottom: 30px;
     }
 
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-family: $font-secondary;
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.13em;
+      @media (min-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -87,11 +88,14 @@
 
     .itemTitle {
       font-family: $font-secondary;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.13em;
       margin-bottom: 10px;
+      @media (min-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
   }
 }
