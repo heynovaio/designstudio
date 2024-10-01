@@ -35,6 +35,7 @@ html {
 body {
   font-family: $font-primary;
   letter-spacing: 0;
+  white-space: pre-line;
 
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
