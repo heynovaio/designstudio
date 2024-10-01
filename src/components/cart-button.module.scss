@@ -10,14 +10,13 @@
 }
 
 .cartButton:hover {
-  
 }
 
 .badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $color-lightorange;
+  background-color: $color-orange;
   box-shadow: 0 0 0 2px white;
   color: black;
   font-size: 10px;
@@ -32,6 +31,5 @@
   box-sizing: border-box;
 }
 
-.cartButton[aria-current="page"] {
-  
+.cartButton[aria-current='page'] {
 }
