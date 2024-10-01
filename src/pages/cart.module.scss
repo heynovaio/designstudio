@@ -116,9 +116,26 @@
   }
 }
 
+.shippingText {
+  text-align: left;
+  @media (min-width: 640px) {
+    text-align: right;
+  }
+}
+
+.buttonArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 @media (min-width: 640px) {
-  .summary .labelColumn,
-  .summary .totals,
+  .shipping .labelColumn,
+  .shipping .totals,
   .grandTotal .labelColumn {
     grid-column-start: auto;
     grid-column-end: auto;

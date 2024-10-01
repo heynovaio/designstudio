@@ -8,7 +8,7 @@ import {
   wrap,
   totals,
   grandTotal,
-  summary,
+  shipping,
   checkoutButton,
   collapseColumn,
   labelColumn,
@@ -21,6 +21,8 @@ import {
   title,
   cart,
   legend,
+  shippingText,
+  buttonArea,
 } from './cart.module.scss'
 import { getPrice } from '../utils/get-price'
 import { Container } from '../components/Components'
@@ -86,42 +88,64 @@ export default function CartPage({ data }) {
                       <td className={labelColumn}>Total Price</td>
                       <td className={totals}>{totalPrice}</td>
                     </tr>
-                    <tr className={summary}>
+                    <tr className={shipping}>
                       <td className={collapseColumn}></td>
                       <td className={collapseColumn}></td>
                       <td className={collapseColumn}></td>
-                      <td className={labelColumn}>
-                        {isCayman ? '*Local Delivery' : ''}
-                      </td>
-                      <td className={totals}>
-                        {isCayman ? 'calculated at checkout' : ''}
-                      </td>
                     </tr>
                   </tbody>
                 </table>
-                {isCayman ? (
-                  <button
-                    onClick={handleCheckout}
-                    disabled={loading}
-                    className="BtnPrimary"
-                    style={{
-                      marginTop: 40,
-                    }}
-                  >
-                    Checkout
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => window.print()}
-                    disabled={loading}
-                    className="BtnPrimary"
-                    style={{
-                      marginTop: 40,
-                    }}
-                  >
-                    Print PDF
-                  </button>
-                )}
+                <p className={shippingText}>
+                  {isCayman ? '*Local Delivery calculated at checkout' : ''}
+                </p>
+                <div className={buttonArea}>
+                  {isCayman ? (
+                    <a
+                      href="/collection/all-products"
+                      disabled={loading}
+                      className="BtnPrimary"
+                      style={{
+                        marginTop: 40,
+                      }}
+                    >
+                      Keep Shopping
+                    </a>
+                  ) : (
+                    <a
+                      href="/collection/all-products"
+                      disabled={loading}
+                      className="BtnPrimary"
+                      style={{
+                        marginTop: 40,
+                      }}
+                    >
+                      Keep Looking
+                    </a>
+                  )}
+                  {isCayman ? (
+                    <button
+                      onClick={handleCheckout}
+                      disabled={loading}
+                      className="BtnPrimary"
+                      style={{
+                        marginTop: 40,
+                      }}
+                    >
+                      Checkout
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => window.print()}
+                      disabled={loading}
+                      className="BtnPrimary"
+                      style={{
+                        marginTop: 40,
+                      }}
+                    >
+                      Print PDF
+                    </button>
+                  )}
+                </div>
               </>
             )}
           </div>
