@@ -79,23 +79,23 @@ export default function CartPage({ data }) {
                       <LineItem item={item} key={item.id} />
                     ))}
 
-                    <tr className={summary}>
-                      <td className={collapseColumn}></td>
-                      <td className={collapseColumn}></td>
-                      <td className={collapseColumn}></td>
-                      <td className={labelColumn}>
-                        {isCayman ? 'Shipping' : ''}
-                      </td>
-                      <td className={totals}>
-                        {isCayman ? 'Calculated at checkout' : ''}
-                      </td>
-                    </tr>
                     <tr className={grandTotal}>
                       <td className={collapseColumn}></td>
                       <td className={collapseColumn}></td>
                       <td className={collapseColumn}></td>
                       <td className={labelColumn}>Total Price</td>
                       <td className={totals}>{totalPrice}</td>
+                    </tr>
+                    <tr className={summary}>
+                      <td className={collapseColumn}></td>
+                      <td className={collapseColumn}></td>
+                      <td className={collapseColumn}></td>
+                      <td className={labelColumn}>
+                        {isCayman ? '*Local Delivery' : ''}
+                      </td>
+                      <td className={totals}>
+                        {isCayman ? 'calculated at checkout' : ''}
+                      </td>
                     </tr>
                   </tbody>
                 </table>

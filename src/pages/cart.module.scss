@@ -51,16 +51,16 @@
   width: max-content;
 }
 
-.summary ~ .summary td {
+.shipping ~ .shipping td {
   padding-top: 0;
 }
 
-.summary .labelColumn {
+.shipping .labelColumn {
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
-.summary .totals {
+.shipping .totals {
   grid-column-start: 2;
   grid-column-end: 4;
 }
@@ -104,6 +104,16 @@
 
 .emptyStateLink {
   display: inline-block;
+}
+
+.grandTotal .labelColumn,
+.grandTotal .totals {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  @media (min-width: 640px) {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 640px) {
