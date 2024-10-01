@@ -44,7 +44,7 @@ export default function CartPage({ data }) {
   const isCayman = location.name === 'Cayman Islands'
   return (
     <Layout menu={menu?.data} title={'Your cart'}>
-      <section>
+      <section className={cart}>
         <Container>
           <div className={wrap}>
             {emptyCart ? (
@@ -79,20 +79,6 @@ export default function CartPage({ data }) {
                       <LineItem item={item} key={item.id} />
                     ))}
 
-                    <tr className={summary}>
-                      <td className={collapseColumn}></td>
-                      <td className={collapseColumn}></td>
-                      <td className={collapseColumn}></td>
-                      <td className={labelColumn}>Subtotal</td>
-                      <td className={totals}>{subtotalPrice}</td>
-                    </tr>
-                    <tr className={summary}>
-                      <td className={collapseColumn}></td>
-                      <td className={collapseColumn}></td>
-                      <td className={collapseColumn}></td>
-                      <td className={labelColumn}>Taxes</td>
-                      <td className={totals}>{taxPrice}</td>
-                    </tr>
                     <tr className={summary}>
                       <td className={collapseColumn}></td>
                       <td className={collapseColumn}></td>
