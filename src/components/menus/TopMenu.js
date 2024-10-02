@@ -21,7 +21,8 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
     }
   }
   const handleChange = (e) => {
-    updateLocale(e.target.value)
+    const value = e.target.closest('button').value;
+    updateLocale(value);
   }
 
   return (
@@ -34,6 +35,15 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
           <div className={sty.navBar}>
             <div className={`${sty.NavWrap} ${mobileMenu ? sty.navOpen : ''}`}>
               <div className={sty.MenuLinks}>
+                <AniLink
+                  paintDrip
+                  to="/"
+                  hex="#DAE2DD"
+                  duration={1}
+                  key="menuLink:home"
+                >
+                  Home
+                </AniLink>
                 {menu.simple_menu.map((item, index) => (
                   <AniLink
                     paintDrip
@@ -44,7 +54,7 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
                   >
                     {item.label}
                   </AniLink>
-                ))}
+                  ))}
               </div>
               <div className={sty.SocialGroup}>
                 <ul className={`list-no-style ${sty.SocialLinks}`}>
@@ -62,20 +72,27 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
               </div>
             </div>
             <div className={sty.iconNav}>
-              {locations?.map((local, i) => (
-                <button 
-                  value={local.name} 
-                  key={`locations:${i}`} 
-                  onClick={handleChange} 
-                  className={`${sty.locationBtn} ${local.name === location.name ? sty.activeBtn : ''}`}
-                >
-                  {local.abr}
-                </button>
-              ))}
+              <div>
+                {locations?.map((local, i) => (
+                  <button 
+                    value={local.name} 
+                    key={`locations:${i}`} 
+                    onClick={handleChange} 
+                    className={`${sty.locationBtn} ${local.name === location.name ? sty.activeBtn : ''}`}
+                    aria-pressed={local.name === location.name}
+                    aria-label={`Select location ${local.name}`}
+                  >
+                      <span className={sty.desktopTablet}>{local.name}</span>
+                      <span className={sty.mobile}>{local.abr}</span>
+                  </button>
+                ))}
+              </div>
               <NavBarIcons />
               <button
                 onClick={toggleMenu}
                 className={`${sty.mobileBtn}  ${mobileMenu ?? sty.navOpen}`}
+                aria-expanded={mobileMenu}
+                aria-label={mobileMenu ? 'Close menu' : 'Open menu'}
               >
                 {mobileMenu ? <BiXCircle size={25} /> : <BiMenu size={25} />}
               </button>
@@ -96,7 +113,10 @@ const NavBarIcons = () => {
   }, 0)
   return (
     <div className={sty.navBarIcons}>
-      <CartButton quantity={quantity} />
+      <CartButton 
+        quantity={quantity}
+        aria-label={`Cart with ${quantity} item${quantity !== 1 ? 's' : ''}`} 
+      />
     </div>
   )
 }
