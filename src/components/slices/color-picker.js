@@ -9,7 +9,12 @@ export const ColorPicker = ({ slice }) => {
       <div className={sty.titleText}>
         <PrismicRichText field={slice.primary.color_picker_title.richText} />
       </div>
-      <div className={sty.colors}>
+      <div className={sty.colors}
+        data-sal="slide-up"
+        data-sal-delay="0"
+        data-sal-easing="ease"
+        data-sal-duration="500"
+      >
         {slice.items.map((item, index) => (
           <div
             key={index}

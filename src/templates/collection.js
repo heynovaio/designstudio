@@ -4,13 +4,11 @@ import { PrismicRichText, PrismicText , PrismicLink } from '@prismicio/react'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import { getShopifyImage } from 'gatsby-source-shopify'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { getCurrencySymbol } from "../utils/format-price"
-import { SearchProvider } from "../context/search-provider"
-import { useProductSearch } from "../utils/hooks"
-import { getValuesFromQuery } from "../utils/search"
-import { CgChevronRight, CgChevronLeft, CgSmileNone } from "react-icons/cg"
+import { StoreContext } from '../context/store-context'
 import { Layout } from '../components/Layout'
 import { Container, Button } from "../components/Components"
+
+import { getPrice } from '../utils/get-price'
 
 
 import * as sty from "./collection.module.scss"
@@ -30,6 +28,8 @@ const CollectionTemplate = ({ data }) => {
     url: `/collection/${Collection.handle}/`,
     alternateLanguages: null,
   };
+
+  const { location } = React.useContext(StoreContext)
 
   const typesList = [];
   const tagsList = [];
@@ -62,10 +62,6 @@ const CollectionTemplate = ({ data }) => {
   typesList.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   tagsList.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   collectionsList.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-
-  console.log('Types List:', typesList);
-  console.log('Tags List:', tagsList);
-  console.log('Collections List:', collectionsList);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [allData, setAllData] = useState(Collection.products || []);
@@ -133,7 +129,7 @@ const CollectionTemplate = ({ data }) => {
 
   return (
     <Layout menu={menu.data} activeDocMeta={activeDoc} title={Collection.title}>
-      <section style={{paddingTop: 60}}>
+      <section className={sty.collectionBG} style={{paddingTop: 60}}>
         <Container>
           <nav className={sty.breadcrumb} style={{marginBottom: '1em'}}>
             <PrismicLink href={`/catalog`}style={{color: "HighlightText"}}>Catalog</PrismicLink> &gt;
@@ -230,7 +226,14 @@ const CollectionTemplate = ({ data }) => {
               </div>
               {searchedData ? 
                 (<div className={sty.ProductGrid}>
-                  {sortData(searchedData).map((item,index) => (
+                  {sortData(searchedData).map((item,index) => {
+                    
+                    const price = item.priceRangeV2
+                    ? getPrice(location, item.priceRangeV2.minVariantPrice.amount)
+                    : 'N/A'
+                    
+                    return (
+                    
                     <PrismicLink 
                       href={`/product/${item.handle}`} 
                       key={`product:${index}`}
@@ -249,10 +252,11 @@ const CollectionTemplate = ({ data }) => {
                       </div>
                       <div style={{padding: "0 10px"}}>
                         <p className={sty.itemTitle}>{item.title}</p>
-                        <span className={sty.price}>${item.priceRangeV2.minVariantPrice.amount} {item.priceRangeV2.minVariantPrice.currencyCode}</span>
+                        <span style={{display: "block"}} className={sty.price} dangerouslySetInnerHTML={{ __html: price }}></span>
                       </div>
                     </PrismicLink>
-                  ))}
+                    )
+                  })}
                 </div>) :
                 <h3>No products available</h3>
               }

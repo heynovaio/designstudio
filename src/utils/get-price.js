@@ -5,6 +5,5 @@ export const getPrice = (location, price) => {
   const convertedPrice =
     name === 'Cayman Islands' ? price * 0.83 : price
 
-  return `${formatPrice(location.currency, convertedPrice)}
-  ${currency === 'USD' ? ' USD' : ''}`
+  return `${formatPrice(currency, convertedPrice)}${currency === 'USD' ? '\u00A0USD' : ''}`
 }

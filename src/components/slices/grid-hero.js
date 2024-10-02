@@ -9,7 +9,12 @@ export const GridHero = ({ slice }) => {
   return (
     <section className={sty.GridHero}>
       <div className={sty.grid}>
-        <div className={`${sty.text} ${sty.text1}`}>
+        <div className={`${sty.text} ${sty.text1}`}
+          data-sal="slide-up"
+          data-sal-delay="20"
+          data-sal-easing="ease"
+          data-sal-duration="350"
+        >
           <p>{slice.primary.block1_subtitle}</p>
           <PrismicRichText field={slice.primary.block1_title.richText} />
           <PrismicLink
@@ -33,7 +38,12 @@ export const GridHero = ({ slice }) => {
           alt=""
           className={sty.image2}
         />
-        <div className={`${sty.text} ${sty.text2}`}>
+        <div className={`${sty.text} ${sty.text2}`}
+          data-sal="slide-up"
+          data-sal-delay="20"
+          data-sal-easing="ease"
+          data-sal-duration="350"
+        >
           <p>{slice.primary.block2_subtitle}</p>
           <PrismicRichText field={slice.primary.block2_title.richText} />
           <PrismicLink
