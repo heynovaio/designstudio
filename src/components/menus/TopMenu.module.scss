@@ -28,7 +28,7 @@
     &:focus {
       transform: translateY(0%);
     }
-  }   
+  }
 }
 .navBar {
   width: 100%;
@@ -74,6 +74,7 @@
   letter-spacing: 10%;
   cursor: pointer;
   white-space: nowrap;
+  color: $color-black;
 
   &:first-child::after {
     content: '';
@@ -106,12 +107,10 @@
   }
 }
 
-
-
 .NavWrap {
   width: 100%;
 
-  //Mobile Nav 
+  //Mobile Nav
   background: $color-cream;
   padding: 5%;
   position: absolute;
@@ -133,7 +132,7 @@
       margin-bottom: 15px;
       display: block;
     }
-  
+
     @media (min-width: $desktop) {
       display: flex;
       flex-wrap: wrap;
@@ -158,12 +157,12 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-  
+
       .SocialLink {
         padding-left: 10px;
         padding-right: 10px;
         color: $color-black;
-      }    
+      }
     }
   }
 
@@ -208,7 +207,7 @@
     a {
       padding: 0 10px;
       color: $color-black;
-    }  
+    }
   }
 }
 
