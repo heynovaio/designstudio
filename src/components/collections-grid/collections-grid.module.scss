@@ -25,9 +25,11 @@
     }
 
     .gridItem {
+      position: relative;
       .imgContainer {
         background-color: $color-sagelt;
         padding: 15px;
+        position: relative;
         @media (min-width: $tablet) {
           padding: 30px;
         }
@@ -114,3 +116,58 @@
 .button {
   font-size: 1rem;
 }
+
+.overlay {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-transparentwhite, 0.9);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+
+  .link {
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-decoration-line: none;
+    text-transform: uppercase;
+    color: $color-rustorange;
+    font-family: $font-secondary;
+    letter-spacing: 0.13em;
+    margin-bottom: 10px;
+    display: inline-block;
+
+    svg {
+      margin-top: 5px;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 0.875rem;
+      margin-bottom: 0px;
+    }
+  }
+
+  p {
+    font-family: $font-header;
+    font-style: italic;
+    color: $color-rustorange;
+    font-size: 2.25rem;
+    @media (max-width: $tablet) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.gridItem:hover .overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 1;
+}
+

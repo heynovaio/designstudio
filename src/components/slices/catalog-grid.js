@@ -7,6 +7,8 @@ import { SlArrowRightCircle } from 'react-icons/sl'
 
 import * as sty from './catalog-grid.module.scss'
 
+import { Parallax } from 'react-scroll-parallax'
+
 export const CatalogGrid = ({ slice }) => {
   return (
     <section className={sty.CatalogGrid}>
@@ -17,14 +19,22 @@ export const CatalogGrid = ({ slice }) => {
         </div>
         <div>
           <div className={sty.grid}>
-            {slice.items.map((item) => (
-              <div className={sty.category}>
+            {slice.items.map((item, index) => (
+              <div className={sty.category}
+                data-sal="slide-up"
+                data-sal-delay="20"
+                data-sal-easing="ease"
+                data-sal-duration="350"
+              >
                 <div className={sty.imageWrap}>
                   <GatsbyImage
                     image={item.catalog_grid_item_image?.gatsbyImageData}
                     className={sty.image}
                   />
-                  <PrismicLink href={item.catalog_grid_item_link?.url}>
+                  <PrismicLink
+                    key={`collection:${index}`}
+                    href={`/collection/${item.room_link_label}`}
+                  >
                     <div className={sty.overlay}>
                       <SlArrowRightCircle color="#F68623" size="55px" />
                     </div>
@@ -54,9 +64,7 @@ export const query = graphql`
     }
     items {
       catalog_grid_item_name
-      catalog_grid_item_link {
-        url
-      }
+      room_link_label
       catalog_grid_item_image {
         gatsbyImageData
         alt
