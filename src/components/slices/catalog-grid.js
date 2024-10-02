@@ -54,9 +54,7 @@ export const query = graphql`
     }
     items {
       catalog_grid_item_name
-      catalog_grid_item_link {
-        url
-      }
+      room_link_label
       catalog_grid_item_image {
         gatsbyImageData
         alt
