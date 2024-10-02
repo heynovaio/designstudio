@@ -8,7 +8,7 @@ import * as sty from './BottomMenu.module.scss'
 
 export const BottomMenu = ({ menu }) => {
   return (
-    <footer className={sty.footer}>
+    <footer className={sty.footer} id="footer">
       <Container className={`flex ${sty.containerFooter} `}>
         <div className={sty.contactColumn}>
           <div className={sty.contacts}>

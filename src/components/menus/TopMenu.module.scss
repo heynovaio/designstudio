@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 100;
   top: 0;
+  border-bottom: 1px solid #f1f0ef;
 
   .skip_button {
     border-radius: 0.5em;
@@ -41,12 +42,17 @@
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 10%;
-  max-width: $full;
   margin: 0 auto;
 
   .icon-nav {
     display: flex;
     justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+    width: 50%;
+    @media (max-width: $desktop) {
+      width: 100%;
+    }
   }
 
   @media (min-width: $desktop) {
@@ -54,6 +60,7 @@
   }
   @media (max-width: $tablet) {
     justify-content: flex-end;
+    padding: 12px 0;
   }
 }
 
@@ -87,6 +94,12 @@
   cursor: pointer;
   background: transparent;
   color: $color-rustorange;
+  padding: 12px 12px 7px;
+  font-size: 1.5em;
+  vertical-align: baseline;
+  background: #f5f3f2;
+  border-radius: 50%;
+  border: 1px solid #b8b8bc;
 
   @media (min-width: $desktop) {
     display: none;
@@ -163,7 +176,6 @@
   }
 
   @media (min-width: $desktop) {
-    max-width: width(8);
     position: relative;
     height: auto;
     display: flex;
@@ -197,5 +209,27 @@
       padding: 0 10px;
       color: $color-black;
     }  
+  }
+}
+
+.locationBtn:focus {
+  outline: 2px solid #d3005b; /* Example focus outline */
+  outline-offset: 2px;
+}
+
+.desktopTablet {
+  display: none;
+}
+
+.mobile {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .desktopTablet {
+    display: inline;
+  }
+  .mobile {
+    display: none;
   }
 }
