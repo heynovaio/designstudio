@@ -2,17 +2,17 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { PrismicPreviewProvider } from 'gatsby-plugin-prismic-previews'
 import { PrismicProvider } from '@prismicio/react'
-import { ParallaxProvider } from "react-scroll-parallax";
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 import { repositoryConfigs } from './src/utils/prismicPreviews'
 import { linkResolver } from './src/utils/linkResolver'
 
 import './src/base/module.scss'
-import { StoreProvider } from './src/context/store-context';
+import { StoreProvider } from './src/context/store-context'
 
 export const wrapRootElement = ({ element }) => (
   <StoreProvider>
-  <ParallaxProvider>
+    <ParallaxProvider>
       <PrismicProvider
         linkResolver={linkResolver}
         internalLinkComponent={({ href, ...props }) => (
@@ -20,12 +20,19 @@ export const wrapRootElement = ({ element }) => (
         )}
       >
         <PrismicPreviewProvider repositoryConfigs={repositoryConfigs}>
-          
-            {element}
-          
+          {element}
         </PrismicPreviewProvider>
       </PrismicProvider>
-
-  </ParallaxProvider>
+    </ParallaxProvider>
   </StoreProvider>
 )
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <meta
+      name="format-detection"
+      content="telephone=no"
+      key="format-detection"
+    />,
+  ])
+}
