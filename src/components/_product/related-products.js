@@ -23,7 +23,7 @@ export const RelatedProducts = ({header, description, products=null}) => {
 						<PrismicLink
 							className={sty.product}
 							key={`product:${index}`}
-							href={`./product/${item.handle}`}
+							href={`/product/${item.handle}`}
 						>
 							<div className={sty.imageWrap}>
 								<GatsbyImage 

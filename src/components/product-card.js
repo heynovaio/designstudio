@@ -12,7 +12,9 @@ export const ProductCard = ({ Image, Title, Price, Width: number, handle }) => {
   )
   return (
     <div>
-      <PrismicLink href={`./product/${handle}`}>
+      <PrismicLink
+        href={`/product/${handle}`} 
+      >
         <div className={sty.imageWrap}>
           {Image && (
             <GatsbyImage
