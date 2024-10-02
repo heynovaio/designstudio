@@ -10,8 +10,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import * as sty from './TopMenu.module.scss'
 export const TopMenu = ({ menu, activeDocMeta }) => {
-  const { updateLocale, location, locationOptions } =
-    React.useContext(StoreContext)
+  const { updateLocale,  location,  locations } = React.useContext(StoreContext)
   const [mobileMenu, setMobileMenu] = React.useState(false)
 
   const toggleMenu = () => {
@@ -63,16 +62,14 @@ export const TopMenu = ({ menu, activeDocMeta }) => {
               </div>
             </div>
             <div className={sty.iconNav}>
-              {locationOptions?.map((local, i) => (
-                <button
-                  value={local}
-                  key={i}
-                  onClick={handleChange}
-                  className={`${sty.locationBtn} ${
-                    location.name === local ? sty.activeBtn : ''
-                  }`}
+              {locations?.map((local, i) => (
+                <button 
+                  value={local.name} 
+                  key={`locations:${i}`} 
+                  onClick={handleChange} 
+                  className={`${sty.locationBtn} ${local.name === location.name ? sty.activeBtn : ''}`}
                 >
-                  {local}
+                  {local.abr}
                 </button>
               ))}
               <NavBarIcons />
