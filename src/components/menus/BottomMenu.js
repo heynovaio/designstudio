@@ -67,7 +67,7 @@ export const BottomMenu = ({ menu }) => {
                 </li>
               ))}
 
-              <div className={sty.legalTitle}>
+              {/* <div className={sty.legalTitle}>
                 {menu.legal_links_title.text}
               </div>
               <ul className="list-no-style">
@@ -81,7 +81,7 @@ export const BottomMenu = ({ menu }) => {
                     </PrismicLink>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </ul>
           </div>
         </div>
@@ -107,7 +107,10 @@ export const BottomMenu = ({ menu }) => {
                 <ul className={`list-no-style ${sty.SocialLinks}`}>
                   {menu.socials.map((item, index) => (
                     <li>
-                      <PrismicLink href={'/'} key={`socialLink:${index}`}>
+                      <PrismicLink
+                        href={item.social_link?.url}
+                        key={`socialLink:${index}`}
+                      >
                         <GatsbyImage
                           image={item?.social_icon?.gatsbyImageData}
                           alt={item.social_icon?.alt || ''}
