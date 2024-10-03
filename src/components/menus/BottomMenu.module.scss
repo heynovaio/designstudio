@@ -68,6 +68,7 @@
 
 .linksColumn {
   order: 2;
+
   @media (min-width: $desktop) {
     order: 0;
   }
@@ -100,8 +101,18 @@
 
 .MenuLinks {
   text-align: center;
+
   ul {
     column-count: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    gap: 0;
+    @media (min-width: $desktop) {
+      gap: 20px;
+    }
     li {
       line-height: 180%;
     }
