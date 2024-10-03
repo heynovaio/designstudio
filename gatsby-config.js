@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: `Design Studio`,
     description:
-      'Barebones prismic starter with Prismic CMS & Gatsby.js for HeyNova Projects',
+      'Transform your home with luxury interior design and custom furniture collections from our award-winning studio in Grand Cayman and Turks & Caicos. Over 30 years of expertise in creating timeless spaces. Shop our designer-curated decor and furniture.',
   },
   plugins: [
     {
@@ -26,7 +26,7 @@ module.exports = {
         storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
         downloadImages: true,
         shopifyConnections: ['collections'],
-        salesChannel: process.env.SHOPIFY_STOREFRONT
+        salesChannel: process.env.SHOPIFY_STOREFRONT,
       },
     },
     {
