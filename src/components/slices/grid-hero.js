@@ -9,7 +9,8 @@ export const GridHero = ({ slice }) => {
   return (
     <section className={sty.GridHero}>
       <div className={sty.grid}>
-        <div className={`${sty.text} ${sty.text1}`}
+        <div
+          className={`${sty.text} ${sty.text1}`}
           data-sal="slide-up"
           data-sal-delay="20"
           data-sal-easing="ease"
@@ -20,6 +21,7 @@ export const GridHero = ({ slice }) => {
           <PrismicLink
             href={`/collection/${slice.primary.block1_label}`}
             className="BtnPrimary"
+            title={slice.primary.block1_btn_text}
           >
             {slice.primary.block1_btn_text}
             <BiArrowBack
@@ -30,15 +32,16 @@ export const GridHero = ({ slice }) => {
         </div>
         <GatsbyImage
           image={slice.primary.first_image?.gatsbyImageData}
-          alt=""
+          alt={slice.primary.first_image?.alt}
           className={sty.image1}
         />
         <GatsbyImage
           image={slice.primary.second_image?.gatsbyImageData}
-          alt=""
+          alt={slice.primary.second_image?.alt}
           className={sty.image2}
         />
-        <div className={`${sty.text} ${sty.text2}`}
+        <div
+          className={`${sty.text} ${sty.text2}`}
           data-sal="slide-up"
           data-sal-delay="20"
           data-sal-easing="ease"
@@ -49,6 +52,7 @@ export const GridHero = ({ slice }) => {
           <PrismicLink
             href={`/collection/${slice.primary.block2_label}`}
             className="BtnPrimary"
+            title={slice.primary.block2_btn_text}
           >
             {slice.primary.block2_btn_text}
             <BiArrowBack
