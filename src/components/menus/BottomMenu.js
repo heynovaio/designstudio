@@ -66,22 +66,25 @@ export const BottomMenu = ({ menu }) => {
                   </PrismicLink>
                 </li>
               ))}
-
-              {/* <div className={sty.legalTitle}>
-                {menu.legal_links_title.text}
-              </div>
-              <ul className="list-no-style">
-                {menu.legal_links.map((item, index) => (
-                  <li>
-                    <PrismicLink
-                      href={item.link?.url}
-                      key={`legalLink:${index}`}
-                    >
-                      {item.label}
-                    </PrismicLink>
-                  </li>
-                ))}
-              </ul> */}
+              <li>
+                {/* <div className={sty.legalTitle}>
+                  {menu.legal_links_title.text}
+                </div>
+              </li>
+              <li>
+                <ul className="list-no-style">
+                  {menu.legal_links.map((item, index) => (
+                    <li>
+                      <PrismicLink
+                        href={item.link?.url}
+                        key={`legalLink:${index}`}
+                      >
+                        {item.label}
+                      </PrismicLink>
+                    </li>
+                  ))}
+                </ul> */}
+              </li>
             </ul>
           </div>
         </div>
@@ -119,7 +122,9 @@ export const BottomMenu = ({ menu }) => {
                       </PrismicLink>
                     </li>
                   ))}
-                  <p>DesignStudioInteriors</p>
+                  <li>
+                    <p>DesignStudioInteriors</p>
+                  </li>
                 </ul>
               </div>
             </div>
