@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
-import { Container, Button } from '../Components'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { PrismicLink } from '@prismicio/react'
+import { Container } from '../Components'
 
 import * as sty from './instagram-feed.module.scss'
 

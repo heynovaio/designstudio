@@ -4,7 +4,6 @@ import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { BiArrowBack } from 'react-icons/bi'
 import { useLocation } from '@reach/router'
-import { SlArrowRightCircle } from 'react-icons/sl'
 
 import * as sty from './hero-banner.module.scss'
 
@@ -22,32 +21,28 @@ export const HeroBanner = ({ slice }) => {
   const isReducedHeight = slice.primary.reduced_height
 
   return (
-    <section
-      className={sty.heroBanner} 
-      style={{ paddingBottom: 0 }}>
+    <section className={sty.heroBanner} style={{ paddingBottom: 0 }}>
       <div
         className={`${
           isReducedHeight ? sty.reducedHeroContainer : sty.heroContainer
         } ${local === '/' ? sty.homeHero : ''}`}
       >
-
-          <div
-            className={`${isReducedHeight ? sty.reducedLogoWrap : sty.logoWrap}`}
-          >
-            <a href="/" alt="Back to Home"
-            >
-              <Parallax translateY={[-110, 60]}>
-                <StaticImage
-                  src="../../images/designstudio_logo.png"
-                  width={378}
-                  height={182}
-                  layout="constrained"
-                  className={sty.fadeIn}
-                  loading="eager"
-                />
-              </Parallax>
-            </a>
-          </div>
+        <div
+          className={`${isReducedHeight ? sty.reducedLogoWrap : sty.logoWrap}`}
+        >
+          <a href="/" alt="Back to Home">
+            <Parallax translateY={[-110, 60]}>
+              <StaticImage
+                src="../../images/designstudio_logo.png"
+                width={378}
+                height={182}
+                layout="constrained"
+                className={sty.fadeIn}
+                loading="eager"
+              />
+            </Parallax>
+          </a>
+        </div>
         <div
           data-sal="slide-up"
           data-sal-delay="0"

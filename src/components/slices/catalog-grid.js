@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { Container } from '../Components'
@@ -20,7 +20,8 @@ export const CatalogGrid = ({ slice }) => {
         <div>
           <div className={sty.grid}>
             {slice.items.map((item, index) => (
-              <div className={sty.category}
+              <div
+                className={sty.category}
                 data-sal="slide-up"
                 data-sal-delay="20"
                 data-sal-easing="ease"

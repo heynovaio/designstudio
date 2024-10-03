@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import { Container, Button } from '../Components'
+import { Container } from '../Components'
 
 import * as sty from './testimonial.module.scss'
 

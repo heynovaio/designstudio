@@ -1,11 +1,8 @@
 import * as React from 'react'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import { getShopifyImage } from 'gatsby-source-shopify'
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import MultiCarousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import { Container, Button } from '../Components'
+import { Container } from '../Components'
 import { ProductCard } from '../product-card'
 import { FaChevronRight } from 'react-icons/fa'
 
@@ -71,7 +68,7 @@ export const ProductGallery = ({ Title, bestSellerProducts }) => {
           {bestSellerProducts?.map((item, index) => (
             <ProductCard
               key={`product:${index}`}
-              Image={getImage(item?.featuredImage,322,265,'constrained')}
+              Image={getImage(item?.featuredImage, 322, 265, 'constrained')}
               Title={item.title}
               Price={item.priceRangeV2}
               Width={256}

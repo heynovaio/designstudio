@@ -3,11 +3,9 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { PrismicLink } from '@prismicio/react'
 import { PrismicRichText } from '@prismicio/react'
 import { BiArrowBack } from 'react-icons/bi'
-import { Parallax } from 'react-scroll-parallax'
 import { SlArrowRightCircle } from 'react-icons/sl'
 
 import * as sty from './collections-grid.module.scss'
-
 
 export const ShopByRoom = ({
   gallery,
@@ -22,15 +20,16 @@ export const ShopByRoom = ({
         <PrismicRichText field={subheader?.richText} />
       </div>
 
-          <div className={sty.grid}>
-      <div className={sty.collectionsGrid}>
+      <div className={sty.grid}>
+        <div className={sty.collectionsGrid}>
           {gallery.map((item, index) => (
             <PrismicLink
               className={sty.gridItem}
               key={`collection:${index}`}
               href={`/collection/${item.room_link_label}`}
             >
-              <div className={sty.imgContainer}
+              <div
+                className={sty.imgContainer}
                 data-sal="slide-up"
                 data-sal-delay="0"
                 data-sal-easing="ease"
@@ -42,19 +41,17 @@ export const ShopByRoom = ({
                     alt={item.image?.alt || ''}
                   />
                   <div className={sty.overlay}>
-                    <span
-                      className={sty.link}
-                    >
+                    <span className={sty.link}>
                       View Products
                       <SlArrowRightCircle color="#F68623" size="55px" />
                     </span>
-                  </div>  
+                  </div>
                 </div>
               </div>
               <h3>{item.room_label}</h3>
             </PrismicLink>
           ))}
-      </div>
+        </div>
       </div>
 
       <div className={sty.buttonArea}>

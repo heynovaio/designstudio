@@ -15,7 +15,8 @@ export const ColumnCallout = ({ slice }) => {
         </div>
         <div className={sty.columns}>
           {slice.items.map((item) => (
-            <div className={sty.columnContent}
+            <div
+              className={sty.columnContent}
               data-sal="slide-up"
               data-sal-delay="0"
               data-sal-easing="ease"

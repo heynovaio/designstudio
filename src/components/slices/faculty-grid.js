@@ -23,7 +23,8 @@ export const FacultyGrid = ({ slice }) => {
           />
           <div className={sty.facultyMembers}>
             {slice.items.map((item) => (
-              <div className={sty.employeeCard}
+              <div
+                className={sty.employeeCard}
                 data-sal="slide-up"
                 data-sal-delay="0"
                 data-sal-easing="ease"

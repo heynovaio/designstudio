@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { Container } from '../Components'
-import { Button } from '../Components'
 
 import * as sty from './text-image.module.scss'
 

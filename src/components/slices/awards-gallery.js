@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '../Components'
 
 import * as sty from './awards-gallery.module.scss'

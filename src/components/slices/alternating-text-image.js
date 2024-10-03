@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { PrismicRichText } from '@prismicio/react'
 import { Container } from '../Components'
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax'
 
 import * as sty from './alternating-text-image.module.scss'
 
@@ -30,10 +30,10 @@ export const AlternatingTextImage = ({ slice }) => {
             <div className={sty.FlexWrap} key={`text-image:${index}`}>
               {index % 2 === starter ? (
                 <>
-                   <Parallax translateY={[-20, 10]}>  
-                      <Image image={item.image} />
-                    </Parallax>
-                    <Copy text={item.text} />
+                  <Parallax translateY={[-20, 10]}>
+                    <Image image={item.image} />
+                  </Parallax>
+                  <Copy text={item.text} />
                 </>
               ) : (
                 <>
