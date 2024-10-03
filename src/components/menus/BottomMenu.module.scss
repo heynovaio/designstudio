@@ -253,3 +253,12 @@
     }
   }
 }
+
+a[href^='mailto:'],
+a[href^='tel:'] {
+  color: $color-greymd;
+  text-decoration: none;
+  &:hover {
+    color: $color-orange;
+  }
+}

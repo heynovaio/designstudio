@@ -14,7 +14,9 @@ export const BottomMenu = ({ menu }) => {
           <div className={sty.contacts}>
             <div className={sty.info}>
               <div className={sty.MenuLinkTitle}>Cayman Islands</div>
-              <p>{menu.caymans_phone}</p>
+              <p>
+                <a href={`tel:${menu.caymans_phone}`}>{menu.caymans_phone}</a>
+              </p>
               <p>{menu.caymans_street}</p>
               <p>{menu.caymans_city}</p>
               <p>{menu.caymans_location}</p>
@@ -22,12 +24,20 @@ export const BottomMenu = ({ menu }) => {
 
             <div className={sty.info}>
               <div className={sty.MenuLinkTitle}>Turks & Caicos</div>
-              <p>{menu.turks_and_caicos_phone}</p>
+              <p>
+                <a href={`tel:${menu.turks_and_caicos_phone}`}>
+                  {menu.turks_and_caicos_phone}
+                </a>
+              </p>
               <p>{menu.turks_and_caicos_complex}</p>
               <p>{menu.turks_and_caicos_street}</p>
               <p>{menu.turks_and_caicos_city}</p>
               <p>{menu.turks_and_caicos_location}</p>
-              <p>{menu.turks_and_caicos_email}</p>
+              <p>
+                <a href={`mailto:${menu.turks_and_caicos_email}`}>
+                  {menu.turks_and_caicos_email}
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -84,7 +94,11 @@ export const BottomMenu = ({ menu }) => {
           <div className={sty.bottomBarInfoWrap}>
             <p>
               <span className={sty.helloText}>Say Hello </span>
-              <span className={sty.emailText}>{menu.caymans_email}</span>
+              <span className={sty.emailText}>
+                <a href={`mailto:${menu.caymans_email}`}>
+                  {menu.caymans_email}
+                </a>
+              </span>
             </p>
           </div>
           <div className={sty.bottomBarInfoWrap}>
