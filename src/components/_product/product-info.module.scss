@@ -56,7 +56,8 @@
 
   .purchase {
     margin: 22px 0 58px;
-    p {
+    p,
+    .quantityLabel {
       font-weight: 600;
       font-size: 18px;
       line-height: 150%;
@@ -93,5 +94,9 @@
   }
   .overview {
     margin-bottom: 40px;
+  }
+
+  .quantityLabel {
+    display: block;
   }
 }
