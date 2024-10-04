@@ -113,7 +113,7 @@ export const BottomMenu = ({ menu }) => {
                       <PrismicLink
                         href={item.social_link?.url}
                         key={`socialLink:${index}`}
-                        title={item.social_link?.url}
+                        title={item.social_icon?.alt}
                       >
                         <GatsbyImage
                           image={item?.social_icon?.gatsbyImageData}
