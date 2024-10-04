@@ -20,7 +20,8 @@ export const CatalogGrid = ({ slice }) => {
         <div>
           <div className={sty.grid}>
             {slice.items.map((item, index) => (
-              <div className={sty.category}
+              <div
+                className={sty.category}
                 data-sal="slide-up"
                 data-sal-delay="20"
                 data-sal-easing="ease"
@@ -30,10 +31,12 @@ export const CatalogGrid = ({ slice }) => {
                   <GatsbyImage
                     image={item.catalog_grid_item_image?.gatsbyImageData}
                     className={sty.image}
+                    alt={item.alt}
                   />
                   <PrismicLink
                     key={`collection:${index}`}
                     href={`/collection/${item.room_link_label}`}
+                    title={item.catalog_grid_item_name}
                   >
                     <div className={sty.overlay}>
                       <SlArrowRightCircle color="#F68623" size="55px" />
