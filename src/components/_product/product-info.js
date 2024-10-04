@@ -109,11 +109,14 @@ export const ProductInfo = ({ product }) => {
             <h3>{title}</h3>
             <span className={sty.price}>{price}</span>
             <div className={sty.purchase}>
-              <p>Quantity</p>
+              <label htmlFor="quantity" className={sty.quantityLabel}>
+                Quantity
+              </label>
               <input
                 type="number"
                 min="1"
                 max="100"
+                id="quantity"
                 value={quantity}
                 onChange={(e) => {
                   setQuantity(e.target.value)
