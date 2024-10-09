@@ -134,7 +134,7 @@ const CollectionTemplate = ({ data }) => {
     <Layout menu={menu.data} activeDocMeta={activeDoc} title={Collection.title}>
       <section className={sty.collectionBG} style={{ paddingTop: 60 }}>
         <Container>
-          <nav className={sty.breadcrumb} style={{ marginBottom: '1em' }}>
+          <nav style={{ marginBottom: '1em' }}>
             <PrismicLink href={`/catalog`} style={{ color: 'HighlightText' }}>
               Catalog
             </PrismicLink>{' '}
