@@ -129,7 +129,7 @@ export const ProductInfo = ({ product }) => {
                 disabled={!quantity > 0}
               />
             </div>
-            <div className={sty.description}>
+            <div>
               <span className={sty.tabHeader}>Overview</span>
 
               <div

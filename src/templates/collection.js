@@ -134,7 +134,7 @@ const CollectionTemplate = ({ data }) => {
     <Layout menu={menu.data} activeDocMeta={activeDoc} title={Collection.title}>
       <section className={sty.collectionBG} style={{ paddingTop: 60 }}>
         <Container>
-          <nav className={sty.breadcrumb} style={{ marginBottom: '1em' }}>
+          <nav style={{ marginBottom: '1em' }}>
             <PrismicLink href={`/catalog`} style={{ color: 'HighlightText' }}>
               Catalog
             </PrismicLink>{' '}
@@ -172,8 +172,8 @@ const CollectionTemplate = ({ data }) => {
               <details open className={sty.filterItem}>
                 <summary className={sty.filterTitle}>Product Type </summary>
                 {typesList.map((type, index) => (
-                  <>
-                    <label key={type} htmlFor={type} className={sty.value}>
+                  <div key={type}>
+                    <label htmlFor={type} className={sty.value}>
                       {type}
                       <input
                         type="checkbox"
@@ -182,14 +182,14 @@ const CollectionTemplate = ({ data }) => {
                         onChange={handleFilter}
                       />
                     </label>
-                  </>
+                  </div>
                 ))}
               </details>
               <details open className={sty.filterItem}>
                 <summary className={sty.filterTitle}>Product Tags </summary>
                 {tagsList.map((tag, index) => (
-                  <>
-                    <label key={tag} htmlFor={tag} className={sty.value}>
+                  <div key={tag}>
+                    <label htmlFor={tag} className={sty.value}>
                       {tag}
                       <input
                         type="checkbox"
@@ -198,7 +198,7 @@ const CollectionTemplate = ({ data }) => {
                         onChange={handleFilter}
                       />
                     </label>
-                  </>
+                  </div>
                 ))}
               </details>
               {collectionsList.length > 0 && (

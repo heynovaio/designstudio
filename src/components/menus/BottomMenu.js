@@ -59,11 +59,9 @@ export const BottomMenu = ({ menu }) => {
         <div className={sty.linksColumn}>
           <div className={sty.MenuLinks}>
             <ul className="list-no-style">
-              {menu.menu_links.map((item, index) => (
-                <li>
-                  <PrismicLink href={item.link?.url} key={`menuLink:${index}`}>
-                    {item.label}
-                  </PrismicLink>
+              {menu.menu_links.map((item) => (
+                <li key={`menuLink:${item.link?.url}`}>
+                  <PrismicLink href={item.link?.url}>{item.label}</PrismicLink>
                 </li>
               ))}
               <li>
@@ -109,10 +107,9 @@ export const BottomMenu = ({ menu }) => {
               <div className={sty.SocialGroup}>
                 <ul className={`list-no-style ${sty.SocialLinks}`}>
                   {menu.socials.map((item, index) => (
-                    <li>
+                    <li key={`socialLink:${item.social_link?.url}`}>
                       <PrismicLink
                         href={item.social_link?.url}
-                        key={`socialLink:${index}`}
                         title={`Link to ${item.social_link?.url}`}
                       >
                         <GatsbyImage
