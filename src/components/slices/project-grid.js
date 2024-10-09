@@ -43,7 +43,9 @@ export const ProjectGrid = ({ slice }) => {
             </div>
             <div className={sty.grid}>
               {tagProd(item.project_tag).map((prod, index) => (
-                <div className={sty.project} key={`prod:${index}`}
+                <div
+                  className={sty.project}
+                  key={`prod:${index}`}
                   data-sal="slide-up"
                   data-sal-delay="20"
                   data-sal-easing="ease"
@@ -60,13 +62,13 @@ export const ProjectGrid = ({ slice }) => {
                       className={sty.image}
                     />
                     <div className={sty.overlay}>
-                      <PrismicLink
+                      <div
                         href={`/project/${prod.uid}`}
                         className={sty.link}
                         title={`View project ${prod.data.project_name}`}
                       >
                         View Project
-                      </PrismicLink>
+                      </div>
                       <SlArrowRightCircle color="#F68623" size="55px" />
                     </div>
                   </PrismicLink>
