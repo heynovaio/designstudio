@@ -23,11 +23,13 @@ export const FacultyGrid = ({ slice }) => {
           />
           <div className={sty.facultyMembers}>
             {slice.items.map((item) => (
-              <div className={sty.employeeCard}
+              <div
+                className={sty.employeeCard}
                 data-sal="slide-up"
                 data-sal-delay="0"
                 data-sal-easing="ease"
                 data-sal-duration="500"
+                key={item.name}
               >
                 <div className={sty.imageWrap}>
                   <GatsbyImage
