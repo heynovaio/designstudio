@@ -28,7 +28,7 @@ export const ShopByRoom = ({
         />
       </div>
 
-      <div className={sty.grid}>
+      <div>
         <div className={sty.collectionsGrid}>
           {gallery.map((item, index) => (
             <PrismicLink

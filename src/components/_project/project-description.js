@@ -12,11 +12,10 @@ export const ProjectDescription = ({ description, gallery }) => {
         {gallery && (
           <div className={sty.galleryWrap}>
             {gallery.map((item, index) => (
-              <div className={sty.imageWrap} key={`galleryItem: ${index}`}>
+              <div key={`galleryItem: ${index}`}>
                 <GatsbyImage
                   image={item.image?.gatsbyImageData}
                   alt={item.image?.alt || ''}
-                  className={sty.image}
                 />
               </div>
             ))}
