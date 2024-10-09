@@ -19,22 +19,22 @@ export const CatalogGrid = ({ slice }) => {
         </div>
         <div>
           <div className={sty.grid}>
-            {slice.items.map((item, index) => (
+            {slice.items.map((item) => (
               <div
                 className={sty.category}
                 data-sal="slide-up"
                 data-sal-delay="20"
                 data-sal-easing="ease"
                 data-sal-duration="350"
+                key={`collection:${item.catalog_grid_item_name}`}
               >
                 <div className={sty.imageWrap}>
                   <GatsbyImage
                     image={item.catalog_grid_item_image?.gatsbyImageData}
                     className={sty.image}
-                    alt={item.alt}
+                    alt={item.catalog_grid_item_image?.alt || ''}
                   />
                   <PrismicLink
-                    key={`collection:${index}`}
                     href={`/collection/${item.room_link_label}`}
                     title={item.catalog_grid_item_name}
                   >
