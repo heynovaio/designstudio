@@ -49,10 +49,8 @@ export const ShopByRoom = ({
                     alt={item.image?.alt || ''}
                   />
                   <div className={sty.overlay}>
-                    <span className={sty.link}>
-                      View Products
-                      <SlArrowRightCircle color="#F68623" size="55px" />
-                    </span>
+                    <span className={sty.link}>View Products</span>
+                    <SlArrowRightCircle color="#F68623" size="55px" />
                   </div>
                 </div>
               </div>
