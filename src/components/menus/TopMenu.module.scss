@@ -87,6 +87,13 @@
     font-weight: 700;
   }
 }
+
+.locationBtn:focus {
+  span {
+    outline: 2px solid black;
+    outline-offset: 2px;
+  }
+}
 .activeBtn {
   opacity: 100%;
 }
@@ -209,11 +216,6 @@
       color: $color-black;
     }
   }
-}
-
-.locationBtn:focus {
-  outline: 2px solid #d3005b; /* Example focus outline */
-  outline-offset: 2px;
 }
 
 .desktopTablet {
